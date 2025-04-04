@@ -1,1 +1,1 @@
-# VerbiQ.ai
+<!-- Fatema has to create navbar and in responsive design we have to create menu in navbar  -->
