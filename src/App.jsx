@@ -1,18 +1,12 @@
-import React from 'react'
+import React from "react";
+import Home from "./pages/Home/Home";
 
-function App() {
+const App = () => {
   return (
     <>
-      <div
-  
-      >
-        <h1 class="text-3xl font-bold underline text-red-500">
-            Yogesh kushawah
-        </h1>
-      </div>
+    <Home/>
     </>
-    
-  )
-}
+  );
+};
 
-export default App
+export default App;

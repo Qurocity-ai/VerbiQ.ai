@@ -10,9 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.5",
     "@tailwindcss/vite": "^4.1.2",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.6.3",
+    "gsap": "^3.12.7",
+    "motion": "^12.6.3",
+    "ogl": "^1.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-intersection-observer": "^9.16.0",
+    "tailwind-merge": "^3.1.0",
     "tailwindcss": "^4.1.2"
   },
   "devDependencies": {
