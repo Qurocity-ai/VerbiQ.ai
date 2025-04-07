@@ -7,7 +7,7 @@ const StatsSection = () => {
       className= "min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 "
     >
       <div className="mx-auto space-y-6">
-        {/* Combined Orb and Image Container */}
+        {/* and Image Container */}
         <div
           className="w-full"
           style={{ position: "relative", height: "600px" }}
