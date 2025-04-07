@@ -24,6 +24,7 @@
 
 .navlinks a {
     font-family: 'Poppins', sans-serif;
+    cursor: pointer;
     font-weight: 400;
     font-size: 20px;
     line-height: 48px;

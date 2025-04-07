@@ -1,15 +1,14 @@
 import React from 'react'
-import FullHiring from './pages/Solutions/FullHiring/FullHiring'
-import LangaugeAssesment from './pages/Solutions/LangaugeAssesment/LangaugeAssesment'
+import Navbar from './componants/Navbar/Navbar';
+import ALLRoutes from './routes/AllRoutes';
+
 
 const App = () => {
   return (
-  
-      <div>
-        <FullHiring/>
-        <LangaugeAssesment/>
-      </div>
-   
+    <>
+      <Navbar/>
+      <ALLRoutes/>
+    </>
     
   )
 }
