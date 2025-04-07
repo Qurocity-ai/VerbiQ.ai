@@ -31,10 +31,10 @@ function FAQ() {
   };
 
   return (
-    <div className="flex flex-col items-end justify-end h-screen ">
+    <div className="flex flex-col items-end justify-center h-screen ">
       <div className="sm:grid sm:grid-cols-12 gap-4 flex flex-col items-center justify-center w-screen bg-[#f9f9ff] sm:pr-38 sm:pl-72 py-34">
         <div className="sm:col-span-5 sm:text-[52px] text-[22px] sm:font-normal text-[#0e128b] leading-[100%] flex justify-center w-full">
-          Frequently Asked Questions
+          Frequently Asked <br className="sm:flex hidden" /> Questions
         </div>
         <div className="sm:col-span-7 sm:pl-40 pl-3 pr-3 w-full">
           {faqData.map((item, index) => (

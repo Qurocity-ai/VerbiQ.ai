@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-white py-11 sm:h-[166px] w-full shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+    <footer className="bg-white py-11 sm:h-[166px] w-full">
       <div className="flex justify-evenly  items-center sm:flex-row flex-col w-full sm:pr-40 sm:pl-16 pb-4">
         <img
           src="\src\assets\Group 514676.png"
