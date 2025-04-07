@@ -5,17 +5,10 @@ const Wave = () => {
   return (
     <div className="w-full h-[600px] relative flex justify-center items-center overflow-hidden">
       {/* Wave Component */}
-      <div className="absolute w-full h-full z-[1]">
-        <Threads
-          color={[0.9, 0.2, 0.4]}
-          amplitude={2}
-          distance={0}
-          enableMouseInteraction={true}
-        />
-      </div>
        <div className="absolute w-full h-full z-[1]">
         <Threads
           color={[1.9, 0.2, 0.4]}
+      
           amplitude={2}
           distance={0}
           enableMouseInteraction={true}
@@ -23,8 +16,8 @@ const Wave = () => {
       </div>
       <div className="absolute w-full h-full z-[1] transform scale-x-[-1]">
         <Threads
-          color={[0.9, 0.2, 0.4]}
-          amplitude={2}
+          color={[0, 0, 1.9]}
+          amplitude={1.2}
           distance={0}
           enableMouseInteraction={true}
         />
@@ -40,7 +33,7 @@ const Wave = () => {
         </div>
 
         {/* Cultural Understanding */}
-        <div className="absolute left-[55%] md:left-[50%] top-[20%] md:top-[25%] animate-float delay-500">
+        <div className="absolute left-[55%] md:left-[60%] top-[20%] md:top-[25%] animate-float delay-500">
           <h2 className="text-[1.5rem] md:text-[1.8rem] bg-gradient-to-r from-[#575aaa] to-[#ed6f6f] bg-clip-text text-transparent drop-shadow-md mb-4 md:mb-2">
             Cultural Understanding
           </h2>
@@ -65,7 +58,7 @@ const Wave = () => {
         </div>
 
         {/* Vocabulary */}
-        <div className="absolute left-[55%] md:left-[80%] top-[55%] md:top-[65%] animate-float delay-700">
+        <div className="absolute left-[55%] md:left-[90%] top-[55%] md:top-[65%] animate-float delay-700">
           <h2 className="text-[1.5rem] md:text-[1.8rem] bg-gradient-to-r from-[#5753a0] to-[#ed6f6f] bg-clip-text text-transparent drop-shadow-md mb-4 md:mb-2">
             Vocabulary
           </h2>

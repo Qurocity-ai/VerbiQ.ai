@@ -115,7 +115,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     }
 
     float colorVal = 1.0 - line_strength;
-    fragColor = vec4(dynamicColor * colorVal, colorVal);
+    fragColor = vec4(dynamicColor *colorVal,colorVal);
 }
 
 void main() {
