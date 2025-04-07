@@ -1,0 +1,67 @@
+.container {
+  text-align: center;
+  padding-left: 9rem;
+  padding-right: 9rem;
+  margin-top: 100px;
+}
+
+/* Title Styling */
+.title {
+  font-size: 27px;
+  font-weight: normal;
+  color: #000949;
+  margin-bottom: 10px;
+}
+
+/* Highlighted Text */
+.highlight {
+  font-weight: 400;
+}
+
+/* Subtitle Styling */
+.subtitle {
+  font-size: 18px;
+  color: #686868;
+}
+
+/* Bold Text */
+.boldText {
+  font-weight: bold;
+  color: #686868;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) { /* Tablets */
+  .container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 480px) { /* Small Tablets & Mobile */
+  .container {
+      padding-left: 7rem;
+      padding-right: 7rem;
+  }
+  .title {
+      font-size: 20px;
+      padding-left: 4rem;
+      padding-right: 4rem;
+  }
+  .subtitle {
+      font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) { /* Mobile Devices */
+  .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+  .title {
+      font-size: 18px;
+  }
+  .subtitle {
+      font-size: 12px;
+  }
+}
