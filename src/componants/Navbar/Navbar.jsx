@@ -58,7 +58,7 @@ export default function Navbar() {
 
         <div   className={`${style.dropdownContainer} ${showSolution ? style.dropdownOpen : ''}`}
  ref={dropdownRef}>
-          <a href="#" onClick={toggleSolutions}>Solutions</a>
+          <a  onClick={toggleSolutions}>Solutions</a>
           {showSolution && (
             <div className={style.dropdown}>
               <div className={style.row}>
