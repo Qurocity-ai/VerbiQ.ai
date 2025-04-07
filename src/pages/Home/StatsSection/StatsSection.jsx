@@ -1,5 +1,4 @@
 import React from "react";
-import Orb from "../ReactBits/Orb";
 import TiltedCard from "../ReactBits/TiltedCard";
 
 const StatsSection = () => {
@@ -13,13 +12,7 @@ const StatsSection = () => {
           className="w-full"
           style={{ position: "relative", height: "600px" }}
         >
-          <Orb
-            hoverIntensity={0.5}
-            rotateOnHover={true}
-            hue={0}
-            forceHoverState={false}
-            className="w-full h-full"
-          />
+          
           <img
             src="/assets/Group 514833.png"
             alt="Assessment Platform"
