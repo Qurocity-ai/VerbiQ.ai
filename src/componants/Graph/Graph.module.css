@@ -1,0 +1,147 @@
+/* Wrapper Background */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #F8FAFF;
+    flex-wrap: wrap;
+  }
+  
+  /* Shared style for both sections */
+  .sectionBox {
+    background-color: white;
+    border-radius: 4rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin: 1rem 0;
+    box-sizing: border-box;
+  }
+  
+  /* Bar Graph Layout */
+  .barGraph {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  /* Bar Wrapper */
+  .barWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    min-width: 60px;
+  }
+  
+  /* Labels Above Bars */
+  .label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Bars */
+  .bar {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  
+  .bar1 { height: 160px; background-color: #4CAF50; }
+  .bar2 { height: 120px; background-color: #FFC107; }
+  .bar3 { height: 140px; background-color: #03A9F4; }
+  .bar4 { height: 100px; background-color: #F44336; }
+  
+  /* Headings and Text */
+  .heading {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #0D47A1;
+    margin-top: 1rem;
+  }
+  
+  .subText {
+    color: #757575;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  /* Subheadings */
+  .subHeading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #999;
+    margin-top: 1rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .subHeading:hover {
+    color: #02586F;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    
+  }
+  
+  /* Personalized Heading */
+  .subHeading1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+  }
+  
+  /* Divider Line */
+  .hrLine {
+    width: 80%;
+    height: 2px;
+    background-color: #ccc;
+    margin: 1.5rem auto;
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .wrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+  
+    .sectionBox {
+      width: 100%;
+      max-width: 95%;
+      padding: 1.5rem;
+    }
+  
+    .barGraph {
+      gap: 0.5rem;
+      justify-content: center;
+    }
+  
+    .barWrapper {
+      width: 22%;
+      min-width: 50px;
+    }
+  
+    .label {
+      font-size: 0.8rem;
+    }
+  
+    .heading {
+      font-size: 1.1rem;
+    }
+  
+    .subHeading {
+      font-size: 1rem;
+    }
+  }
+  
