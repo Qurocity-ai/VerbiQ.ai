@@ -1,19 +1,18 @@
 import { Routes,Route } from "react-router-dom";
-import Navbar from "../componants/Navbar/Navbar";
 import Aboutus from "../pages/Aboutus/Aboutus";
 import Resources from "../pages/Resources/Resources";
-import COE from "../pages/COE/COE";
 import NativeHiringSupport from "../pages/Solutions/NativeHiringSupport/NativeHiringSupport";
 import LanguageAssessments from "../pages/Solutions/Language Assessments/LanguageAssessments";
 import ContractualProject from "../pages/Solutions/ContractualProjectBasedSupport/ContractualProject";
 import FullTimeHiringSupport from "../pages/Solutions/FullTimeHiringSupport/FullTimeHiringSupport";
 import Home from "../pages/Home/Home";
+import CenterofExce from "../pages/CenterofExce/CenterofExce";
 export default function ALLRoutes() {
     return (
       
 <Routes>
 <Route path="/" element={<Home/>}></Route>
-<Route path="/ceo" element={<COE/>}></Route>
+<Route path="/ceo" element={<CenterofExce/>}></Route>
 <Route path="/aboutUs" element={<Aboutus/>}></Route>
 <Route path="/resources" element={<Resources/>}></Route>
 {/* Support Page Routing  */}
