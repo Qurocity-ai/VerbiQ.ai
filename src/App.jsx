@@ -1,13 +1,18 @@
-import React from "react";
-import Home from "./pages/Home/Home";
-import Navbar from "./componants/Navbar/Navbar";
-import ALLRoutes from "./routes/AllRoutes";
+import React from 'react'
+import FullHiring from './pages/Solutions/FullHiring/FullHiring'
+import LangaugeAssesment from './pages/Solutions/LangaugeAssesment/LangaugeAssesment'
 
 const App = () => {
   return (
-    <>
-          <Navbar/>
-    <ALLRoutes/>
+  
+      <div>
+        <FullHiring/>
+        <LangaugeAssesment/>
+      </div>
+   
+    
+  )
+}
 
     </>
   );
