@@ -1,16 +1,15 @@
 import React from 'react'
+import FullHiring from './pages/Solutions/FullHiring/FullHiring'
+import LangaugeAssesment from './pages/Solutions/LangaugeAssesment/LangaugeAssesment'
 
 function App() {
   return (
-    <>
-      <div
   
-      >
-        <h1 class="text-3xl font-bold underline text-red-500">
-            Yogesh kushawah
-        </h1>
+      <div>
+        <FullHiring/>
+        <LangaugeAssesment/>
       </div>
-    </>
+   
     
   )
 }

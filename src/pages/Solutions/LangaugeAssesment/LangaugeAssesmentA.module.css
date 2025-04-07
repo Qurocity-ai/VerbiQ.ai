@@ -1,0 +1,49 @@
+.container {
+    text-align: center;
+    padding-left: 9rem;
+    padding-right: 9rem;
+    
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000949;
+    margin-bottom: 0.5rem;
+  }
+  
+  .highlight {
+    font-size: 1.125rem; 
+    font-weight: bold;
+    color: #b91c1c; 
+    margin-top: 10px;
+  }
+  
+  .description {
+    font-size: 1rem; 
+    color: #6b7280; 
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+  
+  
+  @media (max-width: 500px) { 
+    .container{
+        padding: 2.5rem 1.5rem;
+    }
+    .title {
+      font-size: 1.9rem;
+    }
+  
+    .highlight {
+      font-size: 1.25rem; 
+      margin-top: 2rem;
+    }
+  
+    .description {
+      font-size: 1.125rem;
+      padding: 0.7rem 1.5rem;
+      
+    }
+  }
+  
