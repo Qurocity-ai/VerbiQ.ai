@@ -9,7 +9,7 @@ const Wave = () => {
         <Threads
           color={[1.9, 0.2, 0.4]}
       
-          amplitude={2}
+          amplitude={1}
           distance={0}
           enableMouseInteraction={true}
         />
