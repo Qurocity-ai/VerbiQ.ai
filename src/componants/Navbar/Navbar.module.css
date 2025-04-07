@@ -57,7 +57,7 @@
     padding: 15px 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-    min-width: 400px; 
+    min-width: 450px; 
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -75,7 +75,7 @@
 .item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     width: 50%;
     cursor: pointer;
 }
@@ -87,11 +87,10 @@
 
 /* Hover Effect */
 .item a {
-    font-family: Helvetica, sans-serif;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 28px;
-    letter-spacing: -1px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
     vertical-align: middle;
     color: #000949;
     background: transparent;
