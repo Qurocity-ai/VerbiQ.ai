@@ -29,7 +29,6 @@ const App = () => {
       <Navbar/>
       <ALLRoutes/>
       <Home/>
-      
       <Footer />
     </>
     
