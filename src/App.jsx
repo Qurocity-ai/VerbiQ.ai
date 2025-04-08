@@ -1,10 +1,10 @@
 import React from "react";
-import Footer from "./components/Footer/Footer";
-import FAQ from "./pages/Home/FAQ/FAQ";
+import Footer from "./componants/Footer/Footer";
+import "./App.css";
+
 function App() {
   return (
     <>
-      <FAQ />
       <Footer />
     </>
   );
