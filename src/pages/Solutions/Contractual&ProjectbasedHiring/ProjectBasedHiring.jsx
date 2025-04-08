@@ -24,7 +24,7 @@ function ProjectBasedHiring() {
         <div className="w-full flex flex-col items-center text-center">
           
           <div className="lg:w-[60%]">
-            <h1 className="text-2xl lg:text-[40px] text-blue-900">
+            <h1 className="text-2xl mt-[70px]  lg:text-[40px] text-blue-900 ">
               Flexible Workforce Solutions for Your Business Needs
             </h1>
             <div className="lg:w-[95%] mx-auto mt-6 text-gray-500 text-[18px] lg:text-[23px]">

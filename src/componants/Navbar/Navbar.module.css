@@ -1,0 +1,214 @@
+.navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 70px;
+      min-width: 100%;
+      text-decoration: none;
+      
+      /* Fixed positioning for proper shadow behavior */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      
+      /* Shadow visibility essentials */
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.navlinks {
+    transition: transform 0.3s ease-in-out;
+  
+    display: flex;
+    gap: 20px;
+}
+
+.navlinks a {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 48px;
+    letter-spacing: -1px;
+    vertical-align: middle;
+    position: relative;
+    padding-bottom: 5px; 
+    text-decoration: none;
+    color: #000949;
+    transition: color 0.3s;
+}
+
+/* ✅ Add Skyblue underline on hover */
+.navlinks a:hover {
+    text-decoration: underline 3px solid #007bff;
+}
+
+/* Dropdown Container */
+.dropdownContainer {
+    position: relative;
+    z-index: 1000;
+
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: absolute;
+    top: 100;
+    left: 0;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    min-width: 450px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+/* Flex Row */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dropdown Items */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 50%;
+    cursor: pointer;
+}
+
+/* Image Styling */
+.item img {
+    height: 30px;
+}
+
+/* Hover Effect */
+.item a {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    color: #000949;
+    background: transparent;
+    text-decoration: none;
+    transition: all 300ms ease-out; /* Smart animate */
+    position: relative;
+  }
+  
+  /* Hover effect */
+  .item a:hover {
+    /* color: #e0efff; */
+    text-decoration: underline 3px solid #007bff;
+    transform: translateY(-2px); /* subtle lift */
+  }
+  
+  /* Optional: click-like active effect */
+  .item a:active {
+    transform: scale(0.98);
+    transition: transform 150ms ease-out;
+  }
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* ✅ Mobile layout */
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: block; 
+      font-size: 2rem; 
+    color: #000949;  
+    }
+.navbar {
+    padding: 0px;
+    /* margin-bottom: -10px; */
+
+}
+  
+    .navlinks {
+      position: absolute;
+      top: 73px;
+      left: 0;
+      /* right: 0; */
+      width: 88%;
+      background: #ffffff;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+      gap: 1rem;
+      padding: 1.2rem 1.5rem;
+      transform: translateY(-200%); 
+      transition: transform 0.3s ease-in-out;
+      z-index: 10;
+    }
+  
+    .showMenu {
+        transform: translateY(0%);
+      }
+      .dropdownContainer > a::after {
+        content: "▼";
+        font-size: 1.2rem;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+      .dropdownOpen > a::after {
+        content: "▲";
+      }
+        
+          
+    .dropdown {
+      position: relative;
+      top: 0;
+      background: white;
+      padding: 10px 12px;
+      border-radius: 8px;
+      box-shadow: none;
+      flex-direction: column;
+      gap: 10px;
+  
+    }
+  
+    .row {
+      flex-direction: column;
+      gap: 12px;
+
+    }
+    .item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 6px 0;
+    
+      }
+      .item a {
+        font-size: 16px;
+        padding: 8px 12px;
+        display: block;
+        color: #000949;
+
+        font-weight: 400;
+
+      }
+      .item a:hover {
+        background-color: white;
+        border-radius: 4px;
+        padding-left: 4px;
+        transition: all 0.2s ease;
+      }
+    
+    
+  }
