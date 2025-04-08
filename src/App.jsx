@@ -1,23 +1,34 @@
-import Navbar from './componants/Navbar/Navbar';
-import ALLRoutes from './routes/AllRoutes';
-import HeroSection from "./pages/Home/HeroSection/HeroSection";
-import AnimatedContent from "./pages/Home/ReactBits/AnimatedContent";
-import Threads from "./pages/Home/ReactBits/Threads";
-import Wave from "./pages/Home/Wave/Wave";
-import { Home } from "lucide-react";
-import Footer from './components/Footer/Footer'
-
-
-const App = () => {
+import React from "react";
+import Graph from "./pages/Home/Graph/Graph";
+import Chat from "./pages/Home/Chat/Chat";
+// import Footer from "./components/Footer/Footer";
+// import FAQ from "./pages/Home/FAQ/FAQ";
+function App() {
   return (
     <>
-      <Navbar/>
-      <ALLRoutes/>
-      <Home/>
-      <Footer />
+      {/* <FAQ /> */}
+      {/* <Footer /> */}
+      <Graph/>
+      <Chat/>
     </>
-    
-  )
+  );
 }
 
 export default App;
+
+// import React from 'react'
+// import Navbar from './componants/Navbar/Navbar';
+// import ALLRoutes from './routes/AllRoutes';
+
+
+// const App = () => {
+//   return (
+//     <>
+//       <Navbar/>
+//       <ALLRoutes/>
+//     </>
+    
+//   )
+// }
+
+// export default App;

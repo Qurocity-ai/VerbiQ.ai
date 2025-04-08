@@ -1,9 +1,9 @@
-import { div } from "framer-motion/client";
-
 function AboutUs() {
     return (
-        <div></div>
-      );
+        <div>
+            
+        </div>
+    )
 }
 
-export default AboutUs;
+export default AboutUs
