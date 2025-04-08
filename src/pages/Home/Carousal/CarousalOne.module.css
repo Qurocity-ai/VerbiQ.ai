@@ -154,7 +154,7 @@
 @media (max-width: 768px) {
     .carouselContainer {
       width: 100vw;
-      width: 98%;
+      width: 99.5%;
       border: 1px solid black;
       border-radius: 15px;
     }

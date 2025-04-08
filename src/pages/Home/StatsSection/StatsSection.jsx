@@ -7,18 +7,18 @@ const StatsSection = () => {
       className= "min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 "
     >
       <div className="mx-auto space-y-6">
-        {/* and Image Container */}
-        <div
-          className="w-full"
-          style={{ position: "relative", height: "600px" }}
-        >
-          
-          <img
-            src="/assets/Group 514833.png"
-            alt="Assessment Platform"
-            className="absolute w-190 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          />
-        </div>
+  {/* Video Container */}
+<div className="w-full relative" style={{ height: "600px" }}>
+<video
+      src="/assets/T02.mp4"
+      autoPlay
+      muted
+      
+      playsInline
+      className="absolute w-[760px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    />
+</div>
+
 
         {/* Tilted Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
