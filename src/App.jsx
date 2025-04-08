@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./components/Footer/Footer";
+import Footer from "./componants/Footer/Footer";
 import FAQ from "./pages/Home/FAQ/FAQ";
 function App() {
   return (
