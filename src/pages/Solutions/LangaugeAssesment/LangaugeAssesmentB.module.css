@@ -1,0 +1,82 @@
+.container {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4b5563;
+    margin-bottom: 20px;
+}
+
+.assessmentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 40px;
+    
+}
+
+.assessmentBox {
+    flex: 1;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.5;
+    text-align: start;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+       
+        padding: 50px 35px;
+    }
+    .assessmentContainer {
+        flex-direction: column;
+        gap: 30px;
+
+    }
+
+    .assessmentBox {
+        max-width: 100%;
+    }
+
+    .icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 14px;
+        text-align: center;
+    }
+}

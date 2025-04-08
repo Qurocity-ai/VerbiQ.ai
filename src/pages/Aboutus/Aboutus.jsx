@@ -1,9 +1,9 @@
-import React from 'react'
+import { div } from "framer-motion/client";
 
-function Aboutus() {
-  return (
-    <div>Aboutus</div>
-  )
+function AboutUs() {
+    return (
+        <div></div>
+      );
 }
 
-export default Aboutus
+export default AboutUs;

@@ -1,0 +1,57 @@
+.container { 
+    padding: 2.5rem 1.25rem; 
+    display: flex;
+    justify-content: center;
+    font-size: 18px; 
+  }
+  
+  .grid {
+    max-width: 72rem; 
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
+    text-align: center;
+  }
+  
+  
+ 
+  
+  @media (min-width: 768px) { 
+    .grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 5rem; 
+    height: 5rem; 
+    margin-bottom: 1rem;
+  }
+  
+  .title {
+    
+    font-weight: 600;
+    color: #000949;
+  }
+  
+  .description {
+    color: #686868; 
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+  
+  @media (max-width: 480px) { 
+    .grid {
+      grid-template-columns: repeat(1, 1fr); 
+    }
+    .description {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+  }

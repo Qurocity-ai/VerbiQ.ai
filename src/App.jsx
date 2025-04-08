@@ -1,17 +1,23 @@
-import React from 'react'
-import Chat from './componants/Chat/Chat'
-import Graph from './componants/Graph/Graph'
+import Navbar from './componants/Navbar/Navbar';
+import ALLRoutes from './routes/AllRoutes';
+import HeroSection from "./pages/Home/HeroSection/HeroSection";
+import AnimatedContent from "./pages/Home/ReactBits/AnimatedContent";
+import Threads from "./pages/Home/ReactBits/Threads";
+import Wave from "./pages/Home/Wave/Wave";
+import { Home } from "lucide-react";
+import Footer from './components/Footer/Footer'
 
-function App() {
+
+const App = () => {
   return (
     <>
-      <div>
-       <Chat/>
-       <Graph/>
-      </div>
+      <Navbar/>
+      <ALLRoutes/>
+      <Home/>
+      <Footer />
     </>
     
   )
 }
 
-export default App
+export default App;
