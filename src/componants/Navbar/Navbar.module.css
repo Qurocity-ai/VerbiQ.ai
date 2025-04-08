@@ -7,10 +7,10 @@
       text-decoration: none;
       
       /* Fixed positioning for proper shadow behavior */
-      position: fixed;
-      top: 0;
+      /* position: fixed; */
+      /* top: 0;
       left: 0;
-      right: 0;
+      right: 0; */
       
       /* Shadow visibility essentials */
       background: white;
@@ -142,7 +142,7 @@
     .navlinks {
       position: absolute;
       top: 73px;
-      left: 0;
+      /* left: 0; */
       /* right: 0; */
       width: 88%;
       background: #ffffff;

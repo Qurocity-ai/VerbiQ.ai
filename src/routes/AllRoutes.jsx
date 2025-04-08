@@ -22,5 +22,6 @@ export default function ALLRoutes() {
 <Route path="/fulltime" element={<FullHiring/>}></Route>
 
 
+
 </Routes>
 )}
