@@ -8,7 +8,6 @@ const Wave = () => {
        <div className="absolute w-full h-full z-[1]">
         <Threads
           color={[1.9, 0.2, 0.4]}
-      
           amplitude={1}
           distance={0}
           enableMouseInteraction={true}

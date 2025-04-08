@@ -90,5 +90,4 @@ const StatsSection = () => {
     </div>
   );
 };
-
 export default StatsSection;

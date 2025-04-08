@@ -20,7 +20,5 @@ export default function ALLRoutes() {
 <Route path="/language" element={<LangaugeAssesment/>}></Route>
 <Route path="/contractual" element={<ContractualProject/>}></Route>
 <Route path="/fulltime" element={<FullHiring/>}></Route>
-
-
 </Routes>
 )}
