@@ -5,7 +5,7 @@ function Footer() {
     <footer className="bg-white py-11 sm:h-[166px] w-full">
       <div className="flex justify-evenly  items-center sm:flex-row flex-col w-full sm:pr-40 sm:pl-16 pb-4">
         <img
-          src="\src\assets\Group 514676.png"
+          src="\Footer\assets\Group 514676.png"
           alt="VerbiQ.ai"
           className="w-40 h-10"
         />
@@ -30,7 +30,7 @@ function Footer() {
           <div className=" sm:flex  sm:flex-col sm:col-span-1 hidden sm:w-[134px] sm:h-[73px] sm:pl-16">
             <a href="#" className="sm:flex sm:pb-4 items-center">
               <img
-                src="\src\assets\image 213.png"
+                src="\Footer\assets\image 213.png"
                 alt="LinkedIn-logo"
                 className="w-7 h-7 mr-2"
               />
@@ -38,7 +38,7 @@ function Footer() {
             </a>
             <a href="#" className="sm:flex items-center">
               <img
-                src="\src\assets\image 214.png"
+                src="\Footer\assets\image 214.png"
                 alt="Instagram-logo"
                 className="w-7 h-7 mr-2"
               />
