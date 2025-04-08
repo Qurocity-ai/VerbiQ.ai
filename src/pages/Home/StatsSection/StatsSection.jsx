@@ -3,26 +3,30 @@ import TiltedCard from "../ReactBits/TiltedCard";
 
 const StatsSection = () => {
   return (
-    <div
-      className= "min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 "
-    >
-      <div className="mx-auto space-y-6">
-        {/* and Image Container */}
-        <div
-          className="w-full"
-          style={{ position: "relative", height: "600px" }}
-        >
-          
-          <img
-            src="/assets/Group 514833.png"
-            alt="Assessment Platform"
-            className="absolute w-190 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          />
+    <div className="min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto space-y-6 w-full">
+        {/* Video Container */}
+        <div className="w-full flex justify-center items-center px-4 sm:px-0 ">
+          <div
+            className="relative w-full max-w-4xl mx-auto mb-30 " 
+            style={{ aspectRatio: "16/9" }}
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-contain "
+            >
+              <source src="/assets/T02.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
         {/* Tilted Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <TiltedCard 
+          <TiltedCard
             containerHeight="100%"
             containerWidth="100%"
             rotateAmplitude={5}
@@ -30,19 +34,15 @@ const StatsSection = () => {
             showMobileWarning={false}
             showTooltip={false}
             displayOverlayContent={false}
-            
           >
-            <div className="p-6 bg-gray-100 rounded-lg h-full" >
-              <div className="" >
-
-              <h3 className="text-xl font-bold text-[#f4ad28] mb-2" >
+            <div className="p-6 bg-gray-100 rounded-lg h-full">
+              <h3 className="text-xl font-bold text-[#f4ad28] mb-2">
                 ONE PLATFORM, EASY HIRE
               </h3>
               <p className="text-gray-600">
                 82% faster hiring and 40% lower costs with automated, end-to-end
                 language assessments.
               </p>
-              </div>
             </div>
           </TiltedCard>
 
@@ -55,7 +55,7 @@ const StatsSection = () => {
             showTooltip={false}
             displayOverlayContent={false}
           >
-            <div className="p-6 bg-gray-100  rounded-lg h-full">
+            <div className="p-6 bg-gray-100 rounded-lg h-full">
               <h3 className="text-xl font-bold text-[#f4ad28] mb-2">
                 CULTURAL & LINGUISTIC ASSESSMENT
               </h3>
@@ -75,7 +75,7 @@ const StatsSection = () => {
             showTooltip={false}
             displayOverlayContent={false}
           >
-            <div className="p-6 bg-gray-100  rounded-lg h-full">
+            <div className="p-6 bg-gray-100 rounded-lg h-full">
               <h3 className="text-xl font-bold text-[#f4ad28] mb-2">
                 DATA-DRIVEN RESULTS
               </h3>

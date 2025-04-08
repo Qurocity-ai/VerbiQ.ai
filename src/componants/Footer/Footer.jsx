@@ -54,7 +54,6 @@ function Footer() {
             </a>
           </div>
         </div>
-        {/* <div className=" sm:flex flex-col sm:col-span-1"></div> */}
       </div>
     </footer>
   );
