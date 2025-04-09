@@ -4,7 +4,7 @@
     align-items: center;
     padding: 2rem 1rem;
     box-sizing: border-box;
-    width: 90vw;
+    width: 97vw;
     overflow: hidden;
   }
   
@@ -149,11 +149,14 @@
     font-weight: bold;
 }
   
+.mainContainer{
+  margin-top: 4rem;
+}
 
 
 @media (max-width: 768px) {
     .carouselContainer {
-      width: 100vw;
+      /* width: 100vw; */
       width: 99.5%;
       border: 1px solid black;
       border-radius: 15px;
@@ -163,6 +166,10 @@
       height: auto;
       transition: transform 0.5s ease-in-out;
    
+    }
+
+    .carouselWrapper{
+      width: 100vw;
     }
   
     .oddCard {
