@@ -8,9 +8,9 @@ const HeroSection = () => {
       <div
         className={`min-h-screen bg-white flex items-start justify-center px-4 sm:px-6 lg:px-8 ${styles.container}`}
       >
-        <div className="max-w-4xl w-full mx-auto space-y-6 sm:space-y-8">
+        <div className="max-w-7xl w-full mx-auto space-y-6 sm:space-y-8">
           {/* Main Heading with Animation */}
-          <div className="w-full text-center">
+          <div className={`w-full text-center ${styles.txtContainer}`}>
             <AnimatedContent
               distance={150}
               direction="vertical"
@@ -25,7 +25,7 @@ const HeroSection = () => {
                 className={`text-4xl sm:text-4xl md:text-5xl font-bold text-[#2D3748] ${styles.heading}`}
               >
                 <span className="block">
-                  Smarter Language Hiring,
+                  Smarter Language Hiring,{" "}
                   <span className="text-[#1b3d86] block sm:inline">
                     Beyond Just Scores
                   </span>
@@ -34,14 +34,14 @@ const HeroSection = () => {
             </AnimatedContent>
           </div>
 
-          <div className="w-full text-center">
+          <div className={`w-full text-center  -mt-5 ${styles.secHeading}`}>
             <h2 className="text-xl sm:text-2xl md:text-4xl font-medium text-[#2b4879]">
               Fast, Fair, and Flawless
             </h2>
           </div>
 
           <div className="w-full text-center px-2 sm:px-0">
-            <p className="text-base sm:text-lg md:text-xl text-[#718096] max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-3xl text-[#686868] max-w-7xl mx-auto">
               Experience unbiased, culturally aligned hiring, 60% faster, with
               3X improved retention.
             </p>
@@ -55,12 +55,12 @@ const HeroSection = () => {
             />
           </div>
 
-          <div className="w-full text-center px-2 sm:px-0">
-            <p className="font-bold text-base sm:text-lg md:text-xl text-[#647285] max-w-3xl mx-auto leading-tight">
-              With <span className="font-bold text-[#f6b609]">AI-powered</span>,{" "}
-              <span className="font-bold text-[#ef5016]">Data-backed</span>,{" "}
-              <span className="font-bold text-[#6996d1]">
-                Verbal Assessment
+          <div className={`w-full text-center px-2 sm:px-0 ${styles.lastPara}`}>
+            <p className="font-bold text-base sm:text-lg md:text-xl text-[#647285] max-w-5xl mx-auto leading-tight">
+              With <span className="font-medium text-[#f6b609]">AI-powered</span>,{" "}
+              <span className="font-medium text-[#ef5016]">Data-backed</span>,{" "}
+              <span className="font-medium text-[#6996d1]">
+              360 Language Assessment
               </span>{" "}
               <br className="hidden sm:block" />
               <span className="text-[#b10606]">VerbiQ.ai</span> breaks the mold
