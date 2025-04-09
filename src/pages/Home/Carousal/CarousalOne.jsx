@@ -106,69 +106,73 @@ export default function CarousalOne() {
 
   return (
     <>
+    <div className={styles.mainContainer}>
       <h1 className={styles.mainHeading}>
-        Elevating Language Proficiency with{" "}
-        <span className={styles.mainHeadingSpan}> Precision</span> and{" "}
-        <span className={styles.mainHeadingSpan}>Insight</span>
-      </h1>
-      <div className={styles.carouselWrapper}>
-        <div className={styles.carouselContainer}>
-          <div
-            className={styles.slider}
-            ref={sliderRef}
-          >
-            {Array.from({ length: totalCards }, (_, i) => {
-              const isEven = (i + 1) % 2 === 0;
+          Elevating Language Proficiency with{" "}
+          <span className={styles.mainHeadingSpan}> Precision</span> and{" "}
+          <span className={styles.mainHeadingSpan}>Insight</span>
+        </h1>
+        <div className={styles.carouselWrapper}>
+          <div className={styles.carouselContainer}>
+            <div
+              className={styles.slider}
+              ref={sliderRef}
+            >
+              {Array.from({ length: totalCards }, (_, i) => {
+                const isEven = (i + 1) % 2 === 0;
 
-              if (isEven) {
-                return (
-                  <div
-                    key={i}
-                    className={styles.evenWrapper}
-                    ref={(el) => (cardRefs.current[i] = el)}
-                  >
-                    <h3 className={styles.cardHeading}>
-                      {headingArray[Math.floor(i / 2)]}
-                    </h3>
-                    <div className={`${styles.card} ${styles.evenCard}`}>
-                      <div className={styles.cardContent}>
-                        <ul className={styles.cardList}>
-                          {contentArray[Math.floor(i / 2)].map((item, idx) => (
-                            <li key={idx}>{item}</li>
-                          ))}
-                        </ul>
+                if (isEven) {
+                  return (
+                    <div
+                      key={i}
+                      className={styles.evenWrapper}
+                      ref={(el) => (cardRefs.current[i] = el)}
+                    >
+                      <h3 className={styles.cardHeading}>
+                        {headingArray[Math.floor(i / 2)]}
+                      </h3>
+                      <div className={`${styles.card} ${styles.evenCard}`}>
+                        <div className={styles.cardContent}>
+                          <ul className={styles.cardList}>
+                            {contentArray[Math.floor(i / 2)].map((item, idx) => (
+                              <li key={idx}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              } else {
-                const oddIndex = Math.floor(i / 2);
-                return (
-                  <div
-                    key={i}
-                    className={styles.evenWrapper}
-                    ref={(el) => (cardRefs.current[i] = el)}
-                  >
-                    <h3 className={styles.cardHeadingOdd}>
-                      {oddHeadings[oddIndex]}
-                    </h3>
-                    <div className={`${styles.card} ${styles.oddCard}`} />
-                  </div>
-                );
-              }
-            })}
+                  );
+                } else {
+                  const oddIndex = Math.floor(i / 2);
+                  return (
+                    <div
+                      key={i}
+                      className={styles.evenWrapper}
+                      ref={(el) => (cardRefs.current[i] = el)}
+                    >
+                      <h3 className={styles.cardHeadingOdd}>
+                        {oddHeadings[oddIndex]}
+                      </h3>
+                      <div className={`${styles.card} ${styles.oddCard}`} />
+                    </div>
+                  );
+                }
+              })}
+            </div>
+          </div>
+
+          <div className={styles.buttonWrapper}>
+            <button className={styles.navButton} onClick={handlePrev}>
+              ←
+            </button>
+            <button className={styles.navButton} onClick={handleNext}>
+              →
+            </button>
           </div>
         </div>
 
-        <div className={styles.buttonWrapper}>
-          <button className={styles.navButton} onClick={handlePrev}>
-            ←
-          </button>
-          <button className={styles.navButton} onClick={handleNext}>
-            →
-          </button>
-        </div>
-      </div>
+    </div>
+      
     </>
   );
 }
