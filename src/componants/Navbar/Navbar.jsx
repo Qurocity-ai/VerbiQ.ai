@@ -89,7 +89,7 @@ export default function Navbar() {
           )}
         </div>
          {/* Other Link  */}
-        <Link onClick={() => setMenuOpen(false)} to="/ceo">CEO</Link>
+        <Link onClick={() => setMenuOpen(false)} to="/ceo">COE</Link>
         <Link onClick={() => setMenuOpen(false)} to="/resources">Resources</Link>
         <Link onClick={() => setMenuOpen(false)} to="/aboutUs">About Us</Link>
       </div>

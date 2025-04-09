@@ -5,11 +5,13 @@
       height: 70px;
       min-width: 100%;
       text-decoration: none;
-      position: fixed;
-      top: 0;
+      
+      /* Fixed positioning for proper shadow behavior */
+      /* position: fixed; 
+       top: 0;
       left: 0;
       right: 0;
-      
+       */
      
       background: white;
       z-index:1000;
@@ -139,7 +141,7 @@
     .navlinks {
       position: absolute;
       top: 73px;
-      left: 0;
+      /* left: 0; */
       /* right: 0; */
       width: 88%;
       background: #ffffff;

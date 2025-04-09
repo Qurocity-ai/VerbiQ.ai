@@ -3,26 +3,22 @@ import TiltedCard from "../ReactBits/TiltedCard";
 
 const StatsSection = () => {
   return (
-    <div className="min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto space-y-6 w-full">
-        {/* Video Container */}
-        <div className="w-full flex justify-center items-center px-4 sm:px-0 ">
-          <div
-            className="relative w-full max-w-4xl mx-auto mb-30 " 
-            style={{ aspectRatio: "16/9" }}
-          >
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-contain "
-            >
-              <source src="/assets/T02.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
+    <div
+      className= "min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 "
+    >
+      <div className="mx-auto space-y-6">
+  {/* Video Container */}
+<div className="w-full relative" style={{ height: "600px" }}>
+<video
+      src="/assets/T02.mp4"
+      autoPlay
+      muted
+      
+      playsInline
+      className="absolute w-[760px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    />
+</div>
+
 
         {/* Tilted Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

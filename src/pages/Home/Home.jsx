@@ -2,8 +2,13 @@ import React from 'react'
 import HeroSection from './HeroSection/HeroSection';
 import StatsSection from './StatsSection/StatsSection';
 import Wave from './Wave/Wave';
-import FAQ from './FAQ/FAQ';
+
 import CarousalOne from './Carousal/CarousalOne';
+import Chat from './Chat/Chat';
+import Graph from './Graph/Graph';
+import FAQ from './FAQ/FAQ';
+
+
 const Home = () => {
   return (
 <>
@@ -11,7 +16,10 @@ const Home = () => {
  <StatsSection/>
  <Wave/>
  <CarousalOne/>
- <FAQ />
+ <Chat/>
+ <Graph/>
+ <FAQ/>
+ 
 </>
   )
 }

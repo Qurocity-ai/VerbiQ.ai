@@ -2,7 +2,7 @@
   text-align: center;
   padding-left: 9rem;
   padding-right: 9rem;
-  margin-top: 100px;
+  margin-top: 4rem;
 }
 
 /* Title Styling */
@@ -57,6 +57,7 @@
   .container {
       padding-left: 1rem;
       padding-right: 1rem;
+      margin-top: 1rem;
   }
   .title {
       font-size: 18px;
