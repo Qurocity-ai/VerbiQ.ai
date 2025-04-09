@@ -57,6 +57,9 @@ export default function Navbar() {
  <div className={`${style.navlinks} ${menuOpen ? style.showMenu : ''}`}>
 
         <div   className={`${style.dropdownContainer} ${showSolution ? style.dropdownOpen : ''}`}
+            onMouseEnter={() => setShowSolution(true)}
+            onMouseLeave={() => setShowSolution(false)}
+        
  ref={dropdownRef}>
           <a  onClick={toggleSolutions}>Solutions</a>
           {showSolution && (

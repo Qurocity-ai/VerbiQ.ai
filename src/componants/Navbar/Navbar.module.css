@@ -5,6 +5,7 @@
       height: 70px;
       min-width: 100%;
       text-decoration: none;
+      background-color: #F8FAFF;
       
       /* Fixed positioning for proper shadow behavior */
       /* position: fixed; */
@@ -13,7 +14,7 @@
       right: 0; */
       
       /* Shadow visibility essentials */
-      background: white;
+      /* background: white; */
       z-index: 1000;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 
@@ -97,8 +98,11 @@
 
 /* Hover Effect */
 .item a {
+  font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    
     font-size: 12px;
+    
     line-height: 18px;
     letter-spacing: 0.5px;
     vertical-align: middle;
