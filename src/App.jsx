@@ -1,15 +1,16 @@
 import React from "react";
+import Navbar from "./componants/Navbar/Navbar";
+import ALLRoutes from "./routes/AllRoutes";
 import Footer from "./componants/Footer/Footer";
-import "./App.css";
-import Home from "./pages/Home/Home";
 
-function App() {
+const App = () => {
   return (
     <>
-      <Home />
+      <Navbar />
+      <ALLRoutes />
       <Footer />
     </>
   );
-}
+};
 
 export default App;

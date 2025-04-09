@@ -2,10 +2,10 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-white py-11 sm:h-[166px] w-full">
-      <div className="flex justify-evenly  items-center sm:flex-row flex-col w-full sm:pr-40 sm:pl-16 pb-4">
+    <footer className="bg-white py-11 sm:h-[170px] w-full">
+      <div className="flex justify-evenly shadow-[0_-3px_8px_rgba(0,0,0,0.1)] items-center sm:flex-row flex-col w-full sm:pr-40 sm:pl-16 pb-4 pt-5">
         <img
-          src="\assets\Group 514676.png"
+          src="./assets/Group 514676.png"
           alt="VerbiQ.ai"
           className="w-40 h-10"
         />
@@ -30,7 +30,7 @@ function Footer() {
           <div className=" sm:flex  sm:flex-col sm:col-span-1 hidden sm:w-[134px] sm:h-[73px] sm:pl-16">
             <a href="#" className="sm:flex sm:pb-4 items-center">
               <img
-                src="\assets\image 213.png"
+                src=".\assets\image 213.png"
                 alt="LinkedIn-logo"
                 className="w-7 h-7 mr-2"
               />
@@ -38,7 +38,7 @@ function Footer() {
             </a>
             <a href="#" className="sm:flex items-center">
               <img
-                src="\assets\image 214.png"
+                src=".\assets\image 214.png"
                 alt="Instagram-logo"
                 className="w-7 h-7 mr-2"
               />
@@ -54,7 +54,6 @@ function Footer() {
             </a>
           </div>
         </div>
-        {/* <div className=" sm:flex flex-col sm:col-span-1"></div> */}
       </div>
     </footer>
   );
