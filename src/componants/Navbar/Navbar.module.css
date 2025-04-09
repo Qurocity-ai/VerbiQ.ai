@@ -144,7 +144,7 @@
       top: 73px;
       /* left: 0; */
       /* right: 0; */
-      width: 88%;
+      width: 100%;
       background: #ffffff;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
             flex-direction: column;
@@ -178,7 +178,6 @@
       box-shadow: none;
       flex-direction: column;
       gap: 10px;
-  
     }
   
     .row {
