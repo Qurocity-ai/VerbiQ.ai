@@ -38,9 +38,9 @@ function FAQ() {
         </div>
         <div className="sm:col-span-7 sm:pl-40 pl-3 pr-3 w-full">
           {faqData.map((item, index) => (
-            <div key={index} className=" border-b border-b-gray-300">
+            <div key={index} className=" border-b border-b-gray-300 ">
               <button
-                className={`w-full text-left py-4 px-5 flex items-center justify-between transition-colors duration-300 ${
+                className={`w-full text-left py-4 px-5 flex items-center bg-white justify-between transition-colors  duration-700 ${
                   activeIndex === index ? " text-indigo-700" : " text-gray-700"
                 }`}
                 onClick={() => toggleFAQ(index)}
@@ -48,10 +48,8 @@ function FAQ() {
                 aria-controls={`faq-answer-${index}`}
               >
                 <span
-                  className={`sm:leading-[100%]   font-[Helvetica] text-wrap flex justify-between items-center w-full ${
-                    activeIndex === index
-                      ? "text-[#0e128b] font-bold"
-                      : "text-[#969696]"
+                  className={`text-wrap flex justify-between items-center font-medium  w-full ${
+                    activeIndex === index ? "text-[#161a85]" : "text-[#969696]"
                   }`}
                 >
                   {item.question}
@@ -80,11 +78,11 @@ function FAQ() {
               </button>
               <div
                 id={`faq-answer-${index}`}
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  activeIndex === index ? "py-2 px-5" : "h-0"
+                className={` transition-all duration-1000 ease-in-out overflow-hidden px-6 ${
+                  activeIndex === index ? "h-20" : "h-0"
                 }`}
               >
-                <p className="text-[#0e128b] opacity-95">{item.answer}</p>
+                <p className="text-[#1015b4] opacity-100">{item.answer}</p>
               </div>
             </div>
           ))}
