@@ -7,6 +7,9 @@ import Home from "../pages/Home/Home";
 import CenterofExce from "../pages/CenterofExce/CenterofExce";
 import FullHiring from "../pages/Solutions/FullHiring/FullHiring";
 import LangaugeAssesment from "../pages/Solutions/LangaugeAssesment/LangaugeAssesment";
+import Global from "../pages/Global/global";
+import Blog from "../pages/Blog/Blog";
+import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
 export default function ALLRoutes() {
     return (
       
@@ -14,13 +17,15 @@ export default function ALLRoutes() {
 <Route path="/" element={<Home/>}></Route>
 <Route path="/ceo" element={<CenterofExce/>}></Route>
 <Route path="/aboutUs" element={<Aboutus/>}></Route>
-<Route path="/resources" element={<Resources/>}></Route>
+{/* <Route path="/resources" element={<UnderConstruction/>}></Route> */}
 {/* Support Page Routing  */}
 <Route path="/native" element={<NativeHiringSupport/>}></Route>
 <Route path="/language" element={<LangaugeAssesment/>}></Route>
 <Route path="/contractual" element={<ProjectBasedHiring/>}></Route>
 <Route path="/fulltime" element={<FullHiring/>}></Route>
-
+{/* Resources  */}
+<Route path="/global" element={<Global/>}></Route>
+<Route path="/blog" element={<Blog/>}></Route>
 
 
 </Routes>

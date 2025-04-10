@@ -1,8 +1,12 @@
 import React from 'react'
 import UnderConstruction from '../UnderConstruction/UnderConstruction'
 
-export default function Resources() {
+function Global() {
   return ( <UnderConstruction/>
-    // <div> This is Resources Pages </div>
+    // <div>
+    //   Global Page under resources
+    // </div>
   )
 }
+
+export default Global
