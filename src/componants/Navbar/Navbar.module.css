@@ -1,4 +1,4 @@
-.navbar {
+ .navbar {
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -8,16 +8,14 @@
       background-color: #F8FAFF;
       
       /* Fixed positioning for proper shadow behavior */
-      /* position: fixed; */
-      /* top: 0;
+      /* position: fixed; 
+       top: 0;
       left: 0;
       right: 0; */
       
-      /* Shadow visibility essentials */
-      /* background: white; */
-      z-index: 1000;
+     
+      z-index:1000;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-
 }
 
 .logo img {
