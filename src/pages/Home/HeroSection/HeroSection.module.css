@@ -1,7 +1,30 @@
-
-.heading{
+ .heading{
   font-size: 41px;
+ }
+ .container{
+  margin-top: 4rem;
+  font-family: "Poppins", sans-serif;
+ }
+ .txtContainer h1{
+ font-weight: 400;
+ }
+ .secHeading h2{
+  font-weight: 300;
+ }
+.container p{
+  font-weight: 260;
+  margin-top: 80px;
+
 }
-.container{
-  margin-top: 5px;
+.container img{
+  width: 500px;
+}
+.lastPara p{
+  font-size: 23px;
+  margin-top: 6rem;
+  font-weight: 500;
+  
+}
+.lastPara span{
+  font-weight: 500;
 }
