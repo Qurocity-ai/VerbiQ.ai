@@ -48,7 +48,7 @@ function FAQ() {
                 aria-controls={`faq-answer-${index}`}
               >
                 <span
-                  className={`text-wrap flex justify-between items-center font-medium  w-full ${
+                  className={`text-wrap flex justify-between items-center font-medium  w-full text-[20px] transition-all duration-700 ${
                     activeIndex === index ? "text-[#161a85]" : "text-[#969696]"
                   }`}
                 >
@@ -66,7 +66,7 @@ function FAQ() {
                     viewBox="0 0 16 16"
                     data-supported-dps="16x16"
                     data-test-icon="add-small"
-                    className="sm:h-7 sm:w-7 h-5 w-5"
+                    className="sm:h-7 sm:w-7 h-5 w-5 "
                   >
                     <path
                       d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"
@@ -78,11 +78,11 @@ function FAQ() {
               </button>
               <div
                 id={`faq-answer-${index}`}
-                className={` transition-all duration-1000 ease-in-out overflow-hidden px-6 ${
-                  activeIndex === index ? "h-20" : "h-0"
+                className={` transition-all duration-1000 ease-in-out overflow-hidden px-6 py-1 ${
+                  activeIndex === index ? "max-h-96" : "max-h-0"
                 }`}
               >
-                <p className="text-[#1015b4] opacity-100">{item.answer}</p>
+                <p className="text-[#1015b4] opacity-100 ">{item.answer}</p>
               </div>
             </div>
           ))}
