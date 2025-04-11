@@ -1,7 +1,10 @@
 import React from "react";
+import UnderConstruction from "../UnderConstruction/UnderConstruction";
 
 function Careers() {
-  return <div>Careers</div>;
+  return 
+  <UnderConstruction/>
+  // <div>Careers</div>;
 }
 
 export default Careers;
