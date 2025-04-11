@@ -1,10 +1,12 @@
 import React from 'react'
+import UnderConstruction from '../UnderConstruction/UnderConstruction'
 
 function CenterofExce() {
   return (
-    <div>
-      This is Ceo page
-    </div>
+    <UnderConstruction/>
+    // <div>
+    //   This is Ceo page
+    // </div>
   )
 }
 
