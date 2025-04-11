@@ -39,7 +39,7 @@ const Graph = () => {
         <h4 className={styles.subHeading}>Business and culture ethics</h4>
         <div className={styles.hrLine}></div>
         <h3 className={styles.subHeading1}>Assessments personalized for you</h3>
-        <p className={styles.subText}>
+        <p className={`${styles.subText} ${styles.subText2}`}>
           Tailored evaluations that align with your unique hiring needs and cultural expectations.
         </p>
       </div>

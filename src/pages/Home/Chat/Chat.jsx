@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './Chat.module.css';
 
 const Chat = () => {
@@ -29,15 +29,40 @@ const Chat = () => {
   const [displayedTranslations, setDisplayedTranslations] = useState(Array(messages.length).fill(''));
   const [currentStep, setCurrentStep] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
+  const [startAnimation, setStartAnimation] = useState(false);
+
+  const chatRef = useRef(null);
 
   useEffect(() => {
-    if (currentStep >= messages.length) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartAnimation(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (chatRef.current) {
+      observer.observe(chatRef.current);
+    }
+
+    return () => {
+      if (chatRef.current) observer.unobserve(chatRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!startAnimation || currentStep >= messages.length) return;
 
     const currentMessage = messages[currentStep];
-    
-    // Type both main message and translation simultaneously
-    if (displayedTexts[currentStep].length < currentMessage.text.length || 
-        (currentMessage.translation && displayedTranslations[currentStep].length < currentMessage.translation.length)) {
+
+    if (
+      displayedTexts[currentStep].length < currentMessage.text.length ||
+      (currentMessage.translation &&
+        displayedTranslations[currentStep].length < currentMessage.translation.length)
+    ) {
       const timer = setTimeout(() => {
         setDisplayedTexts(prev => {
           const newTexts = [...prev];
@@ -49,16 +74,20 @@ const Chat = () => {
 
         setDisplayedTranslations(prev => {
           const newTrans = [...prev];
-          if (currentMessage.translation && newTrans[currentStep].length < currentMessage.translation.length) {
-            newTrans[currentStep] = currentMessage.translation.substring(0, newTrans[currentStep].length + 1);
+          if (
+            currentMessage.translation &&
+            newTrans[currentStep].length < currentMessage.translation.length
+          ) {
+            newTrans[currentStep] = currentMessage.translation.substring(
+              0,
+              newTrans[currentStep].length + 1
+            );
           }
           return newTrans;
         });
       }, 30);
       return () => clearTimeout(timer);
-    }
-    // Move to next step
-    else {
+    } else {
       const moveToNextStep = setTimeout(() => {
         if (currentStep < messages.length - 1) {
           setCurrentStep(prev => prev + 1);
@@ -68,30 +97,44 @@ const Chat = () => {
       }, 1000);
       return () => clearTimeout(moveToNextStep);
     }
-  }, [currentStep, displayedTexts, displayedTranslations]);
+  }, [startAnimation, currentStep, displayedTexts, displayedTranslations]);
 
   const renderMessage = (index) => {
     const message = messages[index];
     const isBot = message.sender === 'bot';
-    
+
     return (
       <React.Fragment key={index}>
         <div className={`${isBot ? styles.botMessage : styles.userMessage} ${styles.fadeIn}`}>
-          {isBot && <div className={styles.avatar}><img src="/assets/R.png" alt="Bot" /></div>}
+          {isBot && (
+            <div style={{ position: 'relative' }}>
+              <div className={`${styles.avatarGlow} ${styles.botGlow}`}></div>
+              <div className={styles.avatar}>
+                <img src="/assets/R.png" alt="Bot" />
+              </div>
+            </div>
+          )}
           <div className={styles.messageBox}>
-            <p style={{whiteSpace: 'pre-line'}}>
+            <p style={{ whiteSpace: 'pre-line' }}>
               {displayedTexts[index]}
               {displayedTexts[index].length < message.text.length && (
                 <span className={styles.cursor}>|</span>
               )}
             </p>
           </div>
-          {!isBot && <div className={styles.avatar}><img src="/assets/User1.png" alt="User" /></div>}
+          {!isBot && (
+            <div style={{ position: 'relative' }}>
+              <div className={`${styles.avatarGlow1} ${styles.userGlow}`}></div>
+              <div className={styles.avatar}>
+                <img src="/assets/User1.png" alt="User" />
+              </div>
+            </div>
+          )}
         </div>
-        
+
         {message.translation && (
           <div className={`${styles.translationWrapper} ${styles.fadeIn}`}>
-            <p className={styles.translation} style={{whiteSpace: 'pre-line'}}>
+            <p className={styles.translation} style={{ whiteSpace: 'pre-line' }}>
               {displayedTranslations[index]}
               {displayedTranslations[index].length < message.translation.length && (
                 <span className={styles.cursor}>|</span>
@@ -104,11 +147,9 @@ const Chat = () => {
   };
 
   return (
-    <div className={styles.chatWrapper}>
+    <div className={styles.chatWrapper} ref={chatRef}>
       <div className={styles.chatContainer}>
-        {Array.from({ length: currentStep + 1 }).map((_, index) => (
-          renderMessage(index)
-        ))}
+        {Array.from({ length: currentStep + 1 }).map((_, index) => renderMessage(index))}
       </div>
     </div>
   );
