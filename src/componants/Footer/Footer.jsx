@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-white py-11 sm:h-[170px] w-full">
-      <div className="flex justify-evenly shadow-[0_-3px_8px_rgba(0,0,0,0.1)] items-center sm:flex-row flex-col w-full sm:pr-40 sm:pl-16 pb-4 pt-5">
+    <footer className="w-full">
+      <div className="flex justify-evenly shadow-[0_-3px_8px_rgba(0,0,0,0.1)] items-center sm:flex-row flex-col w-full sm:pr-40 sm:pl-16 pt-5">
         <img
           src="./assets/Group 514676.png"
           alt="VerbiQ.ai"
