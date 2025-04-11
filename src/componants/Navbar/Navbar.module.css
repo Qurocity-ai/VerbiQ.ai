@@ -6,7 +6,8 @@
       min-width: 100%;
       text-decoration: none;
       background-color: #F8FAFF;
-      position: relative;
+      position: fixed;
+      top: 0;
       /* padding: 0 40px; */
 
        z-index:1000;
