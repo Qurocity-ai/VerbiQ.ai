@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <>
       <div
-        className={`min-h-screen bg-white flex items-start justify-center px-4 sm:px-6 lg:px-8 ${styles.container}`}
+        className={`min-h-screen bg-white flex items-start justify-center px-4 sm:px-6 lg:px-8  ${styles.container}`}
       >
         <div className="max-w-7xl w-full mx-auto space-y-6 sm:space-y-8">
           {/* Main Heading with Animation */}
