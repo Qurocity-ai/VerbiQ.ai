@@ -9,7 +9,7 @@ const LangaugeAssesmentB = () => {
       <div className={styles.assessmentContainer}>
         <div className={styles.assessmentBox}>
           <img src={"/assets/Precisionmaking.png"} alt="Precision Icon" className={styles.icon} />
-          <h3 className={styles.subtitle}>97% Precision in Assessments:</h3>
+          <h3 className={styles.subtitle}><strong className={styles.percent}>97%</strong> Precision in Assessments:</h3>
           <p className={styles.description}>
             Our AI-driven evaluations achieve near-perfect accuracy by analyzing speech, grammar, and cultural context.
             </p>

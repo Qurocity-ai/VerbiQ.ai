@@ -13,6 +13,7 @@
     "@react-spring/web": "^9.7.5",
     "@tailwindcss/vite": "^4.1.2",
     "animejs": "^3.2.1",
+    "framer-motion": "^12.6.3",
     "gsap": "^3.12.7",
     "motion": "^12.6.3",
     "ogl": "^1.0.11",

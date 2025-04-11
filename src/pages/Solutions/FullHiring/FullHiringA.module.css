@@ -2,13 +2,13 @@
   text-align: center;
   padding-left: 9rem;
   padding-right: 9rem;
-  margin-top: 10rem;
+  margin-top: 7rem;
   margin-bottom: 5rem;
 }
 
 /* Title Styling */
 .title {
-  font-size: 27px;
+  font-size: 41px;
   font-weight: normal;
   color: #000949;
   margin-bottom: 10px;
@@ -21,7 +21,7 @@
 
 /* Subtitle Styling */
 .subtitle {
-  font-size: 18px;
+  font-size: 23px;
   color: #686868;
 }
 
@@ -29,6 +29,7 @@
 .boldText {
   font-weight: bold;
   color: #686868;
+  font-size: 23px;
 }
 
 /* Responsive Design */

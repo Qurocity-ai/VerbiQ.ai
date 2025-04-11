@@ -9,7 +9,7 @@ const LangaugeAssesmentC = () => {
         <div className={styles.item}>
           <h3 className={styles.title}>Reduced Mismatches:</h3>
           <p className={styles.description}>
-            With a 42% reduction in mismatched hires, our precise evaluations
+            With a <strong className={styles.percent}>42%</strong> reduction in mismatched hires, our precise evaluations
             help you avoid costly hiring mistakes, ensuring that every new team
             member is a perfect fit for your culture and role requirements.
           </p>
