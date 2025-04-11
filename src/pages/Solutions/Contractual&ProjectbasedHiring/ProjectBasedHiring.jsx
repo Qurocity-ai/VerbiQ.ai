@@ -20,7 +20,7 @@ function ProjectBasedHiring() {
 
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col items-center justify-center p-6 gap-7 px-[40px] lg:px-0">
+      <div className="w-full lg:mb-[100px] md:mt-[100px] md:mb-[100px] lg:mt-[100px] flex flex-col items-center justify-center p-6 gap-7 px-[40px] lg:px-0">
         <div className="w-full flex flex-col items-center text-center">
           
           <div className="lg:w-[60%]">
