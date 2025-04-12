@@ -11,7 +11,7 @@
   background-color: #F8FAFF;
   width: 85%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 9rem;
   margin-bottom: 90px;
 }
 
@@ -39,10 +39,7 @@
   font-size: 22px;
 }
 
-/* .paraFirst{
-    color: #686868;
-    font-weight: 400;
-} */
+
 
 .expanding{
     margin-top: 60px;
@@ -57,12 +54,19 @@
   margin-bottom: 1.5rem;
 }
 
-/* .features {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  } */
+
+
+
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
 .features {
   display: flex;
@@ -71,19 +75,19 @@
   gap: 1.5rem;
 }
 
-/* .feature {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-    flex: 1 1 30%;
-   
-    height: 300px;
-    text-align: center;
-    min-width: 250px;
-  } */
+
 
 .feature {
+  animation-name: slideInLeft;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0; 
+
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 50px;
+
+
   background-color: #F8FAFF;
   padding: 0;
   /* border-radius: 8px;
@@ -97,6 +101,24 @@
   overflow: hidden;
 }
 
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.feature:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.feature:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.feature:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
 .iconWrapper {
   height: 200px;
   background: #F8FAFF;
@@ -105,10 +127,7 @@
   align-items: center;
 }
 
-/* .icon {
-    height: 60px;
-    margin-bottom: 1rem;
-  } */
+
 
 .icon {
   width: 140px;
@@ -127,10 +146,6 @@
   justify-content: center;
 }
 
-/* .feature h3 {
-  color: #0a1045;
-  margin-bottom: 0.5rem;
-} */
 
 .feature h3{
     color: #686868;
@@ -145,21 +160,24 @@
     line-height: 23px;
 }
 
-/* .opportunities div {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: #ffffff;
-    border-left: 4px solid #b70000;
-    border-radius: 4px;
-  } */
+
 
   .opportunitiesWrapper {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start; 
     margin-top: 2rem;
     flex-wrap: wrap;
+  }
+
+  .opportunityBlock {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .opportunityBlock:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   }
 
   .leftColumn {
@@ -173,36 +191,23 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ensure it aligns at top */
+    justify-content: flex-start; 
     height: 100%;
   }
 
-  /* .expandingHeading{
-    width: 100%;
-    color: red;
-    text-align: center;
-    
-  } */
+ 
 
   .expandingHeading {
-    display: block;          /* block makes it span full width */
-    width: 100%;             /* ensure it spans across the container */
-    text-align: center;      /* center the text */
+    display: block;         
+    width: 100%;             
+    text-align: center;      
     color: #AD181B;     
-    font-weight: 700;         /* your existing color */
+    font-weight: 700;         
     margin-bottom: 1rem;  
       /* optional spacing */
   }
 
-/* .opportunities h4 {
-  font-weight: 600;
-  color: #0a1045;
-}
 
-.opportunities p {
-  font-size: 0.95rem;
-  color: #555;
-} */
 
 .opportunityBlock {
   background: #F8FAFF;
@@ -229,24 +234,34 @@
 }
 .dotHeading {
   font-size: 40px;
+  display: inline-block;
+  animation: dotHeadingAnim 4s ease-in-out infinite;
 }
 
-/* .middleHeading{
-    color: #686868;
-    font-weight: 700;
+@keyframes dotHeadingAnim {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  75% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.middlePara{
-    color: #686868;
-    font-weight: 200;
-    text-align: justify;
-    
-} */
 
-/* .expandingHeading{
-    display: inline;
-    color: red;
-  } */
 
 .featureLastDiv {
   width: 55%;
@@ -291,6 +306,7 @@
     width: 100%;
     padding: 15px;
     margin-bottom: 30px;
+    margin-top: 8rem;
 
   }
 
