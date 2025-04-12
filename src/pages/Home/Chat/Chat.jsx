@@ -41,7 +41,7 @@ const Chat = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 }
     );
 
     if (chatRef.current) {
@@ -85,7 +85,7 @@ const Chat = () => {
           }
           return newTrans;
         });
-      }, 30);
+      }, 20);
       return () => clearTimeout(timer);
     } else {
       const moveToNextStep = setTimeout(() => {
@@ -94,7 +94,7 @@ const Chat = () => {
         } else {
           setIsTyping(false);
         }
-      }, 1000);
+      }, 250);
       return () => clearTimeout(moveToNextStep);
     }
   }, [startAnimation, currentStep, displayedTexts, displayedTranslations]);
