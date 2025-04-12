@@ -1,3 +1,4 @@
+
 .chatWrapper {
   display: flex;
   justify-content: center;
@@ -12,7 +13,7 @@
   padding: 1.25rem;
   width: 60%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;   
   gap: 1.875rem;
 }
 
@@ -102,6 +103,7 @@
   text-align: left;
 }
 
+
 @keyframes fadeInFast {
   to {
     opacity: 1;
@@ -155,14 +157,15 @@
 
 /* Responsive */
 @media screen and (max-width: 768px) {
+  .chatWrapper {
+    width: 95%;
+    margin-bottom: -4rem;
+  }
   .chatContainer {
     width: 100%;
-    padding: 0 1rem;
   }
 
-  .chatWrapper {
-    margin-bottom: -5rem;
-  }
+  
 
   .botMessage,
   .userMessage {
@@ -209,11 +212,17 @@
     right: 0.625rem;
   }
   .avatarGlow {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 90%;
     transform: translate(-30%, -50%);
 
   }
   
   .avatarGlow1 {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
     transform: translate(-70%, 10%);
 
   }
