@@ -3,18 +3,18 @@ import React, { useState, useEffect } from "react";
 function COE2() {
   const images = [
     {
-      name: "Rebecca",
-      language: "French | Native",
+      name: "Dr. Hosey",
+      language: "German | Native",
       src: "/assets/Frame 2609102.png",
     },
     {
-      name: "Micha",
-      language: "German | Native",
+      name: "Viktoria",
+      language: "Slavik",
       src: "/assets/Frame 2609103.png",
     },
     {
-      name: "Dr. Hosey",
-      language: "Sank",
+      name: "Rebecca",
+      language: "French | Native",
       src: "/assets/Frame 2609104.png",
     },
   ];

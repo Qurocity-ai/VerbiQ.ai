@@ -5,7 +5,7 @@ import COE3 from "./COE3";
 
 function CenterofExce() {
   return (
-    <div className="mt-25 mb-8">
+    <div className="mt-40 mb-8">
       <COE1 />
       <COE2 />
       <COE3 />
