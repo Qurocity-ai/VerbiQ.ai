@@ -128,35 +128,22 @@
 /* Subheadings */
 .subHeading {
   position: relative;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #c9c9c9;
-  margin-top: 1rem;
-  padding: 4px 8px;
-  border-radius: 20px;
-  cursor: default;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.subHeading {
-  position: relative;
   padding-left: 2rem;
   font-size: 1.1rem;
   font-weight: 600;
   color: #c9c9c9;
   margin-top: 1rem;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease-in-out; /* slower */
   cursor: default;
 }
 
 .subHeading::before {
-  content: "✔"; /* Or use →, ✦, ★, 🗸, etc. */
+  content: "✔"; /* Or →, ✦, ★, 🗸, etc. */
   position: absolute;
-  left: 0;
+  left: 5rem;
   opacity: 0;
   transform: translateX(-10px);
-  transition: all 0.3s ease;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* slower */
   font-size: 1.1rem;
   color: #02586f;
 }
@@ -168,7 +155,9 @@
 .subHeading:hover::before {
   opacity: 1;
   transform: translateX(0);
+
 }
+
 
 /* Personalized Heading */
 .subHeading1 {
@@ -203,6 +192,7 @@
   .barGraph {
     gap: 0.5rem;
     justify-content: center;
+    margin-top: 4rem; /* Prevent early trigger */
   }
 
   .barWrapper {
@@ -220,6 +210,14 @@
 
   .subHeading {
     font-size: 0.9rem;
+    padding-left: 2rem;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .subHeading::before {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    font-size: 0.9rem;
+    left: 2.5rem;
   }
 
   .subHeading1 {
@@ -232,5 +230,47 @@
 
   .subText2 {
     font-size: 0.7rem;
+  }
+
+  /* ✅ Bars start from bottom and rise up on inView */
+  .bar {
+    height: 0;
+    opacity: 0;
+    transform: translateY(40px); /* From below */
+    transition: height 1.3s ease-in-out, transform 1.3s ease-in-out, opacity 1s ease-in-out;
+    will-change: transform, opacity, height;
+    backface-visibility: hidden;
+  }
+
+  .bar1.expand {
+    height: 10rem;
+    background-color: #4dca89;
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+  }
+
+  .bar2.expand {
+    height: 7.5rem;
+    background-color: #f6ce4b;
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+
+  .bar3.expand {
+    height: 8.75rem;
+    background-color: #4dcaca;
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+
+  .bar4.expand {
+    height: 6.25rem;
+    background-color: #de3e41;
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.4s;
   }
 }

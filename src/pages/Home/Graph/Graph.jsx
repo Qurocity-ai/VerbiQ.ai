@@ -9,9 +9,9 @@ const Graph = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.7) {
-          setInView(true); // Trigger animation when component enters the view
+          setInView(true); // Add animation when in view
         } else {
-          setInView(false); // Reset animation when component exits the view
+          setInView(false); // Remove animation when out of view
         }
       },
       {
