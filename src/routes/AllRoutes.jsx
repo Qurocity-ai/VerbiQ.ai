@@ -9,7 +9,7 @@ import FullHiring from "../pages/Solutions/FullHiring/FullHiring";
 import LangaugeAssesment from "../pages/Solutions/LangaugeAssesment/LangaugeAssesment";
 import Global from "../pages/Global/global";
 import Blog from "../pages/Blog/Blog";
-import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
+import ContractualProject from "../pages/Solutions/ContractualProjectBasedSupport/ContractualProject";
 export default function ALLRoutes() {
     return (
       
@@ -21,7 +21,7 @@ export default function ALLRoutes() {
 {/* Support Page Routing  */}
 <Route path="/native" element={<NativeHiringSupport/>}></Route>
 <Route path="/language" element={<LangaugeAssesment/>}></Route>
-<Route path="/contractual" element={<ProjectBasedHiring/>}></Route>
+<Route path="/contractual" element={<ContractualProject/>}></Route>
 <Route path="/fulltime" element={<FullHiring/>}></Route>
 {/* Resources  */}
 <Route path="/global" element={<Global/>}></Route>
