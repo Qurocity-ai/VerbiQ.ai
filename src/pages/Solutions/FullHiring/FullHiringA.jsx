@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./FullHiringA.module.css";
+import { Typewriter } from 'react-simple-typewriter';
 
 const FullHiringA = () => {
   return (
@@ -12,7 +13,18 @@ const FullHiringA = () => {
         
       </p>
       <p>
-      <span className={styles.boldText}> Customer Support, Tech Support, Content, IT, Sales, or Operations.</span>
+      {/* <span className={styles.boldText}> Customer Support, Tech Support, Content, IT, Sales, or Operations.</span> */}
+      <span className={styles.boldText}>
+  <Typewriter
+    words={['Customer Support', 'Tech Support', 'Content', 'Information Technology', 'Sales', 'Operations']}
+    loop={true}
+    cursor
+    cursorStyle="|"
+    typeSpeed={60}
+    deleteSpeed={40}
+    delaySpeed={1500}
+  />
+</span>
       </p>
     </div>
   );

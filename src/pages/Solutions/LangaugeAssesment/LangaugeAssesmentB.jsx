@@ -1,30 +1,101 @@
-import React from "react";
+// import React from "react";
+// import styles from "./LangaugeAssesmentB.module.css";
+
+
+// const LangaugeAssesmentB = () => {
+//   return (
+//     <div className={styles.container}>
+//       <h2 className={styles.title}>Unmatched Accuracy</h2>
+//       <div className={styles.assessmentContainer}>
+//         <div className={styles.assessmentBox}>
+//           <img src={"/assets/Precisionmaking.png"} alt="Precision Icon" className={styles.icon} />
+//           <h3 className={styles.subtitle}><strong className={styles.percent}>97%</strong> Precision in Assessments:</h3>
+//           <p className={styles.description}>
+//             Our AI-driven evaluations achieve near-perfect accuracy by analyzing speech, grammar, and cultural context.
+//             </p>
+//             <p className={styles.description}>
+//             With precise scoring, you can trust that every candidate's true language proficiency is revealed.
+//           </p>
+//         </div>
+//         <div className={styles.assessmentBox}>
+//           <img src={"/assets/DataDrivenLangaugeAsses.png"} alt="Decision Making Icon" className={styles.icon} />
+//           <h3 className={styles.subtitle}>Data-Driven Decision Making:</h3>
+//           <p className={styles.description}>
+//             Leveraging millions of data points from diverse linguistic sources, VerbiQ’s assessments minimize errors
+//             and eliminate biases. 
+//             </p>
+//             <p className={styles.description}>
+//             This means you see an objective, consistent evaluation across all candidates.
+//           </p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default LangaugeAssesmentB;
+
+
+
+import React, { useState, useEffect } from "react";
 import styles from "./LangaugeAssesmentB.module.css";
 
-
 const LangaugeAssesmentB = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = 97;
+    const duration = 1500; // total animation duration in ms
+    const intervalTime = 20; // update every 20ms
+    const increment = end / (duration / intervalTime);
+
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        clearInterval(counter);
+        start = end;
+      }
+      setCount(Math.floor(start));
+    }, intervalTime);
+
+    return () => clearInterval(counter);
+  }, []);
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Unmatched Accuracy</h2>
       <div className={styles.assessmentContainer}>
         <div className={styles.assessmentBox}>
-          <img src={"/assets/Precisionmaking.png"} alt="Precision Icon" className={styles.icon} />
-          <h3 className={styles.subtitle}><strong className={styles.percent}>97%</strong> Precision in Assessments:</h3>
+          <img
+            src={"/assets/Precisionmaking.png"}
+            alt="Precision Icon"
+            className={styles.icon}
+          />
+          <h3 className={styles.subtitle}>
+            <strong className={styles.percent}>{count}%</strong> Precision in Assessments:
+          </h3>
           <p className={styles.description}>
-            Our AI-driven evaluations achieve near-perfect accuracy by analyzing speech, grammar, and cultural context.
-            </p>
-            <p className={styles.description}>
-            With precise scoring, you can trust that every candidate's true language proficiency is revealed.
+            Our AI-driven evaluations achieve near-perfect accuracy by analyzing speech,
+            grammar, and cultural context.
+          </p>
+          <p className={styles.description}>
+            With precise scoring, you can trust that every candidate's true language
+            proficiency is revealed.
           </p>
         </div>
         <div className={styles.assessmentBox}>
-          <img src={"/assets/DataDrivenLangaugeAsses.png"} alt="Decision Making Icon" className={styles.icon} />
+          <img
+            src={"/assets/DataDrivenLangaugeAsses.png"}
+            alt="Decision Making Icon"
+            className={styles.icon}
+          />
           <h3 className={styles.subtitle}>Data-Driven Decision Making:</h3>
           <p className={styles.description}>
-            Leveraging millions of data points from diverse linguistic sources, VerbiQ’s assessments minimize errors
-            and eliminate biases. 
-            </p>
-            <p className={styles.description}>
+            Leveraging millions of data points from diverse linguistic sources, VerbiQ’s
+            assessments minimize errors and eliminate biases.
+          </p>
+          <p className={styles.description}>
             This means you see an objective, consistent evaluation across all candidates.
           </p>
         </div>

@@ -14,6 +14,20 @@
     text-align: center;
   }
   
+
+.feature {
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+
+
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
   
  
   
@@ -56,3 +70,60 @@
         padding-right: 4rem;
       }
   }
+
+
+  /* carousal css */
+
+
+/* .container {
+  padding: 2.5rem 1.25rem;
+  font-size: 17px;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature {
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transform: scale(0.9);
+  opacity: 0.4;
+  
+}
+
+.active {
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  width: 7rem;
+  height: 7rem;
+  margin-bottom: 1rem;
+  
+}
+
+.title {
+  font-weight: 600;
+  color: #000949;
+}
+
+.description {
+  color: #686868;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+} */
+
+  
