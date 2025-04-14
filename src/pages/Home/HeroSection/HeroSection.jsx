@@ -2,12 +2,16 @@ import React from "react";
 import styles from "./HeroSection.module.css";
 import AnimatedContent from "../ReactBits/AnimatedContent";
 
+import { Spotlight } from "../ReactBits/Spotlight";
+
 const HeroSection = () => {
   return (
     <>
       <div
-        className={`min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 ${styles.container}`}
+        className={` flex items-start justify-center px-4 sm:px-6 lg:px-8  ${styles.container}`}
       >
+        <Spotlight/>
+       
         <div className="max-w-7xl w-full mx-auto space-y-6 sm:space-y-8">
           {/* Main Heading with Animation */}
           <div className={`w-full text-center ${styles.txtContainer}`}>

@@ -19,7 +19,7 @@ const StatsSection = () => {
     <div className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 ">
       <div className="mx-auto space-y-6 ">
         {/* Video Container */}
-        <div className="w-full relative" style={{ height: "600px" }}>
+        <div className="w-full relative " style={{ height: "600px" }}>
           <video
             ref={videoRef}
             src="/assets/T02.mp4"
