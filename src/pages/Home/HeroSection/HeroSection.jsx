@@ -3,8 +3,6 @@ import styles from "./HeroSection.module.css";
 import AnimatedContent from "../ReactBits/AnimatedContent";
 import CountUp from "../ReactBits/CountUp";
 
-import { Spotlight } from "../ReactBits/Spotlight";
-import { color } from "motion/react";
 
 const HeroSection = () => {
   return (
@@ -12,7 +10,7 @@ const HeroSection = () => {
       <div
         className={`flex items-start justify-center px-4 sm:px-6 lg:px-8  ${styles.container}`}
       >
-        <Spotlight />
+       
 
         <div className="max-w-7xl w-full mx-auto space-y-6 sm:space-y-8">
           {/* Main Heading with Animation */}
