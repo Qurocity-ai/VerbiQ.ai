@@ -16,10 +16,10 @@ const StatsSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-center px-4 sm:px-6 lg:px-8 ">
+    <div className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 ">
       <div className="mx-auto space-y-6 ">
         {/* Video Container */}
-        <div className="w-full relative" style={{ height: "600px" }}>
+        <div className="w-full relative " style={{ height: "600px" }}>
           <video
             ref={videoRef}
             src="/assets/T02.mp4"
@@ -34,7 +34,7 @@ const StatsSection = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
-            className="p-6 bg-white rounded-lg h-full transform transition duration-300 hover:scale-110"
+            className="p-6 rounded-lg h-full transform transition duration-300 hover:scale-110"
             style={{
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
             }}
@@ -55,7 +55,7 @@ const StatsSection = () => {
             </p>
           </div>
           <div
-            className="p-6 bg-white rounded-lg h-full transform transition duration-300 hover:scale-110"
+            className="p-6 rounded-lg h-full transform transition duration-300 hover:scale-110"
             style={{
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
             }}
@@ -77,7 +77,7 @@ const StatsSection = () => {
           </div>
 
           <div
-            className="p-6 bg-white rounded-lg h-full transform transition duration-300 hover:scale-110"
+            className="p-6 rounded-lg h-full transform transition duration-300 hover:scale-110"
             style={{
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
             }}

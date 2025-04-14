@@ -1,0 +1,407 @@
+/* nativeHiring.module.css */
+.parent {
+  width: 100%;
+}
+
+.container {
+  padding: 2rem;
+  /* font-family: "Segoe UI", sans-serif; */
+  font-family: Arial, Helvetica, sans-serifs;
+  color: #333;
+  background-color: #F8FAFF;
+  width: 85%;
+  margin: auto;
+  margin-top: 9rem;
+  margin-bottom: 90px;
+}
+
+.header h1 {
+    
+  font-size: 37px;
+  color: #474760;
+  font-weight: 100;
+  text-align: center;
+}
+
+.header span {
+ font-weight: 700;
+ color: #000949;
+}
+
+.header p {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 2rem;
+ 
+  font-size: 1rem;
+  color: #888888;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+
+
+.expanding{
+    margin-top: 60px;
+}
+
+.whyNative h2,
+.expanding h2 {
+  color: #b70000;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+
+
+.feature {
+  animation-name: slideInLeft;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0; 
+
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 20px;
+
+
+  background-color: #F8FAFF;
+  padding: 0;
+  /* border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); */
+  flex: 1 1 30%;
+  /* min-width: 200px; */
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.feature:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.feature:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.feature:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.iconWrapper {
+  height: 200px;
+  background: #F8FAFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.icon {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+
+
+.content {
+  height: 150px;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.feature h3{
+    color: #686868;
+    font-weight: 800;
+}
+
+.feature p {
+    color: #888888;
+    font-weight: 200;
+    font-size: 17px;
+    text-align: justify;
+    line-height: 23px;
+}
+
+
+
+  .opportunitiesWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start; 
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .opportunityBlock {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .opportunityBlock:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .leftColumn {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1.5rem; */
+    flex: 1;
+  }
+
+  .rightColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    height: 100%;
+  }
+
+ 
+
+  .expandingHeading {
+    display: block;         
+    width: 100%;             
+    text-align: center;      
+    color: #AD181B;     
+    font-weight: 700;         
+    margin-bottom: 1rem;  
+      /* optional spacing */
+  }
+
+
+
+.opportunityBlock {
+  background: #F8FAFF;
+  padding: 1rem;
+  /* border-left: 4px solid #b70000; */
+  border-radius: 4px;
+}
+
+.opportunityBlock h4 {
+  /* font-weight: 600;
+  color: #0a1045; */
+
+  color: #686868;
+  font-weight: 800;
+}
+
+.opportunityBlock p {
+  /* font-size: 0.95rem;
+  color: #555; */
+
+  color: #888888;
+  font-weight: 200;
+  text-align: justify;
+}
+.dotHeading {
+  font-size: 40px;
+  display: inline-block;
+  animation: dotHeadingAnim 4s ease-in-out infinite;
+}
+
+@keyframes dotHeadingAnim {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  75% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+.featureLastDiv {
+  width: 55%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.headingLast {
+  font-size: 10px;
+  color: #9c9c9c;
+  font-weight: 200;
+}
+
+.headingLastSpan{
+    color: #AD181B;
+    font-weight: 600;
+}
+
+.mobileHeading {
+    display: none;
+  }
+
+.paraLast{
+   
+    color: rgb(136, 136, 136);
+    font-size: 17px;
+    font-weight: 200;
+    text-align: center;
+
+    
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+    margin-top: 8rem;
+
+  }
+
+  .header h1{
+    font-size: 25px;
+  }
+
+  .header span{
+    font-weight: 790;
+  }
+
+  .header p{
+    font-size: 16px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .content{
+    text-align: center;
+    padding-top: 0;
+  }
+
+  /* .feature p{
+    text-align: justify;
+  } */
+
+  .features{
+    height:900px;
+    
+  }
+
+  .content p{
+    font-size: 16px;
+
+  }
+
+  .content h3{
+    font-size: 16px;
+    
+  }
+
+  
+
+  .opportunitiesWrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    width: 100%;
+    align-items: center;
+  }
+
+  .opportunityBlock {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .opportunityBlock h4 {
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;   }
+
+  .opportunityBlock p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .expandingHeading {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .dotHeading{
+    display: none;
+  }
+
+  .paraLast{
+    display: none;
+}
+
+  .mobileHeading {
+    display: inline;
+    font-size: 25px;
+    color: #AD181B;
+    font-weight: 750;
+
+  }
+
+  
+
+  .feature {
+    width: 100%;
+  }
+}
