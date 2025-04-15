@@ -12,7 +12,8 @@
 
 .percent{
     font-size: 24px;
-    color: rgb(255, 99, 75);
+    /* color: rgb(255, 99, 75); */
+    color: #b91c1c; 
 }
 .assessmentContainer {
     display: flex;
