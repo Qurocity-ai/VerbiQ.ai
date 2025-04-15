@@ -1,4 +1,4 @@
-.container {
+/* .container {
   position: relative;
   width: 90%;
   overflow-x: hidden;
@@ -41,6 +41,7 @@
   transform-style: preserve-3d;
   transition: all 0.6s ease; 
   cursor: pointer;
+  
   
 }
 
@@ -113,7 +114,7 @@
     padding: 0 10px;
     margin-left: 0;
     width: 95%;
-    /* border: 1px solid black; */
+  
     margin: auto;
   }
 
@@ -148,4 +149,122 @@
     font-size: 18px;
   }
 }
+ */
 
+
+ .container {
+  position: relative;
+  width: 90%;
+  overflow-x: hidden;
+  margin-left: 100px;
+  height: auto;
+  min-height: 450px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F8FAFF;
+  padding-bottom: 30px;
+}
+
+.scrollContainer {
+  display: flex;
+  gap: 20px;
+  transition: transform 1s ease-in-out;
+}
+
+.mainheading {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #02586F;
+}
+
+.spanheading {
+  color: #AD181B;
+  font-weight: bold;
+}
+
+.item {
+  flex: 0 0 450px;
+  height: auto;
+  min-height: 300px;
+  border: 1px solid #DFEAF0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px #DFEAF0;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.item:hover {
+  background-color: #DFEAF0; 
+  transition: background-color 0.3s ease; 
+}
+
+.heading {
+  font-size: 26px;
+  font-weight: 500;
+  color: #02586F;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 6px; 
+  margin-bottom: 20px;
+}
+
+.contentList {
+  list-style-type: none;
+  font-size: 19px;
+  text-align: center;
+  color: #02586F;
+  font-weight: 100;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.listItem {
+  padding: 8px 0;
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.highlightNumber {
+  color: #02586F;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+    padding: 0 10px;
+    margin-left: 0;
+    width: 95%;
+    margin: auto;
+  }
+
+  .item {
+    flex: 0 0 340px !important;
+    width: 80% !important;
+    min-height: 270px;
+    margin: 0 auto;
+  }
+
+  .scrollContainer {
+    gap: 0;
+    padding: 0;
+  }
+
+  .heading {
+    font-size: 19px;
+    padding: 0 10px;
+  }
+
+  .contentList {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .mainheading {
+    font-size: 18px;
+  }
+}
