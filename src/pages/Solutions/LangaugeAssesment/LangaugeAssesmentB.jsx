@@ -117,7 +117,7 @@ const LangaugeAssesmentB = () => {
   useEffect(() => {
     let start = 0;
     const end = 97;
-    const duration = 1500; // total animation duration in ms
+    const duration = 3500; // total animation duration in ms
     const intervalTime = 20; // update every 20ms
     const increment = end / (duration / intervalTime);
 
