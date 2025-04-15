@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
 import AnimatedContent from "../ReactBits/AnimatedContent";
+import CountUp from "../ReactBits/CountUp";
 
-import { Spotlight } from "../ReactBits/Spotlight";
 
 const HeroSection = () => {
   return (
     <>
       <div
-        className={` flex items-start justify-center px-4 sm:px-6 lg:px-8  ${styles.container}`}
+        className={`flex items-start justify-center px-4 sm:px-6 lg:px-8  ${styles.container}`}
       >
-        <Spotlight/>
        
+
         <div className="max-w-7xl w-full mx-auto space-y-6 sm:space-y-8">
           {/* Main Heading with Animation */}
           <div className={`w-full text-center ${styles.txtContainer}`}>
@@ -46,8 +46,21 @@ const HeroSection = () => {
 
           <div className="w-full text-center px-2 sm:px-0">
             <p className="text-base sm:text-lg md:text-3xl text-[#686868] max-w-7xl mx-auto">
-              Experience unbiased, culturally aligned hiring, 60% faster, with
-              3X improved retention.
+              Experience unbiased, culturally aligned hiring,{" "}
+              <span className="text-[#e24f15] font-medium">
+                {" "}
+                
+                <CountUp
+                  from={30}
+                  to={60}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />
+                %
+              </span>{" "}
+              faster, with 3X improved retention.
             </p>
           </div>
 
@@ -61,10 +74,11 @@ const HeroSection = () => {
 
           <div className={`w-full text-center px-2 sm:px-0 ${styles.lastPara}`}>
             <p className="font-bold text-base sm:text-lg md:text-xl text-[#647285] max-w-5xl mx-auto leading-tight">
-              With <span className="font-medium text-[#f6b609]">AI-powered</span>,{" "}
+              With{" "}
+              <span className="font-medium text-[#f6b609]">AI-powered</span>,{" "}
               <span className="font-medium text-[#ef5016]">Data-backed</span>,{" "}
               <span className="font-medium text-[#6996d1]">
-              360 Language Assessment
+                360 Language Assessment
               </span>{" "}
               <br className="hidden sm:block" />
               <span className="text-[#b10606]">VerbiQ.ai</span> breaks the mold
