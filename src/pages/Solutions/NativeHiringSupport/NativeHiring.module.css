@@ -5,7 +5,7 @@
 
 .container {
   padding: 2rem;
-  /* font-family: "Segoe UI", sans-serif; */
+
   font-family: Arial, Helvetica, sans-serifs;
   color: #333;
   background-color: #F8FAFF;
@@ -171,14 +171,14 @@
     flex-wrap: wrap;
   }
 
-  .opportunityBlock {
+  /* .opportunityBlock {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  } */
   
-  .opportunityBlock:hover {
+  /* .opportunityBlock:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  }
+  } */
 
   .leftColumn {
     display: flex;
@@ -232,6 +232,63 @@
   font-weight: 200;
   text-align: justify;
 }
+/* styles.module.css */
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animateFromLeft {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.animateFromRight {
+  animation: slideInRight 1s ease forwards;
+}
+
+.delay1 {
+  animation-delay: 0s;
+}
+.delay2 {
+  animation-delay: 0.5s;
+}
+.delay3 {
+  animation-delay: 1s;
+}
+
+.invisibleBlock {
+  opacity: 0;
+}
+
+
+
+.invisibleBlock {
+  opacity: 0;
+  transform: translateY(20px); /* minor shift to avoid layout jump */
+}
+
+
+
+
+
 .dotHeading {
   font-size: 40px;
   display: inline-block;
@@ -348,7 +405,6 @@
     
   }
 
-  
 
   .opportunitiesWrapper {
     flex-direction: column;
@@ -399,9 +455,20 @@
 
   }
 
+  .animateFromLeft,
+  .animateFromRight,
+  .delay1,
+  .delay2,
+  .delay3 {
+    animation: none !important;
+  }
   
 
   .feature {
     width: 100%;
   }
+}
+
+.invisibleBlock {
+  opacity: 0;
 }
