@@ -43,7 +43,7 @@ const StatsSection = () => {
           reverse ? "md:flex-row-reverse" : ""
         }`}
       >
-        <div className="w-full md:w-2/3 bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 md:mr-20">
+        <div className="w-full md:w-2/3 bg-[#f3f5fa] rounded-xl p-6  duration-300 md:mr-10">
           <h3 className="text-xl font-bold text-[#f4ad28] mb-3">{title}</h3>
           <p className="text-gray-600 text-xl leading-relaxed">{desc}</p>
         </div>
