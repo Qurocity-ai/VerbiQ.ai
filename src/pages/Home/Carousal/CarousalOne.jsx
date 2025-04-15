@@ -254,7 +254,7 @@ const CarousalOne = () => {
     [
       "AI-powered, unbiased assessments with 97% accuracy",
       "42% reduction in mismatch hires",
-      "Reliable identification of true proficiency and cultural fir",
+      "Reliable identification of true proficiency and cultural fit",
     ],
     [
       "94% positive candidate feedback",
