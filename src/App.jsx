@@ -9,6 +9,9 @@ const App = () => {
       <Navbar />
       <ALLRoutes />
       <Footer />
+
+
+      {/* There are some  */}
     </>
   );
 };
