@@ -143,8 +143,13 @@
 // export default GlobalTalentSection;
 import React from "react";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const GlobalTalentSection = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },

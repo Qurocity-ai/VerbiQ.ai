@@ -1,14 +1,13 @@
-import React from "react";
-import UnderConstruction from "../../UnderConstruction/UnderConstruction";
-
+import React, { useEffect } from "react";
 import styles from "./NativeHiring.module.css";
-
 import culturalIcon from "/assets/cultural.png";
 import skillIcon from "/assets/skill.png";
 import communicationIcon from "/assets/communication.png";
-import { Color } from "ogl";
 
 const NativeHiringSupport = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className={styles.container}>
@@ -26,9 +25,10 @@ const NativeHiringSupport = () => {
         <div className={styles.whyNative}>
           <h2>
             <span className={styles.dotHeading}>...</span>
-            <span className={styles.mobileHeading}>Why native hiring Matters</span>
+            <span className={styles.mobileHeading}>
+              Why native hiring Matters
+            </span>
           </h2>
-       
 
           <div className={styles.features}>
             <div className={styles.feature}>
@@ -71,11 +71,17 @@ const NativeHiringSupport = () => {
                   src={communicationIcon}
                   alt="Authentic Communication"
                   className={styles.icon}
-                  style={{height:"180px",width:"180px",objectFit:"contain"}}
+                  style={{
+                    height: "180px",
+                    width: "180px",
+                    objectFit: "contain",
+                  }}
                 />
               </div>
               <div className={styles.content}>
-                <h3 className={styles.middleHeading}>Authentic Communication:</h3>
+                <h3 className={styles.middleHeading}>
+                  Authentic Communication:
+                </h3>
                 <p className={styles.middlePara}>
                   Sourced candidates exhibit natural accents and speech patterns
                   that automated systems often miss.
@@ -84,26 +90,29 @@ const NativeHiringSupport = () => {
             </div>
 
             <div className={styles.featureLastDiv}>
-              <h3 className={styles.paraLast} >
+              <h3 className={styles.paraLast}>
                 We’ll help you secure candidates who not only speak the language
-                fluently but also embody the <span className={styles.headingLastSpan}>cultural nuances</span>  and <span className={styles.headingLastSpan}>dialectical variations</span>
-                 crucial for authentic communication.
+                fluently but also embody the{" "}
+                <span className={styles.headingLastSpan}>cultural nuances</span>{" "}
+                and{" "}
+                <span className={styles.headingLastSpan}>
+                  dialectical variations
+                </span>
+                crucial for authentic communication.
               </h3>
             </div>
           </div>
         </div>
 
-        
-
         <div className={styles.expanding}>
-          <h2 className={styles.expandingHeading} >
+          <h2 className={styles.expandingHeading}>
             Expanding Opportunities with Native Talent
           </h2>
           <div className={styles.opportunitiesWrapper}>
             <div className={styles.leftColumn}>
               <div className={styles.opportunityBlock}>
                 <h4>AI Model Training:</h4>
-                <p >
+                <p>
                   Empower your AI with native experts delivering culturally
                   nuanced and linguistically precise training for superior
                   performance
@@ -127,7 +136,6 @@ const NativeHiringSupport = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -42,8 +42,12 @@
 import React from "react";
 import styles from "./LangaugeAssesmentC.module.css";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const LangaugeAssesmentC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={styles.container}>
       <motion.h2
