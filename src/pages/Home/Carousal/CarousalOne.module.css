@@ -1,7 +1,4 @@
-/* .highlightNumber {
-  color: #02586F;
-  font-weight: bold;
-} */
+
 
 /* .item:hover {
   background-color: #DFEAF0; 
@@ -82,6 +79,11 @@
 
 .listItem:last-child {
   border-bottom: none;
+}
+
+ .highlightNumber {
+  color: #02586F;
+  font-weight: bold;
 }
 
 
