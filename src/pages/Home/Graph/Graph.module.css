@@ -1,4 +1,5 @@
-/* Wrapper Background */
+/* 
+
 .wrapper {
   display: flex;
   justify-content: center;
@@ -8,7 +9,6 @@
   flex-wrap: wrap;
 }
 
-/* Shared style for both sections */
 .sectionBox {
   background-color: white;
   border-radius: 4rem;
@@ -24,7 +24,6 @@
   justify-content: flex-end;
 }
 
-/* Bar Graph Layout */
 .barGraph {
   display: flex;
   justify-content: space-between;
@@ -33,7 +32,6 @@
   margin-top: 3.5rem;
 }
 
-/* Bar Wrapper */
 .barWrapper {
   position: relative;
   width: 20%;
@@ -42,10 +40,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-
 }
 
-/* Labels Above Bars */
 .label {
   position: absolute;
   bottom: 100%;
@@ -56,17 +52,15 @@
   text-align: center;
 }
 
-/* Bars */
 .bar {
   width: 100%;
   height: 0;
   border-radius: 0.5rem;
   transition: height 1s ease-in-out, transform 1s ease-in-out;
   opacity: 0;
-  transform: translateY(20px); /* Start from the bottom */
+  transform: translateY(20px);
 }
 
-/* Expanding Bars */
 .bar1.expand {
   height: 10rem;
   background-color: #4dca89;
@@ -95,7 +89,6 @@
   transform: translateY(0);
 }
 
-/* Bar Text Colors */
 .bar1Text {
   color: #4dca89;
 }
@@ -109,7 +102,6 @@
   color: #de3e41;
 }
 
-/* Headings and Text */
 .heading {
   font-size: 1.3rem;
   font-weight: 400;
@@ -125,7 +117,6 @@
   line-height: 1.5;
 }
 
-/* Subheadings */
 .subHeading {
   position: relative;
   padding-left: 2rem;
@@ -133,17 +124,17 @@
   font-weight: 600;
   color: #c9c9c9;
   margin-top: 1rem;
-  transition: color 0.3s ease-in-out; /* slower */
+  transition: color 0.3s ease-in-out;
   cursor: default;
 }
 
 .subHeading::before {
-  content: "✔"; /* Or →, ✦, ★, 🗸, etc. */
+  content: "✔";
   position: absolute;
   left: 5rem;
   opacity: 0;
   transform: translateX(-10px);
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* slower */
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
   font-size: 1.1rem;
   color: #02586f;
 }
@@ -155,11 +146,8 @@
 .subHeading:hover::before {
   opacity: 1;
   transform: translateX(0);
-
 }
 
-
-/* Personalized Heading */
 .subHeading1 {
   font-size: 1.2rem;
   font-weight: 600;
@@ -167,7 +155,6 @@
   margin-bottom: 1rem;
 }
 
-/* Divider Line */
 .hrLine {
   width: 80%;
   height: 2px;
@@ -175,7 +162,15 @@
   margin: 1.5rem auto;
 }
 
-/* Responsive layout */
+.subHeading.active {
+  color: #02586f;
+}
+
+.subHeading.active::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 @media (max-width: 768px) {
   .wrapper {
     flex-direction: column;
@@ -192,7 +187,7 @@
   .barGraph {
     gap: 0.5rem;
     justify-content: center;
-    margin-top: 4rem; /* Prevent early trigger */
+    margin-top: 4rem;
   }
 
   .barWrapper {
@@ -211,11 +206,9 @@
   .subHeading {
     font-size: 0.9rem;
     padding-left: 2rem;
-    transition: color 0.3s ease-in-out;
   }
 
   .subHeading::before {
-    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
     font-size: 0.9rem;
     left: 2.5rem;
   }
@@ -232,11 +225,10 @@
     font-size: 0.7rem;
   }
 
-  /* ✅ Bars start from bottom and rise up on inView */
   .bar {
     height: 0;
     opacity: 0;
-    transform: translateY(40px); /* From below */
+    transform: translateY(40px);
     transition: height 1.3s ease-in-out, transform 1.3s ease-in-out, opacity 1s ease-in-out;
     will-change: transform, opacity, height;
     backface-visibility: hidden;
@@ -272,5 +264,326 @@
     transform: translateY(0);
     opacity: 1;
     transition-delay: 0.4s;
+  }
+}
+
+ */
+ .container {
+  display: flex;
+  margin: 0 auto;
+  width: 70%;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+/* === LEFT PANE === */
+.leftPane {
+  flex: 1.1;
+  background-color: white;
+  border-radius: 3.125rem; /* 50px */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Matrix Wrapper */
+.matrixWrapper {
+  display: flex;
+  position: relative;
+  margin-bottom: 1.25rem; /* 20px */
+  width: 100%;
+  justify-content: center;
+}
+
+/* Labels */
+.label {
+  position: absolute;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+}
+
+.grammar {
+  top: -1.5625rem; /* 25px */
+  left: 1.25rem;    /* 20px */
+  color: #4DCA89;
+}
+
+.fluency {
+  top: -1.5625rem;
+  right: 1.25rem;
+  color: #4DCACA;
+}
+
+.vocabulary {
+  bottom: -1.5625rem;
+  left: 1.25rem;
+  color: #DDAE15;
+}
+
+.cultural {
+  bottom: -1.5625rem;
+  right: 1.25rem;
+  color: #DE3E41;
+}
+
+/* Matrix Box */
+.matrixBox {
+  position: relative;
+  background-color: #000949;
+  color: white;
+  border-radius: 1.25rem; /* 20px */
+  min-height: 10rem;
+  width: 70%;
+}
+
+/* Grid positions for text columns */
+.column {
+  position: absolute;
+  font-size: 0.6875rem; /* 11px */
+  line-height: 1.5;
+}
+
+.topLeft {
+  top: 1.25rem; /* 20px */
+  left: 0.3125rem; /* 5px */
+  text-align: end;
+  margin-top: -0.5rem;
+}
+.topLeft p {
+  margin-bottom: 0.3rem;
+}
+
+.topRight {
+  top: 1.25rem;
+  right: 1.875rem; /* 30px */
+  text-align: start;
+  margin-top: -0.5rem;
+}
+.topRight p {
+  margin-bottom: 0.3rem;
+}
+
+.bottomRight {
+  bottom: 1.25rem;
+  right: 1.875rem;
+  text-align: start;
+  margin-bottom: -0.5rem;
+}
+.bottomRight p {
+  margin-top: 0.3rem;
+}
+
+.bottomLeft {
+  bottom: 1.25rem;
+  left: 2.625rem; /* 42px */
+  text-align: end;
+  margin-bottom: -0.5rem;
+}
+.bottomLeft p {
+  margin-top: 0.3rem;
+}
+
+/* Dividers */
+.verticalDivider {
+  position: absolute;
+  top: -1.5rem; /* 24px */
+  bottom: -1.5rem;
+  left: 50%;
+  width: 1px;
+  background-color: #D9D9D9;
+  transform: translateX(-50%);
+}
+
+.horizontalDivider {
+  position: absolute;
+  left: -3.125rem; /* 50px */
+  right: -3.125rem;
+  top: 50%;
+  height: 1px;
+  background-color: #D9D9D9;
+  transform: translateY(-50%);
+}
+
+/* Footer */
+.leftFooter {
+  text-align: center;
+  margin-top: 1.5625rem; /* 25px */
+}
+
+.leftFooter h3 {
+  font-size: 1rem; /* 16px */
+  color: #00046C;
+  font-weight: 600;
+}
+
+.leftFooter p {
+  font-size: 0.8125rem; /* 13px */
+  color: #8F8F8F;
+}
+
+/* === RIGHT PANE === */
+.rightPane {
+  flex: 1.2;
+  background-color: white;
+  border-radius: 3.125rem; /* 50px */
+  display: flex;
+  flex-direction: column;
+  padding-top: 2.8rem; /* 35px */
+}
+
+/* Icons */
+.iconRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.625rem; /* 10px */
+  padding: 0 0.9375rem; /* 15px */
+  padding-top: 1.875rem; /* 30px */
+  padding-bottom: 4.0625rem; /* 65px */
+}
+
+.iconBox {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+  align-items: center;
+}
+
+.iconBox img {
+  width: 5.3125rem;  /* 85px */
+  height: 5.3125rem;
+  object-fit: contain;
+  margin-bottom: 0.75rem; /* 12px */
+}
+
+.iconBox p {
+  font-size: 0.875rem; /* 14px */
+  color: #004FAC;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.hrline {
+  background-color: #E0E0E0;
+  height: 1px;
+  border: none;
+}
+
+/* Right Footer */
+.rightFooter {
+  text-align: center;
+}
+
+.rightFooter h3 {
+  font-size: 1rem; /* 16px */
+  color: #004FAC;
+  font-weight: 600;
+}
+
+.rightFooter p {
+  font-size: 0.8125rem; /* 13px */
+  color: #8F8F8F;
+
+}
+@media(max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  /* Matrix box: slightly taller and more readable text */
+  .matrixBox {
+    min-height: 8rem; /* Increased to allow more space for text */
+    width: 85%;
+    font-size: 0.75rem; /* Slightly larger for better readability */
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  /* Paragraph spacing inside matrix */
+  .matrixBox p {
+    margin: 0.3rem 0;
+    line-height: 1.3;
+  }
+
+  /* Quadrant labels: readable but compact */
+  .topLeft,
+  .topRight,
+  .bottomLeft,
+  .bottomRight {
+    font-size: 0.6rem;
+  }
+
+  .topLeft,
+  .topRight {
+    margin-bottom: 0.1rem;
+  }
+
+  .topLeft p,
+  .topRight p {
+    margin-top: 0.1rem;
+  }
+
+  .bottomLeft,
+  .bottomRight {
+    margin-top: 0.3rem;
+  }
+
+  .bottomLeft p,
+  .bottomRight p {
+    margin-bottom: 0.25rem;
+  }
+
+  .horizontalDivider {
+    position: absolute;
+    left: -0.4rem;
+    right: -0.4rem;
+    top: 50%;
+    height: 1px;
+    background-color: #D9D9D9;
+    transform: translateY(-50%);
+  }
+
+  .leftFooter,
+  .rightFooter {
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+
+  .leftFooter h3,
+  .rightFooter h3 {
+    font-size: 0.9375rem;
+  }
+
+  .leftFooter p,
+  .rightFooter p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .rightPane {
+    padding-top: 1.2rem;
+  }
+
+  .iconRow {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .iconBox img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .iconBox p {
+    font-size: 0.8125rem;
+  }
+
+  .rightFooter {
+    text-align: center;
+    margin-bottom: 25px;
   }
 }
