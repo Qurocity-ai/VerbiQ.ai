@@ -1,46 +1,21 @@
-import React, { useRef, useState, useEffect } from "react";
+
+
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./CarousalOne.module.css";
 
-export default function CarousalOne() {
-  const totalCards = 13;
+const CarousalOne = () => {
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [itemWidth, setItemWidth] = useState(470);
 
-  const contentArray = [
-    [
-      "AI-powered, unbaised assessments with 97% accuracy",
-      "42% reduction in mismatched hires",
-      "Reliable identification of true proficiency and cultural fit",
-    ],
-    [
-      "94% positive candidate feedback",
-      "Seamless, human like assesments",
-      "Enhanced comfort and authencity during evaluations",
-    ],
-    [
-      "80% consistency across multiple languages and regions ",
-      "65% reduction in subjective biases",
-      "Reliable, repeatable assesments",
-    ],
-    [
-      "15+ languages with native level accuracy",
-      "3x increase in global hiring capabalities  ",
-      "58% fewer communications gaps",
-    ],
-    [
-      "90% accuracy in evaluating tone and communication style",
-      "45% improvement in employee retention",
-      "better alignment with company culture",
-    ],
-    [
-      "60% faster model improvement cycles",
-      "Continous AI learning and refinements",
-      "Adaptive, future-ready language assesments",
-    ],
-  ];
+  const [activeIndex, setActiveIndex] = useState(0);
 
+  const scrollIntervalRef = useRef(null);
+  const containerRef = useRef(null);
 
-
-  const headingArray = [
-    "Enhancing Accuracy",
+  // Data arrays
+  const headings = [
+    "Enhance Hiring Accuracy",
     "Drive Candidate Confidence",
     "Ensure Consistent Quality",
     "Expand Global Reach",
@@ -48,184 +23,190 @@ export default function CarousalOne() {
     "Future-Proof Your Workforce",
   ];
 
-  const oddHeadings = [
-    "Precision",
-    "Authencity",
-    "Consistency",
-    "Expansion",
-    "Connection",
-    "Evolution",
+  const contents = [
+    [
+      "AI-powered, unbiased assessments with 97% accuracy",
+      "42% reduction in mismatch hires",
+      "Reliable identification of true proficiency and cultural fit",
+    ],
+    [
+      "94% positive candidate feedback",
+      "seamless, human like assessments",
+      "Enhanced comfort and authenticity during evaluations",
+    ],
+    [
+      "80% consistency across multiple languages and regions",
+      "65% reduction in subjective biases",
+      "Reliable, repeatable assessments",
+    ],
+    [
+      "15+ languages with native-level accuracy",
+      "3x increase in global hiring capabalities",
+      "58% fewer communication gaps",
+    ],
+    [
+      "90% accuracy in evaluating tone and communication style",
+      "45% improvement in employee retention ",
+      "Better alignment with company culture",
+    ],
+    [
+      "60% faster model improvement cycles",
+      "Continuous AI learning and refinements",
+      "Adaptive, future-ready language assessments",
+    ],
   ];
 
-  const cardRefs = useRef([]);
-  const sliderRef = useRef(null);
-
-  const [index, setIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const scrollBy = isMobile ? 1 : 4;
-
-  const handlePrev = () => {
-    setIndex((prev) => Math.max(prev - scrollBy, 0));
-  };
-
-  const handleNext = () => {
-    if (isMobile) {
-      let next = index + 1;
-      while (next < totalCards && (next + 1) % 2 !== 0) {
-        next++;
+  const highlightNumbers = (text) => {
+    return text.split(/(\d+%|\d+x|\d+\+|\d+)/g).map((part, i) => {
+      if (/(\d+%|\d+x|\d+\+|\d+)/g.test(part)) {
+        return (
+          <span key={i} className={styles.highlightNumber}>
+            {part}
+          </span>
+        );
       }
-      if (next < totalCards) setIndex(next);
-    } else {
-      setIndex((prev) => Math.min(prev + scrollBy, totalCards - scrollBy));
-    }
+      return part;
+    });
   };
 
-  const getTranslateX = (index) => {
-    let offset = 0;
-    for (let i = 0; i < index; i++) {
-      if (isMobile && (i + 1) % 2 !== 0) continue;
-      offset += cardRefs.current[i]?.offsetWidth || 0;
+  const items = [1, 2, 3, 4, 5, 6];
+  // const scrollStep = itemWidth;
+  const [visibleItems, setVisibleItems] = useState(0);
+
+  const highlightDuration = 2000;
+
+  // const startAutoScroll = () => {
+  //   if (scrollIntervalRef.current) {
+  //     clearInterval(scrollIntervalRef.current);
+  //   }
+
+  //   scrollIntervalRef.current = setInterval(() => {
+  //     if (isVisible) {
+  //       setCurrentPosition((prev) => {
+  //         const maxScroll = (items.length - visibleItems) * itemWidth;
+  //         if (prev >= maxScroll) {
+  //           return 0;
+  //         }
+  //         return prev + scrollStep;
+  //       });
+  //     }
+  //   }, 2000);
+  // };
+
+  const startAutoScroll = () => {
+    if (scrollIntervalRef.current) {
+      clearInterval(scrollIntervalRef.current);
     }
-    return offset;
+
+    scrollIntervalRef.current = setInterval(() => {
+      if (isVisible) {
+        setActiveIndex(prev => {
+          const newIndex = (prev + 1) % items.length;
+          
+          // Calculate new scroll position to keep highlighted item in view
+          const newPosition = Math.min(
+            newIndex * itemWidth,
+            (items.length - visibleItems) * itemWidth
+          );
+          
+          setCurrentPosition(newPosition);
+          
+          return newIndex;
+        });
+      }
+    }, highlightDuration);
   };
 
-  useEffect(() => {
-    if (!sliderRef.current) return;
-    const offset = getTranslateX(index);
-    sliderRef.current.style.transform = `translateX(-${offset}px)`;
-  }, [index, isMobile]);
-
-
-
-  useEffect(() => {
-    let interval;
-    let timeout;
-  
-    // Start the auto slide after a 2-second delay
-    const startAutoSlide = () => {
-      timeout = setTimeout(() => {
-        interval = setInterval(() => {
-          setIndex((prevIndex) => {
-            let next = prevIndex + 1;
-  
-            // Mobile-specific behavior: Skip odd-indexed items
-            if (isMobile) {
-              while (next < totalCards && (next + 1) % 2 !== 0) {
-                next++;
-              }
-              return next < totalCards ? next : 0;
-            } else {
-              const scrollBy = 4; // For larger screens, increment by 4
-              return next + scrollBy <= totalCards ? next : 0;
-            }
-          });
-        }, 3000); // Slide every 3 seconds
-      }, 2000); // Initial delay of 2 seconds
-    };
-  
-    // Initialize the auto slide
-    startAutoSlide();
-  
-    const resetTimer = () => {
-      clearTimeout(timeout); // Clear the timeout before restarting
-      clearInterval(interval); // Clear the existing interval
-      startAutoSlide(); // Restart the auto-slide after reset
-    };
-  
-    // Attach click event listeners to navigation buttons
-    const prevBtn = document.querySelector(`.${styles.navButton}:first-child`);
-    const nextBtn = document.querySelector(`.${styles.navButton}:last-child`);
-    prevBtn?.addEventListener("click", resetTimer);
-    nextBtn?.addEventListener("click", resetTimer);
-  
-    // Clean up on component unmount
-    return () => {
-      clearTimeout(timeout);
-      clearInterval(interval);
-      prevBtn?.removeEventListener("click", resetTimer);
-      nextBtn?.removeEventListener("click", resetTimer);
-    };
-  }, [index, isMobile]);
-
-  
  
 
+  useEffect(() => {
+    const calculateVisibleItems = () => {
+      const containerWidth = window.innerWidth - 100;
+      const isMobile = window.innerWidth <= 768;
+      const updatedItemWidth = isMobile ? window.innerWidth - 20 : 470;
+      setItemWidth(updatedItemWidth);
+
+      const visibleCount = isMobile
+        ? 1
+        : Math.floor(containerWidth / updatedItemWidth);
+      setVisibleItems(visibleCount);
+    };
+
+    calculateVisibleItems();
+    window.addEventListener("resize", calculateVisibleItems);
+
+    return () => {
+      window.removeEventListener("resize", calculateVisibleItems);
+      if (scrollIntervalRef.current) {
+        clearInterval(scrollIntervalRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (visibleItems === 0) return;
+    startAutoScroll();
+
+    return () => {
+      if (scrollIntervalRef.current) {
+        clearInterval(scrollIntervalRef.current);
+      }
+    };
+  }, [visibleItems, items.length, isVisible]);
+
   return (
-    <>
-      <div className={styles.mainContainer}>
-        <h1 className={styles.mainHeading}>
-          Elevating Language Proficiency with{" "}
-          <span className={styles.mainHeadingSpan}> Precision</span> and{" "}
-          <span className={styles.mainHeadingSpan}>Insight</span>
-        </h1>
-        <div className={styles.carouselWrapper}>
-          <div className={styles.carouselContainer}>
-            <div className={styles.slider} ref={sliderRef}>
-              { Array.from({ length: totalCards }, (_, i) => {
-                    const isEven = (i + 1) % 2 === 0;
-
-                    if (isEven) {
-                      return (
-                        <div
-                          key={i}
-                          className={styles.evenWrapper}
-                          ref={(el) => (cardRefs.current[i] = el)}
-                        >
-                          <h3 className={styles.cardHeading}>
-                            {headingArray[Math.floor(i / 2)]}
-                          </h3>
-                          <div className={`${styles.card} ${styles.evenCard}`}>
-                            <div className={styles.cardContent}>
-                              <ul className={styles.cardList}>
-                                {contentArray[Math.floor(i / 2)].map(
-                                  (item, idx) => (
-                                    <li key={idx}>{item}</li>
-                                  )
-                                )}
-                                
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    } else {
-                      const oddIndex = Math.floor(i / 2);
-                      return (
-                        <div
-                          key={i}
-                          className={styles.evenWrapper}
-                          ref={(el) => (cardRefs.current[i] = el)}
-                        >
-                          <h3 className={styles.cardHeadingOdd}>
-                            {oddHeadings[oddIndex]}
-                          </h3>
-                          <div className={`${styles.card} ${styles.oddCard}`} />
-                        </div>
-                      );
-                    }
-                  })}
-            </div>
+    <div className={styles.container} ref={containerRef}>
+      <h1 className={styles.mainheading}>
+        Elevating Language Proficiency with{" "}
+        <span className={styles.spanheading}>Precision</span> and{" "}
+        <span className={styles.spanheading}>Insight</span>
+      </h1>
+      <div
+        className={styles.scrollContainer}
+        style={{
+          transform: `translateX(-${currentPosition}px)`,
+          width: `${items.length * itemWidth}px`,
+        }}
+      >
+        {items.map((item, index) => (
+          <div key={item} 
+          className={`${styles.item} ${activeIndex === index ? styles.highlighted : ''}`}>
+            <h3 className={styles.heading}>{headings[index]}</h3>
+            <ul className={styles.contentList}>
+              {contents[index].map((point, i) => (
+                <li key={i} className={styles.listItem}>
+                  {highlightNumbers(point)}
+                </li>
+              ))}
+            </ul>
           </div>
-
-          <div className={styles.buttonWrapper}>
-            <button className={styles.navButton} onClick={handlePrev}>
-              <img src="/assets/thin_big_left.png" className={styles.arrow}/>
-            </button>
-            <button className={styles.navButton} onClick={handleNext}>
-             <img src="/assets/thin_big_right.png" className={styles.arrow}/>
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default CarousalOne;

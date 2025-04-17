@@ -99,7 +99,7 @@ const resourcesDropdownRef = useRef(null);
                 </div>
                 <div className={style.item} onClick={() =>  {setShowSolution(false);   setMenuOpen(false); navigate("/native")}}>
                   <img src="/assets/NativeHir.png" alt="Native Hiring" />
-                  <Link to="/native">Native Hiring Support</Link>
+                  <Link to="/native">Global Hiring Support</Link>
 
                 </div>
               </div>
@@ -127,7 +127,7 @@ const resourcesDropdownRef = useRef(null);
         navigate("/global");
       }}>
         {/* <img src="/assets/global.png" alt="Global" /> */}
-        <Link to="/global">Global</Link>
+        <Link to="/global">Global insight</Link>
       </div>
 
       <div className={style.item} onClick={() => {
@@ -136,7 +136,7 @@ const resourcesDropdownRef = useRef(null);
         navigate("/blog");
       }}>
         {/* <img src="/assets/blog.png" alt="Blog" /> */}
-        <Link to="/blog">Blog</Link>
+        <Link to="/blog">Blogs</Link>
       </div>
     </div>
   )}

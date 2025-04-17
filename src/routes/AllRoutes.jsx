@@ -7,9 +7,12 @@ import Home from "../pages/Home/Home";
 import CenterofExce from "../pages/CenterofExce/CenterofExce";
 import FullHiring from "../pages/Solutions/FullHiring/FullHiring";
 import LangaugeAssesment from "../pages/Solutions/LangaugeAssesment/LangaugeAssesment";
-import Global from "../pages/Global/global";
-import Blog from "../pages/Blog/Blog";
+import Global from "../pages/Resources/Global/Global";
 import ContractualProject from "../pages/Solutions/ContractualProjectBasedSupport/ContractualProject";
+
+import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
+import BlogListPage from "../pages/Blog/BlogListPage";
+import BlogDetailPage from "../pages/Blog/BlogDetailPage";
 export default function ALLRoutes() {
     return (
       
@@ -25,7 +28,8 @@ export default function ALLRoutes() {
 <Route path="/fulltime" element={<FullHiring/>}></Route>
 {/* Resources  */}
 <Route path="/global" element={<Global/>}></Route>
-<Route path="/blog" element={<Blog/>}></Route>
+<Route path="/blog" element={<BlogListPage/>}></Route>
+<Route path='/blogs/:id' element={<BlogDetailPage />} />
 
 
 </Routes>

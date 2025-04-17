@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import UnderConstruction from "../../UnderConstruction/UnderConstruction";
 
 import styles from "./NativeHiring.module.css";
@@ -9,6 +9,28 @@ import communicationIcon from "/assets/communication.png";
 import { Color } from "ogl";
 
 const NativeHiringSupport = () => {
+  const ref = useRef();
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // stop observing after first trigger
+        }
+      },
+      {
+        threshold: 0.2, // adjust visibility trigger
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <div>
       <div className={styles.container}>
@@ -26,9 +48,10 @@ const NativeHiringSupport = () => {
         <div className={styles.whyNative}>
           <h2>
             <span className={styles.dotHeading}>...</span>
-            <span className={styles.mobileHeading}>Why native hiring Matters</span>
+            <span className={styles.mobileHeading}>
+              Why native hiring Matters
+            </span>
           </h2>
-       
 
           <div className={styles.features}>
             <div className={styles.feature}>
@@ -71,11 +94,17 @@ const NativeHiringSupport = () => {
                   src={communicationIcon}
                   alt="Authentic Communication"
                   className={styles.icon}
-                  style={{height:"180px",width:"180px",objectFit:"contain"}}
+                  style={{
+                    height: "180px",
+                    width: "180px",
+                    objectFit: "contain",
+                  }}
                 />
               </div>
               <div className={styles.content}>
-                <h3 className={styles.middleHeading}>Authentic Communication:</h3>
+                <h3 className={styles.middleHeading}>
+                  Authentic Communication:
+                </h3>
                 <p className={styles.middlePara}>
                   Sourced candidates exhibit natural accents and speech patterns
                   that automated systems often miss.
@@ -84,18 +113,21 @@ const NativeHiringSupport = () => {
             </div>
 
             <div className={styles.featureLastDiv}>
-              <h3 className={styles.paraLast} >
+              <h3 className={styles.paraLast}>
                 We’ll help you secure candidates who not only speak the language
-                fluently but also embody the <span className={styles.headingLastSpan}>cultural nuances</span>  and <span className={styles.headingLastSpan}>dialectical variations</span>
-                 crucial for authentic communication.
+                fluently but also embody the{" "}
+                <span className={styles.headingLastSpan}>cultural nuances</span>{" "}
+                and{" "}
+                <span className={styles.headingLastSpan}>
+                  dialectical variations
+                </span>
+                 {" "}crucial for authentic communication.
               </h3>
             </div>
           </div>
         </div>
 
-        
-
-        <div className={styles.expanding}>
+        {/* <div className={styles.expanding}>
           <h2 className={styles.expandingHeading} >
             Expanding Opportunities with Native Talent
           </h2>
@@ -126,8 +158,60 @@ const NativeHiringSupport = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
+        <div className={styles.expanding} ref={ref}>
+          <h2 className={styles.expandingHeading}>
+            Expanding Opportunities with Native Talent
+          </h2>
+          <div className={styles.opportunitiesWrapper}>
+            <div className={styles.leftColumn}>
+              <div
+                className={`${styles.opportunityBlock} ${
+                  inView
+                    ? `${styles.animateFromLeft} ${styles.delay1}`
+                    : styles.invisibleBlock
+                }`}
+              >
+                <h4>AI Model Training:</h4>
+                <p>
+                  Empower your AI with native experts delivering culturally
+                  nuanced and linguistically precise training for superior
+                  performance.
+                </p>
+              </div>
+
+              <div
+                className={`${styles.opportunityBlock} ${
+                  inView
+                    ? `${styles.animateFromLeft} ${styles.delay3}`
+                    : styles.invisibleBlock
+                }`}
+              >
+                <h4>Content Roles:</h4>
+                <p>
+                  Elevate your brand with content creators and copywriters who
+                  craft high-quality, culturally resonant narratives.
+                </p>
+              </div>
+            </div>
+
+            <div
+              className={`${styles.opportunityBlock} ${styles.rightColumn} ${
+                inView
+                  ? `${styles.animateFromRight} ${styles.delay2}`
+                  : styles.invisibleBlock
+              }`}
+            >
+              <h4>Technical & Domain-Specific Positions:</h4>
+              <p>
+                Drive innovation with specialists who blend deep technical
+                expertise with native fluency to fuel breakthroughs in IT,
+                legal, and finance.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
