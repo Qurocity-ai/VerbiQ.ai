@@ -100,6 +100,7 @@
     justify-content: center;
     gap: 40px;
     padding: 50px 20px;
+    align-items: stretch;
   }
   
   .founderCard {
@@ -107,6 +108,7 @@
     flex-direction: column;
     align-items: center;
     max-width: 320px;
+    min-height: 500px; 
     text-align: left;
     color: #00046C;
   }
@@ -124,6 +126,10 @@
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     color: #00046C;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .founderInfo h4 {
