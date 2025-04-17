@@ -1,0 +1,68 @@
+.container {
+  text-align: center;
+  padding-left: 9rem;
+  padding-right: 9rem;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+
+/* Title Styling */
+.title {
+  font-size: 41px;
+  font-weight: normal;
+  color: #000949;
+  margin-bottom: 10px;
+}
+
+/* Highlighted Text */
+.highlight {
+  font-weight: 400;
+  color: #000949; /* initial color */
+  cursor: pointer;
+  transition: color 0.6s ease-in-out;
+}
+
+.highlight:hover {
+  color: #ff6600; /* color on hover */
+}
+
+/* Subtitle Styling */
+.subtitle {
+  font-size: 23px;
+  color: #686868;
+}
+
+/* Bold Text */
+.boldText {
+  font-weight: bold;
+  color: #686868;
+  font-size: 23px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) { /* Tablets */
+  .container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 480px) { /* Small Tablets & Mobile */
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 8rem;
+  }
+  .title {
+      font-size: 25px;
+      padding-left: 3rem;
+      padding-right: 3rem;
+  }
+  .subtitle {
+      font-size: 20px;
+  }
+  .highlight {
+    font-weight: 600;}
+}
+

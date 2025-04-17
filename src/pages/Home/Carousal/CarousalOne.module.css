@@ -1,0 +1,243 @@
+.carouselWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  width: 97vw;
+  overflow: hidden;
+}
+
+
+.carouselContainer {
+  overflow: hidden;
+  width: 100vw;
+
+}
+
+
+
+.slider {
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.5s ease-in-out;
+  width: max-content;
+
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 1px solid #B3B3B3;
+  flex-shrink: 0;
+}
+
+.oddCard {
+  width: 200px;
+  /* background-color: gray; */
+  border: 1px solid #B3B3B3;
+  border-bottom: none;
+  
+  margin-left: 0;
+  margin-right: 0;
+  height: 1px;
+  align-self: center;
+  position: relative;
+  top: 160px;
+}
+
+
+
+.evenCard {
+  width: 430px;
+  height: 200px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  border-bottom: none;
+  color: #02586F;
+  
+ 
+ 
+}
+
+.evenWrapper {
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+ 
+  margin-top: 2rem;
+}
+
+.navButton {
+  font-size: 4rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: none;
+
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+  color: rgb(199, 199, 199);
+  font-weight: 200;
+}
+
+.navButton:hover {
+  transform: scale(1.2);
+  color: #303030;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  height: 100%;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 400;
+  color: #02586F ;
+}
+
+.cardHeading {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  /* text-align: center; */
+  color: #000;
+  color: #02586F;
+  text-align: start;
+}
+
+.cardList {
+  list-style-type: disc;
+  font-weight: 400;
+  color: #0a5c7d;
+  padding: 0;
+  margin: 0;
+}
+
+.cardList li {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  font-size: 19px;
+}
+
+.cardHeadingOdd{
+  font-size: 17px;
+  position: relative;
+  top: 157px;
+  left: 90px;
+  color: #B3B3B3;
+
+}
+
+.cardHeading{
+  text-align: start;
+}
+
+.mainHeading{
+  font-size: 30px;
+  text-align: center;
+  color: #686868;
+  font-weight: 400;
+}
+
+.mainHeadingSpan{
+  color: #AD181B;
+  font-weight: 400;
+}
+
+.mainContainer{
+margin-top: 4rem;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.arrow{
+  width: 60px;
+}
+
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    /* width: 100vw; */
+    width: 99.5%;
+    border: 1px solid #B3B3B3;
+    border-radius: 15px;
+  }
+
+  .slider {
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+ 
+  }
+
+  .carouselWrapper{
+    width: 100vw;
+  }
+
+  .oddCard {
+    display: none;
+  }
+
+  .evenCard {
+    width: 90vw;
+    height: auto;
+    height: 200px;
+    border: none;
+    padding: 10px;
+  }
+
+  .cardList li {
+      font-size: 16px;
+    }
+
+  .cardHeading{
+      font-size: 20px;
+      text-align: center;
+      
+  }
+
+  .cardContent{
+      padding: 20px;
+      width: 100%;
+      text-align: justify;
+      
+  }
+
+  .cardHeadingOdd{
+      display: none;
+
+  }
+
+  .mainHeading{
+      font-size: 20px;
+      margin-top: 40px;
+  }
+
+  .buttonWrapper{
+      margin-top: 1.3rem;
+  }
+
+  .arrow{
+    width: 40px;
+  }
+ 
+
+
+}
+
+

@@ -1,13 +1,19 @@
 import React from "react";
-import Footer from "./components/Footer/Footer";
-import FAQ from "./pages/Home/FAQ/FAQ";
-function App() {
+import Navbar from "./componants/Navbar/Navbar";
+import ALLRoutes from "./routes/AllRoutes";
+import Footer from "./componants/Footer/Footer";
+
+const App = () => {
   return (
     <>
-      <FAQ />
+      <Navbar />
+      <ALLRoutes />
       <Footer />
+
+
+      {/* There are some  */}
     </>
   );
-}
+};
 
 export default App;

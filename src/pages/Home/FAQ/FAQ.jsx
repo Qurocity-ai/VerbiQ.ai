@@ -31,16 +31,16 @@ function FAQ() {
   };
 
   return (
-    <div className="flex flex-col items-end justify-center h-screen ">
-      <div className="sm:grid sm:grid-cols-12 gap-4 flex flex-col items-center justify-center w-screen bg-[#f9f9ff] sm:pr-38 sm:pl-72 py-34">
+    <div className="flex flex-col items-end justify-center h-auto">
+      <div className="sm:grid sm:grid-cols-12 gap-4 flex flex-col items-center justify-center w-screen  sm:pr-38 sm:pl-72 py-34">
         <div className="sm:col-span-5 sm:text-[52px] text-[22px] sm:font-normal text-[#0e128b] leading-[100%] flex justify-center w-full">
           Frequently Asked <br className="sm:flex hidden" /> Questions
         </div>
         <div className="sm:col-span-7 sm:pl-40 pl-3 pr-3 w-full">
           {faqData.map((item, index) => (
-            <div key={index} className=" border-b border-b-gray-300">
+            <div key={index} className=" border-b border-b-gray-300 ">
               <button
-                className={`w-full text-left py-4 px-5 flex items-center justify-between transition-colors duration-300 ${
+                className={`w-full text-left py-4 px-5 flex items-center bg-white justify-between transition-colors  duration-700 ${
                   activeIndex === index ? " text-indigo-700" : " text-gray-700"
                 }`}
                 onClick={() => toggleFAQ(index)}
@@ -48,10 +48,8 @@ function FAQ() {
                 aria-controls={`faq-answer-${index}`}
               >
                 <span
-                  className={`sm:leading-[100%]   font-[Helvetica] text-wrap flex justify-between items-center w-full ${
-                    activeIndex === index
-                      ? "text-[#0e128b] font-bold"
-                      : "text-[#969696]"
+                  className={`text-wrap flex justify-between items-center font-medium  w-full text-[20px] transition-all duration-700 ${
+                    activeIndex === index ? "text-[#161a85]" : "text-[#969696]"
                   }`}
                 >
                   {item.question}
@@ -68,7 +66,7 @@ function FAQ() {
                     viewBox="0 0 16 16"
                     data-supported-dps="16x16"
                     data-test-icon="add-small"
-                    className="sm:h-7 sm:w-7 h-5 w-5"
+                    className="sm:h-7 sm:w-7 h-5 w-5 "
                   >
                     <path
                       d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"
@@ -80,11 +78,11 @@ function FAQ() {
               </button>
               <div
                 id={`faq-answer-${index}`}
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  activeIndex === index ? "py-2 px-5" : "h-0"
+                className={` transition-all duration-1000 ease-in-out overflow-hidden px-6 py-1 ${
+                  activeIndex === index ? "max-h-96" : "max-h-0"
                 }`}
               >
-                <p className="text-[#0e128b] opacity-95">{item.answer}</p>
+                <p className="text-[#1015b4] opacity-100 ">{item.answer}</p>
               </div>
             </div>
           ))}
