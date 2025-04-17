@@ -13,7 +13,7 @@
   margin-left: 100px;
   height: auto;
   min-height: 450px;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   background-color: #F8FAFF;
   padding-bottom: 30px;
 }
@@ -57,8 +57,8 @@
   font-weight: 500;
   color: #02586F;
   text-align: center;
-  text-decoration: underline;
-  text-underline-offset: 6px; 
+  /* text-decoration: underline; */
+  /* text-underline-offset: 6px;  */
   margin-bottom: 20px;
 }
 
@@ -67,7 +67,7 @@
   font-size: 19px;
   text-align: center;
   color: #02586F;
-  font-weight: 100;
+  font-weight: 300;
   padding: 0;
   margin: 0;
   width: 100%;
