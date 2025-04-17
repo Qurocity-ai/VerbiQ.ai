@@ -7,7 +7,7 @@ import Home from "../pages/Home/Home";
 import CenterofExce from "../pages/CenterofExce/CenterofExce";
 import FullHiring from "../pages/Solutions/FullHiring/FullHiring";
 import LangaugeAssesment from "../pages/Solutions/LangaugeAssesment/LangaugeAssesment";
-import Global from "../pages/Global/global";
+import Global from "../pages/Resources/Global/Global";
 
 import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
 import BlogListPage from "../pages/Blog/BlogListPage";
