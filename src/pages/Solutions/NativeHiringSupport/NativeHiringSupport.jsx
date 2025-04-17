@@ -1,12 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import UnderConstruction from "../../UnderConstruction/UnderConstruction";
+
 import styles from "./NativeHiring.module.css";
 import culturalIcon from "/assets/cultural.png";
 import skillIcon from "/assets/skill.png";
 import communicationIcon from "/assets/communication.png";
 
 const NativeHiringSupport = () => {
+  const ref = useRef();
+  const [inView, setInView] = useState(false);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // stop observing after first trigger
+        }
+      },
+      {
+        threshold: 0.2, // adjust visibility trigger
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
   return (
     <div>
@@ -104,8 +125,8 @@ const NativeHiringSupport = () => {
           </div>
         </div>
 
-        <div className={styles.expanding}>
-          <h2 className={styles.expandingHeading}>
+        {/* <div className={styles.expanding}>
+          <h2 className={styles.expandingHeading} >
             Expanding Opportunities with Native Talent
           </h2>
           <div className={styles.opportunitiesWrapper}>
@@ -127,6 +148,59 @@ const NativeHiringSupport = () => {
               </div>
             </div>
             <div className={`${styles.opportunityBlock} ${styles.rightColumn}`}>
+              <h4>Technical & Domain-Specific Positions:</h4>
+              <p>
+                Drive innovation with specialists who blend deep technical
+                expertise with native fluency to fuel breakthroughs in IT,
+                legal, and finance.
+              </p>
+            </div>
+          </div>
+        </div> */}
+
+        <div className={styles.expanding} ref={ref}>
+          <h2 className={styles.expandingHeading}>
+            Expanding Opportunities with Native Talent
+          </h2>
+          <div className={styles.opportunitiesWrapper}>
+            <div className={styles.leftColumn}>
+              <div
+                className={`${styles.opportunityBlock} ${
+                  inView
+                    ? `${styles.animateFromLeft} ${styles.delay1}`
+                    : styles.invisibleBlock
+                }`}
+              >
+                <h4>AI Model Training:</h4>
+                <p>
+                  Empower your AI with native experts delivering culturally
+                  nuanced and linguistically precise training for superior
+                  performance.
+                </p>
+              </div>
+
+              <div
+                className={`${styles.opportunityBlock} ${
+                  inView
+                    ? `${styles.animateFromLeft} ${styles.delay3}`
+                    : styles.invisibleBlock
+                }`}
+              >
+                <h4>Content Roles:</h4>
+                <p>
+                  Elevate your brand with content creators and copywriters who
+                  craft high-quality, culturally resonant narratives.
+                </p>
+              </div>
+            </div>
+
+            <div
+              className={`${styles.opportunityBlock} ${styles.rightColumn} ${
+                inView
+                  ? `${styles.animateFromRight} ${styles.delay2}`
+                  : styles.invisibleBlock
+              }`}
+            >
               <h4>Technical & Domain-Specific Positions:</h4>
               <p>
                 Drive innovation with specialists who blend deep technical
