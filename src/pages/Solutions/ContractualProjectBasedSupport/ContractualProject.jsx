@@ -2,9 +2,13 @@ import React from 'react'
 import style from './ContractualProject.module.css'
 import CountUp from 'react-countup';
 import ServicesContractual from './ServicesContractual';
+import OptionService from './OptionService';
 
 
 export default function ContractualProject() {
+
+  
+
   return (
     <div className={style.main}>
       <div className={style.heading} >
@@ -36,7 +40,8 @@ export default function ContractualProject() {
         <div className={style.image}>
 <img src='/assets/Map.png' alt="Dotted Map Icon"/>
         </div>
-   <ServicesContractual/>
+   {/* <ServicesContractual/> */}
+   <OptionService/>
       </div>
       <div className={style.taglineWrapper}>
   <p className={style.tagline}>

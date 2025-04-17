@@ -1,190 +1,100 @@
-.sectionContainer {
-    display: flex;
-    gap: 40px;
-    padding: 40px;
-  }
-  
-  .leftColumn {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-left: 65px;
-  }
-  
-  .serviceCard {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border-radius: 999px;
-    border: 1px solid #E3E3E3;
-    /* transition: all 0.3s ease; */
-    background-color: #f9f9f9;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-  }
-  
-  /* .serviceCard:hover {
-    transform: translateX(10px) scale(1.03); /* ✅ subtle slide + zoom */
-    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* ✅ soft shadow */
-    /* border-color: #000949; */
-  
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  padding: 60px;
+  /* border: 1px solid black; */
+  margin: auto 50px;
+}
 
+.cardContainer {
+  perspective: 1000px;
+}
 
-  .serviceCard:hover {
-    transform: translateX(12px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    border-color: #000949;
-    background-color: #ffffff;
-    transition: all 0.4s ease-in-out;
-  }
-  
-  
-  /* .serviceCard.active { */
-    /* border-color: #AD181B; */
-  
-  
-  .icon {
-    width: 48px;
-    height: 48px;
-    margin-right: 16px;
-  }
-  
-  .textBlock {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .title {
-    font-family: Poppins;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 38px;
-    color: #000949;
-    letter-spacing: -1px;
-  }
-  
-  .subtitle {
-    font-family: Poppins Light;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 35px;
-    color: #686868;
-    letter-spacing: -1px;
-    margin-top: -8px;
-  }
-  
-  .rightColumn {
-    flex: 1;
-    padding-top: 16px;
-  }
-  
-  .contentTitle {
-    font-family: Poppins;
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: 16px;
-    color: #000949;
-  }
-  
-  .detailsList {
-    list-style-type: disc;
-    list-style-position: inside;       /* 🟦 bullet stays close to text */
-    padding-left: 10px;
-    margin-left: 100px;
-    color: #1D2B5F;
-    font-family: PoppinsLight;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.6;
-    letter-spacing: -1px;
-  
-    text-align: left;
-    display: flex;
-    flex-direction: column;          
-    justify-content: flex-start;     
-    align-items: flex-start;         
-  }
-  
-  .detailsList li {
-    /* margin-bottom: 10px; */
-    width: 100%;
-  }
-  .groupHeading {
-    font-family: Poppins;
-    font-weight: 700;
-    font-size: 22px;
-    color: #000949;
-    margin-top: 16px;
-    margin-bottom: 6px;
-  }
-  
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-radius: 12px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
 
+.cardInner.showDetails {
+  transform: rotateY(180deg);
+}
 
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  border: 1px solid #E3E3E3;
+  background-color: #ffffff;
+  padding: 16px 20px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
 
+.cardFront {
+  z-index: 2;
+  flex-direction: row;
+  gap: 20px;
 
+}
 
+.cardBack {
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
 
+.icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
 
+.textBlock {
+  font-family: Helvetica;
+}
 
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000949;
+}
 
+.subtitle {
+  font-size: 18px;
+  color: #888;
+  margin-top: -8]px;
+}
 
+.contentTitle {
+  font-family: 'PoppinsLight';
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000949;
+}
 
+.groupHeading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000949;
+  margin: 8px 0 4px;
 
-  /* Responsive Desgin */
-  @media screen and (max-width: 768px) {
-    .sectionContainer {
-      flex-direction: column;
-      padding: 20px;
-      gap: 24px;
-    }
-  
-    .leftColumn {
-      margin-left: 0;
-      gap: 16px;
-    }
-  
-    .serviceCard {
-      border-radius: 24px;
-      padding: 16px;
-    }
-  
-    .icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 12px;
-    }
-  
-    .title {
-      font-size: 18px;
-      line-height: 30px;
-    }
-  
-    .subtitle {
-      font-size: 16px;
-      line-height: 28px;
-    }
-  
-    .rightColumn {
-      padding-top: 0;
-    }
-  
-    .contentTitle {
-      font-size: 20px;
-      text-align: center;
-    }
-  
-    .groupHeading {
-      font-size: 20px;
-      margin-top: 12px;
-    }
-  
-    .detailsList {
-      margin-left: 0;
-      font-size: 18px;
-      padding-left: 0;
-    }
-  }
-  
-  
-  
+}
+
+.detailsList {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #444;
+}
