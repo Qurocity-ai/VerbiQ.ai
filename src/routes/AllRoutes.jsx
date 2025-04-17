@@ -8,6 +8,7 @@ import CenterofExce from "../pages/CenterofExce/CenterofExce";
 import FullHiring from "../pages/Solutions/FullHiring/FullHiring";
 import LangaugeAssesment from "../pages/Solutions/LangaugeAssesment/LangaugeAssesment";
 import Global from "../pages/Resources/Global/Global";
+import ContractualProject from "../pages/Solutions/ContractualProjectBasedSupport/ContractualProject";
 
 import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
 import BlogListPage from "../pages/Blog/BlogListPage";
@@ -23,7 +24,7 @@ export default function ALLRoutes() {
 {/* Support Page Routing  */}
 <Route path="/native" element={<NativeHiringSupport/>}></Route>
 <Route path="/language" element={<LangaugeAssesment/>}></Route>
-<Route path="/contractual" element={<ProjectBasedHiring/>}></Route>
+<Route path="/contractual" element={<ContractualProject/>}></Route>
 <Route path="/fulltime" element={<FullHiring/>}></Route>
 {/* Resources  */}
 <Route path="/global" element={<Global/>}></Route>
