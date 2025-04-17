@@ -12,17 +12,17 @@ function FAQ() {
     {
       question: "How does VerbiQ evaluate cultural fit?",
       answer:
-        "VerbiQ’s AI models are trained on large, high-quality multilingual datasets, ensuring 98%+ accuracy in language proficiency evaluation and consistent scoring across candidates.",
+        "VerbiQ evaluates cultural fit by creating real-world scenarios that simulate workplace interactions across different cultural contexts. Through these situation-based assessments, we observe how candidates respond, adapt, and communicate, ensuring they align naturally with the organization's cultural values.",
     },
     {
       question: "How does VerbiQ prevent bias in assessments?",
       answer:
-        "VerbiQ’s AI models are trained on large, high-quality multilingual datasets, ensuring 98%+ accuracy in language proficiency evaluation and consistent scoring across candidates.",
+        "At VerbiQ, we’ve engineered our AI assessment system to focus strictly on language proficiency, communication skills, and cultural understanding — not personal attributes. Our models are trained to evaluate responses based solely on objective linguistic parameters, without regard to gender, ethnicity, nationality, or personal background. By anonymizing inputs and applying standardized evaluation metrics, we ensure every candidate is assessed fairly, consistently, and without unconscious bias, setting a new benchmark for ethical language assessment.",
     },
     {
       question: "What reporting and analytics does VerbiQ provide?",
       answer:
-        "VerbiQ’s AI models are trained on large, high-quality multilingual datasets, ensuring 98%+ accuracy in language proficiency evaluation and consistent scoring across candidates.",
+        "VerbiQ provides detailed reporting across key language dimensions — Grammar, Fluency, Efficacy, Cultural Understanding, and Business Acumen. Each candidate receives a comprehensive performance report highlighting strengths, areas for improvement, and role-specific suitability. Our analytics empower organizations to make data-driven hiring decisions with deeper insights into a candidate’s real-world communication abilities.",
     },
   ];
 
@@ -40,7 +40,7 @@ function FAQ() {
           {faqData.map((item, index) => (
             <div key={index} className=" border-b border-b-gray-300 ">
               <button
-                className={`w-full text-left py-4 px-5 flex items-center bg-white justify-between transition-colors  duration-700 ${
+                className={`w-full text-left py-4 px-5 flex items-center justify-between transition-colors  duration-700 ${
                   activeIndex === index ? " text-indigo-700" : " text-gray-700"
                 }`}
                 onClick={() => toggleFAQ(index)}
