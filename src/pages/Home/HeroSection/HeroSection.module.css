@@ -28,3 +28,24 @@
 .lastPara span{
   font-weight: 500;
 }
+
+@media screen and (max-width: 640px) {
+  .container {
+    margin-top: 7rem;
+  }
+
+  .heading {
+    font-size: 28px; 
+  }
+ 
+  .lastPara p {
+    margin-top: 1rem;
+    font-size: 17px;
+  }
+  .expPara {
+    color: rgba(145, 141, 141, 0.993);
+    font-weight: 400 !important;
+    margin: 0 auto;
+    font-size: 18px; 
+  }
+}
