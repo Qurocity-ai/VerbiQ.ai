@@ -30,7 +30,11 @@ function Footer() {
             </div>
           </div>
           <div className="flex sm:flex-col sm:col-span-2 sm:w-[134px] sm:h-[73px] sm:pl-16 ">
-            <a href="#" className="flex sm:pb-4 items-center pr-6">
+            <a
+              href="https://www.linkedin.com/company/recrutorycompany/"
+              target="_blank"
+              className="flex sm:pb-4 items-center pr-6"
+            >
               <img
                 src=".\assets\image 213.png"
                 alt="LinkedIn-logo"
@@ -38,7 +42,11 @@ function Footer() {
               />
               <span className="text-[#00046C]"> LinkedIn</span>
             </a>
-            <a href="#" className="flex items-center">
+            <a
+              href="https://www.instagram.com/recrutory/?igsh=MXkxM3Y3am1qYTdhbg%3D%3D#"
+              target="_blank"
+              className="flex items-center"
+            >
               <img
                 src=".\assets\image 214.png"
                 alt="Instagram-logo"
