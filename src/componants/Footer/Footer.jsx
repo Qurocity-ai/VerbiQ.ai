@@ -32,6 +32,7 @@ function Footer() {
           <div className="flex sm:flex-col sm:col-span-2 sm:w-[134px] sm:h-[73px] sm:pl-16 ">
             <a
               href="https://www.linkedin.com/company/recrutorycompany/"
+              target="_blank"
               className="flex sm:pb-4 items-center pr-6"
             >
               <img
@@ -43,6 +44,7 @@ function Footer() {
             </a>
             <a
               href="https://www.instagram.com/recrutory/?igsh=MXkxM3Y3am1qYTdhbg%3D%3D#"
+              target="_blank"
               className="flex items-center"
             >
               <img
