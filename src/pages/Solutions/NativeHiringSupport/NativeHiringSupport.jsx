@@ -119,7 +119,7 @@ const NativeHiringSupport = () => {
                 <span className={styles.headingLastSpan}>
                   dialectical variations
                 </span>
-                crucial for authentic communication.
+                 {" "}crucial for authentic communication.
               </h3>
             </div>
           </div>

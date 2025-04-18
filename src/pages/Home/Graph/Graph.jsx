@@ -168,7 +168,7 @@ const Graph1 = () => {
         <div className={styles.iconRow}>
           <div className={styles.iconBox}>
             <img src="/assets/Graph1.png" alt="Icon 1" />
-            <p>Assessment by a <br /> Native Speaker</p>
+            <p>Assessment by a<br /> Native Speaker</p>
           </div>
           <div className={styles.iconBox}>
             <img src="/assets/Graph2.png" alt="Icon 2" />
