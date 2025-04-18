@@ -108,13 +108,13 @@ const GlobalTalentSection = () => {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-3xl sm:text-4xl lg:text-5xl text-[#000949] mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl font-medium lg:text-4xl text-[#000949] mb-4 sm:mb-6"
           >
             Unlocking Talent Beyond Borders
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-6xl mx-auto"
+            className="text-lg sm:text-xl lg:text-xl text-gray-600 max-w-6xl mx-auto"
           >
             Uncover global perspectives in linguistic hiring from expert blogs
             and trend reports to the latest in talent mobility and
@@ -183,13 +183,13 @@ const GlobalTalentSection = () => {
               variants={itemVariants}
               className="space-y-3 p-4 rounded-lg shadow-sm"
               >
-                <h2 className="text-xl font-medium md:text-3xl text-[#022b41]">
+                <h2 className="text-xl font-medium md:text-2xl text-[#022b41]">
                   {section.title}
                 </h2>
                 {section.content.map((text, i) => (
                   <p
                   key={i}
-                  className="text-base md:text-lg text-[#022b41]"
+                  className="text-justify leading-relaxed tracking-wide  text-base md:text-2sm text-[#022b41]"
                   >
                     {text}
                   </p>
@@ -211,7 +211,7 @@ const GlobalTalentSection = () => {
       },
     },
   }}
-  className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+  className="mt-12 md:mt-24  grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
 >
   {[
     {
@@ -235,8 +235,12 @@ const GlobalTalentSection = () => {
   ].map((card, index) => (
     <motion.div
       key={index}
-      variants={cardVariants}
-      className="md:overflow-hidden md:pl-5"
+      // variants={cardVariants}
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      whileHover={{ scale: 1.03 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className=" md:overflow-hidden md:pl-5 "
     >
       <a 
         href={card.link} 
