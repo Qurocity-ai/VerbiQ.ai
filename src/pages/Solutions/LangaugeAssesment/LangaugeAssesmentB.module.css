@@ -117,7 +117,7 @@
 }
 
 .subtitle {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: #4b5563;
     margin-bottom: 10px;
@@ -134,11 +134,11 @@
 @media (max-width: 500px) {
     .container {
        
-        padding: 50px 35px;
+        padding: 50px 0.1rem;
     }
     .assessmentContainer {
         flex-direction: column;
-        gap: 30px;
+        gap: 50px;
 
     }
 
@@ -154,9 +154,42 @@
     .subtitle {
         font-size: 16px;
     }
+    .percent{
+      font-size: 20px;
+      /* color: rgb(255, 99, 75); */
+      color: #b91c1c; 
+  }
 
     .description {
-        font-size: 14px;
+        font-size: 13px;
         text-align: center;
+        font-weight: 300;
+    }
+    .assessmentBox {
+      position: relative;
+      flex: 1;
+      max-width: 500px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      cursor: pointer;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0px 0px rgb(255, 255, 255);
+      transition: transform 0.3s ease, box-shadow 0.0s ease;
+      overflow: hidden;
+    }
+
+    .assessmentBox::before {
+      content: "";
+      position: absolute;
+      background: none; /* Sky blue glow */
+      box-shadow: 0 0 0px #ffffff;
+      height: 2px;
+      width: 0;
+      opacity: 0;
+      transition: opacity 0.0s ease;
+      z-index: 2;
     }
 }

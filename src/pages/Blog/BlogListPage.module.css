@@ -168,6 +168,10 @@
 
 /* For very small screens (mobile portrait) */
 @media (max-width: 480px) {
+    .envelope{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
     .envelope h1 {
         font-size: 1.8rem; /* Further reduce title size */
     }
