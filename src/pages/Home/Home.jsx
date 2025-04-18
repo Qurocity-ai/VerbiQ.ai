@@ -14,6 +14,7 @@ const Home = () => {
   }, []);
   return (
 <>
+{/* Home */}
  <HeroSection/>
  <StatsSection/>
  <Wave/>
