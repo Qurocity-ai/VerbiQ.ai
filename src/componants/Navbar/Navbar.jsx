@@ -78,7 +78,7 @@ const resourcesDropdownRef = useRef(null);
  ref={dropdownRef}>
           <a  onClick={toggleSolutions}>Solutions</a>
           {showSolution && (
-            <div className={style.dropdown}>
+            <div className={`${style.dropdown} ${style.solutionsDropdown}`}>
               <div className={style.row}>
                 <div className={style.item} onClick={() =>{ setShowSolution(false);    setMenuOpen(false) ; navigate("/fulltime")}}>
                   <img src="/assets/FTHS.png" alt="Full Time" />
