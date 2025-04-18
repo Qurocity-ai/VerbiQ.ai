@@ -70,7 +70,7 @@ const CarousalOne = () => {
   };
 
   const items = [1, 2, 3, 4, 5, 6];
-  const scrollStep = itemWidth;
+  // const scrollStep = itemWidth;
   const [visibleItems, setVisibleItems] = useState(0);
 
   const highlightDuration = 2000;
