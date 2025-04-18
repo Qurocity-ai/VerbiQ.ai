@@ -92,16 +92,23 @@
   justify-content: flex-end;
   margin-top: -1.25rem;
   margin-bottom: 1.25rem;
-  padding-right: 1rem;
-  opacity: 0;
+  margin-left: auto;
   animation: fadeInFast 0.15s ease-in forwards;
+  max-width: 50%;
+  /* Remove width: fit-content */
 }
 
 .translation {
   font-size: 0.8125rem;
   color: #999;
-  max-width: 31.25rem;
   text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere; /* Better than break-word */
+  hyphens: auto;
+  word-break: normal; /* Remove break-word */
+  max-width: 100%; /* Remove fixed 31.25rem value */
+  width: auto;
+  padding: 0 0.5rem;
 }
 
 
@@ -188,7 +195,15 @@
     font-size: 0.6rem;
     line-height: 1;
     letter-spacing: -0.01rem;
+    max-width:100%;
+
   }
+ 
+
+.translation {
+  width: auto;
+}
+
 
   .botMessage .messageBox,
   .userMessage .messageBox {
@@ -198,11 +213,25 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
-
-  .translationWrapper {
-    justify-content: center;
-    margin-left: 2rem;
-    margin-right: 1rem;
+  @media screen and (max-width: 768px) {
+    .translationWrapper {
+      justify-content: flex-start !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0;
+      padding: 0 1rem;
+    }
+  
+    .translation {
+      font-size: 0.7rem;
+      line-height: 1.4;
+      hyphens: manual;
+      overflow-wrap: normal;
+      word-break: keep-all;
+      padding: 0 0.8rem;
+      text-align: justify;
+      max-width: 95%; /* Adjusted max-width for better responsiveness */
+    }
   }
 
   .botMessage .avatar {
