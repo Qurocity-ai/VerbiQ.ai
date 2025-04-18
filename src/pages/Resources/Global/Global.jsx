@@ -199,57 +199,64 @@ const GlobalTalentSection = () => {
             ))}
           </div>
         </motion.div>
-          
-
         {/* Bottom Cards Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            visible: {
-              transition: {
-                staggerChildren: 0.2,
-              },
-            },
-          }}
-          className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
-        >
-          {[
-            {
-              img: "/assets/GlobeImg1.png",
-              title: "Multilingual Talent in Manufacturing & SAP",
-              alt: "Global Potential",
-            },
-            {
-              img: "/assets/GlobeImg3.png",
-              title: "Why Foreign Language Skills Matter In Tech",
-              alt: "Language Matters",
-            },
-            {
-              img: "/assets/GlobeImg2.png",
-              title: "Unlocking The Future Of AI",
-              alt: "AI Future",
-            },
-          ].map((card, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              className="md:overflow-hidden md:pl-5"
-            >
-              <img
-                src={card.img}
-                alt={card.alt}
-                className="w-full md:w-85 object-cover mx-auto"
-              />
-              <div className="pt-4 pl-5">
-                <h3 className="text-lg text-[#022b41] mb-2 md:mb-4">
-                  {card.title}
-                </h3>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }}
+  className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+>
+  {[
+    {
+      img: "/assets/GlobeImg1.png",
+      title: "Multilingual Talent in Manufacturing & SAP",
+      alt: "Global Potential",
+      link: "https://www.linkedin.com/pulse/multilingual-talent-manufacturing-sap-new-trends-hiring-njpuf/?trackingId=6LH156F72HmzFxgtMmX6rw%3D%3D"
+    },
+    {
+      img: "/assets/GlobeImg3.png",
+      title: "Why Foreign Language Skills Matter In Tech",
+      alt: "Language Matters",
+      link: "https://www.linkedin.com/pulse/why-foreign-language-skills-matter-tech-recrutorycompany-0wrrf/?trackingId=kSw4bN26MwMWywWxUei9NA%3D%3D"
+    },
+    {
+      img: "/assets/GlobeImg2.png",
+      title: "Unlocking The Future Of AI",
+      alt: "AI Future",
+      link: "https://www.linkedin.com/pulse/critical-role-skilled-linguists-ai-training-recrutorycompany-ijpmf/?trackingId=Mu9Tkf5yw%2F57KpSPgx0kCQ%3D%3D"
+    },
+  ].map((card, index) => (
+    <motion.div
+      key={index}
+      variants={cardVariants}
+      className="md:overflow-hidden md:pl-5"
+    >
+      <a 
+        href={card.link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <img
+          src={card.img}
+          alt={card.alt}
+          className="w-full md:w-85 object-cover mx-auto cursor-pointer"
+        />
+      </a>
+      <div className="pt-4 pl-5">
+        <h3 className="text-lg text-[#022b41] mb-2 md:mb-4">
+          {card.title}
+        </h3>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
       </div>
     </div>
   );
