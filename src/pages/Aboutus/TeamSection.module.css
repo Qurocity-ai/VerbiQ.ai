@@ -87,32 +87,43 @@
   }
   
   .card {
-    background-color: #F6F8FF;
+    background-color:#F8FAFF;
     padding: 20px;
     border-radius: 8px;
     width: 320px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
   }
-  
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
   .founderCards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     padding: 50px 20px;
     align-items: stretch;
+    background-color:#F8FAFF;
   }
   
   .founderCard {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: left;
     max-width: 320px;
-    min-height: 500px; 
+    min-height: 400px; 
     text-align: left;
     color: #00046C;
+    transition: all 0.3s ease;
   }
-  
+  .founderCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
   .founderCard img {
     width: 140px;
     height: auto;
@@ -121,8 +132,8 @@
   }
   
   .founderInfo {
-    background-color: #F6F8FF;
-    padding: 20px;
+    background-color:#F8FAFF;
+    padding: 16px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     color: #00046C;
@@ -133,8 +144,8 @@
   }
   
   .founderInfo h4 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 8px;
   }
   
   .founderInfo h4 span {
@@ -150,6 +161,6 @@
   .founderInfo ul li {
     margin-bottom: 8px;
     list-style-type: disc;
-    font-size: 14px;
+    font-size: 12px;
   }
   

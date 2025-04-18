@@ -95,25 +95,26 @@
 // export default TeamSection;
 import React from 'react';
 import styles from './TeamSection.module.css';
+import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
     name: 'Shubham Paypare',
     role: 'Deputy General Manager',
-    department: 'Marketing & Growth',
-    branch: 'Marketing & Growth',
+    department: 'Digital Marketing & Growth, Development',
+    
   },
   {
     name: 'Aditya Muthane',
     role: 'Founding Team Member',
-    department: 'Marketing & Growth',
-    branch: 'Marketing & Growth',
+    department: 'Product, Pre-Sales, Business Analytics, Strategy',
+   
   },
   {
     name: 'Laxmi Yadav',
     role: 'National Account Manager',
-    department: 'Sales and Marketing',
-    branch: 'Marketing & Growth',
+    department: 'Sales and Marketing, Client Relationships, Strategic Partnerships, Account Growth',
+    
   }
 ];
 
@@ -139,8 +140,8 @@ const founders = [
     img: '/assets/Team2.png',
   },
   {
-    name: 'Ramkumar Kayarat',
-    title: 'Founder and CHRO',
+    name: 'Rahul Singh ',
+    title: 'Founder and  COO',
     description: [
       '20+ years in Telecom with a focus on people, culture, and learning',
       'Holds degrees from IIM Ahmedabad & XLRI Jamshedpur',
@@ -149,12 +150,40 @@ const founders = [
     img: '/assets/Team2.png',
   }
 ];
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+const founderContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const founderCardVariant = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 function TeamSection() {
   return (
     <section className={styles.teamSection}>
       <h2 className='text-[#00046C] text-xl'>Meet Our Team</h2>
-      <div className={`md:text-right text-center ${styles.teamCards}`}>
+      {/* <div className={`md:text-right text-center ${styles.teamCards}`}>
         {teamMembers.map((member, idx) => (
           <div className={`text-[#686868] ${styles.card}`} key={idx}>
             <h4 className='text-[#000949] font-bold'>{member.name}</h4>
@@ -164,9 +193,34 @@ function TeamSection() {
             <p>{member.branch}</p>
           </div>
         ))}
-      </div>
+      </div> */}
+      <motion.div
+  className={`md:text-right text-center ${styles.teamCards}`}
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="show"
+  // viewport={{ once: true }}
+  viewport={{ once: false, amount: 0.2 }}
+>
+  {teamMembers.map((member, idx) => (
+    <motion.div
+      className={`text-[#686868] ${styles.card}`}
+      key={idx}
+      variants={cardVariants}
+    >
+    
+      <h4 className="text-[#000949] font-bold">{member.name}</h4>
+      <p >{member.role}</p>
+      <br></br>
+      <hr className="w-70 h-px bg-[#686868] border-0" />
+      <p >{member.department}</p>
+      
+    </motion.div>
+  ))}
+</motion.div>
 
-      <div className={styles.founderCards}>
+
+      {/* <div className={styles.founderCards}>
         {founders.map((founder, idx) => (
           <div className={styles.founderCard} key={idx}>
             <img src={founder.img} alt={founder.name} />
@@ -174,7 +228,7 @@ function TeamSection() {
               <h4 className='font-bold'>
                 {founder.name} | <span>{founder.title}</span>
               </h4>
-              <hr className="w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+              <hr className="w-64 h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
               <ul>
                 {founder.description.map((point, i) => (
                   <li className='text-[#00046C]' key={i}>{point}</li>
@@ -183,7 +237,43 @@ function TeamSection() {
             </div>
           </div>
         ))}
+      </div> */}
+      <motion.div
+  className={styles.founderCards}
+  variants={founderContainer}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: false, amount: 0.2 }} // 👈 triggers every time it enters view
+>
+
+  {founders.map((founder, idx) => (
+    <motion.div
+      className={styles.founderCard}
+      key={idx}
+      variants={founderCardVariant}
+      whileHover={{
+        scale: 1.03,
+        transition: { type: "spring", stiffness: 300 },
+      }}
+    >
+      <img src={founder.img} alt={founder.name} />
+      <div className={styles.founderInfo}>
+        <h4 className="font-bold">
+          {founder.name} | <span>{founder.title}</span>
+        </h4>
+        <hr className="w-64 h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+        <ul>
+          {founder.description.map((point, i) => (
+            <li className="text-[#00046C]" key={i}>
+              {point}
+            </li>
+          ))}
+        </ul>
       </div>
+    </motion.div>
+  ))}
+</motion.div>
+
     </section>
   );
 }
