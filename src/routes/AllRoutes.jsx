@@ -15,28 +15,6 @@ import BlogListPage from "../pages/Blog/BlogListPage";
 import BlogDetailPage from "../pages/Blog/BlogDetailPage";
 import Details from "../pages/CenterofExce/Details";
 export default function ALLRoutes() {
-<<<<<<< HEAD
-    return (
-      
-<Routes>
-<Route path="/" element={<Home/>}></Route>
-<Route path="/ceo" element={<CenterofExce/>}></Route>
-<Route path="/aboutUs" element={<Aboutus/>}></Route>
-{/* <Route path="/resources" element={<UnderConstruction/>}></Route> */}
-{/* Support Page Routing  */}
-<Route path="/globalhiring" element={<NativeHiringSupport/>}></Route>
-<Route path="/language" element={<LangaugeAssesment/>}></Route>
-<Route path="/contractual" element={<ProjectBasedHiring/>}></Route>
-<Route path="/fulltime" element={<FullHiring/>}></Route>
-{/* Resources  */}
-<Route path="/global" element={<Global/>}></Route>
-<Route path="/blog" element={<BlogListPage/>}></Route>
-<Route path='/blogs/:id' element={<BlogDetailPage />} />
-
-
-</Routes>
-)}
-=======
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
@@ -44,7 +22,7 @@ export default function ALLRoutes() {
       <Route path="/aboutUs" element={<Aboutus />}></Route>
       {/* <Route path="/resources" element={<UnderConstruction/>}></Route> */}
       {/* Support Page Routing  */}
-      <Route path="/native" element={<NativeHiringSupport />}></Route>
+      <Route path="/globalhiring" element={<NativeHiringSupport />}></Route>
       <Route path="/language" element={<LangaugeAssesment />}></Route>
       <Route path="/contractual" element={<ProjectBasedHiring />}></Route>
       <Route path="/fulltime" element={<FullHiring />}></Route>
@@ -56,4 +34,3 @@ export default function ALLRoutes() {
     </Routes>
   );
 }
->>>>>>> ec6024aedaf6df9385fc83f33a82258a0f919e54
