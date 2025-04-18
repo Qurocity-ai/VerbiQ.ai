@@ -12,7 +12,7 @@
 // }
 
 // export default FullHiring
-
+//code
 import React from "react";
 import FullHiringA from "./FullHiringA";
 import FullHiringB from "./FullHiringB";

@@ -40,7 +40,7 @@
   
   @media (max-width: 500px) {
     .container{
-        padding: 50px 35px;
+        padding: 50px 1.9rem;
     }
     .grid {
       grid-template-columns: 1fr;
@@ -49,6 +49,11 @@
   
     .item {
       align-items: center;
+    }
+    .description {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.6;
     }
   }
   

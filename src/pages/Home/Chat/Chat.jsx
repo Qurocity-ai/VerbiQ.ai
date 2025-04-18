@@ -65,7 +65,7 @@ const Chat = () => {
     ) {
       const timer = setTimeout(() => {
         setDisplayedTexts(prev => {
-          const newTexts = [...prev]; //comment
+          const newTexts = [...prev];
           if (newTexts[currentStep].length < currentMessage.text.length) {
             newTexts[currentStep] = currentMessage.text.substring(0, newTexts[currentStep].length + 1);
           }

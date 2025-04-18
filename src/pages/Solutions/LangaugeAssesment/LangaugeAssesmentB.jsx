@@ -117,7 +117,7 @@ const LangaugeAssesmentB = () => {
   useEffect(() => {
     let start = 0;
     const end = 97;
-    const duration = 3500; // total animation duration in ms
+    const duration = 3700; // total animation duration in ms
     const intervalTime = 20; // update every 20ms
     const increment = end / (duration / intervalTime);
 
@@ -149,7 +149,7 @@ const LangaugeAssesmentB = () => {
         className={styles.assessmentContainer}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.3, duration: 0.8, ease: "easeOut" }}
+        transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         <div className={styles.assessmentBox}>
