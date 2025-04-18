@@ -173,6 +173,7 @@
 import React from "react";
 import styles from "./FullHiringB.module.css";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const features = [
   {
@@ -198,6 +199,11 @@ const features = [
 ];
 
 const FullHiringB = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.grid}>
