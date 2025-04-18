@@ -80,7 +80,7 @@ function COE2() {
                 className="sm:h-fit sm:w-fit h-96 w-72 rounded-full mb-3"
               />
               <h2
-                className={`text-[20px] ${
+                className={`text-[30px] font-semibold text-center ${
                   currentIndex === index
                     ? "text-[#0c0f6a] font-medium"
                     : "text-gray-300"

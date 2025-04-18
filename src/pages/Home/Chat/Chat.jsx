@@ -20,8 +20,8 @@ const Chat = () => {
     },
     {
       sender: 'user',
-      text: "Je comprends vos préoccupations.\nNous réévaluerons notre calendrier et vous enverrons une mise à jour détaillée d'ici la fin de la semaine.",
-      translation: "I understand your concerns.\nWe will reevaluate our timeline and send you a detailed update by the end \nof the week."
+      text: "Je comprends vos préoccupations.Nous réévaluerons notre calendrier et vous enverrons une mise à jour détaillée d'ici la fin de la semaine.",
+      translation: "I understand your concerns.We will reevaluate our timeline and send you \na detailed update by the end of the week."
     }
   ];
 
@@ -65,7 +65,7 @@ const Chat = () => {
     ) {
       const timer = setTimeout(() => {
         setDisplayedTexts(prev => {
-          const newTexts = [...prev]; //comment
+          const newTexts = [...prev];
           if (newTexts[currentStep].length < currentMessage.text.length) {
             newTexts[currentStep] = currentMessage.text.substring(0, newTexts[currentStep].length + 1);
           }
