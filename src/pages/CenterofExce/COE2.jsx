@@ -77,7 +77,7 @@ function COE2() {
               <img
                 src={user.profile_image || "https://via.placeholder.com/150"}
                 alt={user.name}
-                className="sm:h-fit sm:w-fit h-72 w-72 rounded-full mb-3"
+                className="sm:h-fit sm:w-fit h-96 w-72 rounded-full mb-3"
               />
               <h2
                 className={`text-[20px] ${

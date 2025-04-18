@@ -1,150 +1,64 @@
-// import React from "react";
-
-// const GlobalTalentSection = () => {
-//   return (
-//     <div className="bg-[#f8faff] py-16 px-4 sm:px-6 lg:px-8 mt-20">
-//       <div className="max-w-7xl mx-auto">
-//         {/* Main Heading */}
-//         <div className="text-center mb-8 md:mb-16">
-//           <h1 className="text-3xl sm:text-4xl lg:text-5xl text-[#000949] mb-4 sm:mb-6">
-//             Unlocking Talent Beyond Borders
-//           </h1>
-//           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-6xl mx-auto">
-//             Uncover global perspectives in linguistic hiring from expert blogs
-//             and trend reports to the latest in talent mobility and
-//             language-driven recruitment.
-//           </p>
-//         </div>
-
-//         {/* Main Image */}
-//         <div className="mb-12 md:mb-20">
-//           <img
-//             src="/assets/Globe.png"
-//             alt="Global Talent"
-//             className="mx-auto w-full max-w-4xl"
-//           />
-//         </div>
-
-//         {/* Content Sections */}
-//         <div className="mx-auto my-10 md:my-14 px-4 md:px-10">
-//           <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-//             {/* Row 1 */}
-//             <div className="space-y-3 p-4 rounded-lg shadow-sm">
-//               <h2 className="text-xl md:text-2xl text-[#022b41]">
-//                 Embracing Global Talent
-//               </h2>
-//               <p className="text-base md:text-lg text-[#022b41]">
-//                 We leverage our extensive network and cross-border capabilities
-//                 to tap into diverse talent pools across continents.
-//               </p>
-//               <p className="text-base md:text-lg text-[#022b41]">
-//                 From multilingual experts to management, technical, and data
-//                 specialists, we bring together a global workforce to meet the
-//                 evolving needs of modern organizations.
-//               </p>
-//             </div>
-
-//             <div className="space-y-3 p-4 rounded-lg shadow-sm">
-//               <h2 className="text-xl md:text-2xl text-[#022b41]">
-//                 Beyond Borders
-//               </h2>
-//               <p className="text-base md:text-lg text-[#022b41]">
-//                 VerbiQ doesn’t hold back when it comes to hiring offshore
-//                 resources.
-//               </p>
-//               <p className="text-base md:text-lg text-[#022b41]">
-//                 Our global reach enables us to navigate international markets
-//                 seamlessly, providing organizations with the resources they need
-//                 to thrive in an increasingly interconnected world.
-//               </p>
-//             </div>
-
-//             {/* Row 2 */}
-//             <div className="space-y-3 p-4 rounded-lg shadow-sm">
-//               <h2 className="text-xl md:text-2xl text-[#022b41]">
-//                 Unlock Your Global Potential
-//               </h2>
-//               <p className="text-base md:text-lg text-[#022b41]">
-//                 Partner with VerbiQ and unlock the power of global insights.
-//               </p>
-//               <p className="text-base md:text-lg text-[#022b41]">
-//                 Whether you're expanding into new markets or seeking specialized
-//                 talent, trust us to be your strategic partner in navigating the
-//                 complexities of global talent acquisition.
-//               </p>
-//             </div>
-
-//             <div className="space-y-3 p-4 rounded-lg shadow-sm">
-//               <h2 className="text-xl md:text-2xl text-[#022b41]">
-//                 Multilingual Expertise
-//               </h2>
-//               <p className="text-base md:text-lg text-[#022b41]">
-//                 Operating in multicultural environments requires proficiency in
-//                 multiple languages.
-//               </p>
-//               <p className="text-base md:text-lg text-[#022b41]">
-//                 With VerbiQ, organizations gain access to a diverse talent pool
-//                 fluent in various languages, facilitating effective
-//                 communication and cultural understanding on a global scale.
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Bottom Cards Grid */}
-//         <div className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-//           {/* Card 1 */}
-//           <div className="md:overflow-hidden md:pl-5">
-//             <img
-//               src="/assets/GlobeImg1.png"
-//               alt="Global Potential"
-//               className="w-full md:w-85 object-cover mx-auto"
-//             />
-//             <div className="pt-4 pl-5">
-//               <h3 className="text-lg text-[#022b41] mb-2 md:mb-4">
-//                 Multilingual Talent in Manufacturing & SAP
-//               </h3>
-//             </div>
-//           </div>
-
-//           {/* Card 2 */}
-//           <div className="md:overflow-hidden md:pl-6  ">
-//             <img
-//               src="/assets/GlobeImg3.png"
-//               alt="Language Matters"
-//               className="w-full md:w-85 mr-9 object-cover mx-auto"
-//             />
-//             <div className="pt-4">
-//               <h3 className="text-lg text-[#022b41] mb-2 md:mb-4">
-//                 Why Foreign Language Skills Matter In Tech
-//               </h3>
-//             </div>
-//           </div>
-
-//           {/* Card 3 */}
-//           <div className="md:overflow-hidden md:pl-7 ">
-//             <img
-//               src="/assets/GlobeImg2.png"
-//               alt="AI Future"
-//               className="w-full md:w-85 mr-10 object-cover mx-auto"
-//             />
-//             <div className="pt-4">
-//               <h3 className="text-lg text-[#022b41] mb-2 md:mb-4">
-//                 Unlocking The Future Of AI
-//               </h3>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default GlobalTalentSection;
 import React from "react";
-import { motion } from "framer-motion";
+import { motion ,AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+
+
+const ExpandingCard = ({ img, title, alt, content }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <motion.div
+      className="relative aspect-square bg-white rounded-2xl shadow-lg overflow-hidden p-6"
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      {/* Icon Container with Hover Effect */}
+      <motion.div
+        className="w-16 h-16 rounded-xl bg-blue-50 flex items-center justify-center mb-6 cursor-pointer"
+        whileHover={{ scale: 1.1 }}
+      >
+        <img src={img} alt={alt} className="w-10 h-10 object-contain" />
+      </motion.div>
+
+      {/* Title */}
+      <h3 className="text-xl font-semibold text-[#022b41] mb-4">{title}</h3>
+
+      {/* Content with Animation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="text-[#022b41] mb-6"
+          >
+            {content}
+          </motion.p>
+        )}
+      </AnimatePresence>
+
+      {/* Plus Button */}
+      <motion.button
+        className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-[#000949] flex items-center justify-center text-white shadow-md hover:shadow-lg"
+        onClick={() => setIsOpen(!isOpen)}
+        whileHover={{ scale: 1.1 }}
+      >
+        <motion.span
+          animate={{ rotate: isOpen ? 45 : 0 }}
+          className="text-3xl font-light"
+        >
+          +
+        </motion.span>
+      </motion.button>
+    </motion.div>
+  );
+};
 
 const GlobalTalentSection = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -224,13 +138,15 @@ const GlobalTalentSection = () => {
         </motion.div>
 
         {/* Content Sections */}
+        
+
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
           className="mx-auto my-10 md:my-14 px-4 md:px-10"
-        >
+          >
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             {[
               {
@@ -263,75 +179,84 @@ const GlobalTalentSection = () => {
               },
             ].map((section, index) => (
               <motion.div
-                key={index}
-                variants={itemVariants}
-                className="space-y-3 p-4 rounded-lg shadow-sm"
+              key={index}
+              variants={itemVariants}
+              className="space-y-3 p-4 rounded-lg shadow-sm"
               >
-                <h2 className="text-xl md:text-2xl text-[#022b41]">
+                <h2 className="text-xl font-medium md:text-3xl text-[#022b41]">
                   {section.title}
                 </h2>
                 {section.content.map((text, i) => (
                   <p
-                    key={i}
-                    className="text-base md:text-lg text-[#022b41]"
+                  key={i}
+                  className="text-base md:text-lg text-[#022b41]"
                   >
                     {text}
                   </p>
                 ))}
+              
               </motion.div>
             ))}
           </div>
         </motion.div>
-
         {/* Bottom Cards Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            visible: {
-              transition: {
-                staggerChildren: 0.2,
-              },
-            },
-          }}
-          className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
-        >
-          {[
-            {
-              img: "/assets/GlobeImg1.png",
-              title: "Multilingual Talent in Manufacturing & SAP",
-              alt: "Global Potential",
-            },
-            {
-              img: "/assets/GlobeImg3.png",
-              title: "Why Foreign Language Skills Matter In Tech",
-              alt: "Language Matters",
-            },
-            {
-              img: "/assets/GlobeImg2.png",
-              title: "Unlocking The Future Of AI",
-              alt: "AI Future",
-            },
-          ].map((card, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              className="md:overflow-hidden md:pl-5"
-            >
-              <img
-                src={card.img}
-                alt={card.alt}
-                className="w-full md:w-85 object-cover mx-auto"
-              />
-              <div className="pt-4 pl-5">
-                <h3 className="text-lg text-[#022b41] mb-2 md:mb-4">
-                  {card.title}
-                </h3>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  variants={{
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }}
+  className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+>
+  {[
+    {
+      img: "/assets/GlobeImg1.png",
+      title: "Multilingual Talent in Manufacturing & SAP",
+      alt: "Global Potential",
+      link: "https://www.linkedin.com/pulse/multilingual-talent-manufacturing-sap-new-trends-hiring-njpuf/?trackingId=6LH156F72HmzFxgtMmX6rw%3D%3D"
+    },
+    {
+      img: "/assets/GlobeImg3.png",
+      title: "Why Foreign Language Skills Matter In Tech",
+      alt: "Language Matters",
+      link: "https://www.linkedin.com/pulse/why-foreign-language-skills-matter-tech-recrutorycompany-0wrrf/?trackingId=kSw4bN26MwMWywWxUei9NA%3D%3D"
+    },
+    {
+      img: "/assets/GlobeImg2.png",
+      title: "Unlocking The Future Of AI",
+      alt: "AI Future",
+      link: "https://www.linkedin.com/pulse/critical-role-skilled-linguists-ai-training-recrutorycompany-ijpmf/?trackingId=Mu9Tkf5yw%2F57KpSPgx0kCQ%3D%3D"
+    },
+  ].map((card, index) => (
+    <motion.div
+      key={index}
+      variants={cardVariants}
+      className="md:overflow-hidden md:pl-5"
+    >
+      <a 
+        href={card.link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <img
+          src={card.img}
+          alt={card.alt}
+          className="w-full md:w-85 object-cover mx-auto cursor-pointer"
+        />
+      </a>
+      <div className="pt-4 pl-5">
+        <h3 className="text-lg text-[#022b41] mb-2 md:mb-4">
+          {card.title}
+        </h3>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
       </div>
     </div>
   );

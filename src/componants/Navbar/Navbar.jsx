@@ -97,9 +97,9 @@ const resourcesDropdownRef = useRef(null);
                   <Link to="/language">Language Assessments</Link>
 
                 </div>
-                <div className={style.item} onClick={() =>  {setShowSolution(false);   setMenuOpen(false); navigate("/native")}}>
+                <div className={style.item} onClick={() =>  {setShowSolution(false);   setMenuOpen(false); navigate("/globalhiring")}}>
                   <img src="/assets/NativeHir.png" alt="Native Hiring" />
-                  <Link to="/native">Global Hiring Support</Link>
+                  <Link to="/globalhiring">Global Hiring Support</Link>
 
                 </div>
               </div>

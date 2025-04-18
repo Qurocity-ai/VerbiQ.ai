@@ -2,7 +2,7 @@
     text-align: center;
     padding-left: 9rem;
     padding-right: 9rem;
-    margin-top: 8rem;
+    margin-top: 9rem;
     
   }
   
@@ -31,21 +31,21 @@
   
   @media (max-width: 500px) { 
     .container{
-        padding: 2.5rem 1.5rem;
-        margin-top: 1rem;
+        padding: 2.5rem 1.2rem;
     }
     .title {
-      font-size: 1.9rem;
+      font-size: 1.7rem;
+      font-weight: 300;
     }
   
     .highlight {
-      font-size: 1.25rem; 
+      font-size: 1.2rem; 
       margin-top: 2rem;
     }
   
     .description {
-      font-size: 1.125rem;
-      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      padding: 0.7rem 0.5rem;
       
     }
   }

@@ -36,7 +36,7 @@ function FAQ() {
         <div className="sm:col-span-1 sm:text-[40px] text-[22px] sm:font-normal text-[#0e128b] leading-[100%] flex justify-center w-full">
           Frequently Asked <br className="sm:flex hidden" /> Questions
         </div>
-        <div className="sm:col-span-1 pl-3 pr-28 h-auto w-full">
+        <div className="sm:col-span-1 pl-3 sm:pr-28 h-auto w-full">
           {faqData.map((item, index) => (
             <div key={index} className=" border-b border-b-gray-300 ">
               <button
