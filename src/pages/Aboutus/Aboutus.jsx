@@ -21,7 +21,7 @@ const Aboutus = () => {
       >
       <PurposeSection />
     </motion.div>
-
+{/* aboutus */}
     {/* Animated TeamSection */}
     {/* <motion.div
       initial={{ opacity: 0, y: 50 }}
