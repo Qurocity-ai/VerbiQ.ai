@@ -208,13 +208,13 @@ function TeamSection() {
       key={idx}
       variants={cardVariants}
     >
-    
+     
       <h4 className="text-[#000949] font-bold">{member.name}</h4>
-      <p >{member.role}</p>
+      <p className='text-[14px] '>{member.role}</p>
       <br></br>
-      <hr className="w-70 h-px bg-[#686868] border-0" />
-      <p >{member.department}</p>
-      
+      <hr className="w-70 h-px   bg-[#686868] border-0" />
+      <p className='text-[13px] ' >{member.department}</p>
+    
     </motion.div>
   ))}
 </motion.div>
