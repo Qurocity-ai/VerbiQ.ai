@@ -213,11 +213,6 @@ function TeamSection() {
     >
       {/*team member */}
       <img src={member.image} alt={member.name} className={styles.image} />
-            <h4 className="text-[#000949] font-bold">{member.name}</h4>
-            <p className="text-[14px]">{member.role}</p>
-            <hr className="w-70 h-px bg-[#686868] border-0 my-2" />
-            <p className="text-[13px]">{member.department}</p>
-     
       <h4 className="text-[#000949] font-bold">{member.name}</h4>
       <p className='text-[14px] '>{member.role}</p>
       <br></br>
