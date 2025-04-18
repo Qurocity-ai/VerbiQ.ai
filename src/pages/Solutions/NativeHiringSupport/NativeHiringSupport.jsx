@@ -2,11 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import UnderConstruction from "../../UnderConstruction/UnderConstruction";
 
 import styles from "./NativeHiring.module.css";
-
 import culturalIcon from "/assets/cultural.png";
 import skillIcon from "/assets/skill.png";
 import communicationIcon from "/assets/communication.png";
-import { Color } from "ogl";
 
 const NativeHiringSupport = () => {
   const ref = useRef();
@@ -135,7 +133,7 @@ const NativeHiringSupport = () => {
             <div className={styles.leftColumn}>
               <div className={styles.opportunityBlock}>
                 <h4>AI Model Training:</h4>
-                <p >
+                <p>
                   Empower your AI with native experts delivering culturally
                   nuanced and linguistically precise training for superior
                   performance

@@ -280,7 +280,7 @@
 .leftPane {
   flex: 1.1;
   background-color: white;
-  border-radius: 3.125rem; /* 50px */
+  border-radius: 3.125rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -292,7 +292,7 @@
 .matrixWrapper {
   display: flex;
   position: relative;
-  margin-bottom: 1.25rem; /* 20px */
+  margin-bottom: 1.25rem;
   width: 100%;
   justify-content: center;
 }
@@ -300,13 +300,17 @@
 /* Labels */
 .label {
   position: absolute;
+<<<<<<< HEAD
   font-size: 0.875rem; /* 14px */
+=======
+  font-size: 1rem;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   font-weight: 500;
 }
 
 .grammar {
-  top: -1.5625rem; /* 25px */
-  left: 1.25rem;    /* 20px */
+  top: -1.5625rem;
+  left: 1.25rem;
   color: #4DCA89;
 }
 
@@ -328,18 +332,25 @@
   color: #DE3E41;
 }
 
-/* Matrix Box */
+/* Matrix Box - Updated with Grid Layout */
 .matrixBox {
   position: relative;
   background-color: #000949;
   color: white;
-  border-radius: 1.25rem; /* 20px */
-  min-height: 10rem;
-  width: 70%;
+  border-radius: 1.25rem;
+  min-height: 8rem;
+  max-width: 600px;
+  padding: 0.2rem 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  grid-template-rows: 1fr 1px 1fr;
+  gap: 0.25rem;
 }
 
-/* Grid positions for text columns */
+/* Column Text Containers - Updated with Grid Positioning */
 .column {
+<<<<<<< HEAD
   position: absolute;
   font-size: 0.6875rem; /* 11px */
   line-height: 1.5;
@@ -383,43 +394,101 @@
 }
 .bottomLeft p {
   margin-top: 0.3rem;
+=======
+  font-size: 0.75rem;
+  line-height: 1.4;
+  padding: 0 0.25rem;
+  white-space: nowrap;
 }
 
-/* Dividers */
+.topLeft {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+}
+
+.topRight {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: left;
+}
+
+.bottomLeft {
+  grid-column: 1;
+  grid-row: 3;
+  text-align: right;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
+}
+
+.bottomRight {
+  grid-column: 3;
+  grid-row: 3;
+  text-align: left;
+}
+
+/* Column Paragraphs */
+.column p {
+  margin: 0.25rem 0;
+}
+
+/* Dividers - Updated for Grid Layout */
 .verticalDivider {
   position: absolute;
-  top: -1.5rem; /* 24px */
-  bottom: -1.5rem;
+  top: -1.4rem; /* Adjust as needed */
+  bottom: -1.4rem;
   left: 50%;
   width: 1px;
+<<<<<<< HEAD
   background-color: #D9D9D9;
   transform: translateX(-50%);
+=======
+  background-color: rgba(217, 217, 217, 0.3);
+  z-index: 1;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
 }
 
 .horizontalDivider {
   position: absolute;
+<<<<<<< HEAD
   left: -3.125rem; /* 50px */
   right: -3.125rem;
   top: 50%;
   height: 1px;
   background-color: #D9D9D9;
   transform: translateY(-50%);
+=======
+  left: 1.3rem; /* Adjust as needed */
+  right: 1.3rem;
+  top: 50%;
+  height: 1px;
+  background-color: rgba(217, 217, 217, 0.3);
+  z-index: 1;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
 }
+
 
 /* Footer */
 .leftFooter {
   text-align: center;
-  margin-top: 1.5625rem; /* 25px */
+  margin-top: 1.5625rem;
 }
 
 .leftFooter h3 {
+<<<<<<< HEAD
   font-size: 1rem; /* 16px */
+=======
+  font-size: 1.1rem;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   color: #00046C;
   font-weight: 600;
 }
 
 .leftFooter p {
+<<<<<<< HEAD
   font-size: 0.8125rem; /* 13px */
+=======
+  font-size: 0.85rem;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   color: #8F8F8F;
 }
 
@@ -427,20 +496,24 @@
 .rightPane {
   flex: 1.2;
   background-color: white;
-  border-radius: 3.125rem; /* 50px */
+  border-radius: 3.125rem;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   padding-top: 2.8rem; /* 35px */
+=======
+  padding-top: 2.1rem;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
 }
 
 /* Icons */
 .iconRow {
   display: flex;
   justify-content: space-between;
-  gap: 0.625rem; /* 10px */
-  padding: 0 0.9375rem; /* 15px */
-  padding-top: 1.875rem; /* 30px */
-  padding-bottom: 4.0625rem; /* 65px */
+  gap: 0.625rem;
+  padding: 0 0.9375rem;
+  padding-top: 1.875rem;
+  padding-bottom: 3.3rem;
 }
 
 .iconBox {
@@ -452,14 +525,23 @@
 }
 
 .iconBox img {
+<<<<<<< HEAD
   width: 5.3125rem;  /* 85px */
   height: 5.3125rem;
+=======
+  width: 6rem;
+  height: 6rem;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   object-fit: contain;
-  margin-bottom: 0.75rem; /* 12px */
+  margin-bottom: 0.75rem;
 }
 
 .iconBox p {
+<<<<<<< HEAD
   font-size: 0.875rem; /* 14px */
+=======
+  font-size: 1rem;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   color: #004FAC;
   font-weight: 500;
   line-height: 1.5;
@@ -477,12 +559,17 @@
 }
 
 .rightFooter h3 {
+<<<<<<< HEAD
   font-size: 1rem; /* 16px */
+=======
+  font-size: 1.1rem;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   color: #004FAC;
   font-weight: 600;
 }
 
 .rightFooter p {
+<<<<<<< HEAD
   font-size: 0.8125rem; /* 13px */
   color: #8F8F8F;
 
@@ -514,9 +601,81 @@
   .bottomLeft,
   .bottomRight {
     font-size: 0.6rem;
+=======
+  font-size: 0.85rem;
+  color: #8F8F8F;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  /* Container adjustments */
+  .container {
+    flex-direction: column;
+    max-width: 100%;
+    margin-top: 1rem;
+    gap: 2rem;
   }
 
+  /* Left Panel Mobile Optimization */
+  .leftPane {
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    border-radius: 2rem;
+  }
+
+  /* Matrix Wrapper adjustments */
+  .matrixWrapper {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Matrix Box Mobile Layout */
+  .matrixBox {
+    width: auto;
+    max-width: 100%;
+    min-width: 80%;
+    min-height: 8rem;
+    gap: 0.2rem;
+  }
+
+  /* Label positioning adjustments */
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .grammar {
+    top: -1.2rem;
+    left: 1rem;
+  }
+
+  .fluency {
+    top: -1.2rem;
+    right: 1rem;
+  }
+
+  .vocabulary {
+    bottom: -1.2rem;
+    left: 1rem;
+  }
+
+  .cultural {
+    bottom: -1.2rem;
+    right: 1rem;
+  }
+
+  /* Column text adjustments */
+  .column {
+    font-size: 0.55rem;
+    padding: 0 0.08rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-overflow: unset;
+    text-align: justify;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
+  }
+
+  /* Quadrant text alignment */
   .topLeft,
+<<<<<<< HEAD
   .topRight {
     margin-bottom: 0.1rem;
   }
@@ -534,24 +693,43 @@
   .bottomLeft p,
   .bottomRight p {
     margin-bottom: 0.25rem;
+=======
+  .bottomLeft {
+    text-align: right;
+  }
+
+  .topRight,
+  .bottomRight {
+    text-align: left;
+  }
+
+  /* Divider adjustments */
+  .verticalDivider {
+    top: -1rem;
+    bottom: -1rem;
+    left: 50%;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   }
 
   .horizontalDivider {
-    position: absolute;
-    left: -0.4rem;
-    right: -0.4rem;
+    left: 1rem;
+    right: 1rem;
     top: 50%;
+<<<<<<< HEAD
     height: 1px;
     background-color: #D9D9D9;
     transform: translateY(-50%);
+=======
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   }
 
-  .leftFooter,
-  .rightFooter {
-    margin-top: 2rem;
+  /* Footer adjustments */
+  .leftFooter {
+    margin-top: 1.5rem;
     padding: 0 1rem;
   }
 
+<<<<<<< HEAD
   .leftFooter h3,
   .rightFooter h3 {
     font-size: 0.9375rem;
@@ -561,8 +739,17 @@
   .rightFooter p {
     font-size: 0.75rem;
     line-height: 1.4;
+=======
+  .leftFooter h3 {
+    font-size: 0.85rem;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   }
 
+  .leftFooter p {
+    font-size: 0.65rem;
+  }
+
+  /* Right Panel */
   .rightPane {
     padding-top: 1.2rem;
   }
@@ -570,7 +757,18 @@
   .iconRow {
     flex-wrap: wrap;
     gap: 1rem;
+<<<<<<< HEAD
     justify-content: center;
+=======
+    padding: 1.5rem 0;
+  }
+
+  .iconBox {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 120px; /* ensures it wraps gracefully on tiny devices */
+    box-sizing: border-box;
+    text-align: center;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   }
 
   .iconBox img {
@@ -579,11 +777,21 @@
   }
 
   .iconBox p {
+<<<<<<< HEAD
     font-size: 0.8125rem;
+=======
+    font-size: 0.8rem;
+>>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   }
 
   .rightFooter {
     text-align: center;
     margin-bottom: 25px;
+  }
+  .rightFooter h3 {
+    font-size: 0.85rem;
+  }
+  .rightFooter p {
+    font-size: 0.65rem;
   }
 }

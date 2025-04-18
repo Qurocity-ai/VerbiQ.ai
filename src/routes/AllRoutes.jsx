@@ -24,7 +24,9 @@ export default function ALLRoutes() {
       {/* Support Page Routing  */}
       <Route path="/globalhiring" element={<NativeHiringSupport />}></Route>
       <Route path="/language" element={<LangaugeAssesment />}></Route>
-      <Route path="/contractual" element={<ProjectBasedHiring />}></Route>
+      ContractualProject
+      <Route path="/contractual" element={<ContractualProject />}></Route>
+      
       <Route path="/fulltime" element={<FullHiring />}></Route>
       {/* Resources  */}
       <Route path="/global" element={<Global />}></Route>
