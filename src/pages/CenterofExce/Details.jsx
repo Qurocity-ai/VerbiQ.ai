@@ -48,7 +48,7 @@ function Details() {
             />
           </div>
         </div>
-        <div className="text-center sm:flex sm:items-center sm:pl-40 ">
+        <div className="text-center sm:flex sm:items-center sm:pl-40 sm:mt-6">
           <h1 className="text-[30px] font-semibold text-blue-950 sm:text-nowrap">
             {user.name}
           </h1>
@@ -56,7 +56,7 @@ function Details() {
             {user.languages_spoken?.[0]}
           </p>
           <p className="text-blue-800 sm:text-[25px] text-[20px] sm:pl-8 sm:text-nowrap">
-            <span className="text-[#0c0f6a] font-bold text-[20px] sm:text-[25px] ">
+            <span className="text-[#0c0f6a] font-extrabold text-[20px] sm:text-[25px] ">
               Proficiency :{" "}
             </span>
             {user.proficiency}
