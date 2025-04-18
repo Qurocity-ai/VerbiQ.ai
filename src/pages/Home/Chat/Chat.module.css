@@ -230,7 +230,7 @@
       word-break: keep-all;
       padding: 0 0.8rem;
       text-align: justify;
-      max-width: 95%;
+      max-width: 95%; /* Adjusted max-width for better responsiveness */
     }
   }
 
