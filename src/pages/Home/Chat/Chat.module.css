@@ -92,11 +92,7 @@
   justify-content: flex-end;
   margin-top: -1.25rem;
   margin-bottom: 1.25rem;
-<<<<<<< HEAD
-  padding-right: 4rem;
-=======
   padding-right: 1rem;
->>>>>>> 1cea6ce37d5b4d0760eefabc32972475ba443d17
   opacity: 0;
   animation: fadeInFast 0.15s ease-in forwards;
 }
