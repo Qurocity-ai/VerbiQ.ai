@@ -4,6 +4,7 @@ import ALLRoutes from "./routes/AllRoutes";
 import Footer from "./componants/Footer/Footer";
 
 const App = () => {
+ 
   return (
     <>
       <Navbar />
