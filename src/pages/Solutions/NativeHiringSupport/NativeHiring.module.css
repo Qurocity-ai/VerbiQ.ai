@@ -19,7 +19,7 @@
     
   font-size: 37px;
   color: #474760;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
 }
 
@@ -154,7 +154,7 @@
 
 .feature p {
     color: #888888;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 17px;
     text-align: justify;
     line-height: 23px;
@@ -229,7 +229,7 @@
   color: #555; */
 
   color: #888888;
-  font-weight: 300;
+  font-weight: 400;
   text-align: justify;
 }
 /* styles.module.css */
@@ -345,7 +345,7 @@
    
     color: rgb(136, 136, 136);
     font-size: 17px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
 
     
