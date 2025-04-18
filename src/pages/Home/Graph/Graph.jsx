@@ -107,7 +107,7 @@
 // export default Graph;import React from 'react';
 import styles from './graph.module.css';
 
-const Graph1 = () => {
+const Graph = () => {
   return (
     <div className={styles.container}>
       {/* LEFT PANE */}
@@ -119,11 +119,13 @@ const Graph1 = () => {
           <span className={`${styles.label} ${styles.cultural}`}>Cultural</span>
           <span className={`${styles.label} ${styles.vocabulary}`}>Vocabulary </span>
 
-          {/* Matrix */}
-          <div className={styles.matrixBox}>
-            <div className={styles.horizontalDivider}></div>
+          <div className={styles.horizontalDivider}></div>
             <div className={styles.verticalDivider}></div>
 
+
+          {/* Matrix */}
+          <div className={styles.matrixBox}>
+           
             {/* Top-left */}
             <div className={`${styles.column} ${styles.topLeft}`}>
               <p>Sentence Structure</p>
@@ -168,7 +170,7 @@ const Graph1 = () => {
         <div className={styles.iconRow}>
           <div className={styles.iconBox}>
             <img src="/assets/Graph1.png" alt="Icon 1" />
-            <p>Assessment by a<br /> Native Speaker</p>
+            <p>Assessment by a <br /> Native Speaker</p>
           </div>
           <div className={styles.iconBox}>
             <img src="/assets/Graph2.png" alt="Icon 2" />
@@ -196,4 +198,4 @@ const Graph1 = () => {
   );
 };
 
-export default Graph1;
+export default Graph;
