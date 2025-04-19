@@ -154,6 +154,11 @@
       padding: 12px 16px;
     }
     
+    .mobileMenuToggle {
+      display: none; /* hide by default */
+      cursor: pointer;
+    }
+    
   
   /* ✅ Mobile layout */
   @media screen and (max-width: 768px) {
@@ -162,6 +167,10 @@
       font-size: 2rem; 
     color: #000949;  
     }
+    .mobileMenuToggle {
+      display: block; /* show on mobile */
+    }
+  
 .navbar {
     padding: 0px 20px ;
     /* margin-bottom: -10px; */
@@ -172,21 +181,23 @@
       position: absolute;
       top: 73px;
       left: 0;
-      /* right: 0; */
       width: 100%;
       background: #ffffff;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
             flex-direction: column;
       gap: 1rem;
       padding: 1.2rem 1.5rem;
-      transform: translateY(-200%); 
-      transition: transform 0.3s ease-in-out;
-      z-index: 10;
+      transform: translateX(-100%);
+      transition: transform 0.4s ease-in-out;
+    
+      z-index: 100;
+    pointer-events: none;
+    }
+    .showMenu {
+      transform: translateX(0%);
+      pointer-events: auto;
     }
   
-    .showMenu {
-        transform: translateY(0%);
-      }
       .dropdownContainer > a::after {
         content: "▼";
         font-size: 1.2rem;
@@ -251,6 +262,13 @@
         padding-left: 4px;
         transition: all 0.2s ease;
       }
-    
+      .mobileMenuToggle {
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+      
     
   }
