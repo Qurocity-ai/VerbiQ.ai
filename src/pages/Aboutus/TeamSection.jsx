@@ -116,7 +116,7 @@ const teamMembers = [
     name: 'Laxmi Yadav',
     role: 'National Account Manager',
     department: 'Sales and Marketing, Client Relationships, Strategic Partnerships, Account Growth',
-    image:'/assets/laxmi.png.jpeg'
+    image:'/assets/laxmi.jpg'
   }
 ];
 
@@ -184,66 +184,9 @@ const founderCardVariant = {
 function TeamSection() {
   return (
     <section className={styles.teamSection}>
-      <h2 className='text-[#00046C] text-xl'>Meet Our Team</h2>
-      {/* <div className={`md:text-right text-center ${styles.teamCards}`}>
-        {teamMembers.map((member, idx) => (
-          <div className={`text-[#686868] ${styles.card}`} key={idx}>
-            <h4 className='text-[#000949] font-bold'>{member.name}</h4>
-            <p>{member.role}</p>
-            <p>{member.department}</p>
-            <hr className="w-70 h-px bg-[#686868] border-0" />
-            <p>{member.branch}</p>
-          </div>
-        ))}
-      </div> */}
-      <motion.div
-  className={`md:text-right text-center ${styles.teamCards}`}
-  variants={containerVariants}
-  initial="hidden"
-  whileInView="show"
-  // viewport={{ once: true }}
-  viewport={{ once: false, amount: 0.2 }}
->
-  {teamMembers.map((member, idx) => (
-    <motion.div
-      className={`text-[#686868] ${styles.card}`}
-      key={idx}
-      variants={cardVariants}
-  
-    >
-      {/*team member */}
-      <img src={member.image} alt={member.name} className={styles.image} />
-      <h4 className="text-[#000949] font-bold">{member.name}</h4>
-      <p className='text-[14px] '>{member.role}</p>
-      <br></br>
-      <hr className="w-70 h-px   bg-[#686868] border-0" />
-      <p className='text-[13px] ' >{member.department}</p>
-      
-    
-    </motion.div>
-  ))}
-</motion.div>
 
 
-      {/* <div className={styles.founderCards}>
-        {founders.map((founder, idx) => (
-          <div className={styles.founderCard} key={idx}>
-            <img src={founder.img} alt={founder.name} />
-            <div className={styles.founderInfo}>
-              <h4 className='font-bold'>
-                {founder.name} | <span>{founder.title}</span>
-              </h4>
-              <hr className="w-64 h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
-              <ul>
-                {founder.description.map((point, i) => (
-                  <li className='text-[#00046C]' key={i}>{point}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
-      </div> */}
-      <motion.div
+  <motion.div
   className={styles.founderCards}
   variants={founderContainer}
   initial="hidden"
@@ -279,6 +222,33 @@ function TeamSection() {
   ))}
 </motion.div>
 
+<h2 className='text-[#00046C] text-xl'>Meet Our Team</h2>
+      <motion.div
+  className={`md:text-right text-center ${styles.teamCards}`}
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="show"
+  // viewport={{ once: true }}
+  viewport={{ once: false, amount: 0.2 }}
+>
+  {teamMembers.map((member, idx) => (
+    <motion.div
+      className={`text-[#686868] ${styles.card}`}
+      key={idx}
+      variants={cardVariants}
+  
+    >
+      {/*team member */}
+      <img src={member.image} alt={member.name} className={styles.image} />
+      <h4 className="text-[#000949] font-bold">{member.name}</h4>
+      <p className='text-[14px] '>{member.role}</p>
+      <br></br>
+      <hr className="w-70 h-px   bg-[#686868] border-0" />
+      <p className='text-[13px] ' >{member.department}</p>
+    
+    </motion.div>
+  ))}
+      </motion.div>
     </section>
   );
 }

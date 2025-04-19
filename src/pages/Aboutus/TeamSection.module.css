@@ -94,6 +94,15 @@
     transition: all 0.3s ease;
     text-align: center;
   }
+  .image {
+    width: auto;
+    max-height: 100%; /* ya 250px depending on what looks good*/
+    height: 280px;
+    object-fit: cover;
+    /*margin-bottom: 12px;*/
+    margin: 0 auto 16px;
+    display: block;
+  }
 
   .card:hover {
     transform: translateY(-5px);
@@ -125,10 +134,14 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
   .founderCard img {
-    width: 140px;
-    height: auto;
+    width: 100%;
+    max-width: 240px;
+    height:220px;
     border-radius: 12px;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
+    margin: 0 auto 16px;
+    object-fit: contain;
+    display: block;
   }
   
   .founderInfo {
@@ -160,7 +173,7 @@
   
   .founderInfo ul li {
     margin-bottom: 8px;
-    list-style-type: disc;
+    list-style-type: none;
     font-size: 12px;
   }
   
