@@ -218,6 +218,7 @@ function TeamSection() {
       <br></br>
       <hr className="w-70 h-px   bg-[#686868] border-0" />
       <p className='text-[13px] ' >{member.department}</p>
+      
     
     </motion.div>
   ))}
