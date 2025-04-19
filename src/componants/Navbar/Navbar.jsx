@@ -2,11 +2,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; 
 import style from './Navbar.module.css';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross2 } from "react-icons/rx";
+
 
 export default function Navbar() {
-  const [showSolution, setShowSolution] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); 
-
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+   const [showSolution, setShowSolution] = useState(false);
   const [showResources, setShowResources] = useState(false);
 const resourcesDropdownRef = useRef(null);
 
@@ -17,17 +19,24 @@ const resourcesDropdownRef = useRef(null);
     setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
   };
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-    console.log("Menu toggled:", !menuOpen);
-  };
-  
+  const handleDropdownClick = (setter) => {     
+          setter((prev) => !prev);
+        };
+    
+       const closeMobileMenu = () => {          
+          setIsMobileMenuOpen(false);
+          setShowSolution(false);
+          setShowResources(false);
+        };
+      
   const dropdownRef = useRef(null);
   const navigate = useNavigate(); 
 
   const toggleSolutions = () => {
     setShowSolution(!showSolution);
   };
+
+  
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -63,13 +72,15 @@ const resourcesDropdownRef = useRef(null);
       </div>
     
    {/*  Hamburger icon only visible on small screens */}
+   <div className={style.mobileMenuToggle} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? <RxCross2 size={32} /> : <GiHamburgerMenu size={24} />}
+                  </div>
 
-   <div className={style.hamburger} onClick={toggleMenu}>
-        <i className="bx bx-menu"></i>
-      </div>
+
 
  {/* Solution with dropdown menu  */}
- <div className={`${style.navlinks} ${menuOpen ? style.showMenu : ''}`}>
+
+ <div className={`${style.navlinks} ${isMobileMenuOpen ? style.showMenu : ''}`}>
 
         <div   className={`${style.dropdownContainer} ${showSolution ? style.dropdownOpen : ''}`}
             onMouseEnter={() => setShowSolution(true)}
@@ -80,24 +91,24 @@ const resourcesDropdownRef = useRef(null);
           {showSolution && (
             <div className={`${style.dropdown} ${style.solutionsDropdown}`}>
               <div className={style.row}>
-                <div className={style.item} onClick={() =>{ setShowSolution(false);    setMenuOpen(false) ; navigate("/fulltime")}}>
+                <div className={style.item} onClick={() =>{ setShowSolution(false);    setIsMobileMenuOpen(false) ; navigate("/fulltime")}}>
                   <img src="/assets/FTHS.png" alt="Full Time" />
                   <Link to="/fulltime">Full Time Hiring Support</Link>
 
                 </div>
-                <div className={style.item} onClick={() =>{ setShowSolution(false);  setMenuOpen(false) ;navigate("/contractual")}}>
+                <div className={style.item} onClick={() =>{ setShowSolution(false);  setIsMobileMenuOpen(false) ;navigate("/contractual")}}>
                   <img src="/assets/CAPBS.png" alt="Contractual" />
                   <Link to="/contractual">Contractual and Project based Support</Link>
 
                 </div>
               </div>
               <div className={style.row}>
-                <div className={style.item} onClick={() => {setShowSolution(false);   setMenuOpen(false); navigate("/language")}}>
+                <div className={style.item} onClick={() => {setShowSolution(false);   setIsMobileMenuOpen(false); navigate("/language")}}>
                   <img src="/assets/LangAss.png" alt="Language" />
                   <Link to="/language">Language Assessments</Link>
 
                 </div>
-                <div className={style.item} onClick={() =>  {setShowSolution(false);   setMenuOpen(false); navigate("/globalhiring")}}>
+                <div className={style.item} onClick={() =>  {setShowSolution(false);   setIsMobileMenuOpen(false); navigate("/globalhiring")}}>
                   <img src="/assets/NativeHir.png" alt="Native Hiring" />
                   <Link to="/globalhiring">Global Hiring Support</Link>
 
@@ -107,7 +118,7 @@ const resourcesDropdownRef = useRef(null);
           )}
         </div>
          {/* Other Link  */}
-        <Link onClick={() => setMenuOpen(false)} to="/ceo">COE</Link>
+        <Link onClick={() => setIsMobileMenuOpen(false)} to="/ceo">COE</Link>
         {/* <Link onClick={() => setMenuOpen(false)} to="/resources">Resources</Link>
          */}
          {/* Resource with dropdown menu  */}
@@ -123,7 +134,7 @@ const resourcesDropdownRef = useRef(null);
     <div className={`${style.dropdown} ${style.resourcesDropdown}`}>
       <div className={style.item} onClick={() => {
         setShowResources(false);
-        setMenuOpen(false);
+        setIsMobileMenuOpen (false);
         navigate("/global");
       }}>
         {/* <img src="/assets/global.png" alt="Global" /> */}
@@ -132,7 +143,7 @@ const resourcesDropdownRef = useRef(null);
 
       <div className={style.item} onClick={() => {
         setShowResources(false);
-        setMenuOpen(false);
+        setIsMobileMenuOpen(false);
         navigate("/blog");
       }}>
         {/* <img src="/assets/blog.png" alt="Blog" /> */}
@@ -145,7 +156,6 @@ const resourcesDropdownRef = useRef(null);
 
         <Link onClick={() => setMenuOpen(false)} to="/aboutUs">About Us</Link>
       </div>
-      
     </nav>
   );
 }
