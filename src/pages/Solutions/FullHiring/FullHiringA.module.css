@@ -33,9 +33,9 @@
 }
 
 /* Bold Text */
-.boldText {
-  font-weight: bold;
-  color: #686868;
+.boldText{
+  font-weight: bolder;
+  color: #AD181B;
   font-size: 23px;
 }
 

@@ -102,19 +102,21 @@ const teamMembers = [
     name: 'Shubham Paypare',
     role: 'Deputy General Manager',
     department: 'Digital Marketing & Growth, Development',
-    
+    image:'/assets/Shubham.png.jpeg'
   },
+  
   {
     name: 'Aditya Muthane',
     role: 'Founding Team Member',
     department: 'Product, Pre-Sales, Business Analytics, Strategy',
+    image:'/assets/Aditya.png.jpeg'
    
   },
   {
     name: 'Laxmi Yadav',
     role: 'National Account Manager',
     department: 'Sales and Marketing, Client Relationships, Strategic Partnerships, Account Growth',
-    
+    image:'/assets/laxmi.png.jpeg'
   }
 ];
 
@@ -141,13 +143,13 @@ const founders = [
   },
   {
     name: 'Rahul Singh ',
-    title: 'Founder and  COO',
+    title: 'Co-Founder & COO',
     description: [
-      '20+ years in Telecom with a focus on people, culture, and learning',
-      'Holds degrees from IIM Ahmedabad & XLRI Jamshedpur',
-      'Championing a collaborative, high-performance work culture'
+      'Corporates leader with a focus on operational excellence process efficiency',
+      'Expert in business planning and account management',
+      'Driving a collaborative,service-focused culture at Recrutory'
     ],
-    img: '/assets/Team2.png',
+    img: '/assets/image 254.png',
   }
 ];
 const containerVariants = {
@@ -207,8 +209,10 @@ function TeamSection() {
       className={`text-[#686868] ${styles.card}`}
       key={idx}
       variants={cardVariants}
+  
     >
-     
+      {/*team member */}
+      <img src={member.image} alt={member.name} className={styles.image} />
       <h4 className="text-[#000949] font-bold">{member.name}</h4>
       <p className='text-[14px] '>{member.role}</p>
       <br></br>

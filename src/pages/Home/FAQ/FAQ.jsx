@@ -48,7 +48,7 @@ function FAQ() {
                 aria-controls={`faq-answer-${index}`}
               >
                 <span
-                  className={`text-wrap flex justify-between items-center font-medium  w-full sm:text-[17px] text-[12px] transition-all duration-700 ${
+                  className={`text-wrap flex justify-between items-center font-medium  w-full sm:text-[17px] text-[13px] transition-all duration-700 ${
                     activeIndex === index ? "text-[#161a85]" : "text-[#969696]"
                   }`}
                 >
@@ -82,7 +82,7 @@ function FAQ() {
                   activeIndex === index ? "max-h-96" : "max-h-0"
                 }`}
               >
-                <p className="text-[#1015b4] opacity-100 sm:text-[15px] text-[9px]  ">
+                <p className="text-[#1015b4] opacity-100 sm:text-[15px] text-[12px] pb-4">
                   {item.answer}
                 </p>
               </div>

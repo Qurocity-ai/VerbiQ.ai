@@ -22,7 +22,7 @@ export default function ALLRoutes() {
       <Route path="/aboutUs" element={<Aboutus />}></Route>
       {/* <Route path="/resources" element={<UnderConstruction/>}></Route> */}
       {/* Support Page Routing  */}
-      <Route path="/native" element={<NativeHiringSupport />}></Route>
+      <Route path="/globalhiring" element={<NativeHiringSupport />}></Route>
       <Route path="/language" element={<LangaugeAssesment />}></Route>
       ContractualProject
       <Route path="/contractual" element={<ContractualProject />}></Route>
