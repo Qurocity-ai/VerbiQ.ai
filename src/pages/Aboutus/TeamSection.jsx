@@ -116,7 +116,7 @@ const teamMembers = [
     name: 'Laxmi Yadav',
     role: 'National Account Manager',
     department: 'Sales and Marketing, Client Relationships, Strategic Partnerships, Account Growth',
-    image:'/assets/laxmi.png.jpeg'
+    image:'/assets/laxmi.jpg'
   }
 ];
 
@@ -277,7 +277,6 @@ function TeamSection() {
     </motion.div>
   ))}
 </motion.div>
-
     </section>
   );
 }
