@@ -112,10 +112,9 @@
 @media (max-width: 768px) {
   .container {
     height: auto;
-    padding: 0 10px;
-    margin-left: 0;
-    width: 95%;
-    margin: auto;
+    max-width: 100%;
+    width: calc(100% - 1rem); /* Leaves 1rem space on each side */
+    margin: 0 auto;
   }
 
   .item {
