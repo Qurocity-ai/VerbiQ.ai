@@ -1,78 +1,4 @@
-/* .team-section {
-    text-align: center;
-    padding: 40px 20px;
-  }
-  
-  .team-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .card {
-    background-color:#F6F8FF;
-    padding: 20px;
-    border-radius: 8px;
-    width: 320px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  
-  .founder-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 50px 20px;
-  }
-  
-  .founder-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 320px;
-    text-align: left;
-    color: #00046C;
-  }
-  
-  .founder-card img {
-    width: 140px;
-    height: auto;
-    border-radius: 12px;
-    margin-bottom: 15px;
-  }
-  
-  .founder-info {
-    background-color:#F6F8FF ;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    color: #00046C;
-  }
-  
-  .founder-info h4 {
-    font-size: 16px;
-    margin-bottom: 10px;
-   
-  }
-  
-  .founder-info h4 span {
-    color: inherit;
-    font-weight: 500;
-  }
-  
-  .founder-info ul {
-    padding-left: 20px;
-    color:#00046C;
-  }
-  
-  .founder-info ul li {
-    margin-bottom: 8px;
-    list-style-type: disc;
-    font-size: 14px;
-    /* color: #333; */
-  /* } */
+
   .teamSection {
     text-align: center;
     padding: 40px 20px;
@@ -175,5 +101,11 @@
     margin-bottom: 8px;
     list-style-type: none;
     font-size: 12px;
+  }
+  .linkedin{
+    width: 24px;
+    height: 24px;
+     float: right;
+     margin-left: 10px;
   }
   
