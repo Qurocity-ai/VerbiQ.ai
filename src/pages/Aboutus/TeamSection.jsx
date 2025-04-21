@@ -97,8 +97,10 @@ const founderCardVariant = {
 
 function TeamSection() {
   return (
-     <>
+    <section className={styles.teamSection}>
       {/* Founders Section FIRST */}
+      
+      <h2 className="text-[#00046C] text-xl">Meet Our Team</h2>
      
       <motion.div
         className={styles.founderCards}
@@ -144,8 +146,7 @@ function TeamSection() {
       </motion.div>
 
       {/* Team Members Section SECOND */}
-      <section className={styles.teamSection}>
-      <h2 className="text-[#00046C] text-xl">Meet Our Team</h2>
+     
 
       <motion.div
         className={`md:text-right text-center ${styles.teamCards}`}
@@ -179,7 +180,7 @@ function TeamSection() {
         ))}
       </motion.div>
     </section>
-    </>
+   
   );
 }
 export default TeamSection;
