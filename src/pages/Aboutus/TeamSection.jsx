@@ -147,7 +147,6 @@ function TeamSection() {
       <section className={styles.teamSection}>
       <h2 className="text-[#00046C] text-xl">Meet Our Team</h2>
 
-
       <motion.div
         className={`md:text-right text-center ${styles.teamCards}`}
         variants={containerVariants}
