@@ -1,7 +1,7 @@
 
 
 
-
+ 
  /* .container {
   position: relative;
   width: 90%;
@@ -9,31 +9,31 @@
   margin-left: 100px;
   height: auto;
   min-height: 450px;
-
+ 
   background-color: #F8FAFF;
   padding-bottom: 30px;
 }
-
-
-
+ 
+ 
+ 
 .scrollContainer {
   display: flex;
   gap: 20px;
   transition: transform 1s ease-in-out;
 }
-
+ 
 .mainheading {
   text-align: center;
   margin-bottom: 30px;
   font-size: 26px;
   color: #02586F;
 }
-
+ 
 .spanheading {
   color: #AD181B;
   font-weight: bold;
 }
-
+ 
 .item {
   flex: 0 0 450px;
   height: auto;
@@ -45,9 +45,9 @@
   box-sizing: border-box;
   background-color: #F8FAFF;
 }
-
-
-
+ 
+ 
+ 
 .heading {
   font-size: 26px;
   font-weight: 600;
@@ -56,7 +56,7 @@
  
   margin-bottom: 20px;
 }
-
+ 
 .contentList {
   list-style-type: none;
   font-size: 20px;
@@ -67,43 +67,43 @@
   margin: 0;
   width: 100%;
 }
-
+ 
 .listItem {
   padding: 8px 0;
 }
-
+ 
 .listItem:last-child {
   border-bottom: none;
 }
-
+ 
  .highlightNumber {
   color: #02586F;
   font-weight: bold;
 }
-
-
+ 
+ 
 .highlighted {
   background-color: #cce9f9;
   transition: background-color 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
-
-
+ 
+ 
+ 
 .highlighted {
   background-color: #DFEAF0 !important;
   transition: background-color 0.3s ease;
 }
-
+ 
 .highlighted {
   background-color: #DFEAF0 !important;
   transition: background-color 0.3s ease;
 }
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
 @media (max-width: 768px) {
   .container {
     height: auto;
@@ -112,73 +112,73 @@
     width: 95%;
     margin: auto;
   }
-
+ 
   .item {
     flex: 0 0 340px !important;
     width: 80% !important;
     min-height: 270px;
     margin: 0 auto;
   }
-
+ 
   .scrollContainer {
     gap: 0;
     padding: 0;
   }
-
+ 
   .heading {
     font-size: 19px;
     padding: 0 10px;
   }
-
+ 
   .contentList {
     font-size: 16px;
     padding: 0 10px;
   }
-
+ 
   .mainheading {
     font-size: 18px;
   }
 }
  */
-
-
-
-
-
-
-
-.container {
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ .container {
   position: relative;
+  padding: 1rem;
   width: 90%;
   overflow-x: hidden;
-  margin-left: 100px;
   height: auto;
   min-height: 450px;
-
+ margin: 0 auto;
   background-color: #F8FAFF;
   padding-bottom: 30px;
 }
-
-
-
+ 
+ 
+ 
 .scrollContainer {
   display: flex;
   gap: 20px;
   transition: transform 1s ease-in-out;
 }
-
+ 
 .mainheading {
   text-align: center;
   margin-bottom: 30px;
   font-size: 26px;
   color: #02586F;
 }
-
+ 
 .spanheading {
   color: #AD181B;
   font-weight: bold;
 }
-
+ 
 .item {
   flex: 0 0 450px;
   height: auto;
@@ -190,9 +190,9 @@
   box-sizing: border-box;
   background-color: #F8FAFF;
 }
-
-
-
+ 
+ 
+ 
 .heading {
   font-size: 26px;
   font-weight: 600;
@@ -201,7 +201,7 @@
  
   margin-bottom: 20px;
 }
-
+ 
 .contentList {
   list-style-type: none;
   font-size: 19px;
@@ -212,63 +212,75 @@
   margin: 0;
   width: 100%;
 }
-
+ 
 .listItem {
   padding: 8px 0;
 }
-
+ 
 .listItem:last-child {
   border-bottom: none;
 }
-
+ 
  .highlightNumber {
   color: #02586F;
   font-weight: bold;
 }
-
-
+ 
+ 
 .highlighted {
   background-color: #cce9f9;
   transition: background-color 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
-
-
+ 
+ 
+ 
 .highlighted {
   background-color: #DFEAF0 !important;
   transition: background-color 0.3s ease;
 }
-
+ 
 .highlighted {
   background-color: #DFEAF0 !important;
   transition: background-color 0.3s ease;
 }
-
-
-
-
-
+ 
+ 
+ 
+ 
 @media (max-width: 768px) {
   .container {
-    height: auto;
-    padding: 0 10px;
-    margin-left: 0;
-    width: 95%;
-    margin: auto;
+    width: 100%;
+    padding: 0 10px; /* Padding for centering */
+    margin: 0 auto;
+    background-color: #F8FAFF;
+  }
+
+  .scrollContainer {
+    display: flex;
+    gap: 0; /* Remove extra gaps between items */
+    justify-content: center; /* Center the scroll container */
+    transition: transform 0.5s ease-in-out;
+    margin: 0 auto; /* Ensures it's centered in the viewport */
   }
 
   .item {
-    flex: 0 0 340px !important;
-    width: 80% !important;
+    flex: 0 0 340px !important; /* Adjust the item width for mobile */
+    width: 80% !important; /* Ensures the items fit well in mobile view */
     min-height: 250px;
     margin: 0 auto;
     padding: 15px;
   }
 
-  .scrollContainer {
-    gap: 0;
-    padding: 0;
+  .navigationContainer {
+    margin-top: 20px;
+    gap: 15px;
+  }
+
+  .navButton {
+    width: 45px;
+    margin-top: 10px;
+    font-size: 30px; /* Adjust the button size for mobile */
   }
 
   .heading {
@@ -291,6 +303,42 @@
   }
 }
 
+@media (max-width: 480px) {
+  .scrollContainer {
+    justify-content: center; /* Ensures it's still centered on smaller devices */
+    width: 100%; /* Ensure the container stretches across the viewport */
+  }
+
+  .item {
+    flex: 0 0 300px !important; /* Adjust the item width for very small screens */
+    width: 90% !important; /* Ensures it fits the small screen */
+    min-height: 200px; /* Reduced height for better fit */
+    padding: 10px;
+  }
+
+  .navButton {
+    width: 40px;
+    font-size: 28px; /* Slightly smaller nav button on very small screens */
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .contentList {
+    font-size: 14px;
+  }
+
+  .mainheading {
+    font-size: 16px;
+  }
+
+  .listItem {
+    padding: 4px 0;
+  }
+}
+
+ 
 .navigationContainer {
   display: flex;
   justify-content: center;
@@ -299,7 +347,7 @@
   margin-top: 40px;
   padding: 0 20px;
 }
-
+ 
 .navButton {
   background: transparent;
   border: none;
@@ -312,33 +360,35 @@
   align-items: center;
   justify-content: center;
 }
-
+ 
 .navButton:hover {
   color: #02586F;
   transform: scale(1.2);
 }
-
+ 
 .navButton:active {
   color: #AD181B;
   transform: scale(0.9);
 }
-
+ 
 @media (max-width: 768px) {
   .navigationContainer {
     margin-top: 20px;
     gap: 15px;
   }
-  
+ 
   /* .navButton {
     font-size: 30px;
   } */
-
+ 
   .navButton{
     width: 45px;
     margin-top: 10px;
   }
-
-
+ 
+ 
 }
-
-
+ 
+ 
+ 
+ 
