@@ -155,14 +155,11 @@
 
 // export default Details;
 
-
 import React, { useEffect, useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 // import styles from "./Details.module.css"
-import styles from "./Details.module.css"
-
-
+import styles from "./Details.module.css";
 
 const Details = () => {
   const { id } = useParams(); // Get user ID from URL
@@ -198,89 +195,110 @@ const Details = () => {
   const workExperience = user.work_experience || [];
 
   return (
-    <div className={styles.main} >
-    {/* <img src="/assets/RecutoryVerbiqLogo.png" alt="Logo" className={styles.logo} /> */}
-    <div className={styles.detailsContainer}>
-      {/* Left Section: User Details */}
-      
-      <div className={styles.leftSection}>
-        <div className={styles.detailsCard}>
-          <div className={styles.top}>
-          <h2 className={styles.name}>
-            {user.name} | <span>Total work experience: {user.total_experience} Years</span>
-          </h2>
-          </div>
-          <div className={styles.cDetails}>
-          <p className={styles.proficiency}>
-            <strong>Proficiency:</strong> {frenchProficiency.level} | {frenchProficiency.certification}
-          </p>
+    <div className={styles.main}>
+      {/* <img src="/assets/RecutoryVerbiqLogo.png" alt="Logo" className={styles.logo} /> */}
+      <div className={styles.detailsContainer}>
+        {/* Left Section: User Details */}
 
-          <p className={styles.languageSkills}>
-            <strong>French Language Skills:</strong> Spoken - {skills.spoken || "N/A"} | Vocabulary ({skills.vocabulary || "N/A"}) | Grammar ({skills.grammar || "N/A"}) | Fluency ({skills.fluency || "N/A"})
-          </p>
+        <div className={styles.leftSection}>
+          <div className={styles.detailsCard}>
+            <div className={styles.top}>
+              <h2 className={styles.name}>
+                {user.name} |{" "}
+                <span>
+                  Total work experience: {user.total_experience} Years
+                </span>
+              </h2>
+            </div>
+            <div className={styles.cDetails}>
+              <p className={styles.proficiency}>
+                <strong>Proficiency:</strong> {frenchProficiency.level} |{" "}
+                {frenchProficiency.certification}
+              </p>
 
-          <h3 className={styles.sectionTitle}>Professional Summary</h3>
-          <p className={styles.summary}>{user.professional_summary || "No summary available"}</p>
+              <p className={styles.languageSkills}>
+                <strong>French Language Skills:</strong> Spoken -{" "}
+                {skills.spoken || "N/A"} | Vocabulary (
+                {skills.vocabulary || "N/A"}) | Grammar (
+                {skills.grammar || "N/A"}) | Fluency ({skills.fluency || "N/A"})
+              </p>
 
-          <h3 className={styles.sectionTitle}>Skills & Proficiency</h3>
-          <ul>
-            {user.skills?.length > 0 ? user.skills.map((skill, index) => (
-              <li key={index}>{skill}</li>
-            )) : <li>No skills listed</li>}
-          </ul>
+              <h3 className={styles.sectionTitle}>Professional Summary</h3>
+              <p className={styles.summary}>
+                {user.professional_summary || "No summary available"}
+              </p>
 
-          <h3 className={styles.sectionTitle}>Work Experience</h3>
-          {workExperience.length > 0 ? (
-            workExperience.map((job, index) => (
-              <div key={index} className={styles.job}>
-                <h4>{job.company}</h4>
-                <p><strong >Role:</strong> {job.role}</p>
-                <ul >
-                  {job.responsibilities?.map((resp, i) => (
-                    <li key={i}>{resp}</li>
+              <h3 className={styles.sectionTitle}>Skills & Proficiency</h3>
+              <ul>
+                {user.skills?.length > 0 ? (
+                  user.skills.map((skill, index) => (
+                    <li key={index}>{skill}</li>
+                  ))
+                ) : (
+                  <li>No skills listed</li>
+                )}
+              </ul>
+
+              <h3 className={styles.sectionTitle}>Work Experience</h3>
+              {workExperience.length > 0 ? (
+                workExperience.map((job, index) => (
+                  <div key={index} className={styles.job}>
+                    <h4>{job.company}</h4>
+                    <p>
+                      <strong>Role:</strong> {job.role}
+                    </p>
+                    <ul>
+                      {job.responsibilities?.map((resp, i) => (
+                        <li key={i}>{resp}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))
+              ) : (
+                <p>No work experience listed</p>
+              )}
+
+              <h3 className={styles.sectionTitle}>Language Certifications</h3>
+              {certifications.length > 0 ? (
+                <ul>
+                  {certifications.map((cert, index) => (
+                    <li key={index}>
+                      {cert.name} ({cert.level}) - {cert.institution}
+                    </li>
                   ))}
                 </ul>
-              </div>
-            ))
-          ) : (
-            <p>No work experience listed</p>
-          )}
+              ) : (
+                <p>No certifications listed</p>
+              )}
 
-          <h3 className={styles.sectionTitle}>French Certifications</h3>
-          {certifications.length > 0 ? (
-            <ul>
-              {certifications.map((cert, index) => (
-                <li key={index}>
-                  {cert.name} ({cert.level}) - {cert.institution}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No certifications listed</p>
-          )}
-
-<button className={styles.backButton} onClick={() => navigate(-1)}>Go Back</button>
+              <button
+                className={styles.backButton}
+                onClick={() => navigate(-1)}
+              >
+                Go Back
+              </button>
+            </div>
           </div>
+        </div>
 
-          
+        {/* Right Section: Profile Picture */}
+        <div className={styles.rightSection}>
+          <div className={styles.profileCard}>
+            <img
+              src={user.profile_image || "https://via.placeholder.com/150"}
+              alt={user.name}
+              className={styles.profileImage}
+            />
+            <h3 className={styles.profileName}>{user.name}</h3>
+            <p className={styles.profileLanguage}>
+              <em>
+                Languages:{" "}
+                {user.languages_spoken?.join(", ") || "Not specified"}
+              </em>
+            </p>
+          </div>
         </div>
       </div>
-
-      {/* Right Section: Profile Picture */}
-      <div className={styles.rightSection}>
-        <div className={styles.profileCard}>
-          <img
-            src={user.profile_image || "https://via.placeholder.com/150"}
-            alt={user.name}
-            className={styles.profileImage}
-          />
-          <h3 className={styles.profileName}>{user.name}</h3>
-          <p className={styles.profileLanguage}>
-            <em>Languages: {user.languages_spoken?.join(", ") || "Not specified"}</em>
-          </p>
-        </div>
-      </div>
-    </div>
     </div>
   );
 };

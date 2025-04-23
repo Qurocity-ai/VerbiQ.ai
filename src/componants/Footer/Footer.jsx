@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="w-full">
+    <footer className="w-ful">
       <div className="flex sm:justify-evenly justify-center shadow-[0_-3px_8px_rgba(0,0,0,0.1)] items-center sm:flex-row flex-col w-full pt-5 sm:pb-10">
         <img
           src="./assets/Group 514676.png"
@@ -58,15 +58,11 @@ function Footer() {
               />
               <span className="text-[#00046C]">Instagram</span>
             </a>
-            <a
-              href="https://www.instagram.com/recrutory/?igsh=MXkxM3Y3am1qYTdhbg%3D%3D#"
-              target="_blank"
-              className="flex items-center sm:pt-2 sm:-ml-2"
-            >
+            <a href="#" target="_blank" className="flex items-center sm:pt-2">
               <img
-                src="https://img.freepik.com/premium-vector/social-media-icon-illustration-facebook-facebook-icon-vector-illustration_561158-2134.jpg?w=2000"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/1200px-Facebook_icon.svg.png"
                 alt="facebook-icon"
-                className="w-11 h-11 mr-2"
+                className="w-7 h-7 mr-3"
               />
               <span className="text-[#00046C]">Facebook</span>
             </a>
