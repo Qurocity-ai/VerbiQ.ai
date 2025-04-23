@@ -58,7 +58,7 @@
     transition: color 0.3s;
 }
 
-/* ✅ Add Skyblue underline on hover */
+/* ✅ Add Skyblue underline on hover  */
 .navlinks a:hover {
     text-decoration: underline 3px solid #007bff;
 }
@@ -85,13 +85,14 @@
     gap: 15px ;
     z-index: 1000;
 }
+/* Css */
 .solutionsDropdown {
   left: 50%;
   transform: translateX(-50%);
 }
 
 
-/* Flex Row */
+/* Flex Row CSS  */
 .row {
     display: flex;
     justify-content: space-between;
