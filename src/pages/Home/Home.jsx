@@ -7,6 +7,7 @@ import CarousalOne from "./Carousal/CarousalOne";
 import Chat from "./Chat/Chat";
 import Graph from "./Graph/Graph";
 import FAQ from "./FAQ/FAQ";
+import FeedbackSection from './Feedback/FeedbackSection';
 
 const Home = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const Home = () => {
  <CarousalOne/>
  <Chat/>
  <Graph/>
+ <FeedbackSection/>
  <FAQ/>
  
 </>
