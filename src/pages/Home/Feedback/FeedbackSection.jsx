@@ -61,84 +61,84 @@ const FeedbackSection = () => {
           </h2>
           <div className="w-24 h-1 bg-[#15647A] mx-auto rounded-full"></div>
         </div>
-  
-
         {feedback.length === 0 ? (
           <div className="bg-white rounded-xl shadow-md p-8 text-center max-w-lg mx-auto">
             <MessageCircle className="w-12 h-12 text-blue-500 mx-auto mb-4" />
             <p className="text-lg text-gray-600">No feedback available yet. Be the first to share your experience!</p>
           </div>
         ) : (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {feedback.map((item, index) => (
-      <div
-  key={index}
-  className="bg-white rounded-xl shadow-sm overflow-hidden h-auto transition-all duration-300 hover:shadow-lg group relative cursor-pointer"
-  style={{ 
-    animation: `fadeIn 0.5s ease-out ${0.1 * index}s both`,
-    opacity: 0
-  }}
->
-        {/* Animated background effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
-        <div className="p-6 h-full flex flex-col relative">
-          {/* User Info */}
-          <div className="flex items-center mb-4">
-            <div className="flex-shrink-0 bg-blue-100 rounded-full p-2 transition-colors duration-300 group-hover:bg-blue-200">
-              <User className="h-6 w-6 text-blue-600 transition-colors duration-300 group-hover:text-blue-700" />
-            </div>
-            <div className="ml-3">
-              <h3 className="text-lg font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
-                {item.name || 'Anonymous'}
-              </h3>
-              {item.rating && (
-                <div className="flex items-center mt-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className={`h-4 w-4 transition-colors ${i < item.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+{feedback.map((item, index) => (
+  <div
+    key={index}
+    className="bg-white rounded-xl shadow-sm overflow-hidden h-auto transition-all duration-300 hover:shadow-lg group relative cursor-pointer"
+    style={{ 
+      animation: `fadeIn 0.5s ease-out ${0.1 * index}s both`,
+      opacity: 0
+    }}
+  >
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    
+    <div className="p-6 h-full flex flex-col relative">
+      {/* Rating Stars */}
+ <div className="flex p-4  gap-2">
+            <div className="flex items-center">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="h-4 w-4 text-yellow-400 fill-current "
+                />
+              ))}
+            </div> 
           </div>
-          
-          {/* Feedback Text */}
-          <div className="relative flex-grow mb-4">
-  <div className="text-gray-600 pl-6 relative">
-    <MessageCircle className="w-6 h-6 text-blue-200 absolute -left-1 -top-1" />
-    <div className="relative z-10">
-      <p className="text-justify line-clamp-4 transition-all duration-300 group-hover:line-clamp-none group-hover:pb-4">
-        "{item.feedback}"
-      </p>
-      <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white via-white/80 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"></div>
-    </div>
-  </div>
-</div>
-          
-          {/* Date */}
-          {item.date && (
-            <div className="flex items-center mt-auto pt-3 border-t border-gray-100 text-sm text-gray-500 group-hover:text-gray-600 transition-colors">
-              <Calendar className="w-4 h-4 mr-1" />
-              {new Date(item.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-              })}
-            </div>
-          )}
+
+      {/* Feedback Text */}
+      <div className="relative flex-grow mb-4">
+        <div className="text-gray-600 pl-6 relative">
+          <MessageCircle className="w-6 h-6 text-blue-200 absolute -left-1 -top-1" />
+          <div className="relative z-10">
+            <p className="text-justify italic line-clamp-4 transition-all duration-300 group-hover:line-clamp-none group-hover:pb-4">
+              "{item.feedback}"
+            </p>
+            <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white via-white/80 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+          </div>
         </div>
       </div>
-    ))}
+
+      {/* User Info & Date */}
+      <div className="mt-auto pt-4 border-t border-gray-100">
+        <div className="flex items-center">
+          <div className="flex-shrink-0 bg-blue-100 rounded-full p-2">
+            <User className="h-6 w-6 text-blue-600" />
+          </div>
+          <div className="ml-3">
+            <h3 className="text-lg font-semibold text-gray-800">
+              {item.name || 'Anonymous'}
+            </h3>
+            {item.date && (
+              <div className="flex items-center text-sm text-gray-500 mt-1">
+                <Calendar className="w-4 h-4 mr-1" />
+                {new Date(item.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+))}
+</div>
 )}
-</div>    
+</div>
+
 <style jsx>{`
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
 }
 `}</style>
 </section>
