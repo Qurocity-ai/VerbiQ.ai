@@ -1,0 +1,134 @@
+
+
+  .carouselWrapper {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9fafb;
+    border-radius: 12px;
+  }
+  
+  .carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    
+    width: 100%;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  .carousel::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .carousel::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+  
+  .card {
+    flex: 0 0 350px;
+    background: #ffffff;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 30px;
+    max-width: 90vw;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 450px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+
+  
+  .stars  {
+    
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  
+  .message {
+    font-size: 15px;
+    color: #111827;
+    flex-grow: 1;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    max-height: 150px;
+    font-style: initial;
+  }
+
+  
+  .name {
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .date {
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+  }
+  
+  .arrow {
+    background-color: #e5e7eb;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .arrow:hover:not(:disabled) {
+    background-color: #f3f4f6;
+  }
+  
+  .arrow:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive design for mobile */
+  @media (max-width: 768px) {
+    .carousel {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      flex: 0 0 90%;  /* Increase card width to take up more space on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel {
+      gap: 10px;  /* Smaller gap between cards */
+    }
+  
+    .card {
+      flex: 0 0 100%;  /* Cards take up full width on small screens */
+    }
+  
+    .arrow {
+      font-size: 14px;  /* Make arrows smaller on small screens */
+      padding: 6px 10px;  /* Reduce arrow padding */
+    }
+  }
+  
