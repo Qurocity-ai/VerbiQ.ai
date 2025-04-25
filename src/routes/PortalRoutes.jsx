@@ -20,6 +20,8 @@ import Contractual from '../portalpages/TypeofEmployement/Contractual/Contractua
 export default function PortalRoutes() {
   return (
     <Routes>
+        {/* folder wise routing */}
+
         {/* TypeofEmployement */}
         <Route path="/typeofemployement" element={<TypeofEmployement/>}/>
         <Route path="/freelancer" element={<FreeLancer/>}/>
