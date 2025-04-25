@@ -83,14 +83,57 @@ function Registration() {
       <div className="max-w-4xl w-full p-8">
         <div>
           <img src="\assets\virbiqlogo.png" className="pb-7 h-20 w-52" />
-          <p className="mt-2 text-left text-sm text-red-600 font-semibold">
-            Candidate Registration
-            <hr className="-mt-2.5 ml-44 text-gray-200" />
-          </p>
         </div>
         <form className="mt-8 space-y-6 ">
           <div className=" space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+            <p className="mt-2 text-left text-sm text-[#C92A2D] font-semibold">
+              Candidate Credential
+              <hr className="-mt-2.5 ml-44 text-gray-200" />
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mt-8">
+              <div>
+                <input
+                  id="Email"
+                  name="Email"
+                  type="email"
+                  required
+                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300  text-gray-900 placeholder-gray-300 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  placeholder="Email-ID "
+                />
+                <span className="text-[#C92A2D] sm:ml-[75px] ml-[95px]">*</span>
+              </div>
+              <div>
+                <input
+                  id="Password"
+                  name="Password"
+                  type="password"
+                  required
+                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  placeholder="Enter Password "
+                />
+                <span className="text-[#C92A2D] sm:ml-[130px] ml-[144px]">
+                  *
+                </span>
+              </div>
+              <div>
+                <input
+                  id="ConfirmPassword"
+                  name="ConfirmPassword"
+                  type="password"
+                  required
+                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  placeholder="Confirm Password"
+                />
+                <span className="text-[#C92A2D] sm:ml-[139px] ml-[80px]">
+                  *
+                </span>
+              </div>
+            </div>
+            <p className="mt-10 text-left text-sm text-[#C92A2D] font-semibold">
+              Candidate Registration
+              <hr className="-mt-2.5 ml-44 text-gray-200" />
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mt-8">
               <div>
                 <input
                   id="fullName"
@@ -100,7 +143,7 @@ function Registration() {
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300  text-gray-900 placeholder-gray-300 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Full Name "
                 />
-                <span className="text-red-700 sm:ml-[85px] ml-[95px]">*</span>
+                <span className="text-[#C92A2D] sm:ml-[85px] ml-[95px]">*</span>
               </div>
               <div>
                 <input
@@ -111,7 +154,9 @@ function Registration() {
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Contact Number "
                 />
-                <span className="text-red-700 sm:ml-[130px] ml-[144px]">*</span>
+                <span className="text-[#C92A2D] sm:ml-[130px] ml-[144px]">
+                  *
+                </span>
               </div>
               <div>
                 <input
@@ -122,7 +167,7 @@ function Registration() {
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Email ID "
                 />
-                <span className="text-red-700 sm:ml-[70px] ml-[80px]">*</span>
+                <span className="text-[#C92A2D] sm:ml-[70px] ml-[80px]">*</span>
               </div>
               <div>
                 <input
@@ -133,7 +178,7 @@ function Registration() {
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Location"
                 />
-                <span className="text-red-700 sm:ml-[70px] ml-[80px]">*</span>
+                <span className="text-[#C92A2D] sm:ml-[70px] ml-[80px]">*</span>
               </div>
               <div>
                 <input
@@ -144,7 +189,7 @@ function Registration() {
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Current CTC"
                 />
-                <span className="text-red-700 sm:ml-24 ml-28">*</span>
+                <span className="text-[#C92A2D] sm:ml-24 ml-28">*</span>
               </div>
 
               <div>
@@ -172,7 +217,7 @@ function Registration() {
                     className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                     placeholder="Native Language "
                   />
-                  <span className="text-red-700 sm:ml-32 ml-36">*</span>
+                  <span className="text-[#C92A2D] sm:ml-32 ml-36">*</span>
                 </div>
                 <div>
                   <select
@@ -225,7 +270,7 @@ function Registration() {
                         onClick={() => {
                           handleRemoveLanguage(lang.id);
                         }}
-                        className="ml-2 p-2 text-white rounded-md bg-red-700"
+                        className="ml-2 p-2 text-white rounded-md bg-[#B0181B]"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -260,7 +305,7 @@ function Registration() {
                     className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                     placeholder="Foreign Language "
                   />
-                  <span className="text-red-700 sm:ml-36 ml-38">*</span>
+                  <span className="text-[#C92A2D] sm:ml-36 ml-38">*</span>
                 </div>
                 <div>
                   <select
@@ -313,7 +358,7 @@ function Registration() {
                         onClick={() => {
                           handleRemoveForeignLanguage(lang.id);
                         }}
-                        className="ml-2 p-2 text-white rounded-md bg-red-700"
+                        className="ml-2 p-2 text-white rounded-md bg-[#B0181B]"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -337,9 +382,9 @@ function Registration() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-blue-700">
+            <label className="block text-sm font-medium text-[#002279]">
               What are the roles that you have experience in?{" "}
-              <span className="text-red-700 font-bold text-lg">*</span>
+              <span className="text-[#C92A2D] font-bold text-lg">*</span>
             </label>
             <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               <div className=" flex items-center">
@@ -354,7 +399,7 @@ function Registration() {
 
                 <label
                   htmlFor="interpretation"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Interpretation
                 </label>
@@ -370,7 +415,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="translation"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Translation
                 </label>
@@ -386,7 +431,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="contentRoles"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Content Roles
                 </label>
@@ -402,7 +447,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="aiModelTraining"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   AI Model Training
                 </label>
@@ -418,7 +463,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="customerSupportRoles"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Customer Support Roles
                 </label>
@@ -437,11 +482,11 @@ function Registration() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold mb-2 text-red-700">
+            <p className="text-sm font-semibold mb-2 text-[#C92A2D]">
               Extra candidature details (optional)
               <hr className="-mt-2 sm:-mt-3 ml-68 text-gray-200" />
             </p>
-            <p className="text-sm text-red-700">
+            <p className="text-sm text-[#C92A2D]">
               <span className="font-extrabold">Note:</span> A detailed profiling
               will help us personalize jobs fit for your profile and preference.
               Hence, We request you to answer all questions if possible.
@@ -450,7 +495,7 @@ function Registration() {
               <div>
                 <label
                   htmlFor="languageCertifications"
-                  className="block text-sm font-bold text-blue-700 "
+                  className="block text-sm font-bold text-[#002279] "
                 >
                   Language certifications (If Any)
                 </label>
@@ -468,7 +513,7 @@ function Registration() {
               <div>
                 <label
                   htmlFor="preferredLocations"
-                  className="block text-sm font-bold text-blue-700 "
+                  className="block text-sm font-bold text-[#002279] "
                 >
                   Preferred Locations
                 </label>
@@ -486,7 +531,7 @@ function Registration() {
               <div>
                 <label
                   htmlFor="preferredProcesses"
-                  className="block text-sm font-bold text-blue-700 "
+                  className="block text-sm font-bold text-[#002279] "
                 >
                   Preferred Processes
                 </label>
@@ -505,7 +550,7 @@ function Registration() {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-blue-700">
+            <label className="block text-sm font-bold text-[#002279]">
               Have you given any of the assessments listed below?
             </label>
             <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -518,7 +563,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="amcatSvar"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   AMCAT / SVAR
                 </label>
@@ -532,7 +577,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="versant"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Versant
                 </label>
@@ -546,7 +591,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="berlitz"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Berlitz
                 </label>
@@ -560,7 +605,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="pipplet"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Pipplet
                 </label>
@@ -569,7 +614,7 @@ function Registration() {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-blue-700">
+            <label className="block text-sm font-bold text-[#002279]">
               If you have worked in Content roles or training Al Models , Please
               select the areas of the Al Model
             </label>
@@ -585,7 +630,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="contentRating"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Content Rating
                 </label>
@@ -601,7 +646,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="contentModeration"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Content Moderation
                 </label>
@@ -617,7 +662,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="dataAnnotation"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Data Annotation
                 </label>
@@ -633,7 +678,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="promptAndResponseTraining"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Prompt and Response Training
                 </label>
@@ -649,7 +694,7 @@ function Registration() {
                 />
                 <label
                   htmlFor="promptEvaluationAnalyst"
-                  className="ml-2 block text-sm font-medium text-blue-700"
+                  className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   Prompt Evaluation Analyst
                 </label>
@@ -660,7 +705,7 @@ function Registration() {
           <div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-blue-700">
+                <label className="block text-sm font-medium text-[#002279]">
                   For Project based / freelancing roles, <br /> How much time
                   can you commit weekly?
                 </label>
@@ -696,7 +741,7 @@ function Registration() {
             </button>
             <button
               type="submit"
-              className="w-40 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-700 "
+              className="w-40 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#B0181B] "
             >
               Submit
             </button>
