@@ -1,116 +1,28 @@
-// import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
-// import styles from './BlogListPage.module.css';
-// import config from "../../services/config";
-// import { FourSquare } from 'react-loading-indicators';
-
-
-
-// const BlogListPage = () => {
-//   const [blogs, setBlogs] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const blogsPerPage = 9; 
-
-//   useEffect(() => {
-//     window.scrollTo(0, 0);
-//     fetch(`${config.apiUrl}/blog/blogs`)
-//       .then((response) => response.json())
-//       .then((data) => {
-//         setBlogs(data.reverse());
-//       })
-//       .catch((error) => console.error('Error fetching blogs:', error));
-//   }, []);
-
-//   // Get the blogs for the current page
-//   const indexOfLastBlog = currentPage * blogsPerPage;
-//   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-//   const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
-
-//   // Pagination Logic
-//   const totalPages = Math.ceil(blogs.length / blogsPerPage);
-//   const handlePageClick = (pageNumber) => {
-//     setCurrentPage(pageNumber);
-//     window.scrollTo(0, 0);
-//   };
-
-//   const formatDate = (dateString) => {
-//     const options = { day: 'numeric', month: 'long', year: 'numeric' };
-//     return new Date(dateString).toLocaleDateString(undefined, options);
-//   };
-
-//   return (
-//     <>
-    
-//     <div className={styles.envelope}>
-
-//     <h1>Blogs</h1>
-
-//     <div className={styles.blogsContainer}>
-//       {currentBlogs.length > 0 ? (
-//         <>
-//           <div className={styles.blogGrid}>
-//             {currentBlogs.map((blog) => (
-//               <div key={blog._id} className={styles.blogCard}>
-//                 <Link to={`/blogs/${blog._id}`} style={{ textDecoration: 'none' }}>
-//                   <img src={blog.imageUrl} alt={blog.title} className={styles.blogImage} />
-//                   <h2 className={styles.blogTitle}>{blog.title}</h2>
-//                   <p className={styles.blogDate}>{formatDate(blog.date)}</p> {/* Format date */}
-//                   <p className={styles.blogSummary}>{blog.summary}</p>
-//                   <div className={styles.readMore}>Read More</div>
-//                 </Link>
-//               </div>
-//             ))}
-//           </div>
-
-//           {/* Pagination */}
-//           <div className={styles.pagination}>
-//             {Array.from({ length: totalPages }, (_, index) => (
-//               <button
-//                 key={index + 1}
-//                 className={`${styles.pageButton} ${currentPage === index + 1 ? styles.activePage : ''}`}
-//                 onClick={() => handlePageClick(index + 1)}
-//               >
-//                 {index + 1}
-//               </button>
-//             ))}
-//           </div>
-//         </>
-//       ) : (
-//         <>
-//         {/* <p>Loading blogs ...</p> */}
-//         <FourSquare color={["#a9b9c1", "#bda9c1", "#c1b1a9", "#adc1a9"]} />
-//       </>
-        
-//       )}
-//     </div>
-//     </div>
-    
-//     </>
-//   );
-// };
-
-// export default BlogListPage;
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './BlogListPage.module.css';
 import config from "../../services/config";
-import { FourSquare } from 'react-loading-indicators';
 import { motion } from 'framer-motion';
 
 const BlogListPage = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 9;
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setLoading(true);
     fetch(`${config.apiUrl}/blog/blogs`)
       .then((response) => response.json())
       .then((data) => {
         setBlogs(data.reverse());
+        setLoading(false);
       })
-      .catch((error) => console.error('Error fetching blogs:', error));
+      .catch((error) => {
+        console.error('Error fetching blogs:', error);
+        setLoading(false);
+      });
   }, []);
 
   const indexOfLastBlog = currentPage * blogsPerPage;
@@ -128,6 +40,30 @@ const BlogListPage = () => {
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
+  // Skeleton loader component
+  const SkeletonCard = () => (
+    <div className={`${styles.blogCard} ${styles.skeleton}`}>
+      <div className={`${styles.skeletonImage} ${styles.shimmer}`} style={{ width: '300px', margin: '0' }}></div>
+      <div className={`${styles.skeletonTitle} ${styles.shimmer}`}></div>
+      <div className={`${styles.skeletonDate} ${styles.shimmer}`}></div>
+      <div className={`${styles.skeletonSummary} ${styles.shimmer}`}></div>
+      <div className={`${styles.skeletonSummary} ${styles.shimmer}`} style={{ width: '80%' }}></div>
+      <div className={`${styles.skeletonReadMore} ${styles.shimmer}`}></div>
+    </div>
+  );
+
+  // Array of skeleton cards based on blogs per page
+  const skeletonCards = Array(blogsPerPage).fill().map((_, index) => (
+    <motion.div
+      key={`skeleton-${index}`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: index * 0.05 }}
+    >
+      <SkeletonCard />
+    </motion.div>
+  ));
+
   return (
     <>
       <div className={styles.envelope}>
@@ -140,7 +76,11 @@ const BlogListPage = () => {
         </motion.h1>
 
         <div className={styles.blogsContainer}>
-          {currentBlogs.length > 0 ? (
+          {loading ? (
+            <div className={styles.blogGrid}>
+              {skeletonCards}
+            </div>
+          ) : currentBlogs.length > 0 ? (
             <div className={styles.blogGrid}>
               {currentBlogs.map((blog) => (
                 <motion.div
@@ -162,18 +102,11 @@ const BlogListPage = () => {
               ))}
             </div>
           ) : (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}
-            >
-              <FourSquare color={["#a9b9c1", "#bda9c1", "#c1b1a9", "#adc1a9"]} />
-            </motion.div>
+            <div className={styles.noBlogs}>No blogs found</div>
           )}
 
           {/* Pagination */}
-          {currentBlogs.length > 0 && (
+          {!loading && currentBlogs.length > 0 && (
             <motion.div
               className={styles.pagination}
               initial={{ opacity: 0 }}
