@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: 'Shubham Paypare',
     role: 'Deputy General Manager',
-    department: 'Digital Marketing & Growth, Development',
+    department: 'Marketing & Growth, Development',
     image: '/assets/Shubham.png.jpeg',
     linkedin:'https://www.linkedin.com/in/shubham-paypare/',
   },
