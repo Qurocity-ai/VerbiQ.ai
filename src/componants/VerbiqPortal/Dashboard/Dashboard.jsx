@@ -6,12 +6,14 @@ import PortalRoutes from '../../../routes/PortalRoutes'
 function Dashboard() {
   return (
     <div>
-      Dashboard
+      Dashboard 
       <PortalNavbar/>
       <Sidebar/>
       <PortalRoutes/>
+      
     </div>
+    
   )
 }
 
-export default Dashboard
+export default Dashboard;

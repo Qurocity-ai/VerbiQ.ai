@@ -16,6 +16,7 @@ import Japanese from '../portalpages/Language/Japanese/Japanese'
 import TypeofEmployement from '../portalpages/TypeofEmployement/TypeofEmployement'
 import FreeLancer from '../portalpages/TypeofEmployement/Freelancer/FreeLancer'
 import Contractual from '../portalpages/TypeofEmployement/Contractual/Contractual'
+import PortalNavbar from '../componants/VerbiqPortal/PortalNavbar/PortalNavbar'
 
 export default function PortalRoutes() {
   return (
@@ -43,6 +44,9 @@ export default function PortalRoutes() {
         <Route path="/mandarin" element={<Mandarin/>}/>
         <Route path="/korean" element={<Korean/>}/>
         <Route path="/japanese" element={<Japanese/>}/>
+
+        {/*portal-navbar*/}
+        <Route path="/portalnavbar" element={<PortalNavbar />} />
 
     </Routes>
   )
