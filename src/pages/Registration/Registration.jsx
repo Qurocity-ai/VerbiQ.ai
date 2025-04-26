@@ -4,7 +4,7 @@ import axios from "axios";
 function Registration() {
   const [languages, setLanguages] = useState([
     {
-      id: 1,
+      _id: 1,
       nativeLanguage: "",
       proficiencyNative: "",
       certifications: "",
@@ -13,32 +13,56 @@ function Registration() {
 
   const [foreignLanguages, setForeignLanguages] = useState([
     {
-      id: 1,
+      _id: 1,
       foreignLanguage: "",
-      proficiencyL2: "",
+      proficiency: "",
       certifications: "",
     },
   ]);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [formData, setFormData] = useState({
-    email: "",
+    _id: "",
+    emailId: "",
     password: "",
     confirmPassword: "",
     fullName: "",
     contactNumber: "",
     location: "",
-    currentCtc: "",
-    linkedInProfile: "",
+    currentCTC: "",
+    linkToPortfolio: "",
+    assessments: {
+      amcatORsvar: false,
+      versant: false,
+      berlitz: false,
+      pipplet: false,
+    },
     nativeLanguages: [],
     foreignLanguages: [],
-    roles: {},
-    areas: {},
+    roles: {
+      interpretation: false,
+      translation: false,
+      contentRoles: false,
+      aiModelTraining: false,
+      customerSupportRoles: false,
+    },
+    aiModelAreas: {
+      contentRating: false,
+      contentModeration: false,
+      dataAnnotation: false,
+      promptResponseTraining: false,
+      promptEvaluationAnalyst: false,
+    },
     workExperience: "",
     languageCertifications: "",
     preferredLocations: "",
     preferredProcesses: "",
     weeklyCommitment: "",
     hourlyCharge: "",
+    createdAt: "",
+    updatedAt: "",
+    __v: 0,
   });
 
   // Handle input changes
@@ -49,44 +73,99 @@ function Registration() {
       [name]: value,
     }));
   };
+  const validatePassword = () => {
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return false;
+    }
 
-  // Fetch existing registration data
-  useEffect(() => {
-    const fetchRegistrationData = async () => {
-      try {
-        const response = await axios.get(
-          "https://verbiq-backend1.onrender.com/registration/getRegister"
-        );
-        if (response.data) {
-          setFormData(response.data);
-        }
-      } catch (error) {
-        console.error("Error fetching registration data:", error);
-      }
-    };
-
-    fetchRegistrationData();
-  }, []);
+    return true;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!validatePassword()) {
+      return;
+    }
+
     // Prepare the data to be sent
     const submitData = {
-      ...formData,
-      nativeLanguages: languages.map((lang) => ({
-        language: lang.nativeLanguage,
-        proficiency: lang.proficiencyNative,
-        certifications: lang.certifications,
-      })),
-      foreignLanguages: foreignLanguages.map((lang) => ({
-        language: lang.foreignLanguage,
-        proficiency: lang.proficiencyL2,
-        certifications: lang.foreignCertifications,
-      })),
-    };
+      password: formData.password,
+      confirmPassword: formData.confirmPassword,
+      fullName: formData.fullName?.trim(),
+      contactNumber: formData.contactNumber?.trim(),
+      emailId: formData.emailId?.trim(),
+      location: formData.location?.trim(),
+      currentCTC: Number(formData.currentCTC) || 0,
+      linkToPortfolio: formData.linkToPortfolio,
 
+      // Structure the languages arrays correctly
+      nativeLanguages: Array.isArray(languages)
+        ? languages
+            .filter((lang) => lang.nativeLanguage)
+            .map((lang) => ({
+              nativeLanguage: lang.nativeLanguage,
+              proficiencyNative: lang.proficiencyNative,
+              certifications: lang.certifications || "NA",
+            }))
+        : [],
+
+      foreignLanguages: Array.isArray(foreignLanguages)
+        ? foreignLanguages
+            .filter((lang) => lang.foreignLanguage)
+            .map((lang) => ({
+              foreignLanguage: lang.foreignLanguage,
+              proficiency: lang.proficiency,
+              certifications: lang.certifications || "NA",
+            }))
+        : [],
+
+      // Structure the roles object correctly
+      roles: {
+        interpretation: Boolean(formData.interpretation),
+        translation: Boolean(formData.translation),
+        contentRoles: Boolean(formData.contentRoles),
+        aiModelTraining: Boolean(formData.aiModelTraining),
+        customerSupportRoles: Boolean(formData.customerSupportRoles),
+      },
+
+      // Structure the assessments object correctly
+      assessments: {
+        amcatORsvar: Boolean(formData.amcatORsvar),
+        versant: Boolean(formData.versant),
+        berlitz: Boolean(formData.berlitz),
+        pipplet: Boolean(formData.pipplet),
+      },
+
+      // Structure the AI model areas correctly
+      aiModelAreas: {
+        contentRating: Boolean(formData.contentRating),
+        contentModeration: Boolean(formData.contentModeration),
+        dataAnnotation: Boolean(formData.dataAnnotation),
+        promptResponseTraining: Boolean(formData.promptResponseTraining),
+        promptEvaluationAnalyst: Boolean(formData.promptEvaluationAnalyst),
+      },
+
+      workExperience: formData.workExperience?.trim() || "",
+      languageCertifications: formData.languageCertifications
+        ? [formData.languageCertifications].filter(Boolean)
+        : [],
+      preferredLocations: formData.preferredLocations
+        ? [formData.preferredLocations].filter(Boolean)
+        : [],
+      preferredProcesses: formData.preferredProcesses
+        ? [formData.preferredProcesses].filter(Boolean)
+        : [],
+      weeklyCommitmentHours: Number(formData.weeklyCommitment) || 0,
+      chargesPerHour: Number(formData.hourlyCharge) || 0,
+      createdAt: formData.createdAt || new Date().toISOString(),
+      updatedAt: formData.updatedAt || new Date().toISOString(),
+      __v: formData.__v || 0,
+    };
+    setIsLoading(true);
     try {
+      console.log("Submitting data:", submitData);
       const response = await axios.post(
         "https://verbiq-backend1.onrender.com/registration/postRegister",
         submitData,
@@ -98,12 +177,14 @@ function Registration() {
       );
 
       if (response.status === 200 || response.status === 201) {
-        alert("Registration successful!");
-        // Optionally reset form or redirect
+        setIsLoading(true);
       }
     } catch (error) {
-      console.error("Registration error:", error);
-      alert("Registration failed. Please try again.");
+      console.error("Full error:", error);
+      console.error("Response data:", error.response?.data);
+      console.error("Response status:", error.response?.status);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -111,7 +192,7 @@ function Registration() {
     setLanguages([
       ...languages,
       {
-        id: languages.length + 1,
+        _id: languages.length + 1,
         nativeLanguage: "",
         proficiencyNative: "",
         certifications: "",
@@ -123,7 +204,7 @@ function Registration() {
     setForeignLanguages([
       ...foreignLanguages,
       {
-        id: foreignLanguages.length + 1,
+        _id: foreignLanguages.length + 1,
         foreignLanguage: "",
         proficiencyL2: "",
         certifications: "",
@@ -134,15 +215,19 @@ function Registration() {
     if (foreignLanguages.length > 1) {
       // Only remove if there's more than one language
       setForeignLanguages(
-        foreignLanguages.filter((lang) => lang.id !== idToRemove)
+        foreignLanguages.filter((lang) => lang._id !== idToRemove)
       );
     }
   };
   const handleRemoveLanguage = (idToRemove) => {
     if (languages.length > 1) {
       // Only remove if there's more than one language
-      setLanguages(languages.filter((lang) => lang.id !== idToRemove));
+      setLanguages(languages.filter((lang) => lang._id !== idToRemove));
     }
+  };
+
+  const hasValue = (value) => {
+    return value && value.length > 0;
   };
 
   return (
@@ -160,46 +245,60 @@ function Registration() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mt-8">
               <div>
                 <input
-                  id="Email"
-                  name="Email"
+                  id="emailId"
+                  name="emailId"
                   type="email"
                   required
-                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300  text-gray-900 placeholder-gray-300 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300  text-gray-900 placeholder-gray-300 focus:z-10 sm:text-sm ${
+                    !hasValue(formData.emailId) ? "-mb-9" : ""
+                  } bg-transparent focus:bg-white"`}
                   placeholder="Email-ID "
-                  value={formData.email}
+                  value={formData.emailId}
                   onChange={handleInputChange}
                 />
-                <span className="text-[#C92A2D] sm:ml-[75px] ml-[95px]">*</span>
+                {!hasValue(formData.emailId) && (
+                  <span className="text-[#C92A2D] sm:ml-[75px] ml-[95px]">
+                    *
+                  </span>
+                )}
               </div>
               <div>
                 <input
-                  id="Password"
-                  name="Password"
+                  id="password"
+                  name="password"
                   type="password"
                   required
-                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
+                    !hasValue(formData.password) ? "-mb-9" : ""
+                  } bg-transparent focus:bg-white"`}
                   placeholder="Enter Password "
                   value={formData.password}
                   onChange={handleInputChange}
                 />
-                <span className="text-[#C92A2D] sm:ml-[130px] ml-[144px]">
-                  *
-                </span>
+                {!hasValue(formData.password) && (
+                  <span className="text-[#C92A2D] sm:ml-[120px] ml-[135px]">
+                    *
+                  </span>
+                )}
               </div>
               <div>
                 <input
-                  id="ConfirmPassword"
-                  name="ConfirmPassword"
+                  id="confirmPassword"
+                  name="confirmPassword"
                   type="password"
                   required
-                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
+                    !hasValue(formData.confirmPassword) ? "-mb-9" : ""
+                  } bg-transparent focus:bg-white"`}
                   placeholder="Confirm Password"
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
                 />
-                <span className="text-[#C92A2D] sm:ml-[139px] ml-[80px]">
-                  *
-                </span>
+                {!hasValue(formData.confirmPassword) && (
+                  <span className="text-[#C92A2D] sm:ml-[139px] ml-[157px]">
+                    *
+                  </span>
+                )}
               </div>
             </div>
             <p className="mt-10 text-left text-sm text-[#C92A2D] font-semibold">
@@ -213,12 +312,18 @@ function Registration() {
                   name="fullName"
                   type="text"
                   required
-                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300  text-gray-900 placeholder-gray-300 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300  text-gray-900 placeholder-gray-300 focus:z-10 sm:text-sm ${
+                    !hasValue(formData.fullName) ? "-mb-9" : ""
+                  } bg-transparent focus:bg-white"`}
                   placeholder="Full Name "
                   value={formData.fullName}
                   onChange={handleInputChange}
                 />
-                <span className="text-[#C92A2D] sm:ml-[85px] ml-[95px]">*</span>
+                {!hasValue(formData.fullName) && (
+                  <span className="text-[#C92A2D] sm:ml-[85px] ml-[95px]">
+                    *
+                  </span>
+                )}
               </div>
               <div>
                 <input
@@ -226,27 +331,37 @@ function Registration() {
                   name="contactNumber"
                   type="tel"
                   required
-                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
+                    !hasValue(formData.contactNumber) ? "-mb-9" : ""
+                  } bg-transparent focus:bg-white"`}
                   placeholder="Contact Number "
                   value={formData.contactNumber}
                   onChange={handleInputChange}
                 />
-                <span className="text-[#C92A2D] sm:ml-[130px] ml-[144px]">
-                  *
-                </span>
+                {!hasValue(formData.contactNumber) && (
+                  <span className="text-[#C92A2D] sm:ml-[135px] ml-[155px]">
+                    *
+                  </span>
+                )}
               </div>
               <div>
                 <input
-                  id="email"
-                  name="email"
+                  id="emailId"
+                  name="emailId"
                   type="email"
                   required
-                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
+                    !hasValue(formData.emailId) ? "-mb-9" : ""
+                  } bg-transparent focus:bg-white"`}
                   placeholder="Email ID "
-                  value={formData.email}
+                  value={formData.emailId}
                   onChange={handleInputChange}
                 />
-                <span className="text-[#C92A2D] sm:ml-[70px] ml-[80px]">*</span>
+                {!hasValue(formData.emailId) && (
+                  <span className="text-[#C92A2D] sm:ml-[75px] ml-[95px]">
+                    *
+                  </span>
+                )}
               </div>
               <div>
                 <input
@@ -254,57 +369,71 @@ function Registration() {
                   name="location"
                   type="text"
                   required
-                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
+                    !hasValue(formData.location) ? "-mb-9" : ""
+                  } bg-transparent focus:bg-white"`}
                   placeholder="Location"
                   value={formData.location}
                   onChange={handleInputChange}
                 />
-                <span className="text-[#C92A2D] sm:ml-[70px] ml-[80px]">*</span>
+                {!hasValue(formData.location) && (
+                  <span className="text-[#C92A2D] sm:ml-[75px] ml-[95px]">
+                    *
+                  </span>
+                )}
               </div>
               <div>
                 <input
-                  id="currentCtc"
-                  name="currentCtc"
+                  id="currentCTC"
+                  name="currentCTC"
                   type="text"
                   required
-                  className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                  className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
+                    !hasValue(formData.currentCTC) ? "-mb-9" : ""
+                  } bg-transparent focus:bg-white"`}
                   placeholder="Current CTC"
-                  value={formData.currentCtc}
+                  value={formData.currentCTC}
                   onChange={handleInputChange}
                 />
-                <span className="text-[#C92A2D] sm:ml-24 ml-28">*</span>
+                {!hasValue(formData.currentCTC) && (
+                  <span className="text-[#C92A2D] sm:ml-[105px] ml-[110px]">
+                    *
+                  </span>
+                )}
               </div>
 
               <div>
                 <input
-                  id="linkedInProfile"
-                  name="linkedInProfile"
+                  id="linkToPortfolio"
+                  name="linkToPortfolio"
                   type="text"
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Link to Portfolio"
-                  value={formData.linkedInProfile}
+                  value={formData.linkToPortfolio}
                   onChange={handleInputChange}
                 />
               </div>
             </div>
             {languages.map((lang) => (
               <div
-                key={lang.id}
+                key={lang._id}
                 className="grid grid-cols-1 md:grid-cols-3 gap-4"
               >
                 <div>
                   <input
-                    id={`nativeLanguage-${lang.id}`}
+                    id={`nativeLanguage-${lang._id}`}
                     name="nativeLanguage"
                     type="text"
                     required
-                    className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                    className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
+                      !hasValue(formData.nativeLanguages) ? "-mb-9" : ""
+                    } bg-transparent focus:bg-white"`}
                     placeholder="Native Language "
                     value={lang.nativeLanguage}
                     onChange={(e) => {
                       const updatedLanguages = languages.map((l) => {
-                        if (l.id === lang.id) {
+                        if (l._id === lang._id) {
                           return { ...l, nativeLanguage: e.target.value };
                         }
                         return l;
@@ -312,17 +441,21 @@ function Registration() {
                       setLanguages(updatedLanguages);
                     }}
                   />
-                  <span className="text-[#C92A2D] sm:ml-32 ml-36">*</span>
+                  {!hasValue(formData.nativeLanguages) && (
+                    <span className="text-[#C92A2D] sm:ml-[135px] ml-[155px]">
+                      *
+                    </span>
+                  )}
                 </div>
                 <div>
                   <select
-                    id={`proficiencyNative-${lang.id}`}
+                    id={`proficiencyNative-${lang._id}`}
                     name="proficiencyNative"
                     className="mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
                     value={lang.proficiencyNative}
                     onChange={(e) => {
                       const updatedLanguages = languages.map((l) => {
-                        if (l.id === lang.id) {
+                        if (l._id === lang._id) {
                           return { ...l, proficiencyNative: e.target.value };
                         }
                         return l;
@@ -339,13 +472,13 @@ function Registration() {
                 </div>
                 <div className="flex items-center">
                   <select
-                    id={`certifications-${lang.id}`}
+                    id={`certifications-${lang._id}`}
                     name="certifications"
-                    className="mt-1 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300 ml-2"
+                    className="mt-1 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300 sm:ml-2"
                     value={lang.certifications}
                     onChange={(e) => {
                       const updatedLanguages = languages.map((l) => {
-                        if (l.id === lang.id) {
+                        if (l._id === lang._id) {
                           return { ...l, certifications: e.target.value };
                         }
                         return l;
@@ -358,7 +491,7 @@ function Registration() {
                     <option>Option 2</option>
                     <option>Option 3</option>
                   </select>
-                  {lang.id === languages.length && (
+                  {lang._id === languages.length && (
                     <>
                       <button
                         type="button"
@@ -383,7 +516,7 @@ function Registration() {
                       <button
                         type="button"
                         onClick={() => {
-                          handleRemoveLanguage(lang.id);
+                          handleRemoveLanguage(lang._id);
                         }}
                         className="ml-2 p-2 text-white rounded-md bg-[#B0181B]"
                       >
@@ -408,21 +541,23 @@ function Registration() {
             ))}
             {foreignLanguages.map((lang) => (
               <div
-                key={lang.id}
+                key={lang._id}
                 className="grid grid-cols-1 md:grid-cols-3 gap-4"
               >
                 <div>
                   <input
-                    id={`foreignLanguage-${lang.id}`}
+                    id={`foreignLanguage-${lang._id}`}
                     name="foreignLanguage"
                     type="text"
                     required
-                    className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
+                    className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
+                      !hasValue(formData.foreignLanguages) ? "-mb-9" : ""
+                    } bg-transparent focus:bg-white"`}
                     placeholder="Foreign Language "
                     value={lang.foreignLanguage}
                     onChange={(e) => {
                       const updatedLanguages = foreignLanguages.map((l) => {
-                        if (l.id === lang.id) {
+                        if (l._id === lang._id) {
                           return { ...l, foreignLanguage: e.target.value };
                         }
                         return l;
@@ -430,18 +565,22 @@ function Registration() {
                       setForeignLanguages(updatedLanguages);
                     }}
                   />
-                  <span className="text-[#C92A2D] sm:ml-36 ml-38">*</span>
+                  {!hasValue(formData.foreignLanguages) && (
+                    <span className="text-[#C92A2D] sm:ml-[140px] ml-[165px]">
+                      *
+                    </span>
+                  )}
                 </div>
                 <div>
                   <select
-                    id={`proficiencyL2-${lang.id}`}
+                    id={`proficiencyL2-${lang._id}`}
                     name="proficiencyL2"
                     className="mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
-                    value={lang.proficiencyL2}
+                    value={lang.proficiency}
                     onChange={(e) => {
                       const updatedLanguages = foreignLanguages.map((l) => {
-                        if (l.id === lang.id) {
-                          return { ...l, proficiencyL2: e.target.value };
+                        if (l._id === lang._id) {
+                          return { ...l, proficiency: e.target.value };
                         }
                         return l;
                       });
@@ -457,16 +596,16 @@ function Registration() {
                 </div>
                 <div className="flex items-center">
                   <select
-                    id={`foreignCertifications-${lang.id}`}
-                    name="foreignCertifications"
-                    className="mt-1 ml-2 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
-                    value={lang.foreignCertifications}
+                    id={`certifications-${lang._id}`}
+                    name="certifications"
+                    className="mt-1 sm:ml-2 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
+                    value={lang.certifications}
                     onChange={(e) => {
                       const updatedLanguages = foreignLanguages.map((l) => {
-                        if (l.id === lang.id) {
+                        if (l._id === lang._id) {
                           return {
                             ...l,
-                            foreignCertifications: e.target.value,
+                            certifications: e.target.value,
                           };
                         }
                         return l;
@@ -479,7 +618,7 @@ function Registration() {
                     <option>Option 2</option>
                     <option>Option 3</option>
                   </select>
-                  {lang.id === foreignLanguages.length && (
+                  {lang._id === foreignLanguages.length && (
                     <>
                       <button
                         type="button"
@@ -504,7 +643,7 @@ function Registration() {
                       <button
                         type="button"
                         onClick={() => {
-                          handleRemoveForeignLanguage(lang.id);
+                          handleRemoveForeignLanguage(lang._id);
                         }}
                         className="ml-2 p-2 text-white rounded-md bg-[#B0181B]"
                       >
@@ -737,20 +876,20 @@ function Registration() {
             <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
               <div className="flex items-center">
                 <input
-                  id="amcatSvar"
-                  name="amcatSvar"
+                  id="amcatORsvar"
+                  name="amcatORsvar"
                   type="checkbox"
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
-                  checked={formData.amcatSvar}
+                  checked={formData.amcatORsvar}
                   onChange={(e) =>
                     setFormData((prev) => ({
                       ...prev,
-                      amcatSvar: e.target.checked,
+                      amcatORsvar: e.target.checked,
                     }))
                   }
                 />
                 <label
-                  htmlFor="amcatSvar"
+                  htmlFor="amcatORsvar"
                   className="ml-2 block text-sm font-medium text-[#002279]"
                 >
                   AMCAT / SVAR
@@ -949,7 +1088,7 @@ function Registration() {
                   id="weeklyCommitment"
                   name="weeklyCommitment"
                   type="text"
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 -mb-7 bg-transparent text-center te focus:bg-whitext-gray-900 focus:outline-none  focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 -mb-7 bg-transparent text-center focus:outline-none  focus:z-10 sm:text-sm"
                   value={formData.weeklyCommitment}
                   onChange={handleInputChange}
                 />
@@ -982,7 +1121,30 @@ function Registration() {
               type="submit"
               className="w-40 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#B0181B] "
             >
-              Submit
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <svg
+                    className="animate-spin h-5 w-5 mr-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    />
+                  </svg>
+                </div>
+              ) : (
+                "Submit"
+              )}
             </button>
           </div>
         </form>
