@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function Registration() {
   const [languages, setLanguages] = useState([
@@ -19,20 +20,92 @@ function Registration() {
     },
   ]);
 
-  const [roles, setRoles] = useState({
-    interpretation: false,
-    translation: false,
-    contentRoles: false,
-    aiModelTraining: false,
-    customerSupportRoles: false,
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+    fullName: "",
+    contactNumber: "",
+    location: "",
+    currentCtc: "",
+    linkedInProfile: "",
+    nativeLanguages: [],
+    foreignLanguages: [],
+    roles: {},
+    areas: {},
+    workExperience: "",
+    languageCertifications: "",
+    preferredLocations: "",
+    preferredProcesses: "",
+    weeklyCommitment: "",
+    hourlyCharge: "",
   });
-  const [areas, setAreas] = useState({
-    contentRating: false,
-    contentModeration: false,
-    dataAnnotation: false,
-    promptAndResponseTraining: false,
-    promptEvaluationAnalyst: false,
-  });
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  // Fetch existing registration data
+  useEffect(() => {
+    const fetchRegistrationData = async () => {
+      try {
+        const response = await axios.get(
+          "https://verbiq-backend1.onrender.com/registration/getRegister"
+        );
+        if (response.data) {
+          setFormData(response.data);
+        }
+      } catch (error) {
+        console.error("Error fetching registration data:", error);
+      }
+    };
+
+    fetchRegistrationData();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Prepare the data to be sent
+    const submitData = {
+      ...formData,
+      nativeLanguages: languages.map((lang) => ({
+        language: lang.nativeLanguage,
+        proficiency: lang.proficiencyNative,
+        certifications: lang.certifications,
+      })),
+      foreignLanguages: foreignLanguages.map((lang) => ({
+        language: lang.foreignLanguage,
+        proficiency: lang.proficiencyL2,
+        certifications: lang.foreignCertifications,
+      })),
+    };
+
+    try {
+      const response = await axios.post(
+        "https://verbiq-backend1.onrender.com/registration/postRegister",
+        submitData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200 || response.status === 201) {
+        alert("Registration successful!");
+        // Optionally reset form or redirect
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert("Registration failed. Please try again.");
+    }
+  };
 
   const handleAddLanguage = () => {
     setLanguages([
@@ -71,20 +144,14 @@ function Registration() {
       setLanguages(languages.filter((lang) => lang.id !== idToRemove));
     }
   };
-  const handleRoleChange = (role) => {
-    setRoles({ ...roles, [role]: !roles[role] });
-  };
 
-  const handleAreaChange = (area) => {
-    setAreas({ ...areas, [area]: !areas[area] });
-  };
   return (
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-20">
       <div className="max-w-4xl w-full p-8">
         <div>
           <img src="\assets\virbiqlogo.png" className="pb-7 h-20 w-52" />
         </div>
-        <form className="mt-8 space-y-6 ">
+        <form className="mt-8 space-y-6 " onSubmit={handleSubmit}>
           <div className=" space-y-4">
             <p className="mt-2 text-left text-sm text-[#C92A2D] font-semibold">
               Candidate Credential
@@ -99,6 +166,8 @@ function Registration() {
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300  text-gray-900 placeholder-gray-300 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Email-ID "
+                  value={formData.email}
+                  onChange={handleInputChange}
                 />
                 <span className="text-[#C92A2D] sm:ml-[75px] ml-[95px]">*</span>
               </div>
@@ -110,6 +179,8 @@ function Registration() {
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Enter Password "
+                  value={formData.password}
+                  onChange={handleInputChange}
                 />
                 <span className="text-[#C92A2D] sm:ml-[130px] ml-[144px]">
                   *
@@ -123,6 +194,8 @@ function Registration() {
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Confirm Password"
+                  value={formData.confirmPassword}
+                  onChange={handleInputChange}
                 />
                 <span className="text-[#C92A2D] sm:ml-[139px] ml-[80px]">
                   *
@@ -142,6 +215,8 @@ function Registration() {
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300  text-gray-900 placeholder-gray-300 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Full Name "
+                  value={formData.fullName}
+                  onChange={handleInputChange}
                 />
                 <span className="text-[#C92A2D] sm:ml-[85px] ml-[95px]">*</span>
               </div>
@@ -153,6 +228,8 @@ function Registration() {
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Contact Number "
+                  value={formData.contactNumber}
+                  onChange={handleInputChange}
                 />
                 <span className="text-[#C92A2D] sm:ml-[130px] ml-[144px]">
                   *
@@ -166,6 +243,8 @@ function Registration() {
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Email ID "
+                  value={formData.email}
+                  onChange={handleInputChange}
                 />
                 <span className="text-[#C92A2D] sm:ml-[70px] ml-[80px]">*</span>
               </div>
@@ -177,6 +256,8 @@ function Registration() {
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Location"
+                  value={formData.location}
+                  onChange={handleInputChange}
                 />
                 <span className="text-[#C92A2D] sm:ml-[70px] ml-[80px]">*</span>
               </div>
@@ -188,6 +269,8 @@ function Registration() {
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                   placeholder="Current CTC"
+                  value={formData.currentCtc}
+                  onChange={handleInputChange}
                 />
                 <span className="text-[#C92A2D] sm:ml-24 ml-28">*</span>
               </div>
@@ -200,6 +283,8 @@ function Registration() {
                   required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Link to Portfolio"
+                  value={formData.linkedInProfile}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -216,6 +301,16 @@ function Registration() {
                     required
                     className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                     placeholder="Native Language "
+                    value={lang.nativeLanguage}
+                    onChange={(e) => {
+                      const updatedLanguages = languages.map((l) => {
+                        if (l.id === lang.id) {
+                          return { ...l, nativeLanguage: e.target.value };
+                        }
+                        return l;
+                      });
+                      setLanguages(updatedLanguages);
+                    }}
                   />
                   <span className="text-[#C92A2D] sm:ml-32 ml-36">*</span>
                 </div>
@@ -224,6 +319,16 @@ function Registration() {
                     id={`proficiencyNative-${lang.id}`}
                     name="proficiencyNative"
                     className="mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
+                    value={lang.proficiencyNative}
+                    onChange={(e) => {
+                      const updatedLanguages = languages.map((l) => {
+                        if (l.id === lang.id) {
+                          return { ...l, proficiencyNative: e.target.value };
+                        }
+                        return l;
+                      });
+                      setLanguages(updatedLanguages);
+                    }}
                   >
                     <option>Proficiency-Native</option>
                     <option>Beginner</option>
@@ -237,6 +342,16 @@ function Registration() {
                     id={`certifications-${lang.id}`}
                     name="certifications"
                     className="mt-1 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300 ml-2"
+                    value={lang.certifications}
+                    onChange={(e) => {
+                      const updatedLanguages = languages.map((l) => {
+                        if (l.id === lang.id) {
+                          return { ...l, certifications: e.target.value };
+                        }
+                        return l;
+                      });
+                      setLanguages(updatedLanguages);
+                    }}
                   >
                     <option>Certifications (if any)</option>
                     <option>Option 1</option>
@@ -304,6 +419,16 @@ function Registration() {
                     required
                     className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm -mb-9 bg-transparent focus:bg-white"
                     placeholder="Foreign Language "
+                    value={lang.foreignLanguage}
+                    onChange={(e) => {
+                      const updatedLanguages = foreignLanguages.map((l) => {
+                        if (l.id === lang.id) {
+                          return { ...l, foreignLanguage: e.target.value };
+                        }
+                        return l;
+                      });
+                      setForeignLanguages(updatedLanguages);
+                    }}
                   />
                   <span className="text-[#C92A2D] sm:ml-36 ml-38">*</span>
                 </div>
@@ -312,6 +437,16 @@ function Registration() {
                     id={`proficiencyL2-${lang.id}`}
                     name="proficiencyL2"
                     className="mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
+                    value={lang.proficiencyL2}
+                    onChange={(e) => {
+                      const updatedLanguages = foreignLanguages.map((l) => {
+                        if (l.id === lang.id) {
+                          return { ...l, proficiencyL2: e.target.value };
+                        }
+                        return l;
+                      });
+                      setForeignLanguages(updatedLanguages);
+                    }}
                   >
                     <option>Proficiency L2</option>
                     <option>Beginner</option>
@@ -325,6 +460,19 @@ function Registration() {
                     id={`foreignCertifications-${lang.id}`}
                     name="foreignCertifications"
                     className="mt-1 ml-2 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
+                    value={lang.foreignCertifications}
+                    onChange={(e) => {
+                      const updatedLanguages = foreignLanguages.map((l) => {
+                        if (l.id === lang.id) {
+                          return {
+                            ...l,
+                            foreignCertifications: e.target.value,
+                          };
+                        }
+                        return l;
+                      });
+                      setForeignLanguages(updatedLanguages);
+                    }}
                   >
                     <option>Certifications (if any)</option>
                     <option>Option 1</option>
@@ -392,8 +540,13 @@ function Registration() {
                   type="checkbox"
                   name="interpretation"
                   id="interpretation"
-                  checked={roles.interpretation}
-                  onChange={() => handleRoleChange("interpretation")}
+                  checked={formData.interpretation}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      interpretation: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
 
@@ -409,8 +562,13 @@ function Registration() {
                   id="translation"
                   name="translation"
                   type="checkbox"
-                  checked={roles.translation}
-                  onChange={() => handleRoleChange("translation")}
+                  checked={formData.translation}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      translation: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
@@ -425,8 +583,13 @@ function Registration() {
                   id="contentRoles"
                   name="contentRoles"
                   type="checkbox"
-                  checked={roles.contentRoles}
-                  onChange={() => handleRoleChange("contentRoles")}
+                  checked={formData.contentRoles}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      contentRoles: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
@@ -441,8 +604,13 @@ function Registration() {
                   id="aiModelTraining"
                   name="aiModelTraining"
                   type="checkbox"
-                  checked={roles.aiModelTraining}
-                  onChange={() => handleRoleChange("aiModelTraining")}
+                  checked={formData.aiModelTraining}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      aiModelTraining: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
@@ -457,8 +625,13 @@ function Registration() {
                   id="customerSupportRoles"
                   name="customerSupportRoles"
                   type="checkbox"
-                  checked={roles.customerSupportRoles}
-                  onChange={() => handleRoleChange("customerSupportRoles")}
+                  checked={formData.customerSupportRoles}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      customerSupportRoles: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
@@ -478,6 +651,8 @@ function Registration() {
               rows={3}
               className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Notes about your work experience"
+              value={formData.workExperience}
+              onChange={handleInputChange}
             />
           </div>
 
@@ -503,6 +678,8 @@ function Registration() {
                   id="languageCertifications"
                   name="languageCertifications"
                   className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300  text-gray-300 sm:text-sm rounded-md"
+                  value={formData.languageCertifications}
+                  onChange={handleInputChange}
                 >
                   <option>Select</option>
                   <option>Option 1</option>
@@ -521,6 +698,8 @@ function Registration() {
                   id="preferredLocations"
                   name="preferredLocations"
                   className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300   sm:text-sm rounded-md text-gray-300"
+                  value={formData.preferredLocations}
+                  onChange={handleInputChange}
                 >
                   <option>Select</option>
                   <option>Location 1</option>
@@ -539,6 +718,8 @@ function Registration() {
                   id="preferredProcesses"
                   name="preferredProcesses"
                   className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300  sm:text-sm rounded-md text-gray-300"
+                  value={formData.preferredProcesses}
+                  onChange={handleInputChange}
                 >
                   <option>Select</option>
                   <option>Process 1</option>
@@ -560,6 +741,13 @@ function Registration() {
                   name="amcatSvar"
                   type="checkbox"
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  checked={formData.amcatSvar}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      amcatSvar: e.target.checked,
+                    }))
+                  }
                 />
                 <label
                   htmlFor="amcatSvar"
@@ -574,6 +762,13 @@ function Registration() {
                   name="versant"
                   type="checkbox"
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  checked={formData.versant}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      versant: e.target.checked,
+                    }))
+                  }
                 />
                 <label
                   htmlFor="versant"
@@ -588,6 +783,13 @@ function Registration() {
                   name="berlitz"
                   type="checkbox"
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  checked={formData.berlitz}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      berlitz: e.target.checked,
+                    }))
+                  }
                 />
                 <label
                   htmlFor="berlitz"
@@ -602,6 +804,13 @@ function Registration() {
                   name="pipplet"
                   type="checkbox"
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  checked={formData.pipplet}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      pipplet: e.target.checked,
+                    }))
+                  }
                 />
                 <label
                   htmlFor="pipplet"
@@ -624,8 +833,13 @@ function Registration() {
                   id="contentRating"
                   name="contentRating"
                   type="checkbox"
-                  checked={areas.contentRating}
-                  onChange={() => handleAreaChange("contentRating")}
+                  checked={formData.contentRating}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      contentRating: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
@@ -640,8 +854,13 @@ function Registration() {
                   id="contentModeration"
                   name="contentModeration"
                   type="checkbox"
-                  checked={areas.contentModeration}
-                  onChange={() => handleAreaChange("contentModeration")}
+                  checked={formData.contentModeration}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      contentModeration: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
@@ -656,8 +875,13 @@ function Registration() {
                   id="dataAnnotation"
                   name="dataAnnotation"
                   type="checkbox"
-                  checked={areas.dataAnnotation}
-                  onChange={() => handleAreaChange("dataAnnotation")}
+                  checked={formData.dataAnnotation}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      dataAnnotation: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
@@ -672,8 +896,13 @@ function Registration() {
                   id="promptAndResponseTraining"
                   name="promptAndResponseTraining"
                   type="checkbox"
-                  checked={areas.promptAndResponseTraining}
-                  onChange={() => handleAreaChange("promptAndResponseTraining")}
+                  checked={formData.promptAndResponseTraining}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      promptAndResponseTraining: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
@@ -688,8 +917,13 @@ function Registration() {
                   id="promptEvaluationAnalyst"
                   name="promptEvaluationAnalyst"
                   type="checkbox"
-                  checked={areas.promptEvaluationAnalyst}
-                  onChange={() => handleAreaChange("promptEvaluationAnalyst")}
+                  checked={formData.promptEvaluationAnalyst}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      promptEvaluationAnalyst: e.target.checked,
+                    }))
+                  }
                   className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
@@ -716,6 +950,8 @@ function Registration() {
                   name="weeklyCommitment"
                   type="text"
                   className="appearance-none rounded-md relative block w-full px-3 py-2 -mb-7 bg-transparent text-center te focus:bg-whitext-gray-900 focus:outline-none  focus:z-10 sm:text-sm"
+                  value={formData.weeklyCommitment}
+                  onChange={handleInputChange}
                 />
                 <span className="text-blue-800 ml-60 sm:ml-52 ">Hrs</span>
                 <hr className="text-gray-200" />
@@ -727,6 +963,8 @@ function Registration() {
                   type="text"
                   className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:z-10 sm:text-sm"
                   placeholder="Charges/Hour"
+                  value={formData.hourlyCharge}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -736,6 +974,7 @@ function Registration() {
             <button
               type="reset"
               className="w-40 py-2 px-4 border border-transparent text-sm shadow-md font-medium rounded-md text-black focus:outline-none sm:mr-7 mr-3"
+              onClick={() => setFormData({})}
             >
               Clear Data
             </button>
