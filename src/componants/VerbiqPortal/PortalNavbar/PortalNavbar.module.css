@@ -1,0 +1,90 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .leftSection p {
+    font-size: 1rem;
+    color: #0A0A23;
+  }
+  
+  .username {
+    font-weight: bold;
+    color: #000949;
+  }
+  
+  .emoji {
+    margin-left: 4px;
+  }
+  
+  .rightSection {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .notification {
+    position: relative;
+    font-size: 1.4rem;
+    color: #4f46e5; /* Indigo color */
+    cursor: pointer;
+  }
+  
+  .notificationDot {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    background-color: #6366f1; /* Light indigo */
+    border-radius: 50%;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .profileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+  }
+  
+  .dropdownIcon {
+    font-size: 0.8rem;
+    
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .navbar {
+      padding: 0.8rem 1rem;
+    }
+  
+    .leftSection p {
+      font-size: 0.9rem;
+    }
+  
+    .rightSection {
+      gap: 1rem;
+    }
+  
+    .profileImage {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  

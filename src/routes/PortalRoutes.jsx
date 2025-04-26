@@ -17,6 +17,7 @@ import TypeofEmployement from '../portalpages/TypeofEmployement/TypeofEmployemen
 import FreeLancer from '../portalpages/TypeofEmployement/Freelancer/FreeLancer'
 import Contractual from '../portalpages/TypeofEmployement/Contractual/Contractual'
 
+
 export default function PortalRoutes() {
   return (
     <Routes>
@@ -43,6 +44,9 @@ export default function PortalRoutes() {
         <Route path="/mandarin" element={<Mandarin/>}/>
         <Route path="/korean" element={<Korean/>}/>
         <Route path="/japanese" element={<Japanese/>}/>
+
+        {/*portal-navbar*/}
+        
 
     </Routes>
   )
