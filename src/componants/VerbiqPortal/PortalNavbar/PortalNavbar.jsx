@@ -2,9 +2,7 @@
 
 function PortalNavbar() {
   return (
-    <div>
-      Navbar
-    </div>
+    <div >Navbar</div>
   )
 }
 
