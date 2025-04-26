@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-import React from "react";
-/*import Navbar from "./componants/Navbar/Navbar";
-import ALLRoutes from "./routes/AllRoutes";
-import Footer from "./componants/Footer/Footer";*/
-import PortalRoutes from "./routes/PortalRoutes";
-
-=======
 // import React from "react";
 // import Navbar from "./componants/Navbar/Navbar";
 // import ALLRoutes from "./routes/AllRoutes";
 // import Footer from "./componants/Footer/Footer";
->>>>>>> 05b698008c67f5a1acf8dfcf02f9bf2b8c0a5ba2
 
 // const App = () => {
  
@@ -29,13 +20,16 @@ import PortalRoutes from "./routes/PortalRoutes";
 // export default App;
 import React from 'react'
 import Dashboard from './componants/VerbiqPortal/Dashboard/Dashboard'
+//import PortalRoutes from './routes/PortalRoutes';
+
 function App() {
   return (
     <>
       {/*<Navbar />
       <ALLRoutes />
-      <Footer />*/}
-      <PortalRoutes />
+      <Footer />*
+      <PortalRoutes />*/}
+      <Dashboard />
 
       {/* There are some  */}
     </>

@@ -14,6 +14,7 @@ import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
 import BlogListPage from "../pages/Blog/BlogListPage";
 import BlogDetailPage from "../pages/Blog/BlogDetailPage";
 import Details from "../pages/CenterofExce/Details";
+import PortalNavbar from "../componants/VerbiqPortal/PortalNavbar/PortalNavbar";
 export default function ALLRoutes() {
   return (
     <Routes>
@@ -33,6 +34,8 @@ export default function ALLRoutes() {
       <Route path="/blog" element={<BlogListPage />}></Route>
       <Route path="/blogs/:id" element={<BlogDetailPage />} />
       <Route path="/details/:id" element={<Details />} />
+    
+      <Route path="/portalnavbar" element={<PortalNavbar />} />
     </Routes>
   );
 }
