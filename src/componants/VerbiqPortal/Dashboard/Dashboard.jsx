@@ -5,14 +5,20 @@ import PortalRoutes from '../../../routes/PortalRoutes'
 
 function Dashboard() {
   return (
-    <div>
-      Dashboard 
-      <PortalNavbar/>
-      <Sidebar/>
+  //   <div>
+  //  <PortalNavbar/> 
+  //   <Sidebar/>
+   
+  //   <PortalRoutes/>
+  //   </div>
+  // )
+  <div className="flex min-h-screen">
+      <Sidebar />
       <PortalRoutes/>
-      
-    </div>
-    
+      <main className="flex-1 p-4">
+      <PortalNavbar/>
+      </main>
+      </div>
   )
 }
 
