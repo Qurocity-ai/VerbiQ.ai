@@ -7,14 +7,14 @@ const App = () => {
  
   return (
     <>
-//       <Navbar />
-//       <ALLRoutes />
-//       <Footer />
+{/*       <Navbar />
+     <ALLRoutes />
+     <Footer /> */}
          <Dashboard/>
 
       {/* There are some  */}
     </>
   );
 };
-
+export default App;
 
