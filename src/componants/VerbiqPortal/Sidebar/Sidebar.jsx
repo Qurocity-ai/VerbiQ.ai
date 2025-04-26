@@ -9,12 +9,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import clsx from "clsx";
 import { NavLink, Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ mobileOpen, setMobileOpen, isSidebarOpen }) => {
   const [employmentOpen, setEmploymentOpen] = useState(true);
   const [experienceOpen, setExperienceOpen] = useState(true);
   const [languageOpen, setLanguageOpen] = useState(true);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  // const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggle = (setter) => setter(prev => !prev);
 
@@ -26,52 +25,24 @@ const Sidebar = () => {
 
   return (
 <>
-
-      {/* Hamburger (Mobile Only) */}
-      {/* <div className="lg:hidden"> */}
-      <div>
-        {/* <button className={styles.hamburgerButton} onClick={() => setMobileOpen(prev => !prev)}> */}
-        <button
-            className="lg:hidden fixed top-0 left-1 z-50 bg-white p-2 rounded-md "
-             onClick={() => setMobileOpen(prev => !prev)}
-             >
-          <GiHamburgerMenu size={24} />
-        </button>
-      </div>
-
       {/* Sidebar */}
       <div
-        className={clsx(
-          styles.sidebar,
-          {
-            [styles.sidebarExpanded]: isSidebarOpen,
-            [styles.sidebarCollapsed]: !isSidebarOpen,
-            [styles.sidebarHiddenMobile]: !mobileOpen,
-            [styles.sidebarVisibleMobile]: mobileOpen,
-          }
-        )}
+      className={clsx(
+        styles.sidebar,
+        {
+          [styles.sidebarExpanded]: isSidebarOpen,
+          [styles.sidebarCollapsed]: !isSidebarOpen,
+          [styles.sidebarHiddenMobile]: !mobileOpen,
+          [styles.sidebarVisibleMobile]: mobileOpen,
+        }
+      )}
       >
-        {/* Close (Mobile Only) */}
-        <div className={styles.closeButton}>
-          <button onClick={() => setMobileOpen(false)}>✕</button>
-        </div>
-
         {/* Logo */}
         {isSidebarOpen && (
           <div className={styles.logoContainer}>
             <img src={logo} alt="VerbiQ Logo" style={{ height: "32px" }} />
           </div>
         )}
-
-        {/* Toggle Sidebar (Desktop Only) */}
-        {/* <div className={styles.toggleDesktopButton}>
-          <button
-            onClick={() => setIsSidebarOpen(prev => !prev)}
-            className={styles.toggleButtonIcon}
-          >
-            {isSidebarOpen ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
-          </button>
-        </div> */}
 
         {/* Section: Type of Employment */}
         <div>
@@ -150,12 +121,9 @@ const Sidebar = () => {
               <NavLink to="/mandarin" className={navLinkClass}><li>Mandarin</li></NavLink>
               <NavLink to="/korean" className={navLinkClass}><li>Korean</li></NavLink>
               <NavLink to="/japanese" className={navLinkClass}><li>Japanese</li></NavLink>
-              
-            </div>
-            
+              </div>            
           )}
         </div>
-
       </div>
 </>
 );

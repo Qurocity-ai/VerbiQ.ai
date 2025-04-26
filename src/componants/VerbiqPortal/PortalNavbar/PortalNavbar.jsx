@@ -12,11 +12,19 @@ export default PortalNavbar;*/
 import React from "react";
 import styles from "./PortalNavbar.module.css";
 //import { FaBell } from "react-icons/fa"; 
-
-const PortalNavbar = () => {
+import { GiHamburgerMenu } from "react-icons/gi";  // Import the hamburger menu icon
+import clsx from "clsx";
+const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.leftSection}>
+    <nav className={styles.navbar}>     
+       <div className={styles.leftSection}>
+                {/* Hamburger Button for Mobile View */}
+        <button
+          className={clsx("lg:hidden", styles.hamburgerButton)}
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          <GiHamburgerMenu size={24} />
+        </button>
         <p>Welcome back, <span className={styles.username}>Aditya</span> <span className={styles.emoji}>☀️</span></p>
       </div>
 
