@@ -1,31 +1,20 @@
-// import React from "react";
+import React from "react";
 // import Navbar from "./componants/Navbar/Navbar";
 // import ALLRoutes from "./routes/AllRoutes";
 // import Footer from "./componants/Footer/Footer";
-
-// const App = () => {
+import Dashboard from './componants/VerbiqPortal/Dashboard/Dashboard'
+const App = () => {
  
-//   return (
-//     <>
+  return (
+    <>
 //       <Navbar />
 //       <ALLRoutes />
 //       <Footer />
+         <Dashboard/>
+
+      {/* There are some  */}
+    </>
+  );
+};
 
 
-//       {/* There are some  */}
-//     </>
-//   );
-// };
-
-// export default App;
-import React from 'react'
-import Dashboard from './componants/VerbiqPortal/Dashboard/Dashboard'
-function App() {
-  return (
-    <div>
-      <Dashboard/>
-    </div>
-  )
-}
-
-export default App
