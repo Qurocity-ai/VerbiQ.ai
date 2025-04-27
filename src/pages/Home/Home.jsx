@@ -6,8 +6,9 @@ import { useEffect } from 'react';
 import CarousalOne from "./Carousal/CarousalOne";
 import Chat from "./Chat/Chat";
 import Graph from "./Graph/Graph";
+import FeedbackCarousel from './FeedbackSection/FeedbackCarousel';
 import FAQ from "./FAQ/FAQ";
-import FeedbackSection from './Feedback/FeedbackSection';
+
 
 const Home = () => {
   useEffect(() => {
@@ -22,8 +23,9 @@ const Home = () => {
  <CarousalOne/>
  <Chat/>
  <Graph/>
- <FeedbackSection/>
+ <FeedbackCarousel />
  <FAQ/>
+ 
  
 </>
   )

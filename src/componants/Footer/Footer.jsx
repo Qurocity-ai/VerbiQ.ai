@@ -25,7 +25,7 @@ function Footer() {
                 Jobs
               </a>
               <a
-                href="https://www.linkedin.com/company/recrutorycompany/posts/?feedView=articles"
+                href="https://www.linkedin.com/newsletters/7185962989202669569/"
                 target="_blank"
                 className="text-[#00046C] text-nowrap"
               >
@@ -47,7 +47,7 @@ function Footer() {
               <span className="text-[#00046C]"> LinkedIn</span>
             </a>
             <a
-              href="https://www.instagram.com/recrutory/?igsh=MXkxM3Y3am1qYTdhbg%3D%3D#"
+              href="https://www.instagram.com/verbiq.ai/?igsh=YjJ1Z2V1aTV2d2Vq#"
               target="_blank"
               className="flex items-center"
             >
@@ -58,7 +58,8 @@ function Footer() {
               />
               <span className="text-[#00046C]">Instagram</span>
             </a>
-            <a href="#" target="_blank" className="flex items-center sm:pt-2">
+            <a href="https://www.facebook.com/share/1FcCEmyUsp/" 
+           target="_blank" className="flex items-center sm:pt-2">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/1200px-Facebook_icon.svg.png"
                 alt="facebook-icon"
