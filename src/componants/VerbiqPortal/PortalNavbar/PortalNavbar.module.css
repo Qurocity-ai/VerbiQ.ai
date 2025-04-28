@@ -75,7 +75,8 @@
     }
   
     .leftSection p {
-      font-size: 0.9rem;
+      font-size: 0.6rem;
+      padding-left: 60px;
     }
   
     .rightSection {
@@ -87,4 +88,11 @@
       height: 32px;
     }
   }
-  
+  /* Add styles to position the hamburger button */
+.hamburgerButton {
+  position: absolute;
+  left: 15px;  /* Adjust based on your design */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;  /* Ensures the button stays on top */
+}

@@ -45,6 +45,9 @@ export default function PortalRoutes() {
         <Route path="/korean" element={<Korean/>}/>
         <Route path="/japanese" element={<Japanese/>}/>
 
+        {/*portal-navbar*/}
+        
+
     </Routes>
   )
 }

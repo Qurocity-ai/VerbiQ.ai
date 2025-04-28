@@ -15,32 +15,20 @@ body{
     gap: 8px;
     overflow-y: auto; /* <-- This is important */
     transition: all 0.3s ease;
-    z-index: 50;
+    z-index: 100;
   }
   
   .sidebarExpanded {
     width: 272px; /* 17rem */
   }
   
-  .sidebarCollapsed {
-    width: 80px; /* 5rem */
-  }
-  
-  /* .sidebarHiddenMobile {
-    transform: translateX(-100%);
-  }
-  
-  .sidebarVisibleMobile {
-    transform: translateX(0);
-  }
-   */
    /* Mobile sidebar animation */
 .sidebarHiddenMobile {
     transform: translateX(-100%);
   }
   
   .sidebarVisibleMobile {
-    transform: translateX(0);
+    transform: translateX(-0);
   }
   
   @media (min-width: 1024px) {
@@ -54,21 +42,6 @@ body{
   }
   .hamburgerButton {
     padding: 12px;
-  }
-  
-
- 
-  
-  .closeButton {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-  }
-  
-  @media (min-width: 1024px) {
-    .closeButton {
-      display: none;
-    }
   }
   
   .logoContainer {
@@ -184,4 +157,4 @@ body{
     .pageWrapper {
       padding-left: 100px;
     }
-  }
+  } 

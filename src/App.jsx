@@ -3,16 +3,14 @@ import React from "react";
 // import ALLRoutes from "./routes/AllRoutes";
 // import Footer from "./componants/Footer/Footer";
 import Dashboard from './componants/VerbiqPortal/Dashboard/Dashboard'
-//import PortalRoutes from './routes/PortalRoutes';
-
-function App() {
+const App = () => {
+ 
   return (
     <>
-      {/*<Navbar />
-      <ALLRoutes />
-      <Footer />*
-      <PortalRoutes />*/}
-      <Dashboard />
+{/*       <Navbar />
+     <ALLRoutes />
+     <Footer /> */}
+         <Dashboard/>
 
       {/* There are some  */}
     </>
