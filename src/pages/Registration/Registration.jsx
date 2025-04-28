@@ -1119,7 +1119,12 @@ function Registration() {
             </button>
             <button
               type="submit"
-              className="w-40 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#B0181B] "
+              className={`" border border-transparent text-sm font-medium rounded-md text-white 
+                ${
+                  isLoading
+                    ? "bg-[#d85e61] cursor-not-allowed w-40 py-2 px-4"
+                    : "bg-[#B0181B] hover:bg-[#a31518] w-40 py-2 px-4"
+                }"`}
             >
               {isLoading ? (
                 <div className="flex items-center justify-center">

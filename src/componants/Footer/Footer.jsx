@@ -58,8 +58,11 @@ function Footer() {
               />
               <span className="text-[#00046C]">Instagram</span>
             </a>
-            <a href="https://www.facebook.com/share/1FcCEmyUsp/" 
-           target="_blank" className="flex items-center sm:pt-2">
+            <a
+              href="https://www.facebook.com/share/1FcCEmyUsp/"
+              target="_blank"
+              className="flex items-center sm:pt-4"
+            >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/1200px-Facebook_icon.svg.png"
                 alt="facebook-icon"
