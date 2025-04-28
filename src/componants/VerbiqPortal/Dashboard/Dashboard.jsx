@@ -16,7 +16,7 @@ function Dashboard() {
         <div className="lg:pl-[272px] flex flex-col flex-1">
           <PortalNavbar setMobileOpen={setMobileOpen} mobileOpen={mobileOpen}  />
         
-        <main className={`${styles.pageWrapper} flex-1 p-4 overflow-auto`}>
+        <main className={`${styles.pageWrapper} flex-1 p-4 overflow-auto bg-white`}>
           <PortalRoutes />
         </main>
       </div>

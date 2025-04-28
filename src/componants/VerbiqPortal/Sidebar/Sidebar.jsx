@@ -45,7 +45,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen, isSidebarOpen }) => {
         )}
 
         {/* Section: Type of Employment */}
-        <div>
+        <div className='pt-[10px]'>
           <Link to="/typeofemployement" onClick={() => setMobileOpen(false)}>
             <button
               onClick={() => toggle(setEmploymentOpen)}
