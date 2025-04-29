@@ -28,7 +28,8 @@ const HeroSection = () => {
               <h1
                 className={`text-4xl sm:text-4xl md:text-5xl font-bold text-[#2D3748] ${styles.heading}`}
               >
-                <span className="block">
+
+                <span className="block ">
                   Smarter Language Hiring,{" "}
                   <span className="text-[#1b3d86] block sm:inline">
                     Beyond Just Scores
@@ -38,14 +39,14 @@ const HeroSection = () => {
             </AnimatedContent>
           </div>
 
-          <div className={`w-full text-center  -mt-5 ${styles.secHeading}`}>
-            <h2 className="text-xl sm:text-2xl md:text-4xl font-medium text-[#2b4879]">
+          <div className={`w-full text-center  -mt-3 ${styles.secHeading}`}>
+            <h2 className="text-2xl sm:text-2xl md:text-4xl font-medium text-[#2b4879]">
               Fast, Fair, and Flawless
             </h2>
           </div>
 
-          <div className="w-full text-center px-2 sm:px-0">
-            <p className="text-base sm:text-lg md:text-3xl text-[#686868] max-w-7xl mx-auto">
+          <div className="w-full text-center px-2  sm:px-0">
+            <p className={`${styles.expPara} sm:text-lg md:text-3xl  text-[#686666]  mx-auto `}>
               Experience unbiased, culturally aligned hiring,{" "}
               <span className="text-[#e24f15] font-medium">
                 {" "}
