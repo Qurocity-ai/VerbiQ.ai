@@ -1,12 +1,4 @@
-
-
-/* .item:hover {
-  background-color: #DFEAF0; 
-  transition: background-color 0.3s ease; 
-} */
-
- 
- /* .container {
+/* .container {
   position: relative;
   width: 90%;
   overflow-x: hidden;
@@ -57,17 +49,16 @@
   font-weight: 600;
   color: #02586F;
   text-align: center;
-  /* text-decoration: underline; */
-  /* text-underline-offset: 6px;  */
+ 
   margin-bottom: 20px;
 }
  
 .contentList {
   list-style-type: none;
-  font-size: 19px;
+  font-size: 20px;
   text-align: center;
   color: #02586F;
-  font-weight: 400;
+  font-weight: 800;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -90,7 +81,7 @@
 .highlighted {
   background-color: #cce9f9;
   transition: background-color 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
  
  
@@ -260,7 +251,7 @@
     margin: 0 auto;
     background-color: #F8FAFF;
   }
-
+ 
   .scrollContainer {
     display: flex;
     gap: 0; /* Remove extra gaps between items */
@@ -268,7 +259,7 @@
     transition: transform 0.5s ease-in-out;
     margin: 0 auto; /* Ensures it's centered in the viewport */
   }
-
+ 
   .item {
     flex: 0 0 340px !important; /* Adjust the item width for mobile */
     width: 80% !important; /* Ensures the items fit well in mobile view */
@@ -276,73 +267,73 @@
     margin: 0 auto;
     padding: 15px;
   }
-
+ 
   .navigationContainer {
     margin-top: 20px;
     gap: 15px;
   }
-
+ 
   .navButton {
     width: 45px;
     margin-top: 10px;
     font-size: 30px; /* Adjust the button size for mobile */
   }
-
+ 
   .heading {
     font-size: 22px;
     padding: 0 10px;
     margin-bottom: 15px;
   }
-
+ 
   .contentList {
     font-size: 16px;
     padding: 0 10px;
   }
-
+ 
   .mainheading {
     font-size: 18px;
   }
-
+ 
   .listItem {
     padding: 6px 0;
   }
 }
-
+ 
 @media (max-width: 480px) {
   .scrollContainer {
     justify-content: center; /* Ensures it's still centered on smaller devices */
     width: 100%; /* Ensure the container stretches across the viewport */
   }
-
+ 
   .item {
     flex: 0 0 300px !important; /* Adjust the item width for very small screens */
     width: 90% !important; /* Ensures it fits the small screen */
     min-height: 200px; /* Reduced height for better fit */
     padding: 10px;
   }
-
+ 
   .navButton {
     width: 40px;
     font-size: 28px; /* Slightly smaller nav button on very small screens */
   }
-
+ 
   .heading {
     font-size: 20px;
   }
-
+ 
   .contentList {
     font-size: 14px;
   }
-
+ 
   .mainheading {
     font-size: 16px;
   }
-
+ 
   .listItem {
     padding: 4px 0;
   }
 }
-
+ 
  
 .navigationContainer {
   display: flex;
@@ -393,7 +384,4 @@
  
  
 }
- 
- 
- 
  
