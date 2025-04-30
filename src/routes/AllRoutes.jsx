@@ -14,11 +14,7 @@ import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
 import BlogListPage from "../pages/Blog/BlogListPage";
 import BlogDetailPage from "../pages/Blog/BlogDetailPage";
 import Details from "../pages/CenterofExce/Details";
-<<<<<<< HEAD
-import PortalNavbar from "../componants/VerbiqPortal/PortalNavbar/PortalNavbar";
-=======
 import Registration from "../pages/Registration/Registration";
->>>>>>> 6f7be58777f7f7bd634c52658c9484b6d28a8244
 export default function ALLRoutes() {
   return (
     <Routes>
