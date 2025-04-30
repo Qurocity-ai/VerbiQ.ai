@@ -25,8 +25,6 @@ function Registration() {
   const [formData, setFormData] = useState({
     _id: "",
     emailId: "",
-    password: "",
-    confirmPassword: "",
     fullName: "",
     contactNumber: "",
     location: "",
@@ -73,26 +71,13 @@ function Registration() {
       [name]: value,
     }));
   };
-  const validatePassword = () => {
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return false;
-    }
 
-    return true;
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validatePassword()) {
-      return;
-    }
-
     // Prepare the data to be sent
     const submitData = {
-      password: formData.password,
-      confirmPassword: formData.confirmPassword,
       fullName: formData.fullName?.trim(),
       contactNumber: formData.contactNumber?.trim(),
       emailId: formData.emailId?.trim(),
@@ -167,7 +152,7 @@ function Registration() {
     try {
       console.log("Submitting data:", submitData);
       const response = await axios.post(
-        "https://verbiq-backend1.onrender.com/registration/postRegister",
+        "https://verbiq-backend1-1.onrender.com/registration/postRegister",
         submitData,
         {
           headers: {
@@ -238,7 +223,9 @@ function Registration() {
         </div>
         <form className="mt-8 space-y-6 " onSubmit={handleSubmit}>
           <div className=" space-y-4">
-            <p className="mt-2 text-left text-sm text-[#C92A2D] font-semibold">
+            
+            
+            {/* <p className="mt-2 text-left text-sm text-[#C92A2D] font-semibold">
               Candidate Credential
               <hr className="-mt-2.5 ml-44 text-gray-200" />
             </p>
@@ -300,7 +287,8 @@ function Registration() {
                   </span>
                 )}
               </div>
-            </div>
+            </div> */}
+
             <p className="mt-10 text-left text-sm text-[#C92A2D] font-semibold">
               Candidate Registration
               <hr className="-mt-2.5 ml-44 text-gray-200" />
