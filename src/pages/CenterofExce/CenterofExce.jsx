@@ -9,7 +9,7 @@ function CenterofExce() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="mt-40 mb-8">
+    <div className="mt-40 mb-8 w-screen h-full">
       <COE1 />
       <COE2 />
       <COE3 />
