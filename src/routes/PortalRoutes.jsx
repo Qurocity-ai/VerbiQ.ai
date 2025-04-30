@@ -16,6 +16,9 @@ import Japanese from '../portalpages/Language/Japanese/Japanese'
 import TypeofEmployement from '../portalpages/TypeofEmployement/TypeofEmployement'
 import FreeLancer from '../portalpages/TypeofEmployement/Freelancer/FreeLancer'
 import Contractual from '../portalpages/TypeofEmployement/Contractual/Contractual'
+import SignIn from '../portalpages/Sign-In/SignIn'
+import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
+import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
 
 export default function PortalRoutes() {
   return (
@@ -43,6 +46,14 @@ export default function PortalRoutes() {
         <Route path="/mandarin" element={<Mandarin/>}/>
         <Route path="/korean" element={<Korean/>}/>
         <Route path="/japanese" element={<Japanese/>}/>
+
+        {/* Sigin , ResetPassword, Forgot */}
+      
+        <Route path='/Sign-In' element={<SignIn/>}></Route>
+        <Route path='/ForgotPassword'element={<ForgotPassword />} > </Route>
+        <Route path='/reset-password' element={<ResetPassword/>}></Route>
+        {/* Other routes */}
+
 
     </Routes>
   )

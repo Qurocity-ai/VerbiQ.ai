@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./componants/Navbar/Navbar";
 import ALLRoutes from "./routes/AllRoutes";
 import Footer from "./componants/Footer/Footer";
+import PortalRoutes from "./routes/PortalRoutes";
 
 const App = () => {
  
@@ -9,6 +10,7 @@ const App = () => {
     <>
       <Navbar />
       <ALLRoutes />
+      <PortalRoutes/>
       <Footer />
 
 
