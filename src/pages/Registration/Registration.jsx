@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Registration() {
   const [languages, setLanguages] = useState([
@@ -10,6 +11,8 @@ function Registration() {
       certifications: "",
     },
   ]);
+
+  const navigate = useNavigate();
 
   const [foreignLanguages, setForeignLanguages] = useState([
     {
@@ -71,7 +74,6 @@ function Registration() {
       [name]: value,
     }));
   };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -164,6 +166,7 @@ function Registration() {
       if (response.status === 200 || response.status === 201) {
         setIsLoading(true);
       }
+      navigate("/registrationMessage");
     } catch (error) {
       console.error("Full error:", error);
       console.error("Response data:", error.response?.data);
@@ -223,13 +226,11 @@ function Registration() {
         </div>
         <form className="mt-8 space-y-6 " onSubmit={handleSubmit}>
           <div className=" space-y-4">
-            
-            
             {/* <p className="mt-2 text-left text-sm text-[#C92A2D] font-semibold">
               Candidate Credential
               <hr className="-mt-2.5 ml-44 text-gray-200" />
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mt-8">
+            </p> */}
+            {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mt-8">
               <div>
                 <input
                   id="emailId"
@@ -288,7 +289,6 @@ function Registration() {
                 )}
               </div>
             </div> */}
-
             <p className="mt-10 text-left text-sm text-[#C92A2D] font-semibold">
               Candidate Registration
               <hr className="-mt-2.5 ml-44 text-gray-200" />
@@ -674,7 +674,7 @@ function Registration() {
                       interpretation: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
 
                 <label
@@ -696,7 +696,7 @@ function Registration() {
                       translation: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
                   htmlFor="translation"
@@ -717,7 +717,7 @@ function Registration() {
                       contentRoles: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
                   htmlFor="contentRoles"
@@ -738,7 +738,7 @@ function Registration() {
                       aiModelTraining: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
                   htmlFor="aiModelTraining"
@@ -759,7 +759,7 @@ function Registration() {
                       customerSupportRoles: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
                   htmlFor="customerSupportRoles"
@@ -867,7 +867,7 @@ function Registration() {
                   id="amcatORsvar"
                   name="amcatORsvar"
                   type="checkbox"
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                   checked={formData.amcatORsvar}
                   onChange={(e) =>
                     setFormData((prev) => ({
@@ -888,7 +888,7 @@ function Registration() {
                   id="versant"
                   name="versant"
                   type="checkbox"
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                   checked={formData.versant}
                   onChange={(e) =>
                     setFormData((prev) => ({
@@ -909,7 +909,7 @@ function Registration() {
                   id="berlitz"
                   name="berlitz"
                   type="checkbox"
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                   checked={formData.berlitz}
                   onChange={(e) =>
                     setFormData((prev) => ({
@@ -930,7 +930,7 @@ function Registration() {
                   id="pipplet"
                   name="pipplet"
                   type="checkbox"
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                   checked={formData.pipplet}
                   onChange={(e) =>
                     setFormData((prev) => ({
@@ -967,7 +967,7 @@ function Registration() {
                       contentRating: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className="w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
                   htmlFor="contentRating"
@@ -988,7 +988,7 @@ function Registration() {
                       contentModeration: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
                   htmlFor="contentModeration"
@@ -1009,7 +1009,7 @@ function Registration() {
                       dataAnnotation: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
                   htmlFor="dataAnnotation"
@@ -1030,7 +1030,7 @@ function Registration() {
                       promptAndResponseTraining: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
                   htmlFor="promptAndResponseTraining"
@@ -1051,7 +1051,7 @@ function Registration() {
                       promptEvaluationAnalyst: e.target.checked,
                     }))
                   }
-                  className=" w-4 h- accent-red-800 border-none cursor-pointer focus:outline-none "
+                  className=" w-4 accent-red-800 border-none cursor-pointer focus:outline-none "
                 />
                 <label
                   htmlFor="promptEvaluationAnalyst"
@@ -1107,7 +1107,7 @@ function Registration() {
             </button>
             <button
               type="submit"
-              className={`" border border-transparent text-sm font-medium rounded-md text-white 
+              className={`" text-sm font-medium rounded-md text-white 
                 ${
                   isLoading
                     ? "bg-[#d85e61] cursor-not-allowed w-40 py-2 px-4"
