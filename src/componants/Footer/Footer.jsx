@@ -22,7 +22,7 @@ function Footer() {
             </div>
             <div className="sm:flex sm:flex-col sm:w-36 sm:h-[70px] pl-4">
               <a href="/registration" className="sm:pb-4 pr-4 text-[#00046C]">
-                Registration
+              Register as Candidate
               </a>
               <a
                 href="https://www.linkedin.com/newsletters/7185962989202669569/"
