@@ -21,6 +21,21 @@ const FeedbackCarousel = () => {
       feedback:
         "Hi Suhani & Amisha, I just wanted to take a moment to thank you both for your incredible support throughout the hiring process. Everything went so smoothly, and I’m excited about my new role at Teleperformance. I’m looking forward to staying in touch.",
     },
+    {
+      name: "Suryanarayana Vadde, Customer Support Executive",
+      feedback:
+        "I just wanted to take a moment to thank you and the Recrutory team for the smooth and well-coordinated experience throughout the entire process. From the initial interview rounds to the onboarding and regular updates, everything was handled professionally and with genuine care. A special thanks to you for being approachable, responsive, and helpful whenever I had queries. Your support made the entire process a lot more comfortable and stress-free. Wishing you and your team continued success!",
+    },
+    {
+      name: "Tarun Kumar, Customer Support Executive",
+      feedback:
+        "My experience with VerbiQ has really been genuinely positive from start to finish. I mean, the entire process from initial interview rounds to onboarding was handled with great professionalism and clarity. I especially loved the timely communication, clear briefings for clearing the interview rounds, and smooth coordination throughout the process. A special thanks to Ms. Amisha ma'am for being incredibly helpful and responsive whenever needed. Her support made the entire journey much easier and more comfortable. Overall, I felt well-guided and valued during every step. Thank you so much for this journey.",
+    },
+    {
+      name: "Zubair Ahmad",
+      feedback:
+        "I appreciate your work and your assistance, help and guidance. I am very happy 😊. I appreciate your professionalism. I am thankful to Suhani as well. I am thankful to her for her supportive words. During the interview process both supported me well. Thanks and regards.",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
