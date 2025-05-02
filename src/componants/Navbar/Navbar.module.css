@@ -8,15 +8,17 @@
     min-width: 100%;
     background-color: #F8FAFF;
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);*/
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 1000;
+    height: 65px;
 
 }
   .navlinks {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    margin-right: 28rem;
+    gap: 1.2rem;
+    margin-right: 32rem;
 }
 
 .navlinks a {
@@ -33,6 +35,9 @@
 .navLinkWithIcon span:hover {
     color: #AD181B;
 }
+.dropdownArrow:hover{
+    color: #AD181B;
+}
 
 
 .logo {
@@ -43,7 +48,7 @@
 }
 
 .logo img {
-    height: 25px;
+    height: 23px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -74,10 +79,15 @@
 }*/
 .dropdownArrow {
     transition: transform 0.3s ease;
+    font-weight: 400;
+    color: #000949;
+
 }
 
 .arrowRotate {
     transform: rotate(90deg);
+    font-weight: 400;
+    color: #000949;
 }
 
 .dropdown {
@@ -93,25 +103,24 @@
     display: flex;
     gap: 12px;
    flex-wrap: wrap;
-    width:fit-content;
-    min-width: 140px;
+    width:100%;
+    min-width: 120px;
     transition: all 0.3s ease-in-out;
     white-space: nowrap;
+    /*grid-column: 1 / -1;*/
 }
 
   
   .solutionsDropdown{
-    min-width: 600px;
+   min-width: 560px;
     margin-top: 6px; 
     /*padding-top: 0px;*/
     margin-left: -80px;
-    /*color: #000949;*/
   }
 
 
 .resourcesDropdown {
     flex-direction: column;
-  
     /*max-width: 270px;*/
     margin-top: 5px; 
     padding-top: 8px;
