@@ -3,7 +3,7 @@ import React from 'react'
 function Czech() {
   return (
     <div>
-      Czech
+      <h1>Czech</h1>
     </div>
   )
 }
