@@ -2,7 +2,7 @@ import React from "react";
 
 function COE1() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center w-screen h-full">
       <h1 className="sm:text-[35px] text-[30px] text-[#0c0f6a] font-semilight text-center">
         VerbiQ's Center of Excellence
       </h1>

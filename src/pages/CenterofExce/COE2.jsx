@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FourSquare } from "react-loading-indicators";
+import { motion } from "framer-motion";
 
 function COE2() {
   const [users, setUsers] = useState([]);
@@ -70,7 +72,18 @@ function COE2() {
   return (
     <div className="flex items-center justify-center h-full py-18">
       {isLoading ? (
-        <div>Loading...</div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "2rem",
+          }}
+        >
+          <FourSquare color={["#a9b9c1", "#bda9c1", "#c1b1a9", "#adc1a9"]} />
+        </motion.div>
       ) : (
         <div className="relative h-96 w-1/2  ">
           <div className="absolute top-40 w-full z-0 flex items-center justify-center">
