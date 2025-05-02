@@ -395,7 +395,7 @@ function Registration() {
                   id="linkToPortfolio"
                   name="linkToPortfolio"
                   type="text"
-                  required
+                  // required
                   className="appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Link to Portfolio"
                   value={formData.linkToPortfolio}
@@ -413,7 +413,7 @@ function Registration() {
                     id={`nativeLanguage-${lang._id}`}
                     name="nativeLanguage"
                     type="text"
-                    required
+                    // required
                     className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
                       !hasValue(formData.nativeLanguages) ? "-mb-9" : ""
                     } bg-transparent focus:bg-white"`}
@@ -429,11 +429,11 @@ function Registration() {
                       setLanguages(updatedLanguages);
                     }}
                   />
-                  {!hasValue(formData.nativeLanguages) && (
+                  {/* {!hasValue(formData.nativeLanguages) && (
                     <span className="text-[#C92A2D] sm:ml-[135px] ml-[155px]">
                       *
                     </span>
-                  )}
+                  )} */}
                 </div>
                 <div>
                   <select
@@ -451,7 +451,7 @@ function Registration() {
                       setLanguages(updatedLanguages);
                     }}
                   >
-                    <option>Proficiency-Native</option>
+                    <option value="" disabled>Proficiency-Native</option>
                     <option>Beginner</option>
                     <option>Intermediate</option>
                     <option>Advanced</option>
@@ -474,10 +474,28 @@ function Registration() {
                       setLanguages(updatedLanguages);
                     }}
                   >
-                    <option>Certifications (if any)</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
+                    <option value="" disabled>Certifications (if any)</option>
+                    <option>B1</option>
+                    <option>B2</option>
+                    <option>C1</option>
+                    <option>C2</option>
+                    <option>HSK 3</option>
+                    <option>HSK4</option>
+                    <option>HSK5</option>
+                    <option>HSK6</option>
+                    <option>N4</option>
+                    <option>N3</option>
+                    <option>N2</option>
+                    <option>N1</option>
+                    <option>L3</option>
+                    <option>L4</option>
+                    <option>L5</option>
+                    <option>L6</option>
+                    <option>Bachelors</option>
+                    <option>Masters</option>
+                    <option>Diploma</option>
+                    <option>Adv. Diploma</option>
+                    <option>PG Diploma</option>
                   </select>
                   {lang._id === languages.length && (
                     <>
@@ -559,11 +577,14 @@ function Registration() {
                     </span>
                   )}
                 </div>
-                <div>
+                <div className="relative w-52">
                   <select
                     id={`proficiencyL2-${lang._id}`}
+                    required
                     name="proficiencyL2"
-                    className="mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
+                    // className="mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
+                    // className="mt-1 block w-52 pl-3 pr-8 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
+                     className="mt-1 block w-full pl-3 pr-8 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300 appearance-none"
                     value={lang.proficiency}
                     onChange={(e) => {
                       const updatedLanguages = foreignLanguages.map((l) => {
@@ -575,12 +596,18 @@ function Registration() {
                       setForeignLanguages(updatedLanguages);
                     }}
                   >
-                    <option>Proficiency L2</option>
+                    <option value="" disabled>Proficiency L2</option>
                     <option>Beginner</option>
                     <option>Intermediate</option>
                     <option>Advanced</option>
                     <option>Native</option>
                   </select>
+
+                  {!hasValue(formData.proficiencyL2) && (
+                    <span className="absolute text-[#C92A2D] right-20 top-1.5 pointer-events-none">
+                      *
+                    </span>
+                  )}
                 </div>
                 <div className="flex items-center">
                   <select
@@ -601,10 +628,28 @@ function Registration() {
                       setForeignLanguages(updatedLanguages);
                     }}
                   >
-                    <option>Certifications (if any)</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
+                    <option value="" disabled>Certifications (if any)</option>
+                    <option>B1</option>
+                    <option>B2</option>
+                    <option>C1</option>
+                    <option>C2</option>
+                    <option>HSK 3</option>
+                    <option>HSK4</option>
+                    <option>HSK5</option>
+                    <option>HSK6</option>
+                    <option>N4</option>
+                    <option>N3</option>
+                    <option>N2</option>
+                    <option>N1</option>
+                    <option>L3</option>
+                    <option>L4</option>
+                    <option>L5</option>
+                    <option>L6</option>
+                    <option>Bachelors</option>
+                    <option>Masters</option>
+                    <option>Diploma</option>
+                    <option>Adv. Diploma</option>
+                    <option>PG Diploma</option>
                   </select>
                   {lang._id === foreignLanguages.length && (
                     <>
@@ -808,10 +853,28 @@ function Registration() {
                   value={formData.languageCertifications}
                   onChange={handleInputChange}
                 >
-                  <option>Select</option>
-                  <option>Option 1</option>
-                  <option>Option 2</option>
-                  <option>Option 3</option>
+                  <option value="" disabled>Select</option>
+                  <option>B1</option>
+                  <option>B2</option>
+                  <option>C1</option>
+                  <option>C2</option>
+                  <option>HSK 3</option>
+                  <option>HSK4</option>
+                  <option>HSK5</option>
+                  <option>HSK6</option>
+                  <option>N4</option>
+                  <option>N3</option>
+                  <option>N2</option>
+                  <option>N1</option>
+                  <option>L3</option>
+                  <option>L4</option>
+                  <option>L5</option>
+                  <option>L6</option>
+                  <option>Bachelors</option>
+                  <option>Masters</option>
+                  <option>Diploma</option>
+                  <option>Adv. Diploma</option>
+                  <option>PG Diploma</option>
                 </select>
               </div>
               <div>
@@ -828,10 +891,13 @@ function Registration() {
                   value={formData.preferredLocations}
                   onChange={handleInputChange}
                 >
-                  <option>Select</option>
-                  <option>Location 1</option>
-                  <option>Location 2</option>
-                  <option>Location 3</option>
+                  <option value="" disabled>Select</option>
+                  <option>Gurugram</option>
+                  <option>Jaipur</option>
+                  <option>Mumbai</option>s
+                  <option>Kolkata</option>
+                  <option>Mohali</option>
+                  <option>Bangalore</option>
                 </select>
               </div>
               <div>
@@ -848,10 +914,11 @@ function Registration() {
                   value={formData.preferredProcesses}
                   onChange={handleInputChange}
                 >
-                  <option>Select</option>
-                  <option>Process 1</option>
-                  <option>Process 2</option>
-                  <option>Process 3</option>
+                  <option value="" disabled>Select</option>
+                  <option>Voice</option>
+                  <option>Non-Voice</option>
+                  <option>Blended</option>
+                  <option>Content Roles</option>
                 </select>
               </div>
             </div>
