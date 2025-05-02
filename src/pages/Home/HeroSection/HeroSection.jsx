@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./HeroSection.module.css";
 import AnimatedContent from "../ReactBits/AnimatedContent";
 import CountUp from "../ReactBits/CountUp";
+import { Typewriter } from "react-simple-typewriter";
 
 
 const HeroSection = () => {
@@ -31,7 +32,7 @@ const HeroSection = () => {
 
                 <span className="block ">
                   Smarter Language Hiring,{" "}
-                  <span className="text-[#1b3d86] block sm:inline">
+                  <span className="text-[#2D3748] block sm:inline">
                     Beyond Just Scores
                   </span>
                 </span>
@@ -40,8 +41,20 @@ const HeroSection = () => {
           </div>
 
           <div className={`w-full text-center  -mt-3 ${styles.secHeading}`}>
-            <h2 className="text-2xl sm:text-2xl md:text-4xl font-medium text-[#2b4879]">
-              Fast, Fair, and Flawless
+            <h2 className="text-2xl sm:text-2xl md:text-4xl font-medium text-[#AD181B]">
+              <Typewriter
+            words={[
+                          "Fast, Fair, and Flawless",
+                         
+                        ]}
+                        loop={1}
+                        cursor
+                        cursorStyle=""
+                        typeSpeed={60}
+                        deleteSpeed={40}
+                        delaySpeed={1500} 
+                        ></Typewriter>
+                      
             </h2>
           </div>
 
