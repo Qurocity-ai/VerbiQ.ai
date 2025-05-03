@@ -27,12 +27,12 @@ const HeroSection = () => {
               threshold={0.2}
             >
               <h1
-                className={`text-4xl sm:text-4xl md:text-5xl font-bold text-[#2D3748] ${styles.heading}`}
+                className={`text-4xl sm:text-4xl md:text-5xl font-bold text-[#1b3d86] ${styles.heading}`}
               >
 
                 <span className="block ">
                   Smarter Language Hiring,{" "}
-                  <span className="text-[#2D3748] block sm:inline">
+                  <span className="text-[#1b3d86] block sm:inline">
                     Beyond Just Scores
                   </span>
                 </span>
