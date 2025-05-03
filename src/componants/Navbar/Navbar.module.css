@@ -17,8 +17,8 @@
   .navlinks {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    margin-right: 32rem;
+    gap: 0.9rem;
+    margin: auto;
 }
 
 .navlinks a {
@@ -42,7 +42,7 @@
 
 .logo {
     height: 24px;
-    margin-left: 4rem; 
+    margin-left: 3rem; 
     display: flex;
     align-items: center;
 }
@@ -52,6 +52,7 @@
     width: auto;
     object-fit: contain;
     display: block;
+    
 }
 
 .dropdownContainer {
