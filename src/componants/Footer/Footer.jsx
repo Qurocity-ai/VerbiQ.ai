@@ -2,83 +2,168 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="w-ful">
-      <div className="flex sm:justify-evenly justify-center shadow-[0_-3px_8px_rgba(0,0,0,0.1)] items-center sm:flex-row flex-col w-full pt-5 sm:pb-10">
-        <img
-          src="./assets/Group 514676.png"
-          alt="VerbiQ.ai"
-          className="sm:w-40 sm:h-10"
-        />
+    <footer className="w-full bg-[#F8FAFF] shadow-2xl">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        {/* Desktop Layout */}
+        <div className="hidden sm:flex flex-col">
+          <div className="flex flex-col items-center justify-between gap-8 sm:flex-row">
+            {/* Logo */}
+            <img
+              src="./assets/Group 514676.png"
+              alt="VerbiQ.ai"
+              className="h-10 w-40 shrink-0"
+            />
 
-        <div className="flex flex-col flex-wrap items-center justify-center sm:grid sm:grid-cols-6 sm:gap-7 gap-4 sm:pl-[50px] py-5 sm:w-[50%] ">
-          <div className="flex sm:col-span-2">
-            <div className="sm:flex sm:flex-col sm:w-36 sm:h-[73px] ">
-              <a href="#" className="sm:pb-4 pr-2.5 text-[#00046C]">
-                Careers
-              </a>
-              <a href="/blog" className="text-[#00046C]">
-                Blogs
-              </a>
+            {/* Links Grid */}
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
+              {/* Left Column */}
+              <div className="space-y-4">
+                <a href="#" className="block text-[#00046C] hover:text-opacity-80">
+                  Careers
+                </a>
+                <a href="/blog" className="block text-[#00046C] hover:text-opacity-80">
+                  Blogs
+                </a>
+              </div>
+
+              {/* Middle Column */}
+              <div className="space-y-4">
+                <a href="/registration" className="block text-[#00046C] hover:text-opacity-80">
+                  Register as Candidate
+                </a>
+                <a
+                  href="https://www.linkedin.com/newsletters/7185962989202669569/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-[#00046C] hover:text-opacity-80"
+                >
+                  News Letters
+                </a>
+              </div>
+
+              {/* Right Column - Social Links */}
+              <div className="col-span-2 space-y-4 md:col-span-1">
+                <div className="flex flex-col space-y-4">
+                  <a
+                    href="https://www.linkedin.com/company/recrutorycompany/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-[#00046C] hover:text-opacity-80"
+                  >
+                    <img src="./assets/image 213.png" alt="LinkedIn" className="h-6 w-6" />
+                    <span>LinkedIn</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/verbiq.ai/?igsh=YjJ1Z2V1aTV2d2Vq#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-[#00046C] hover:text-opacity-80"
+                  >
+                    <img src="./assets/image 214.png" alt="Instagram" className="h-6 w-6" />
+                    <span>Instagram</span>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/share/1FcCEmyUsp/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-[#00046C] hover:text-opacity-80"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/1200px-Facebook_icon.svg.png"
+                      alt="Facebook"
+                      className="h-6 w-6"
+                    />
+                    <span>Facebook</span>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="sm:flex sm:flex-col sm:w-36 sm:h-[70px] pl-4">
-              <a href="/registration" className="sm:pb-4 pr-4 text-[#00046C]">
-                Registration
+
+            {/* Contact Info */}
+            <div className="space-y-2 text-right">
+              <div className="block text-[#00046C] font-medium">9373902340</div>
+              <div className="block text-[#00046C] font-medium">hr@verbiq.ai</div>
+            </div>
+          </div>
+
+          {/* Bottom Border */}
+          <div className="mt-8 border-t border-gray-200 pt-8 text-center">
+            <p className="text-base text-[#00046C]">
+              &copy; {new Date().getFullYear()} VerbiQ.ai. All rights reserved.
+            </p>
+          </div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="sm:hidden">
+          <div className="flex flex-col">
+            {/* Logo */}
+            <img
+              src="./assets/Group 514676.png"
+              alt="VerbiQ.ai"
+              className="h-10 w-40 mx-auto mb-6"
+            />
+
+            {/* Mobile Links in specified order */}
+            <div className="space-y-3 mb-6 text-left">
+              <a href="/registration" className="block text-[#00046C] hover:text-opacity-80">
+                Register as Candidate
+              </a>
+              <a href="/blog" className="block text-[#00046C] hover:text-opacity-80">
+                Blogs
               </a>
               <a
                 href="https://www.linkedin.com/newsletters/7185962989202669569/"
-                target="_blank"
-                className="text-[#00046C] text-nowrap"
+                className="block text-[#00046C] hover:text-opacity-80"
               >
                 News Letters
               </a>
+              <a href="#" className="block text-[#00046C] hover:text-opacity-80">
+                Careers
+              </a>
             </div>
-          </div>
-          <div className="flex flex-wrap sm:flex-nowrap sm:flex-col sm:col-span-2 sm:w-[134px] sm:h-[73px] sm:pl-10 px-5 sm:p-0 justify-center sm:pt-11 ">
-            <a
-              href="https://www.linkedin.com/company/recrutorycompany/"
-              target="_blank"
-              className="flex sm:pb-4 items-center pr-6"
-            >
-              <img
-                src=".\assets\image 213.png"
-                alt="LinkedIn-logo"
-                className="w-7 h-7 mr-3"
-              />
-              <span className="text-[#00046C]"> LinkedIn</span>
-            </a>
-            <a
-              href="https://www.instagram.com/verbiq.ai/?igsh=YjJ1Z2V1aTV2d2Vq#"
-              target="_blank"
-              className="flex items-center"
-            >
-              <img
-                src=".\assets\image 214.png"
-                alt="Instagram-logo"
-                className="w-7 h-7 mr-3"
-              />
-              <span className="text-[#00046C]">Instagram</span>
-            </a>
-            <a
-              href="https://www.facebook.com/share/1FcCEmyUsp/"
-              target="_blank"
-              className="flex items-center sm:pt-4"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/1200px-Facebook_icon.svg.png"
-                alt="facebook-icon"
-                className="w-7 h-7 mr-3"
-              />
-              <span className="text-[#00046C]">Facebook</span>
-            </a>
-          </div>
 
-          <div className="sm:flex sm:flex-col sm:h-[73px] sm:pl-6 sm:col-span-2">
-            <a href="#" className="sm:pb-5 pr-4 text-[#00046C] font-medium">
-              9373902340
-            </a>
-            <a href="#" className="text-[#00046C] font-medium">
-              hr@verbiq.ai
-            </a>
+            {/* Contact Info */}
+            <div className="space-y-2 mb-6 text-left">
+              <div className="block text-[#00046C] font-medium">9373902340</div>
+              <div className="block text-[#00046C] font-medium">hr@verbiq.ai</div>
+            </div>
+
+            {/* Horizontal Social Links */}
+            <div className="flex justify-center space-x-6 mt-4">
+              <a
+                href="https://www.linkedin.com/company/recrutorycompany/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./assets/image 213.png" alt="LinkedIn" className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/verbiq.ai/?igsh=YjJ1Z2V1aTV2d2Vq#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./assets/image 214.png" alt="Instagram" className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1FcCEmyUsp/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
+                  alt="Facebook"
+                  className="h-6 w-6"
+                />
+              </a>
+            </div>
+
+            {/* Bottom Border section*/}
+            <div className="mt-8 border-t border-gray-200 pt-8 text-center">
+              <p className="text-base text-[#00046C]">
+                &copy; {new Date().getFullYear()} VerbiQ.ai. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       </div>
