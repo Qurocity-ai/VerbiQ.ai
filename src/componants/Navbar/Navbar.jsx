@@ -96,11 +96,12 @@ export default function Navbar() {
                   <img src="/assets/CAPBS.png" alt="Contractual" />
                   <div className={style.itemContent}>
                     <div className={style.itemTitle}>
-                      <span>Contractual and Project based Support</span>
+                      <span>Contractual and Project<br /> based Support</span>
                       {/*<IoIosArrowForward className={style.itemArrow} />*/}
                     </div>
                   </div>
                 </div>
+                <div className={style.divider}></div> {/* horizontal line */}
               </div>
               
               <div className={style.row}>

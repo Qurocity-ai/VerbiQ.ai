@@ -103,20 +103,26 @@
     display: flex;
     gap: 12px;
    flex-wrap: wrap;
-    width:100%;
-    min-width: 120px;
+    width:auto;
+    min-width: 100px;
     transition: all 0.3s ease-in-out;
     white-space: nowrap;
-    /*grid-column: 1 / -1;*/
 }
 
   
   .solutionsDropdown{
-   min-width: 560px;
+   min-width: 500px;
     margin-top: 6px; 
     /*padding-top: 0px;*/
     margin-left: -80px;
   }
+  .divider {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    margin: 1px auto;
+  }
+  
 
 
 .resourcesDropdown {
@@ -133,7 +139,6 @@
    width: 100%;
     gap: 16px;
     flex-wrap: wrap;
-    
 }
 .item.active{
     background-color: #e5b3b3;
@@ -143,6 +148,7 @@
 }
 
 .item {
+    max-width: 100%;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -154,7 +160,7 @@
     /*border: 1px solid #ccc;*/
     border-radius: 4px;
     transition:transform 0.25s, background-color 0.3s;
-    white-space: wrap;
+    white-space: nowrap;
 }
 .item:hover {
     background-color: #f3f4f6;
@@ -187,9 +193,10 @@
 }
 .itemTitle span {
     font-size: 0.8rem;
-    font-weight: 400;
+    font-weight: 450;
     /*color: #6b7280;*/
     white-space: nowrap;
+    /*line-height: 1.2;*/
   }
 .itemArrow {
     transition: transform 0.3s ease;
@@ -249,6 +256,7 @@
       padding: 1rem 0;
       background-color: #F8FAFF;
   }
+
   .solutionsDropdown {
     min-width: 100%;
     margin-left: 0;     /* Remove negative margin */
@@ -263,6 +271,23 @@
   .row {
       flex-direction: column;
   }
+
+  /* Responsive behavior for "Solutions" dropdown */
+  .solutionsDropdown .item {
+    padding: 0.1rem ;
+    width: 100%;
+}
+
+/* Responsive behavior for "Resources" dropdown */
+.resourcesDropdown .item {
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+
+/*.solutionsDropdown.show, .resourcesDropdown.show {
+    display: block;
+}*/
  }
       
   
