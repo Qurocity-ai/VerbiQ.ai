@@ -158,7 +158,7 @@ function Footer() {
               </a>
             </div>
 
-            {/* Bottom Border */}
+            {/* Bottom Border section*/}
             <div className="mt-8 border-t border-gray-200 pt-8 text-center">
               <p className="text-base text-[#00046C]">
                 &copy; {new Date().getFullYear()} VerbiQ.ai. All rights reserved.
