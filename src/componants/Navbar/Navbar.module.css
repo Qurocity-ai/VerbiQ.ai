@@ -1,5 +1,5 @@
 
-   .navbar {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,7 +12,7 @@
     top: 0;
     z-index: 1000;
     height: 65px;
-
+ 
 }
   .navlinks {
     display: flex;
@@ -20,17 +20,17 @@
     gap: 1rem;
     margin: auto;
 }
-
+ 
 .navlinks a {
     text-decoration: none;
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
     cursor: pointer;
     padding: 0.5rem 0;
     transition: color 0.3s ease;  /* Smooth transition */
    font-weight: 400;
    color: #000949;
 }
-
+ 
 .navlinks a:hover,
 .navLinkWithIcon span:hover {
     color: #AD181B;
@@ -38,33 +38,33 @@
 .dropdownArrow:hover{
     color: #AD181B;
 }
-
-
+ 
+ 
 .logo {
     height: 24px;
-    margin-left: 3rem; 
+    margin-left: 3rem;
     display: flex;
     align-items: center;
 }
-
+ 
 .logo img {
     height: 23px;
     width: auto;
     object-fit: contain;
     display: block;
 }
-
+ 
 .dropdownContainer {
     position: relative;
     cursor: pointer;
    
 }
-
+ 
 .navLinkWithIcon {
     display: flex;
     align-items: center;
     gap: 0.3rem;
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
     padding: 0.5rem 0;
     cursor: pointer;
     transition: color 0.3s;
@@ -73,7 +73,7 @@
     font-weight: 400;
     color: #000949;
 }
-
+ 
 /*.dropdownContainer:hover .navLinkWithIcon {
     color: #3b4f6e;
 }*/
@@ -81,15 +81,15 @@
     transition: transform 0.3s ease;
     font-weight: 400;
     color: #000949;
-
+ 
 }
-
+ 
 .arrowRotate {
     transform: rotate(90deg);
     font-weight: 400;
     color: #000949;
 }
-
+ 
 .dropdown {
     position: absolute;
     top: 100%;
@@ -97,7 +97,7 @@
     background:#F8FAFF;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 0.75rem; 
+    padding: 0.75rem;
     margin-top: 1rem;
     z-index: 1000;
     display: flex;
@@ -108,30 +108,30 @@
     transition: all 0.3s ease-in-out;
     white-space: nowrap;
 }
-
-  
+ 
+ 
   .solutionsDropdown{
    min-width: 500px;
-    margin-top: 6px; 
+    margin-top: 6px;
     /*padding-top: 0px;*/
     margin-left: -80px;
   }
   .divider {
     height: 1px;
-    background-color: rgba(0, 0, 0, 0.1); 
+    background-color: rgba(0, 0, 0, 0.1);
     width: 100%;
     margin: 1px auto;
   }
-  
-
-
+ 
+ 
+ 
 .resourcesDropdown {
     flex-direction: column;
     /*max-width: 270px;*/
-    margin-top: 5px; 
+    margin-top: 5px;
     padding-top: 8px;
 }
-  
+ 
 .row {
     display: flex;
     transition: 0.3s;
@@ -146,7 +146,7 @@
 .row:last-child {
     margin-bottom: 0;
 }
-
+ 
 .item {
     max-width: 100%;
     display: flex;
@@ -177,8 +177,8 @@
     flex-direction: column;
     gap: 4px;
   }
-  
-
+ 
+ 
 .itemTitle {
     display: flex;
     align-items: center;
@@ -201,35 +201,35 @@
 .itemArrow {
     transition: transform 0.3s ease;
 }
-
+ 
 .item:hover .itemArrow {
     transform: translateX(3px);
 }
-
+ 
 .mobileMenuToggle {
     display: none;
 }
 /* Responsive design*/
-
+ 
 @media (max-width: 992px) {
   .navbar {
       justify-content: space-between;
       padding: 0 1rem;
-      
+     
   }
-  
+ 
   .logo {
       order: 1;
       margin-left: 0;
   }
-
+ 
   .mobileMenuToggle {
       order: 2;
-      display: block !important; 
+      display: block !important;
       cursor: pointer;
-      z-index: 1001; 
+      z-index: 1001;
   }
-
+ 
   .navlinks {
       position: absolute;
       top: 80px;
@@ -244,11 +244,11 @@
       gap: 1rem;
       width: 100%;
   }
-  
+ 
   .showMenu {
       display: flex;
   }
-  
+ 
   .dropdown {
       position: static;
       width: 100% !important;
@@ -256,41 +256,41 @@
       padding: 1rem 0;
       background-color: #F8FAFF;
   }
-
+ 
   .solutionsDropdown {
     min-width: 100%;
     margin-left: 0;     /* Remove negative margin */
     padding: 0 1rem;    /* Add padding to avoid edge clipping */
     box-sizing: border-box;
   }
-
+ 
   .item {
     width: 100%;        /* Make each item full-width in mobile */
   }
-  
+ 
   .row {
       flex-direction: column;
   }
-
+ 
   /* Responsive behavior for "Solutions" dropdown */
   .solutionsDropdown .item {
     padding: 0.1rem ;
     width: 100%;
 }
-
+ 
 /* Responsive behavior for "Resources" dropdown */
 .resourcesDropdown .item {
     padding: 0.5rem 0;
     width: 100%;
 }
-
-
+ 
+ 
 /*.solutionsDropdown.show, .resourcesDropdown.show {
     display: block;
 }*/
  }
-      
-  
-  
-
-
+     
+ 
+ 
+ 
+ 

@@ -15,6 +15,7 @@ import BlogListPage from "../pages/Blog/BlogListPage";
 import BlogDetailPage from "../pages/Blog/BlogDetailPage";
 import Details from "../pages/CenterofExce/Details";
 import Registration from "../pages/Registration/Registration";
+import Message from "../pages/Registration/Message";
 export default function ALLRoutes() {
   return (
     <Routes>
@@ -34,6 +35,7 @@ export default function ALLRoutes() {
       <Route path="/blogs/:id" element={<BlogDetailPage />} />
       <Route path="/details/:id" element={<Details />} />
       <Route path="/registration" element={<Registration />} />
+      <Route path="/registrationMessage" element={<Message />} />
     </Routes>
   );
 }
