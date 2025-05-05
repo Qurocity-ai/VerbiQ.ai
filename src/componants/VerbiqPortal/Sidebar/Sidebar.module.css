@@ -1,0 +1,160 @@
+/* Sidebar.module.css */
+
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #F5F5F5;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto; /* <-- This is important */
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+  
+  .sidebarExpanded {
+    width: 272px; /* 17rem */
+  }
+  
+   /* Mobile sidebar animation */
+.sidebarHiddenMobile {
+    transform: translateX(-100%);
+  }
+  
+  .sidebarVisibleMobile {
+    transform: translateX(-0);
+  }
+  
+  @media (min-width: 1024px) {
+    .sidebarHiddenMobile {
+      transform: translateX(0);
+    }
+  
+    .sidebarVisibleMobile {
+      transform: translateX(0);
+    }
+  }
+  .hamburgerButton {
+    padding: 12px;
+  }
+  
+  .logoContainer {
+    padding: 8px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .toggleDesktopButton {
+    display: none;
+  }
+  
+  @media (min-width: 1024px) {
+    .toggleDesktopButton {
+      display: flex;
+      justify-content: flex-end;
+      padding: 8px;
+    }
+  }
+  
+  .toggleButtonIcon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background-color: #d1d5db;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .toggleButtonIcon:hover {
+    background-color: #9ca3af;
+  }
+  
+  .navButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 6px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navButtonExpanded {
+    justify-content: space-between;
+    background-color: #024E5B;
+    color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .navButtonCollapsed {
+    justify-content: center;
+  }
+  
+  .navLinks {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .navLink {
+    padding-left: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 15px;
+    list-style: none;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .activeNavLink {
+    color: #dc2626; /* red-600 */
+    font-weight: 600;
+  }
+  
+  .inactiveNavLink {
+    color: black;
+  }
+ /* Adjust these two */
+.sidebarHiddenMobile {
+    transform: translateX(-100%);
+  }
+  
+  .sidebarVisibleMobile {
+    transform: translateX(0);
+  }
+  
+  /* Add this */
+  @media (min-width: 1024px) {
+    .sidebarHiddenMobile {
+      transform: translateX(0); /* Show on desktop */
+    }
+  
+    .sidebarVisibleMobile {
+      transform: translateX(0); /* Always show on desktop */
+    }
+  }
+/* example layout CSS */
+ .pageWrapper {
+    padding-top: 200px;
+    padding-left: 292px; /* match sidebarExpanded width */
+    
+  }
+  
+  @media (max-width: 1023px) {
+    .pageWrapper {
+      padding-left: 100px;
+    }
+  } 
