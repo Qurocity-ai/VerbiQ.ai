@@ -9,12 +9,32 @@ function PortalNavbar() {
 export default PortalNavbar;*/
 
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./PortalNavbar.module.css";
 //import { FaBell } from "react-icons/fa"; 
 import { GiHamburgerMenu } from "react-icons/gi";  // Import the hamburger menu icon
 import clsx from "clsx";
 const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef();
+
+  const handleLogout = () => {
+    // Clear any tokens or session storage
+    localStorage.clear(); // or sessionStorage.clear();
+    // Redirect to login page
+    window.location.href = "/login";
+  };
+
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   return (
     <nav className={styles.navbar}>     
        <div className={styles.leftSection}>
@@ -39,7 +59,12 @@ const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
             alt="Profile"
             className={styles.profileImage}
           />
-          <div className={styles.dropdownIcon}>▾</div>
+          <div className={styles.dropdownIcon}   onClick={() => setDropdownOpen((prev) => !prev)}>▾</div>
+          {dropdownOpen && (
+            <div className={styles.dropdownMenu}>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          )}
         </div>
       </div>
     </nav>
