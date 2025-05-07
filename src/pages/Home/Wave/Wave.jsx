@@ -7,13 +7,11 @@ const Wave = () => {
       id: 1,
       title: "Could you explain how your team resolved a miscommunication with a client?",
       description: "Understand how a candidate structures thoughts, uses verb tenses, connectors, and constructs grammatically sound, professional responses.",
-      greetings: ["Hello", "Bonjour"]
     },
     {
       id: 2,
       title: "Tell us how you would describe our product to a non-technical customer.",
       description: "Measures range, precision, and contextual appropriateness of words used in real-life workplace situations.",
-      dictionary: "DICTIONARY A-Z"
     },
     {
       id: 3,
