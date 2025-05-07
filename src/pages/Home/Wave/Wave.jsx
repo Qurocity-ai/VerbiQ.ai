@@ -43,10 +43,10 @@ const Wave = () => {
   ];
   
   return (
-    <div className="w-full min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="w-full min-h-screen bg-[#F8FAFF] flex items-center justify-center p-4">
       <div className="w-full max-w-7xl flex flex-col items-center">
         {/* Title  */}
-        <h1 className="text-2xl font-medium text-center text-gray-800 mx-auto max-w-6xl" >
+        <h1 className="text-2xl font-medium text-center text-gray-800 mx-auto max-w-5xl" >
           {slides[currentSlide].title}
         </h1>
         
