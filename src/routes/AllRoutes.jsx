@@ -38,6 +38,7 @@ export default function ALLRoutes() {
       <Route path="/registration" element={<Registration />} />
       <Route path="/registrationMessage" element={<Message />} />
       <Route path="/dashboard/*" element={<Dashboard />} />
+      
     </Routes>
   );
 }

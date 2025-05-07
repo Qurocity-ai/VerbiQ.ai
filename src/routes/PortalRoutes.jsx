@@ -43,6 +43,12 @@ export default function PortalRoutes() {
         <Route path="/korean" element={<Korean/>}/>
         <Route path="/japanese" element={<Japanese/>}/>
         {/*portal-navbar*/}
+
+        <Route path='/Sigin-in' element={<SignIn/>}></Route>
+        <Route path='/ForgotPassword'element={<ForgotPassword />} > </Route>
+        <Route path='/reset-password' element={<ResetPassword/>}></Route>
+
+        
     </Routes>
   )
 }
