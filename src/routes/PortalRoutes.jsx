@@ -16,6 +16,9 @@ import Japanese from '../portalpages/Language/Japanese/Japanese'
 import TypeofEmployement from '../portalpages/TypeofEmployement/TypeofEmployement'
 import FreeLancer from '../portalpages/TypeofEmployement/Freelancer/FreeLancer'
 import Contractual from '../portalpages/TypeofEmployement/Contractual/Contractual'
+import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
+import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
+import SignIn from '../portalpages/Sign-In/SignIn'
 export default function PortalRoutes() {
   return (
     <Routes>

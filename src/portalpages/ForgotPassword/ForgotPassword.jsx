@@ -72,13 +72,13 @@ const ForgotPassword = () => {
     <div className={styles.container}>
     {/* Left Panel */}
     <div className={styles.leftPanel}>
-      <img src="/half-r.png" alt="Half R Logo" className={styles.halfR} />
+      <img src="/assets/half-r.png" alt="Half R Logo" className={styles.halfR} />
     </div>
 
     {/* Right Panel */}
     <div className={styles.rightPanel}>
       <div className={styles.topRow}>
-        <img src="/verbiq-logo.png" alt="VerbiQ Logo" className={styles.verbiqLogo} />
+        <img src="/assets/verbiq-logo.png" alt="VerbiQ Logo" className={styles.verbiqLogo} />
         <div className={styles.separator}>|</div>
 
         <Link to="/ForgotPassword" className={styles.forgotPasswordLink}>

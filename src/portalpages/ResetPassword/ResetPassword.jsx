@@ -54,11 +54,11 @@ export default function ResetPassword() {
   return (
     <div className={styles.container}>
       <div className={styles.leftPanel}>
-        <img src="/half-r.png" alt="Half R Logo"  className={styles.halfR} />
+        <img src="/assets/half-r.png" alt="Half R Logo"  className={styles.halfR} />
       </div>
       <div className={styles.rightPanel}>
         <div className={styles.formContainer}>
-          <img src="/verbiq-logo.png" alt="VerbiQ Logo" className={styles.logoRight} />
+          <img src="/assets/verbiq-logo.png" alt="VerbiQ Logo" className={styles.logoRight} />
           <h2>Reset Password</h2>
           <input
             type="password"

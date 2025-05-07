@@ -50,11 +50,11 @@ const handleSubmit = async (e) => {
   return (
     <div className={styles.container}>
     <div className={styles.leftPanel}>
-      <img src="/half-r.png" alt="Half R" className={styles.halfR} />
+      <img src="/assets/half-r.png" alt="Half R" className={styles.halfR} />
     </div>
     <div className={styles.rightPanel}>
     <div className={styles.header}>
-    <img src="/verbiq-logo.png" alt="VerbiQ Logo" className={styles.verbiqLogo} />
+    <img src="/assets/verbiq-logo.png" alt="VerbiQ Logo" className={styles.verbiqLogo} />
     <Link to="#" className={styles.signinHeading}>Sign-In</Link>
 
   </div> 
