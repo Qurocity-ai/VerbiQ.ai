@@ -99,8 +99,8 @@
 }
 .dropdownMenu {
   position: absolute;
-  top: 60px;
-  right: 20px;
+  top: 62px;
+  right: 10px;
   background-color: white;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -109,14 +109,16 @@
   z-index: 1001;
 }
 
-.dropdownMenu button {
-  background: none;
-  border: none;
-  color: #000;
-  cursor: pointer;
+.dropdownMenu a {
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  color: #333;
+  display: block;
   font-size: 0.9rem;
+  transition: background 0.2s ease;
+  cursor: pointer;
 }
 
-.dropdownMenu button:hover {
+.dropdownMenu a:hover {
   color: #4f46e5;
 }

@@ -1,17 +1,8 @@
-/*import React from 'react'
-
-function PortalNavbar() {
-  return (
-    <div >Navbar</div>
-  )
-}
-
-export default PortalNavbar;*/
-
 
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./PortalNavbar.module.css";
 //import { FaBell } from "react-icons/fa"; 
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";  // Import the hamburger menu icon
 import clsx from "clsx";
 const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
@@ -59,12 +50,17 @@ const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
             alt="Profile"
             className={styles.profileImage}
           />
-          <div className={styles.dropdownIcon}   onClick={() => setDropdownOpen((prev) => !prev)}>▾</div>
-          {dropdownOpen && (
-            <div className={styles.dropdownMenu}>
-              <button onClick={handleLogout}>Logout</button>
+          {/* <div className={styles.dropdownIcon}   onClick={() => setDropdownOpen((prev) => !prev)}>▾</div> */}
+            <div className={styles.dropdownIcon} onClick={() => setDropdownOpen((prev) => !prev)}>
+                 {dropdownOpen ? <FiChevronUp size={16} /> : <FiChevronDown size={16} />}
             </div>
-          )}
+           {dropdownOpen && (
+              <div className={styles.dropdownMenu}>
+                <a href="/edit-profile">Edit Profile</a>
+                <a href="/applied-jobs">View Job Apply</a>
+                <a onClick={handleLogout}>Logout</a>
+              </div>
+           )}
         </div>
       </div>
     </nav>
