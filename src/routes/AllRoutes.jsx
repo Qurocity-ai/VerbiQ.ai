@@ -16,6 +16,7 @@ import BlogDetailPage from "../pages/Blog/BlogDetailPage";
 import Details from "../pages/CenterofExce/Details";
 import Registration from "../pages/Registration/Registration";
 import Message from "../pages/Registration/Message";
+import Dashboard from "../componants/VerbiqPortal/Dashboard/Dashboard";
 export default function ALLRoutes() {
   return (
     <Routes>
@@ -36,6 +37,7 @@ export default function ALLRoutes() {
       <Route path="/details/:id" element={<Details />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/registrationMessage" element={<Message />} />
+      <Route path="/dashboard/*" element={<Dashboard />} />
     </Routes>
   );
 }

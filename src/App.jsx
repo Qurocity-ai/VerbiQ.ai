@@ -11,11 +11,11 @@ const App = () => {
   const hideNavbarFooter = location.pathname.startsWith("/dashboard");
   return (
     <>
-      <Navbar />
-      <ALLRoutes />
-      <PortalRoutes/>
-      <Footer />
-
+        {!hideNavbarFooter &&<Navbar />}
+     <ALLRoutes />     
+     {!hideNavbarFooter &&<Footer />}
+      
+         {/* <Dashboard/> */}
 
       {/* There are some  */}
     </>

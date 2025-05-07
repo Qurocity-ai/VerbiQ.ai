@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 61px;
     padding: 1rem 2rem;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -95,4 +96,29 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;  /* Ensures the button stays on top */
+}
+.dropdownMenu {
+  position: absolute;
+  top: 62px;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 0.5rem 1rem;
+  z-index: 1001;
+}
+
+.dropdownMenu a {
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  color: #333;
+  display: block;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.dropdownMenu a:hover {
+  color: #4f46e5;
 }
