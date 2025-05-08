@@ -6,8 +6,10 @@ import { useLocation } from "react-router-dom";
 const App = () => {
   const location = useLocation();
   
-  // Check if the current path is '/dashboard'
-  const hideNavbarFooter = location.pathname.startsWith("/dashboard");
+  // Check if the current path starts with '/dashboard' or '/assessment'
+  const hideNavbarFooter = ["/dashboard", "/assessment"].some(path =>
+    location.pathname.startsWith(path)
+  );
   return (
     <>
         {!hideNavbarFooter &&<Navbar />}
@@ -21,4 +23,3 @@ const App = () => {
   );
 };
 export default App;
-
