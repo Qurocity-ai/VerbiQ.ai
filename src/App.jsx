@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
         {!hideNavbarFooter &&<Navbar />}
-     <ALLRoutes />
+     <ALLRoutes />     
      {!hideNavbarFooter &&<Footer />}
       
          {/* <Dashboard/> */}
