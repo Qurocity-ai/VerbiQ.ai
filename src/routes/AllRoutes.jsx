@@ -17,6 +17,10 @@ import Details from "../pages/CenterofExce/Details";
 import Registration from "../pages/Registration/Registration";
 import Message from "../pages/Registration/Message";
 import Dashboard from "../componants/VerbiqPortal/Dashboard/Dashboard";
+import DashBoardRegister from "../pages/Registration/DashboardRegistration/DashBoardRegister";
+import CompanyRegistration from "../pages/Registration/DashboardRegistration/CompanyRegistration";
+import CandidateRegistration from "../pages/Registration/DashboardRegistration/CandidateRegistration";
+import LoginDash from "../pages/Registration/DashboardRegistration/LoginDash";
 export default function ALLRoutes() {
   return (
     <Routes>
@@ -36,6 +40,16 @@ export default function ALLRoutes() {
       <Route path="/blogs/:id" element={<BlogDetailPage />} />
       <Route path="/details/:id" element={<Details />} />
       <Route path="/registration" element={<Registration />} />
+
+      <Route path="/register/*" element={<DashBoardRegister />}>
+        <Route index element={<CandidateRegistration />} />
+        <Route path="company" element={<CompanyRegistration />} />
+        <Route path="candidate" element={<CandidateRegistration />} />
+      </Route>
+      <Route path="/candidatelogin" element={<LoginDash />} />
+      
+      {/* <Route path="/register/companyregistration" element={<CompanyRegistration/>}/>
+      <Route path="/register/candidateregistration" element={<CandidateRegistration/>}/> */}
       <Route path="/registrationMessage" element={<Message />} />
       <Route path="/dashboard/*" element={<Dashboard />} />
     </Routes>
