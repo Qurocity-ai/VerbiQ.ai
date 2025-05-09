@@ -2,10 +2,11 @@ import React from 'react';
 
 const CompletionPage = () => {
     const handleCloseTab = () => {
-        const isClosed = window.close();
+       window.location.href = '/'; 
+        /*const isClosed = window.close();
         if (!isClosed) {
           alert("Please close this tab manually as the browser has blocked automatic closing.");
-        }
+        }*/
       };
 
   return (
