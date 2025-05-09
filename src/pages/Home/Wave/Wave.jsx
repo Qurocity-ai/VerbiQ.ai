@@ -1,196 +1,100 @@
-// import React from "react";
-// import Threads from "../ReactBits/Threads";
+import React, { useState, useEffect } from 'react';
 
-// const Wave = () => {
-//   return (
-//     <div className="w-full h-[600px] relative flex justify-center items-center overflow-hidden">
-//       {/* Wave Component */}
-//        <div className="absolute w-full h-full z-[1]">
-//         <Threads
-//           color={[1.9, 0.2, 0.4]}
-//           amplitude={1}
-//           distance={0}
-//           enableMouseInteraction={true}
-//         />
-//       </div>
-//       <div className="absolute w-full h-full z-[1] transform scale-x-[-1]">
-//         <Threads
-//           color={[0, 0, 1.9]}
-//           amplitude={1.2}
-//           distance={0}
-//           enableMouseInteraction={true}
-//         />
-//       </div>
-
-//       {/* Text Elements with Wave Layout */}
-//       <div className="relative z-[2] w-[90%] md:w-[80%] h-full pointer-events-none">
-//         {/* Fluency */}
-//         <div className="absolute left-[2%] md:left-[2%] top-[25%] md:top-[30%] animate-float">
-//           <h2 className="text-[2rem] md:text-[2.5rem] text-[#5753c6] drop-shadow-md mb-4 md:mb-2">
-//             Fluency
-//           </h2>
-//         </div>
-
-//         {/* Cultural Understanding */}
-//         <div className="absolute left-[55%] md:left-[60%] top-[20%] md:top-[25%] animate-float delay-500">
-//           <h2 className="text-[1.5rem] md:text-[1.8rem] bg-gradient-to-r from-[#575aaa] to-[#ed6f6f] bg-clip-text text-transparent drop-shadow-md mb-4 md:mb-2">
-//             Cultural Understanding
-//           </h2>
-//           <svg
-//             viewBox="0 0 60 20"
-//             className="w-10 md:w-14 -mt-1 mx-auto text-gradient-to-r from-[#575aaa] to-[#ed6f6f] animate-float delay-500"
-//           >
-//             <path
-//               d="M10 0 Q30 10 10 20 M50 0 Q30 10 50 20"
-//               stroke="currentColor"
-//               strokeWidth="2"
-//               fill="none"
-//             />
-//           </svg>
-//         </div>
-
-//         {/* Grammar */}
-//         <div className="absolute left-[5%] md:left-[20%] top-[50%] md:top-[60%] animate-float delay-200">
-//           <h2 className="text-[1.8rem] md:text-[2.2rem] text-[#5753aa] drop-shadow-md mb-4 md:mb-2">
-//             Grammar
-//           </h2>
-//         </div>
-
-//         {/* Vocabulary */}
-//         <div className="absolute left-[55%] md:left-[90%] top-[55%] md:top-[65%] animate-float delay-700">
-//           <h2 className="text-[1.5rem] md:text-[1.8rem] bg-gradient-to-r from-[#5753a0] to-[#ed6f6f] bg-clip-text text-transparent drop-shadow-md mb-4 md:mb-2">
-//             Vocabulary
-//           </h2>
-//           <svg
-//             viewBox="0 0 60 20"
-//             className="w-10 md:w-14 -mt-1 mx-auto text-gradient-to-r from-[#5753a0] to-[#ed6f6f] animate-float delay-700"
-//           >
-//             <path
-//               d="M10 0 Q30 10 10 20 M50 0 Q30 10 50 20"
-//               stroke="currentColor"
-//               strokeWidth="2"
-//               fill="none"
-//             />
-//           </svg>
-//         </div>
-//       </div>
-
-//       {/* Global styles */}
-//       <style jsx="true" global="true">{`
-//         @keyframes float {
-//           0%,
-//           100% {
-//             transform: translateY(0);
-//           }
-//           50% {
-//             transform: translateY(-15px);
-//           }
-//         }
-//         .animate-float {
-//           animation: float 3s ease-in-out infinite;
-//         }
-//         .delay-200 {
-//           animation-delay: 0.2s;
-//         }
-//         .delay-500 {
-//           animation-delay: 0.5s;
-//         }
-//         .delay-700 {
-//           animation-delay: 0.7s;
-//         }
-//         .text-gradient-to-r {
-//           background: linear-gradient(
-//             to right,
-//             var(--tw-gradient-from),
-//             var(--tw-gradient-to)
-//           );
-//           -webkit-background-clip: text;
-//           background-clip: text;
-//           color: transparent;
-//         }
-//       `}</style>
-//     </div>
-//   );
-// };
-
-// export default Wave;
-import React from "react";
 
 const Wave = () => {
+  const slides = [
+    {
+      id: 1,
+      title: "Could you explain how your team resolved a miscommunication with a client?",
+      description: "Understand how a candidate structures thoughts, uses verb tenses, connectors, and constructs grammatically sound, professional responses.",
+    },
+    {
+      id: 2,
+      title: "Tell us how you would describe our product to a non-technical customer.",
+      description: "Measures range, precision, and contextual appropriateness of words used in real-life workplace situations.",
+    },
+    {
+      id: 3,
+      title: "Walk us through your day if you're managing two meetings and a client call back-to-back",
+      description: "Evaluates flow, pacing, hesitation patterns, and ability to communicate smoothly under time pressure"
+    },
+    {
+      id: 4,
+      title: "Your teammate prefers email updates while you prefer quick calls. How would you handle this difference?",
+      description: "Assesses sensitivity to communication styles, workplace expectations, and cross-cultural collaboration—key for global roles."
+    }
+  ];
+  
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [slides.length]);
+  
+  const illustrations = [
+    'assets/Slide1.png',
+    'assets/Slide2.png',
+    'assets/Slide3.png',
+    'assets/Slide2.png',
+  ];
+  
   return (
-    <div
-      className={`relative w-full aspect-[3/2] sm:aspect-[3/1] overflow-hidden  mt-30 mb-60 `}
-    >
-      {/* Wave background */}
-      <img
-        src="assets/Wave.png"
-        alt="Wave"
-        className="absolute w-full h-full object-cover"
-      />
-
-      <div className="relative z-[2] w-[90%] md:w-[80%] h-full pointer-events-none">
-        {/* Fluency */}
-        <div className="absolute left-[2%] md:left-[5%] top-[15%] md:top-[8%] animate-float md:animate-float">
-          <h2 className="text-[1.25rem] sm:text-[1.5rem] md:text-[2.5rem] text-[#5753c6] drop-shadow-md mb-4 md:mb-2">
-            Fluency
-          </h2>
+    <div className="w-full min-h-screen bg-[#F8FAFF] flex items-center justify-center p-4">
+      <div className="w-full max-w-7xl flex flex-col items-center">
+        {/* Title  */}
+        <h1 className="text-2xl font-medium text-center text-gray-800 mx-auto max-w-5xl" >
+          {slides[currentSlide].title}
+        </h1>
+        
+        {/* Description */}
+        <p className="text-gray-500 text-center mt-2 mb-10 mx-auto max-w-4xl">
+          {slides[currentSlide].description}
+        </p>
+        
+        {/* Conditional elements*/}
+        {slides[currentSlide].greetings && (
+          <div className="flex justify-center gap-4 mb-8">
+            {slides[currentSlide].greetings.map((greeting, index) => (
+              <span key={index} className="px-4 py-2 bg-blue-100 text-blue-500 rounded-full">
+                {greeting}
+              </span>
+            ))}
+          </div>
+        )}
+        
+        {slides[currentSlide].dictionary && (
+          <div className="bg-red-100 text-red-800 px-4 py-2 rounded-lg mb-8 inline-block">
+            {slides[currentSlide].dictionary}
+          </div>
+        )}
+        
+        {/* Illustration*/}
+        <div className="w-full flex justify-center items-center mb-10">
+          <img 
+            src={illustrations[currentSlide]}
+            alt={`Illustration for ${slides[currentSlide].title}`}
+            className="max-w-full h-auto max-h-80 object-contain"
+          />
         </div>
-
-        {/* Cultural Understanding */}
-        <div className="absolute left-[55%] md:left-[60%] top-[3%] md:top-[7%] animate-float delay-500">
-          <h2 className="text-[1rem] sm:text-[1.2rem] md:text-[1.8rem] bg-gradient-to-r from-[#575aaa] to-[#ed6f6f] bg-clip-text text-transparent drop-shadow-md mb-4 md:mb-2">
-            Cultural Understanding
-          </h2>
-        </div>
-
-        {/* Grammar */}
-        <div className="absolute left-[5%] md:left-[20%] top-[85%] md:top-[70%] animate-float delay-200">
-          <h2 className="text-[1.2rem] sm:text-[1.5rem] md:text-[2.2rem] text-[#5753aa] drop-shadow-md mb-4 md:mb-2">
-            Grammar
-          </h2>
-        </div>
-
-        {/* Vocabulary */}
-        <div className="absolute left-[78%] md:left-[104%] top-[75%] md:top-[65%] animate-float delay-700">
-          <h2 className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.8rem] bg-gradient-to-r from-[#5753a0] to-[#ed6f6f] bg-clip-text text-transparent drop-shadow-md mb-4 md:mb-2">
-            Vocabulary
-          </h2>
+        
+        {/* Slide indicators */}
+        <div className="flex justify-center gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
-      {/* Global styles */}
-      <style jsx="true" global="true">{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-15px);
-          }
-        }
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-        .delay-200 {
-          animation-delay: 0.2s;
-        }
-        .delay-500 {
-          animation-delay: 0.5s;
-        }
-        .delay-700 {
-          animation-delay: 0.7s;
-        }
-        .text-gradient-to-r {
-          background: linear-gradient(
-            to right,
-            var(--tw-gradient-from),
-            var(--tw-gradient-to)
-          );
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-        }
-      `}</style>
     </div>
   );
 };

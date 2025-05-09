@@ -9,7 +9,6 @@ import FullHiring from "../pages/Solutions/FullHiring/FullHiring";
 import LangaugeAssesment from "../pages/Solutions/LangaugeAssesment/LangaugeAssesment";
 import Global from "../pages/Resources/Global/Global";
 import ContractualProject from "../pages/Solutions/ContractualProjectBasedSupport/ContractualProject";
-
 import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
 import BlogListPage from "../pages/Blog/BlogListPage";
 import BlogDetailPage from "../pages/Blog/BlogDetailPage";
