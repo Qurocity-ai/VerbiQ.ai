@@ -1,0 +1,83 @@
+ 
+  
+  /*body,html{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    
+  }*/
+  .pageBackground {
+    width: 100%;
+}
+.fullLine {
+    height: 2px;
+    background-color: #003e5f;
+    width: 100%; 
+    margin-top: 60px;
+}
+
+  .container {
+    
+    padding: 2rem;
+    /*border-top: 2px solid #003e5f;*/
+    width: 100%;
+    max-width: 1000px;
+    margin: 3rem auto;
+    border-radius: 8px;
+}
+
+.title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 1.5rem;
+    color: #00475D;
+}
+.separator {
+    height: 1px;
+    background-color: #00475D;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    color: #002279;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.field label {
+    font-size: 12px;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+.input {
+    padding: 0.6rem;
+    border: 1px solid #003e5f;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.button {
+    display: block;
+    margin: 4rem auto 0;  /* Add top margin (2rem) to push it down */
+    background-color: #002b6b;
+    color: white;
+    padding: 0.7rem 1.5rem;  /* Increase padding to make the button bigger */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;  /* Increase font size if needed */
+    width: 30%;
+}
+
+  

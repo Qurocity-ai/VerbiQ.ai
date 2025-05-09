@@ -1,14 +1,13 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; 
 import style from './Navbar.module.css';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
-
+import { IoIosArrowForward } from "react-icons/io";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-   const [showSolution, setShowSolution] = useState(false);
+  const [showSolution, setShowSolution] = useState(false);
   const [showResources, setShowResources] = useState(false);
   const [activeLink, setActiveLink] = useState("");  // Track active link
   
@@ -22,13 +21,11 @@ export default function Navbar() {
     setShowResources(false);
     
   };
-
-  
-
+      
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (solutionsDropdownRef.current && !solutionsDropdownRef.current.contains(event.target)) {
         setShowSolution(false);
       }
 
@@ -94,7 +91,8 @@ export default function Navbar() {
                     </div>
                   </div>
                 </div>
-                <div className={style.item} onClick={() =>{ setShowSolution(false);  setIsMobileMenuOpen(false) ;navigate("/contractual")}}>
+                
+                <div className={style.item} onClick={() => { setShowSolution(false); setIsMobileMenuOpen(false); navigate("/contractual")}}>
                   <img src="/assets/CAPBS.png" alt="Contractual" />
                   <div className={style.itemContent}>
                     <div className={style.itemTitle}>
@@ -105,8 +103,9 @@ export default function Navbar() {
                 </div>
                 <div className={style.divider}></div> {/* horizontal line */}
               </div>
+              
               <div className={style.row}>
-                <div className={style.item} onClick={() => {setShowSolution(false);   setIsMobileMenuOpen(false); navigate("/language")}}>
+                <div className={style.item} onClick={() => {setShowSolution(false); setIsMobileMenuOpen(false); navigate("/language")}}>
                   <img src="/assets/LangAss.png" alt="Language" />
                   <div className={style.itemContent}>
                     <div className={style.itemTitle}>
@@ -115,7 +114,8 @@ export default function Navbar() {
                     </div>
                   </div>
                 </div>
-                <div className={style.item} onClick={() =>  {setShowSolution(false);   setIsMobileMenuOpen(false); navigate("/globalhiring")}}>
+                
+                <div className={style.item} onClick={() => {setShowSolution(false); setIsMobileMenuOpen(false); navigate("/globalhiring")}}>
                   <img src="/assets/NativeHir.png" alt="Native Hiring" />
                   <div className={style.itemContent}>
                     <div className={style.itemTitle}>
@@ -159,6 +159,9 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+               {/* Divider line */}
+             <div className={style.divider}></div>
+
 
               <div className={style.item} onClick={() => {
                 setShowResources(false);

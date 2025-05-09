@@ -150,11 +150,10 @@
  .pageWrapper {
     padding-top: 200px;
     padding-left: 292px; /* match sidebarExpanded width */
-    
   }
   
   @media (max-width: 1023px) {
     .pageWrapper {
       padding-left: 100px;
     }
-  } 
+  }   
