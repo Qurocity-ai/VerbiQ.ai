@@ -23,9 +23,9 @@ const Home = () => {
  <Wave/>
  <CarousalOne/>
  <Chat/>
- <Graph/>
+ {/* <Graph/> */}
  
-  {/* <NewGraph/> */}
+  <NewGraph/>
  <FeedbackCarousel />
  <FAQ/>
  

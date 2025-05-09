@@ -6,60 +6,55 @@ function NewGraph() {
         {
           id: 1,
           title: 'Assessment by a Native Speaker',
-          icon: '/icons/native-icon.svg', // Replace with your paths
+          icon: '/assets/Graph1.png',
           content: {
             heading: 'Assessment by a Native Speaker',
             points: [
               'Responses are reviewed by certified native linguists for real-world accuracy, tone, and regional nuance.',
               'Ensures evaluation goes beyond textbook correctness, capturing natural fluency and cultural context.'
-            ],
-            subtitle: 'Assessments personalized for you',
-            description: 'Tailored evaluations that align with your unique hiring needs and cultural expectations'
-          }
+            ]
+
+        }
         },
         {
           id: 2,
           title: 'Business and Culture ethics',
-          icon: '/icons/culture-icon.svg',
+          icon: '/assets/Graph2.png',
           content: {
             heading: 'Business and Culture ethics',
             points: [
-              'Evaluates communication in professional environments.',
-              'Includes respect for cultural diversity and regional standards.'
-            ],
-            subtitle: 'Business readiness focus',
-            description: 'Ensuring employees communicate appropriately across cultures.'
+"Candidates are assessed on communication norms, decision-making, and situational etiquette in cross-cultural workplaces.",
+"Scenarios reflect professional behavior, hierarchy awareness, and sensitivity to global workplace ethics."
+            ]
+        
           }
         },
         {
           id: 3,
           title: 'Scenario Based Assessment',
-          icon: '/icons/scenario-icon.svg',
+          icon: '/assets/Graph3.png',
           content: {
             heading: 'Scenario Based Assessment',
             points: [
-              'Simulates real-world situations.',
-              'Tests problem-solving and decision-making using language.'
+"Real-life workplace situations test a candidate’s ability to respond under pressure and with professionalism.",
+"Evaluates practical communication skills across tasks like conflict resolution, reporting, and feedback delivery."
+
+                
             ],
-            subtitle: 'Real-life evaluation',
-            description: 'Revealing how language is applied in practical cases.'
-          }
-        },
+           }},
         {
           id: 4,
           title: 'Domain based Assessment',
-          icon: '/icons/domain-icon.svg',
+          icon: '/assets/Graph4.png',
           content: {
             heading: 'Domain based Assessment',
             points: [
-              'Assessment tailored to industry-specific vocabulary.',
-              'Covers technical and professional jargon usage.'
+ "Tailored questions reflect specific industry jargon and client-facing situations (e.g., tech support, finance, healthcare).",
+"Tests both linguistic accuracy and domain familiarity to ensure job readiness from day one."
+
             ],
-            subtitle: 'Precision testing',
-            description: 'Ensure language matches your domain’s context.'
-          }
-        }
-      ];
+              }}
+      ]
       
       const [selected, setSelected] = useState(cardData[0]);
       
@@ -85,8 +80,12 @@ function NewGraph() {
             <li key={idx}>{point}</li>
           ))}
         </ul>
-        <p className={styles.subtitle}>{selected.content.subtitle}</p>
-        <p className={styles.subtext}>{selected.content.description}</p>
+        <hr className={styles.hr} />
+<p className={styles.subtitle}>Assessments personalized for you</p>
+<p className={styles.subtext}>
+  Tailored evaluations that align with your unique hiring needs and cultural expectations
+</p>
+
       </div>
     </div>
 
