@@ -87,7 +87,7 @@ const handleSubmit = async (e) => {
         {/* <a href="#" className={styles.forgotPassword}>Forgot Password?</a> */}
         <Link to="/ForgotPassword" className={styles.forgotPassword}>Forgot Password?</Link>
 
-        <button type="submit" className={styles.submitBtn} disabled={loading} >
+        <button type="submit" className={styles.submitBttun} disabled={loading} >
         {loading ? (
     <div className={styles.spinnerWrapper}>
       <span className={styles.spinner}></span>

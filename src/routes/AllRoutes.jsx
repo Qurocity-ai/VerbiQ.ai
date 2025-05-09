@@ -18,9 +18,9 @@ import Registration from "../pages/Registration/Registration";
 import Message from "../pages/Registration/Message";
 import Dashboard from "../componants/VerbiqPortal/Dashboard/Dashboard";
 
-// import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
-// import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
-// import SignIn from '../portalpages/Sign-In/SignIn'
+import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
+import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
+import SignIn from '../portalpages/Sign-In/SignIn'
 
 export default function ALLRoutes() {
   return (
@@ -44,11 +44,11 @@ export default function ALLRoutes() {
       <Route path="/registrationMessage" element={<Message />} />
       <Route path="/dashboard/*" element={<Dashboard />} />
       
-        {/* <Route path='/Sigin-in' element={<SignIn/>}></Route>
+           <Route path='/Sigin-in' element={<SignIn/>}></Route>
               <Route path='/ForgotPassword'element={<ForgotPassword />} > </Route>
               <Route path='/reset-password' element={<ResetPassword/>}></Route>
-       */}
-      
+        
+       
       
     </Routes>
   );

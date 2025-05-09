@@ -92,7 +92,7 @@
 }
 
 
-.submitBtn {
+.submitBttun {
   margin-top: 15px;
   height: 45px; 
   width: 100%;
@@ -106,11 +106,11 @@
   transition: all 0.3s ease-out;
 }
 
-.submitBtn:hover {
+.submitBttun:hover {
   background-color: #a01315;
   transform: scale(1.02);
 }
-.submitBtn:disabled {
+.submitBttun:disabled {
   background-color: #ccc;
   cursor: not-allowed;
   opacity: 0.7;
