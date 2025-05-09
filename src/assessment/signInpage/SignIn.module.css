@@ -1,72 +1,5 @@
 
 
-/*.container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  align-items: center;
-  height: 100vh;
-}
-
-.left {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.right {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: 400;
-  color: #e50000;
-}
-
-.inputContainer {
-  margin-bottom: 20px;
-  width: 80%;
-}
-
-.label {
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.input {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.button {
-  background-color: #003a8c;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  max-width: 500px;
-}
-
-.trouble {
-  text-align: right;
-  color: #003a8c;
-  margin-top: 10px;
-  cursor: pointer;
-}*/
-
 .container {
   display: flex;
   justify-content: center;
@@ -134,7 +67,8 @@
   width: 100%;
   max-width: 400px; /* Set a max-width for the button */
 }
-button:hover{
+
+.button:hover{
   background-color:  #B0181B;
 }
 
