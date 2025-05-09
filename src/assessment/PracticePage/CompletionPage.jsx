@@ -47,3 +47,5 @@ const CompletionPage = () => {
 };
 
 export default CompletionPage;
+
+//console.log()
