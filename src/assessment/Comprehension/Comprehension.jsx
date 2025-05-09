@@ -3,7 +3,7 @@ import useSharedTimer from "../UseTimer/UseTimer";
 import ClozeQuestion from "../ClozeQuestion/ClozeQuestion";
 import ErrorCorrection from "../ErrorCorrection/ErrorCorrection";
 
-const Comprehension = () => {
+const Comprehension = ({onSubmit}) => {
   const timeLeft = useSharedTimer(300);
   const [showCloze, setShowCloze] = useState(false);
   const [showErrorCorrection, setShowErrorCorrection] = useState(false);
@@ -105,7 +105,10 @@ const Comprehension = () => {
                   Back
                 </button>
                 <button
-                  onClick={handleSubmit}
+                    onClick={() => {
+    handleSubmit();
+    onSubmit();
+  }}
                   className="bg-red-600 text-white px-12 py-2 rounded"
                 >
                   Submit

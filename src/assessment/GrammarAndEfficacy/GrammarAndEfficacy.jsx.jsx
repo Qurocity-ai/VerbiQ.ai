@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Instructions from "../Instructions/Instructions ";
  import ClozeQuestion from "../ClozeQuestion/ClozeQuestion";
 
-const GrammarAndEfficacy = () => {
+const GrammarAndEfficacy = ({onSubmit}) => {
   const [navigateToInstructions, setNavigateToInstructions] = useState(false);
   const [showClozeQuestion, setShowClozeQuestion] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -103,7 +103,10 @@ const GrammarAndEfficacy = () => {
         </div>
         
         <button 
-          onClick={handleSubmit}
+          onClick={() => {
+    handleSubmit();
+    onSubmit();
+  }}
           className="bg-red-600 text-white px-12 py-2 rounded"
         >
           Submit

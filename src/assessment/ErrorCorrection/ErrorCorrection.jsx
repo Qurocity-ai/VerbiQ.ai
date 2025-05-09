@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useSharedTimer from "../UseTimer/UseTimer";
 import Comprehension from "../Comprehension/Comprehension";
 
-const ErrorCorrection = () => {
+const ErrorCorrection = ({onSubmit}) => {
   const timeLeft = useSharedTimer(300); // 80 seconds = 1:20 mins
   const [selectedOption, setSelectedOption] = useState("");
   const [showPreviousComponent, setShowPreviousComponent] = useState(false);
@@ -68,7 +68,7 @@ const ErrorCorrection = () => {
           </button>
         </div>
 
-        <button className="bg-red-600 text-white px-12 py-2 rounded">
+        <button  onClick={onSubmit} className="bg-red-600 text-white px-12 py-2 rounded">
           Submit
         </button>
       </div>

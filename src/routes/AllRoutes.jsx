@@ -16,7 +16,7 @@ import Details from "../pages/CenterofExce/Details";
 import Registration from "../pages/Registration/Registration";
 import Message from "../pages/Registration/Message";
 import Dashboard from "../componants/VerbiqPortal/Dashboard/Dashboard";
-import Assessment from "../assessment/PracticePage/MultiStepForm";
+import Assessment from "../assessment/MultiStepForm";
 
 export default function ALLRoutes() {
   return (

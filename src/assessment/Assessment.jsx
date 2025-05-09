@@ -1,5 +1,5 @@
 import React from 'react'
-import MultiStepForm from './PracticePage/MultiStepForm'
+import MultiStepForm from './MultiStepForm'
 
 function Assessment() {
   return (

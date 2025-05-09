@@ -1,20 +1,20 @@
 import React from 'react';
 import { useState } from 'react';
-import GrammarAndEfficacy from '../GrammarAndEfficacy/GrammarAndEfficacy.jsx';
-const Instructions = () => {
-  const [navigateToGrammar, setNavigateToGrammar] = useState(false);
+// import GrammarAndEfficacy from '../GrammarAndEfficacy/GrammarAndEfficacy.jsx';
+const Instructions = ({onSubmit}) => {
+  // const [navigateToGrammar, setNavigateToGrammar] = useState(false);
   
-  const handleContinue = () => {
-    // Add history entry for back button functionality
-    window.history.pushState({ page: 'grammar' }, '');
-    setNavigateToGrammar(true);
-    window.scrollTo(0, 0);
-  };
+  // const handleContinue = () => {
+  //   // Add history entry for back button functionality
+  //   window.history.pushState({ page: 'grammar' }, '');
+  //   setNavigateToGrammar(true);
+  //   window.scrollTo(0, 0);
+  // };
   
-  // If we've navigated to grammar, render the Grammar component
-  if (navigateToGrammar) {
-    return <GrammarAndEfficacy />;
-  }
+  // // If we've navigated to grammar, render the Grammar component
+  // if (navigateToGrammar) {
+  //   return <GrammarAndEfficacy />;
+  // }
   
   return (
     <div className="max-w-6xl mx-auto px-4  pb-12">
@@ -94,7 +94,7 @@ const Instructions = () => {
       
       <div className="flex justify-center mt-12">
         <button 
-          onClick={handleContinue}
+          onClick={onSubmit}
           className="bg-blue-900 text-white font-medium px-6 py-3 rounded w-full max-w-sm"
         >
           Confirm & Continue

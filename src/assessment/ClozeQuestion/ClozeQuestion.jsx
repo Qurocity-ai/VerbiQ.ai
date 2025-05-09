@@ -4,7 +4,7 @@ import GrammarSection from "../GrammarAndEfficacy/GrammarAndEfficacy.jsx";
 import Comprehension from "../Comprehension/Comprehension.jsx";
 
 
-const ClozeQuestion = () => {
+const ClozeQuestion = ({onSubmit}) => {
   const timeLeft = useSharedTimer(300); 
   const [answer, setAnswer] = useState("");
   const [showComprehension, setShowComprehension] = useState(false);
@@ -75,7 +75,10 @@ const ClozeQuestion = () => {
           </div>
 
           <button
-            onClick={handleSubmit}
+           onClick={() => {
+    handleSubmit();
+    onSubmit();
+  }}
             className="bg-red-600 text-white px-12 py-2 rounded"
           >
             Submit
