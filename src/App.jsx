@@ -7,7 +7,8 @@ const App = () => {
   const location = useLocation();
   
   // Check if the current path is '/dashboard'
-  const hideNavbarFooter = location.pathname.startsWith("/dashboard");
+  const hideNavbarFooter = location.pathname.startsWith("/dashboard") || 
+  location.pathname.startsWith("/assessment");
   return (
     <>
         {!hideNavbarFooter &&<Navbar />}
