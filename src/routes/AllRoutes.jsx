@@ -41,5 +41,8 @@ export default function ALLRoutes() {
       <Route path="/dashboard/*" element={<Dashboard />} />
       <Route path="/assessment" element={<Assessment />} />
     </Routes>
+
+
+
   );
 }

@@ -159,6 +159,9 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+               {/* Divider line */}
+             <div className={style.divider}></div>
+
 
               <div className={style.item} onClick={() => {
                 setShowResources(false);
@@ -182,3 +185,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

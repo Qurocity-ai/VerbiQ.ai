@@ -3,6 +3,9 @@ import Navbar from "./componants/Navbar/Navbar";
 import ALLRoutes from "./routes/AllRoutes";
 import Footer from "./componants/Footer/Footer";
 import { useLocation } from "react-router-dom";
+import AssessmentsRoutes from "./routes/AssessmentsRoutes";
+
+
 const App = () => {
   const location = useLocation();
   
@@ -15,6 +18,8 @@ const App = () => {
         {!hideNavbarFooter &&<Navbar />}
      <ALLRoutes />     
      {!hideNavbarFooter &&<Footer />}
+     
+     <AssessmentsRoutes />
       
          {/* <Dashboard/> */}
 
