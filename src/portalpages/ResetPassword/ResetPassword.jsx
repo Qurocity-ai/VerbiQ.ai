@@ -73,7 +73,7 @@ export default function ResetPassword() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
           {error && <p className={styles.error}>{error}</p>}
-          <button onClick={handleSubmit}>Set Password</button>
+          <button onClick={handleSubmit} className={styles.regbutton}>Set Password</button>
         </div>
       </div>
     </div>
