@@ -28,16 +28,8 @@ function TimerSet() {
         {`${time.minutes.toString().padStart(2, '0')}:${time.seconds.toString().padStart(2, '0')} mins`}
       </div>
 
-      {/* Navbar */}
-      {/* <div className="bg-[#000949] flex justify-center py-2 px-4 rounded-full mx-auto w-[629px]">
-        <div className="flex space-x-8">
-          <a className="text-white text-sm ">Reading</a>
-          <a className="text-white text-sm ">Writing</a>
-          <a className="text-white text-sm ">Speaking</a>
-          <a className="text-white text-sm ">Listening</a>
-          <a className="text-white text-sm ">Final submission</a>
-        </div>
-      </div> */}
+    
+     
       
        
      
