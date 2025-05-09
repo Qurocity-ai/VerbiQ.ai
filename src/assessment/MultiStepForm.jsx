@@ -10,6 +10,10 @@ import ErrorCorrection from './ErrorCorrection/ErrorCorrection.jsx';
 import Comprehension from './Comprehension/Comprehension.jsx';
 import ClozeQuestion from './ClozeQuestion/ClozeQuestion.jsx';
 import GrammarAndEfficacy from './GrammarAndEfficacy/GrammarAndEfficacy.jsx.jsx';
+import SignIn from './signInpage/SignIn.jsx';
+import CandidatureForm from './candidateDetailspage/candidateDetails.jsx';
+import CandidatureDetailsForm from './candidateDetails2/candidateDetails2.jsx';
+import AssessmentButton from './VerbiqAssessmentButton/AssessmentButton.jsx';
 
 
 function MultiStepForm() {
@@ -20,7 +24,10 @@ function MultiStepForm() {
   };
 
   const steps = [
-    
+    <SignIn onSubmit={handleNextStep}/>,
+    <CandidatureForm onSubmit={handleNextStep}/>,
+    <CandidatureDetailsForm onSubmit={handleNextStep}/>,
+    <AssessmentButton onSubmit={handleNextStep}/>,
     <Instructions onSubmit={handleNextStep}/>,
     <GrammarAndEfficacy onSubmit={handleNextStep}/>,
     <ClozeQuestion onSubmit={handleNextStep}/>,

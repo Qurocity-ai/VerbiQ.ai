@@ -1,9 +1,9 @@
 
 import styles from './candidateDetails2.module.css';
-import { useNavigate } from 'react-router-dom';
 
-const CandidatureDetailsForm = () => {
-    const navigate = useNavigate();
+
+const CandidatureDetailsForm = ({onSubmit}) => {
+   
 
     return (
         <>
@@ -46,7 +46,7 @@ const CandidatureDetailsForm = () => {
                     <input placeholder="N.A." className={styles.input} />
                 </div>
             </div>
-            <button className={styles.button} onClick={() => navigate('/assessmentbutton')}>Save & Continue</button>
+            <button className={styles.button} onClick={onSubmit}>Save & Continue</button>
         </div>
        </div>
        </>

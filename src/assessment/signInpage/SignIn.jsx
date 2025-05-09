@@ -1,12 +1,12 @@
 
 import React from 'react';
 import styles from './SignIn.module.css';
-import { useNavigate } from 'react-router-dom';
+
 import image from '../../../public/assets/Frame.png'; 
 import logo from '../../../public/assets/VerbiQ Logo 5.png';
 
-function SignIn() {
-  const navigate = useNavigate();
+function SignIn({onSubmit}) {
+  
 
   return (
     <div className={styles.container}>
@@ -23,7 +23,7 @@ function SignIn() {
           <label className={styles.label}>Password</label>
           <input placeholder="Enter Password" type="password" className={styles.input} />
         </div>
-        <button onClick={() => navigate('/form')} className={styles.button}>Sign-In</button>
+        <button onClick={onSubmit} className={styles.button}>Sign-In</button>
         <p className={styles.trouble}>Trouble signing in ?</p>
       </div>
     </div>

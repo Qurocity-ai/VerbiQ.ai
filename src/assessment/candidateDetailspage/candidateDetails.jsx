@@ -4,15 +4,11 @@
 
 import React from 'react';
 import styles from './candidateDetails.module.css';
-import { useNavigate } from 'react-router-dom';
+
 import verbiqLogo from '../../../public/assets/VerbiQ Logo 5.png';
 
-function CandidatureForm() {
-  const navigate = useNavigate();
-
-  const handleContinue = () => {
-    navigate('/form2');
-  };
+function CandidatureForm({onSubmit}) {
+ 
 
   return (
     <div className={styles.page}>
@@ -61,7 +57,7 @@ function CandidatureForm() {
           </div>
         </div>
 
-        <button className={styles.button} onClick={handleContinue}>
+        <button className={styles.button} onClick={onSubmit}>
           Confirm & Continue
         </button>
       </div>
