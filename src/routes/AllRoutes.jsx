@@ -18,6 +18,11 @@ import Message from "../pages/Registration/Message";
 import Dashboard from "../componants/VerbiqPortal/Dashboard/Dashboard";
 import Assessment from "../assessment/MultiStepForm";
 
+
+import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
+import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
+import SignIn from '../portalpages/Sign-In/SignIn'
+
 export default function ALLRoutes() {
   return (
     <Routes>

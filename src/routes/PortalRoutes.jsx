@@ -16,10 +16,9 @@ import Japanese from '../portalpages/Language/Japanese/Japanese'
 import TypeofEmployement from '../portalpages/TypeofEmployement/TypeofEmployement'
 import FreeLancer from '../portalpages/TypeofEmployement/Freelancer/FreeLancer'
 import Contractual from '../portalpages/TypeofEmployement/Contractual/Contractual'
-import SignIn from '../portalpages/Sign-In/SignIn'
-import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
-import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
-
+// import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
+// import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
+// import SignIn from '../portalpages/Sign-In/SignIn'
 export default function PortalRoutes() {
   return (
     <Routes>
@@ -56,6 +55,12 @@ export default function PortalRoutes() {
 
 
         {/*portal-navbar*/}
+
+        {/* <Route path='/Sigin-in' element={<SignIn/>}></Route>
+        <Route path='/ForgotPassword'element={<ForgotPassword />} > </Route>
+        <Route path='/reset-password' element={<ResetPassword/>}></Route> */}
+
+        
     </Routes>
   )
 }
