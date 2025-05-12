@@ -39,7 +39,7 @@ const Wave = () => {
     'assets/Slide1.png',
     'assets/Slide2.png',
     'assets/Slide3.png',
-    'assets/Slide2.png',
+    'assets/OBJECT.png',
   ];
   
   return (
