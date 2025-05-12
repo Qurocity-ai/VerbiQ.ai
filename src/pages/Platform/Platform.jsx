@@ -1,10 +1,16 @@
 import React from 'react'
+import AssessmentReport from './AssessmentReport'
+import ForExperts from './ForExperts'
 import BottomSection from './BottomSection/BottomSection'
 
-export default function Platform() {
+function Platform() {
   return (
     <div>
-        <BottomSection/>       
-         </div>
+      <AssessmentReport/>
+      <ForExperts/>
+      <BottomSection/>
+    </div>
   )
 }
+
+export default Platform
