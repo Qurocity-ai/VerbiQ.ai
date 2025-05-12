@@ -1,6 +1,7 @@
 .wrapper {
-  padding: 50px;
-  font-family: 'Segoe UI', sans-serif;
+  padding :20px 100px;
+  /* font-family: 'Segoe UI', sans-serif; */
+  /* border: 1px solid black; */
 }
 
 .heading {

@@ -1,8 +1,11 @@
 .wrapper {
   background-color: #f7f9fc;
-  padding: 50px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 50px 80px;
+   max-width: 1250px;
+margin: auto;
+  /* font-family: 'Segoe UI', sans-serif; */
   color: #353535;
+  /* border: 1px solid black; */
 }
 
 .header {
