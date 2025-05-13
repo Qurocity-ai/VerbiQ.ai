@@ -16,9 +16,16 @@ import Japanese from '../portalpages/Language/Japanese/Japanese'
 import TypeofEmployement from '../portalpages/TypeofEmployement/TypeofEmployement'
 import FreeLancer from '../portalpages/TypeofEmployement/Freelancer/FreeLancer'
 import Contractual from '../portalpages/TypeofEmployement/Contractual/Contractual'
-// import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
-// import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
-// import SignIn from '../portalpages/Sign-In/SignIn'
+import MyProject from '../portalpages/MyProject/MyProject'
+import CompletedProjects from '../portalpages/MyProject/CompletedProjects/CompletedProjects'
+import CurrentProjects from '../portalpages/MyProject/CurrentProjects/CurrentProjects'
+import Clients from '../portalpages/Clients/Clients'
+import Innodata from '../portalpages/Clients/Innodata/Innodata'
+import Soft2Bet from '../portalpages/Clients/Soft2Bet/Soft2Bet'
+import Teleperformance from '../portalpages/Clients/Teleperformance/Teleperformance'
+import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
+import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
+import SignIn from '../portalpages/Sign-In/SignIn'
 export default function PortalRoutes() {
   return (
     <Routes>
@@ -59,7 +66,14 @@ export default function PortalRoutes() {
         {/* <Route path='/Sigin-in' element={<SignIn/>}></Route>
         <Route path='/ForgotPassword'element={<ForgotPassword />} > </Route>
         <Route path='/reset-password' element={<ResetPassword/>}></Route> */}
-
+        {/* Company Dashboard */}
+            <Route path="/myproject" element={<MyProject />} />
+            <Route path="/completedproject" element={<CompletedProjects />} />
+            <Route path="/currentproject" element={<CurrentProjects />} />
+            <Route path="/client" element={<Clients />} />
+            <Route path="/inndodata" element={<Innodata />} />
+            <Route path="/soft2bet" element={<Soft2Bet />} />
+            <Route path="/teleperformance" element={<Teleperformance />} />
         
     </Routes>
   )

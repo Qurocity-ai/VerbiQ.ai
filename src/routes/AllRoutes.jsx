@@ -22,6 +22,7 @@ import CandidateRegistration from "../pages/Registration/DashboardRegistration/C
 import LoginDash from "../pages/Registration/DashboardRegistration/LoginDash";
 import Platform from "../pages/Platform/Platform";
 import Assessment from "../assessment/Assessment";
+import CompanyDashboard from "../componants/VerbiqPortal/CompanyDashboad/CompanyDashboard";
 export default function ALLRoutes() {
   return (
     <Routes>
@@ -55,6 +56,7 @@ export default function ALLRoutes() {
       <Route path="/registrationMessage" element={<Message />} />
       <Route path="/dashboard/*" element={<Dashboard />} />
       <Route path="/assessment" element={<Assessment />} />
+    <Route path="/companydashboard/*" element={<CompanyDashboard />} />
     </Routes>
 
 
