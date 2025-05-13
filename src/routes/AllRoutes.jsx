@@ -18,10 +18,17 @@ import Message from "../pages/Registration/Message";
 import Dashboard from "../componants/VerbiqPortal/Dashboard/Dashboard";
 import Assessment from "../assessment/MultiStepForm";
 
+
+import ResetPassword from '../portalpages/ResetPassword/ResetPassword'
+import ForgotPassword from '../portalpages/ForgotPassword/ForgotPassword'
+import SignIn from '../portalpages/Sign-In/SignIn'
+import Platform from "../pages/Platform/Platform";
+
 export default function ALLRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
+      <Route path="/platform" element={<Platform/>}></Route>
       <Route path="/ceo" element={<CenterofExce />}></Route>
       <Route path="/aboutUs" element={<Aboutus />}></Route>
       {/* <Route path="/resources" element={<UnderConstruction/>}></Route> */}
