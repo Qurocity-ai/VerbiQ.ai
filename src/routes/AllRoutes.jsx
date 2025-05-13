@@ -9,7 +9,6 @@ import FullHiring from "../pages/Solutions/FullHiring/FullHiring";
 import LangaugeAssesment from "../pages/Solutions/LangaugeAssesment/LangaugeAssesment";
 import Global from "../pages/Resources/Global/Global";
 import ContractualProject from "../pages/Solutions/ContractualProjectBasedSupport/ContractualProject";
-
 import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
 import BlogListPage from "../pages/Blog/BlogListPage";
 import BlogDetailPage from "../pages/Blog/BlogDetailPage";
@@ -21,10 +20,13 @@ import DashBoardRegister from "../pages/Registration/DashboardRegistration/DashB
 import CompanyRegistration from "../pages/Registration/DashboardRegistration/CompanyRegistration";
 import CandidateRegistration from "../pages/Registration/DashboardRegistration/CandidateRegistration";
 import LoginDash from "../pages/Registration/DashboardRegistration/LoginDash";
+import Platform from "../pages/Platform/Platform";
+import Assessment from "../assessment/Assessment";
 export default function ALLRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
+      <Route path="/platform" element={<Platform/>}></Route>
       <Route path="/ceo" element={<CenterofExce />}></Route>
       <Route path="/aboutUs" element={<Aboutus />}></Route>
       {/* <Route path="/resources" element={<UnderConstruction/>}></Route> */}
@@ -52,6 +54,10 @@ export default function ALLRoutes() {
       <Route path="/register/candidateregistration" element={<CandidateRegistration/>}/> */}
       <Route path="/registrationMessage" element={<Message />} />
       <Route path="/dashboard/*" element={<Dashboard />} />
+      <Route path="/assessment" element={<Assessment />} />
     </Routes>
+
+
+
   );
 }
