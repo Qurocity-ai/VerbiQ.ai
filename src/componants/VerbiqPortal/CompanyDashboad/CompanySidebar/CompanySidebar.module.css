@@ -82,3 +82,25 @@
   padding-top: 100px;
   padding-left: 292px; /* match sidebarExpanded width */
 }
+  @media (max-width: 1023px) {
+    .pageWrapper {
+      padding-left: 100px;
+    }
+  }
+   /* Adjust these two */
+.sidebarHiddenMobile {
+    transform: translateX(-100%);
+  }
+  
+  .sidebarVisibleMobile {
+    transform: translateX(0);
+  }
+   @media (min-width: 1024px) {
+    .sidebarHiddenMobile {
+      transform: translateX(0); /* Show on desktop */
+    }
+  
+    .sidebarVisibleMobile {
+      transform: translateX(0); /* Always show on desktop */
+    }
+  }

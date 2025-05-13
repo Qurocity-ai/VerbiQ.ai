@@ -7,12 +7,16 @@ import PortalNavbar from '../PortalNavbar/PortalNavbar';
 
 function CompanyDashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
+ const [mobileOpen, setMobileOpen] = useState(false);
+  
   return (
     <div className="min-h-screen flex flex-col">
-      <CompanySidebar isSidebarOpen={isSidebarOpen} />
+      <CompanySidebar 
+      mobileOpen={mobileOpen} 
+        setMobileOpen={setMobileOpen} 
+      isSidebarOpen={isSidebarOpen} />
       <div className="lg:pl-[272px] flex flex-col flex-1">
-      <PortalNavbar/>
+       <PortalNavbar setMobileOpen={setMobileOpen} mobileOpen={mobileOpen}  />
         <main className={`${styles.pageWrapper} flex-1 p-4 overflow-auto bg-white`}>
           <PortalRoutes />
         </main>
