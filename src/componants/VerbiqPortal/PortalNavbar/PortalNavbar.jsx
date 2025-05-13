@@ -9,6 +9,25 @@ const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef();
 
+  const [userName, setUserName] = useState("User");
+
+  useEffect(() => {
+    const fullname = localStorage.getItem("fullname");
+    const companyName = localStorage.getItem("companyName");
+
+    console.log("fullname:", fullname);
+    console.log("companyName:", companyName);
+
+    const name =
+      fullname?.trim() && fullname !== "undefined"
+        ? fullname
+        : companyName?.trim() && companyName !== "undefined"
+        ? companyName
+        : "User";
+
+    setUserName(name);
+  }, []);
+
   const handleLogout = () => {
     // Clear any tokens or session storage
     localStorage.clear(); // or sessionStorage.clear();
@@ -36,7 +55,7 @@ const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
         >
           <GiHamburgerMenu size={24} />
         </button>
-        <p>Welcome back, <span className={styles.username}>Aditya</span> <span className={styles.emoji}>☀️</span></p>
+        <p>Welcome back, <span className={styles.username}>{userName}</span> <span className={styles.emoji}>☀️</span></p>
       </div>
 
       <div className={styles.rightSection}>
