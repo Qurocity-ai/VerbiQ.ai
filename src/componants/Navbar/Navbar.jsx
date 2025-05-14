@@ -128,7 +128,9 @@ export default function Navbar() {
             </div>
           )}
         </div>
-        
+      {/* Platform */}
+              <Link onClick={() => { setActiveLink("platform");  setIsMobileMenuOpen(false)}} to="/platform" className={activeLink === "platform" ? style.activeLink : ""}>Platform</Link>
+
         {/* COE Link*/}
         <Link onClick={() => { setActiveLink("coe");  setIsMobileMenuOpen(false)}} to="/ceo" className={activeLink === "coe" ? style.activeLink : ""}>COE</Link>
         

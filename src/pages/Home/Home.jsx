@@ -8,6 +8,7 @@ import Chat from "./Chat/Chat";
 import Graph from "./Graph/Graph";
 import FeedbackCarousel from './FeedbackSection/FeedbackCarousel';
 import FAQ from "./FAQ/FAQ";
+import NewGraph from '../NewGraph/NewGraph';
 
 
 const Home = () => {
@@ -22,7 +23,9 @@ const Home = () => {
  <Wave/>
  <CarousalOne/>
  <Chat/>
- <Graph/>
+ {/* <Graph/> */}
+ 
+  <NewGraph/>
  <FeedbackCarousel />
  <FAQ/>
  
