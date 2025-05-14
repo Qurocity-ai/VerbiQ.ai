@@ -1,0 +1,85 @@
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  gap: 20px; /* To add space between left and right sections */
+}
+
+.left {
+  width: 28%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #e50000;
+  margin-right: 250px ;
+}
+
+.inputContainer {
+  margin-bottom: 10px;
+  width: 100%; /* Full width for input container */
+  max-width: 400px; /* Adjusted max-width */
+
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+  margin-top: 0;
+  color:#002279;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px; /* Add some space below input fields */
+  
+}
+
+.button {
+  background-color: #003a8c;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px; /* Set a max-width for the button */
+}
+
+.button:hover{
+  background-color:  #B0181B;
+}
+
+.trouble {
+  text-align: right;
+  color: #003a8c;
+  margin-top: 30px;
+  cursor: pointer;
+  margin-left:220px;
+}
+
+
+
+

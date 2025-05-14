@@ -9,17 +9,24 @@ import FullHiring from "../pages/Solutions/FullHiring/FullHiring";
 import LangaugeAssesment from "../pages/Solutions/LangaugeAssesment/LangaugeAssesment";
 import Global from "../pages/Resources/Global/Global";
 import ContractualProject from "../pages/Solutions/ContractualProjectBasedSupport/ContractualProject";
-
 import UnderConstruction from "../pages/UnderConstruction/UnderConstruction";
 import BlogListPage from "../pages/Blog/BlogListPage";
 import BlogDetailPage from "../pages/Blog/BlogDetailPage";
 import Details from "../pages/CenterofExce/Details";
 import Registration from "../pages/Registration/Registration";
 import Message from "../pages/Registration/Message";
+import Dashboard from "../componants/VerbiqPortal/Dashboard/Dashboard";
+import DashBoardRegister from "../pages/Registration/DashboardRegistration/DashBoardRegister";
+import CompanyRegistration from "../pages/Registration/DashboardRegistration/CompanyRegistration";
+import CandidateRegistration from "../pages/Registration/DashboardRegistration/CandidateRegistration";
+import LoginDash from "../pages/Registration/DashboardRegistration/LoginDash";
+import Platform from "../pages/Platform/Platform";
+import Assessment from "../assessment/Assessment";
 export default function ALLRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
+      <Route path="/platform" element={<Platform/>}></Route>
       <Route path="/ceo" element={<CenterofExce />}></Route>
       <Route path="/aboutUs" element={<Aboutus />}></Route>
       {/* <Route path="/resources" element={<UnderConstruction/>}></Route> */}
@@ -35,7 +42,22 @@ export default function ALLRoutes() {
       <Route path="/blogs/:id" element={<BlogDetailPage />} />
       <Route path="/details/:id" element={<Details />} />
       <Route path="/registration" element={<Registration />} />
+
+      <Route path="/register/*" element={<DashBoardRegister />}>
+        <Route index element={<CandidateRegistration />} />
+        <Route path="company" element={<CompanyRegistration />} />
+        <Route path="candidate" element={<CandidateRegistration />} />
+      </Route>
+      <Route path="/candidatelogin" element={<LoginDash />} />
+      
+      {/* <Route path="/register/companyregistration" element={<CompanyRegistration/>}/>
+      <Route path="/register/candidateregistration" element={<CandidateRegistration/>}/> */}
       <Route path="/registrationMessage" element={<Message />} />
+      <Route path="/dashboard/*" element={<Dashboard />} />
+      <Route path="/assessment" element={<Assessment />} />
     </Routes>
+
+
+
   );
 }
