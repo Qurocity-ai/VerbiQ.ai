@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./registration.module.css";
-
+import { useNavigate } from "react-router-dom";
 
 const CandidateRegistration = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +9,7 @@ const CandidateRegistration = () => {
     password: "",
   });
 
-
+   const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -31,7 +31,7 @@ const CandidateRegistration = () => {
       const result = await response.json();
       if (response.ok) {
         alert("Candidate registered successfully!");
-      
+         navigate("/candidatelogin"); 
 
       } else {
         alert(result.message || "Registration failed.");

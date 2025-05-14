@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./registration.module.css";
-
+import { useNavigate } from "react-router-dom";
 
 const CompanyRegistration = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ const CompanyRegistration = () => {
   });
 
 
-
+ const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -32,7 +32,7 @@ const CompanyRegistration = () => {
       const result = await response.json();
       if (response.ok) {
         alert("Company registered successfully!");
-      
+       navigate("/candidatelogin"); 
       } else {
         alert(result.message || "Registration failed.");
       }
