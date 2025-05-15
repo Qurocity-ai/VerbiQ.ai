@@ -22,11 +22,12 @@ import CandidateRegistration from "../pages/Registration/DashboardRegistration/C
 import LoginDash from "../pages/Registration/DashboardRegistration/LoginDash";
 import Platform from "../pages/Platform/Platform";
 import Assessment from "../assessment/Assessment";
+import JobPostForm from "../pages/Registration/DashboardRegistration/JobsPostForm";
 export default function ALLRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
-      <Route path="/platform" element={<Platform/>}></Route>
+      <Route path="/platform" element={<Platform />}></Route>
       <Route path="/ceo" element={<CenterofExce />}></Route>
       <Route path="/aboutUs" element={<Aboutus />}></Route>
       {/* <Route path="/resources" element={<UnderConstruction/>}></Route> */}
@@ -42,22 +43,18 @@ export default function ALLRoutes() {
       <Route path="/blogs/:id" element={<BlogDetailPage />} />
       <Route path="/details/:id" element={<Details />} />
       <Route path="/registration" element={<Registration />} />
-
       <Route path="/register/*" element={<DashBoardRegister />}>
         <Route index element={<CandidateRegistration />} />
         <Route path="company" element={<CompanyRegistration />} />
         <Route path="candidate" element={<CandidateRegistration />} />
       </Route>
       <Route path="/candidatelogin" element={<LoginDash />} />
-      
       {/* <Route path="/register/companyregistration" element={<CompanyRegistration/>}/>
       <Route path="/register/candidateregistration" element={<CandidateRegistration/>}/> */}
       <Route path="/registrationMessage" element={<Message />} />
       <Route path="/dashboard/*" element={<Dashboard />} />
       <Route path="/assessment" element={<Assessment />} />
+      <Route path="/JobPostForm" element={<JobPostForm />} />
     </Routes>
-
-
-
   );
 }
