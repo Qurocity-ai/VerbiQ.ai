@@ -41,7 +41,9 @@ export default function ALLRoutes() {
       <Route path="/global" element={<Global />}></Route>
       <Route path="/blog" element={<BlogListPage />}></Route>
       <Route path="/blogs/:id" element={<BlogDetailPage />} />
+      {/* Center of Excellence */}
       <Route path="/details/:id" element={<Details />} />
+      {/* Registration & Login */}
       <Route path="/registration" element={<Registration />} />
       <Route path="/register/*" element={<DashBoardRegister />}>
         <Route index element={<CandidateRegistration />} />
@@ -49,8 +51,14 @@ export default function ALLRoutes() {
         <Route path="candidate" element={<CandidateRegistration />} />
       </Route>
       <Route path="/candidatelogin" element={<LoginDash />} />
-      {/* <Route path="/register/companyregistration" element={<CompanyRegistration/>}/>
-      <Route path="/register/candidateregistration" element={<CandidateRegistration/>}/> */}
+      <Route
+        path="/register/companyregistration"
+        element={<CompanyRegistration />}
+      />
+      <Route
+        path="/register/candidateregistration"
+        element={<CandidateRegistration />}
+      />
       <Route path="/registrationMessage" element={<Message />} />
       <Route path="/dashboard/*" element={<Dashboard />} />
       <Route path="/assessment" element={<Assessment />} />
