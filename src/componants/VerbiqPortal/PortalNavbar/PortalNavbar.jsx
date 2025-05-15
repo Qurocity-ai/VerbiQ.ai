@@ -32,7 +32,7 @@ const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
     // Clear any tokens or session storage
     localStorage.clear(); // or sessionStorage.clear();
     // Redirect to login page
-    window.location.href = "/login";
+    window.location.href = "/candidatelogin";
   };
 
   // Close dropdown if clicked outside

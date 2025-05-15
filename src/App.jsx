@@ -10,7 +10,7 @@ const App = () => {
   const location = useLocation();
   
   // Check if the current path starts with '/dashboard' or '/assessment'
-  const hideNavbarFooter = ["/dashboard", "/assessment","/companydashboard"].some(path =>
+  const hideNavbarFooter = ["/candidatedashboard", "/assessment","/companydashboard"].some(path =>
     location.pathname.startsWith(path)
   );
   return (
