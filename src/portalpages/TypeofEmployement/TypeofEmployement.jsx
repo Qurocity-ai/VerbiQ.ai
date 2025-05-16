@@ -1,9 +1,11 @@
 import React from 'react'
+import GenAIRolesHeader from '../GenAIRolesHeader/GenAIRolesHeader'
+
 
 function TypeofEmployement() {
   return (
     <div>
-      TypeofEmployee
+       {/* <GenAIRolesHeader title="Type of Employment"/> */}
     </div>
   )
 }

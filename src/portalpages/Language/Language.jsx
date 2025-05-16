@@ -4,7 +4,7 @@ import Czech from './Czech/Czech'
 function Language() {
   return (
     <div>
-      <Czech></Czech>
+      
     </div>
   )
 }
