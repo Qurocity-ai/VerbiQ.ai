@@ -1,4 +1,3 @@
-
 // import React, { useState } from 'react';
 // import CompanySidebar from './CompanySidebar/CompanySidebar';
 // import PortalRoutes from '../../../routes/PortalRoutes';
@@ -23,26 +22,44 @@
 
 // export default CompanyDashboard;
 
-import React from 'react'
-import PortalNavbar from '../PortalNavbar/PortalNavbar'
-
-import PortalRoutes from '../../../routes/PortalRoutes'
-import styles from '../Sidebar/Sidebar.module.css'; // Import the CSS module
+import React from "react";
+import PortalNavbar from "../PortalNavbar/PortalNavbar";
+import { useNavigate } from "react-router-dom";
+import PortalRoutes from "../../../routes/PortalRoutes";
+import styles from "../Sidebar/Sidebar.module.css"; // Import the CSS module
 import { useState } from "react";
-import CompanySidebar from './CompanySidebar/CompanySidebar';
-function CompanyDashboard() { 
+import CompanySidebar from "./CompanySidebar/CompanySidebar";
+function CompanyDashboard() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen flex flex-col">
-       <CompanySidebar  
-        mobileOpen={mobileOpen} 
-        setMobileOpen={setMobileOpen} 
-        isSidebarOpen={isSidebarOpen}  />
-        <div className="lg:pl-[272px] flex flex-col flex-1">
-          <PortalNavbar setMobileOpen={setMobileOpen} mobileOpen={mobileOpen}  />
-        
-        <main className={`${styles.pageWrapper} flex-1 p-4 overflow-auto bg-white`}>
+      <CompanySidebar
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        isSidebarOpen={isSidebarOpen}
+      />
+      <div className="lg:pl-[272px] flex flex-col flex-1 bg-white">
+        <PortalNavbar setMobileOpen={setMobileOpen} mobileOpen={mobileOpen} />
+
+        <button
+          className="absolute top-20 right-7 flex items-center text-red-700 font-semibold border border-gray-200 bg-transparent py-3 px-4 rounded-lg text-nowrap text-md cursor-pointer"
+          onClick={() => {
+            navigate("/JobPostForm");
+          }}
+        >
+          Post a jobs
+          <img
+            src="/assets/cloud-upload.jpg"
+            alt="cloud-upload"
+            className="w-6 h-6 ml-3"
+          />
+        </button>
+        <hr className="mt-20 text-gray-200" />
+        <main
+          className={`${styles.pageWrapper} flex-1 p-4 overflow-auto bg-white`}
+        >
           <PortalRoutes />
         </main>
       </div>

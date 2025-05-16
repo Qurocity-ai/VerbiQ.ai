@@ -26,7 +26,7 @@ import Teleperformance from "../portalpages/Clients/Teleperformance/Teleperforma
 import ResetPassword from "../portalpages/ResetPassword/ResetPassword";
 import ForgotPassword from "../portalpages/ForgotPassword/ForgotPassword";
 import SignIn from "../portalpages/Sign-In/SignIn";
-import CompanyDashboard from "../portalpages/CompanyDashboard/CompanyDashboard";
+
 export default function PortalRoutes() {
   return (
     <Routes>
@@ -62,7 +62,6 @@ export default function PortalRoutes() {
       </Route>
       <Route path="/reset-password" element={<ResetPassword />}></Route>
       {/* Other routes */}
-      <Route path="/companydashboard" element={<CompanyDashboard />} />
       {/*portal-navbar*/}
 
       {/* <Route path='/Sigin-in' element={<SignIn/>}></Route>

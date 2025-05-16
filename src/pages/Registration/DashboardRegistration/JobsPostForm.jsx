@@ -68,6 +68,7 @@ const JobPostForm = () => {
       );
       console.log("Job posted successfully:", response.data);
       setFormData(initialState);
+      navigate("/companydashboard");
     } catch (err) {
       if (err.response?.status === 401) {
         setError("Session expired. Please login again");
@@ -259,4 +260,3 @@ const JobPostForm = () => {
 };
 
 export default JobPostForm;
-// Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident libero maxime eveniet ab ratione beatae porro neque quae, enim delectus similique tempore. Exercitationem, necessitatibus. Vero cupiditate at ipsum reprehenderit magni.
