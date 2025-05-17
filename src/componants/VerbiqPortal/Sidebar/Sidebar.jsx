@@ -46,7 +46,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen, isSidebarOpen }) => {
 
         {/* Section: Type of Employment */}
         <div className='pt-[10px]'>
-          <Link to="/dashboard/typeofemployement" onClick={() => setMobileOpen(false)}>
+          <Link to="/candidatedashboard/typeofemployement" onClick={() => setMobileOpen(false)}>
             <button
               onClick={() => toggle(setEmploymentOpen)}
               className={clsx(styles.navButton, {
@@ -62,8 +62,8 @@ const Sidebar = ({ mobileOpen, setMobileOpen, isSidebarOpen }) => {
           {employmentOpen && isSidebarOpen && (
             <div className={styles.navLinks}>
             
-              <NavLink to="/dashboard/freelancer" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>Freelancer</li></NavLink>
-              <NavLink to="/dashboard/contractual" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>Contractual</li></NavLink>
+              <NavLink to="/candidatedashboard/freelancer" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>Freelancer</li></NavLink>
+              <NavLink to="/candidatedashboard/contractual" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>Contractual</li></NavLink>
              
             </div>
           )}
@@ -71,7 +71,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen, isSidebarOpen }) => {
 
         {/* Section: Experience Level */}
         <div>
-          <Link to="/dashboard/experiencelevel" onClick={() => setMobileOpen(false)}>
+          <Link to="/candidatedashboard/experiencelevel" onClick={() => setMobileOpen(false)}>
             <button
               onClick={() => toggle(setExperienceOpen)}
               className={clsx(styles.navButton, {
@@ -87,9 +87,9 @@ const Sidebar = ({ mobileOpen, setMobileOpen, isSidebarOpen }) => {
           {experienceOpen && isSidebarOpen && (
             <div className={styles.navLinks}>
             
-              <NavLink to="/dashboard/entrylevel" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>Entry Level</li></NavLink>
-              <NavLink to="/dashboard/intermediate" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>Intermediate</li></NavLink>
-              <NavLink to="/dashboard/expert" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Expert</li></NavLink>
+              <NavLink to="/candidatedashboard/entrylevel" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>Entry Level</li></NavLink>
+              <NavLink to="/candidatedashboard/intermediate" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>Intermediate</li></NavLink>
+              <NavLink to="/candidatedashboard/expert" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Expert</li></NavLink>
            
             </div>
           )}
@@ -97,7 +97,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen, isSidebarOpen }) => {
 
         {/* Section: Language */}
         <div>
-          <Link to="/dashboard/language" onClick={() => setMobileOpen(false)}>
+          <Link to="/candidatedashboard/language" onClick={() => setMobileOpen(false)}>
             <button
               onClick={() => toggle(setLanguageOpen)}
               className={clsx(styles.navButton, {
@@ -113,14 +113,14 @@ const Sidebar = ({ mobileOpen, setMobileOpen, isSidebarOpen }) => {
           {languageOpen && isSidebarOpen && (
             <div className={styles.navLinks}>
            
-              <NavLink to="/dashboard/french" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>French</li></NavLink>
-              <NavLink to="/dashboard/german" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>German</li></NavLink>
-              <NavLink to="/dashboard/czech" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Czech</li></NavLink>
-              <NavLink to="/dashboard/spanish" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Spanish</li></NavLink>
-              <NavLink to="/dashboard/italian" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Italian</li></NavLink>
-              <NavLink to="/dashboard/mandarin" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Mandarin</li></NavLink>
-              <NavLink to="/dashboard/korean" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Korean</li></NavLink>
-              <NavLink to="/dashboard/japanese" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Japanese</li></NavLink>
+              <NavLink to="/candidatedashboard//french" className={navLinkClass} onClick={() => setMobileOpen(false)}><li>French</li></NavLink>
+              <NavLink to="/candidatedashboard/german" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>German</li></NavLink>
+              <NavLink to="/candidatedashboard/czech" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Czech</li></NavLink>
+              <NavLink to="/candidatedashboard/spanish" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Spanish</li></NavLink>
+              <NavLink to="/candidatedashboard/italian" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Italian</li></NavLink>
+              <NavLink to="/candidatedashboard/mandarin" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Mandarin</li></NavLink>
+              <NavLink to="/candidatedashboard/korean" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Korean</li></NavLink>
+              <NavLink to="/candidatedashboard/japanese" className={navLinkClass}onClick={() => setMobileOpen(false)}><li>Japanese</li></NavLink>
               </div>            
           )}
         </div>

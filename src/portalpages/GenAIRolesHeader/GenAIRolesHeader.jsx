@@ -1,68 +1,4 @@
-// import { useLocation } from "react-router-dom";
 
-// export default function GenAIRolesHeader() {
-//   const location = useLocation();
-
-//   // Map paths to titles
-//   const routeTitles = {
-//      "/typeofemployement": "Type of Employment",
-//     "/freelancer": "Freelance GenAI Roles",
-//     "/contractual": "Contractual GenAI Roles",
-
-//     "/experiencelevel": "Experience Level",
-//     "/entrylevel": "Entry Level Roles",
-//     "/intermediate": "Intermediate Level Roles",
-//     "/expert": "Expert Level Roles",
-
-//     "/language": "Language Preferences",
-//     "/french": "French Language Roles",
-//     "/german": "German Language Roles",
-//     "/czech": "Czech Language Roles",
-//     "/spanish": "Spanish Language Roles",
-//     "/italian": "Italian Language Roles",
-//     "/mandarin": "Mandarin Language Roles",
-//     "/korean": "Korean Language Roles",
-//     "/japanese": "Japanese Language Roles",
-//   };
-
-//   // Get current route's title or fallback
-//   const pageTitle = routeTitles[location.pathname] || "GenAI Roles";
-
-//   return (
-//     <div className="flex items-center justify-between gap-4 p-4 border-b">
-//       {/* Left: Title and Search */}
-//       <div className="flex items-center gap-4">
-//         <h2 className="text-sm font-semibold text-red-600 whitespace-nowrap">
-//           {pageTitle}
-//         </h2>
-
-//         <div className="relative">
-//           <input
-//             type="text"
-//             placeholder="Search by name, role, department..."
-//             className="pl-8 pr-12 py-2 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           />
-//           <span className="absolute left-2 top-2.5 h-4 w-4 text-gray-400">
-//             🔍
-//           </span>
-//           <span className="absolute right-2 top-2.5 text-gray-400 text-xs">
-//             ⌘ K
-//           </span>
-//         </div>
-//       </div>
-
-//       {/* Right: Sort and Date */}
-//       <div className="flex items-center gap-2">
-//         <button className="flex items-center gap-1 border rounded-lg px-3 py-2 text-sm text-blue-900 hover:bg-gray-100">
-//           Sort <span className="ml-1">▼</span>
-//         </button>
-//         <button className="flex items-center gap-2 border rounded-lg px-3 py-2 text-sm text-blue-900 hover:bg-gray-100">
-//           📅 13 Jan, 2024
-//         </button>
-//       </div>
-//     </div>
-//   );
-// }
 
 import { useState } from "react";
 import { Calendar, CalendarIcon, ChevronDownIcon, SearchIcon } from "lucide-react";
@@ -72,22 +8,22 @@ export default function GenAIRolesHeader({ title }) {
   const location = useLocation();
 
  const routeTitles = {
-  "/dashboard/typeofemployement": "Type of Employment",
-  "/dashboard/freelancer": "Freelance GenAI Roles",
-  "/dashboard/contractual": "Contractual GenAI Roles",
-  "/dashboard/experiencelevel": "Experience Level",
-  "/dashboard/entrylevel": "Entry Level Roles",
-  "/dashboard/intermediate": "Intermediate Level Roles",
-  "/dashboard/expert": "Expert Level Roles",
-  "/dashboard/language": "Language Preferences",
-  "/dashboard/french": "French Language Roles",
-  "/dashboard/german": "German Language Roles",
-  "/dashboard/czech": "Czech Language Roles",
-  "/dashboard/spanish": "Spanish Language Roles",
-  "/dashboard/italian": "Italian Language Roles",
-  "/dashboard/mandarin": "Mandarin Language Roles",
-  "/dashboard/korean": "Korean Language Roles",
-  "/dashboard/japanese": "Japanese Language Roles",
+  "/candidatedashboard/typeofemployement": "Type of Employment",
+  "/candidatedashboard/freelancer": "Freelance GenAI Roles",
+  "/candidatedashboard/contractual": "Contractual GenAI Roles",
+  "/candidatedashboard/experiencelevel": "Experience Level",
+  "/candidatedashboard/entrylevel": "Entry Level Roles",
+  "/candidatedashboard/intermediate": "Intermediate Level Roles",
+  "/candidatedashboard/expert": "Expert Level Roles",
+  "/candidatedashboard/language": "Language Preferences",
+  "/candidatedashboard/french": "French Language Roles",
+  "/candidatedashboard/german": "German Language Roles",
+  "/candidatedashboard/czech": "Czech Language Roles",
+  "/candidatedashboard/spanish": "Spanish Language Roles",
+  "/candidatedashboard/italian": "Italian Language Roles",
+  "/candidatedashboard/mandarin": "Mandarin Language Roles",
+  "/candidatedashboard/korean": "Korean Language Roles",
+  "/candidatedashboard/japanese": "Japanese Language Roles",
 };
 
 

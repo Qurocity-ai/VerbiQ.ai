@@ -110,7 +110,7 @@ const JobBoard = () => {
       {/* Close Button */}
       <button
         onClick={() => setShowPopup(false)}
-        className="absolute -top-0.5 right-0.5 text-gray-600 text-2xl font-bold z-10"
+        className="absolute -top-0.5 right-0.5 text-white text-2xl font-semibold z-10"
       >
         &times;
       </button>
