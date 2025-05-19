@@ -46,7 +46,7 @@ function CompanyDashboard() {
         <button
           className="absolute top-20 right-7 flex items-center text-red-700 font-semibold border border-gray-200 bg-transparent py-3 px-4 rounded-lg text-nowrap text-md cursor-pointer"
           onClick={() => {
-            navigate("/JobPostForm");
+            navigate("/companydashboard/JobPostForm");
           }}
         >
           Post a jobs
@@ -56,7 +56,7 @@ function CompanyDashboard() {
             className="w-6 h-6 ml-3"
           />
         </button>
-        <hr className="mt-20 text-gray-200" />
+        <hr className="text-gray-200" />
         <main
           className={`${styles.pageWrapper} flex-1 p-4 overflow-auto bg-white`}
         >

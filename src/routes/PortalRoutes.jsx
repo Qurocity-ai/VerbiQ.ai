@@ -26,7 +26,7 @@ import Teleperformance from "../portalpages/Clients/Teleperformance/Teleperforma
 import ResetPassword from "../portalpages/ResetPassword/ResetPassword";
 import ForgotPassword from "../portalpages/ForgotPassword/ForgotPassword";
 import SignIn from "../portalpages/Sign-In/SignIn";
-
+import JobPostForm from "../pages/Registration/DashboardRegistration/JobsPostForm";
 export default function PortalRoutes() {
   return (
     <Routes>
@@ -75,6 +75,8 @@ export default function PortalRoutes() {
       <Route path="/inndodata" element={<Innodata />} />
       <Route path="/soft2bet" element={<Soft2Bet />} />
       <Route path="/teleperformance" element={<Teleperformance />} />
+      {/* {job posting form } */}
+      <Route path="/JobPostForm" element={<JobPostForm />} />
     </Routes>
   );
 }

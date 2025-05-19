@@ -83,8 +83,8 @@ const JobPostForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md sm:p-22 p-8">
+    <div className="min-h-screen flex justify-center items-center sm:-mt-64 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl bg-white rounded-lg shadow-md sm:p-20 p-8">
         <h2 className="text-[35px] text-center font-bold text-red-600 mb-10">
           Post a New Job
         </h2>
