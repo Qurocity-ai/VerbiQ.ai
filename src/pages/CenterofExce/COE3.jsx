@@ -2,7 +2,7 @@ import React from "react";
 
 function COE3() {
   return (
-    <div className="flex flex-col items-center justify-center sm:px-5 sm:py-10 w-screen h-full">
+    <div className="flex flex-col items-center justify-center sm:px-5 sm:py-10 w-screen h-full px-5">
       <p className="sm:text-[20px] text-[16px] text-black font-semibold text-center p-2">
         Our global assessment panel brings together certified language experts
         and native speakers to ensure every evaluation is:

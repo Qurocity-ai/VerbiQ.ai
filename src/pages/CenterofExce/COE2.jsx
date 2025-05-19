@@ -38,6 +38,16 @@ function COE2() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      // Force a re-render when screen size changes
+      setCurrentIndex(currentIndex);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [currentIndex]);
+
   const handlePrevClick = () => {
     setCurrentIndex((prev) => (prev - 1 + totalImages) % totalImages);
     setActiveButton("left");
@@ -58,6 +68,16 @@ function COE2() {
     const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
     const nextIndex = (currentIndex + 1) % totalImages;
 
+    // For mobile screens
+    if (window.innerWidth < 768) {
+      // 768px is standard breakpoint for mobile
+      if (index === currentIndex) {
+        return "left-1/2 -translate-x-1/2 scale-100 z-10";
+      }
+      return "opacity-0"; // Hide all other images on mobile
+    }
+
+    // For desktop screens
     if (index === currentIndex) {
       return "left-1/2 -translate-x-1/2 scale-100 z-10";
     }
@@ -70,7 +90,7 @@ function COE2() {
     return "opacity-0";
   };
   return (
-    <div className="flex items-center justify-center h-full py-18">
+    <div className="flex items-center justify-center h-full py-12 sm:py-18">
       {isLoading ? (
         <motion.div
           initial={{ opacity: 0 }}
@@ -92,12 +112,12 @@ function COE2() {
           {users.map((user, index) => (
             <div
               key={user._id}
-              className={`absolute top-1/2 -translate-y-1/2 transition-all duration-700 bg-[#F8FAFF] ease-in-out ${getPositionClasses(
+              className={`w-full h-52 sm:w-auto absolute top-1/2 -translate-y-1/2 transition-all duration-700 ease-in-out ${getPositionClasses(
                 index
               )}`}
             >
               <div
-                className="bg-transparent w-screen h-fit sm:w-64 sm:h-64 flex flex-col items-center justify-center"
+                className="w-full h-52 sm:w-52 sm:h-64 flex flex-col items-center justify-center"
                 onClick={() => handleUserClick(user)}
               >
                 <img
@@ -106,7 +126,7 @@ function COE2() {
                   className="sm:h-fit sm:w-fit h-96 w-72 rounded-full mb-3"
                 />
                 <h2
-                  className={`text-[30px] font-semibold text-center ${
+                  className={`sm:text-[30px] text-[25px] font-semibold text-center ${
                     currentIndex === index
                       ? "text-[#0c0f6a] font-medium"
                       : "text-gray-300"
@@ -115,7 +135,7 @@ function COE2() {
                   {user.name}
                 </h2>
                 <p
-                  className={`text-[20px] text-center ${
+                  className={`sm:text-[20px] text-[15px] text-center ${
                     currentIndex === index
                       ? "text-[#0c0f6a] opacity-95"
                       : "text-gray-300"
@@ -126,7 +146,7 @@ function COE2() {
               </div>
             </div>
           ))}
-          <div className="absolute sm:-bottom-28 -bottom-32 w-full z-20 flex justify-center px-4 -translate-y-1/2">
+          <div className="absolute sm:-bottom-32 -bottom-18 w-full z-20 flex justify-center px-4 -translate-y-1/2">
             <button
               onClick={handlePrevClick}
               className=" rounded-full p-2  transition-all"
