@@ -219,12 +219,12 @@ function Registration() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-20">
-      <div className="max-w-4xl w-full p-8">
+    <div className="min-h-screen flex items-center justify-center  ">
+      <div className="max-w-4xl w-full">
         <div>
           <img src="\assets\virbiqlogo.png" className="pb-7 h-20 w-52" />
         </div>
-        <form className="mt-8 space-y-6 " onSubmit={handleSubmit}>
+        <form className="mt-8 space-y-6 w-max -ml-20" onSubmit={handleSubmit}>
           <div className=" space-y-4">
             {/* <p className="mt-2 text-left text-sm text-[#C92A2D] font-semibold">
               Candidate Credential
@@ -300,9 +300,9 @@ function Registration() {
                   name="fullName"
                   type="text"
                   required
-                  className={`"appearance-none rounded-md relative block w-52 px-2 py-2 border border-gray-300  text-gray-900 placeholder-gray-300 focus:z-10 sm:text-sm ${
-                    !hasValue(formData.fullName) ? "-mb-9" : ""
-                  } bg-transparent focus:bg-white"`}
+                  className={`appearance-none rounded-md relative block w-auto px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm ${
+                    !hasValue(formData.fieldName) ? "-mb-9" : ""
+                  } bg-transparent focus:bg-white`}
                   placeholder="Full Name "
                   value={formData.fullName}
                   onChange={handleInputChange}
