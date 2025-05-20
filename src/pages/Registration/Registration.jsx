@@ -439,7 +439,9 @@ function Registration() {
                   <select
                     id={`proficiencyNative-${lang._id}`}
                     name="proficiencyNative"
-                    className={`mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md ${lang.proficiencyNative?'text-gray-950':'text-gray-300'}`}
+                    className={`mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md ${
+                      lang.proficiencyNative ? "text-gray-950" : "text-gray-300"
+                    }`}
                     value={lang.proficiencyNative}
                     onChange={(e) => {
                       const updatedLanguages = languages.map((l) => {
@@ -451,7 +453,9 @@ function Registration() {
                       setLanguages(updatedLanguages);
                     }}
                   >
-                    <option value="" disabled>Proficiency-Native</option>
+                    <option value="" disabled>
+                      Proficiency-Native
+                    </option>
                     <option>Beginner</option>
                     <option>Intermediate</option>
                     <option>Advanced</option>
@@ -462,7 +466,9 @@ function Registration() {
                   <select
                     id={`certifications-${lang._id}`}
                     name="certifications"
-                    className={`mt-1 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${lang.certifications?'text-gray-950':'text-gray-300'}  sm:ml-2`}
+                    className={`mt-1 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
+                      lang.certifications ? "text-gray-950" : "text-gray-300"
+                    }  sm:ml-2`}
                     value={lang.certifications}
                     onChange={(e) => {
                       const updatedLanguages = languages.map((l) => {
@@ -474,7 +480,9 @@ function Registration() {
                       setLanguages(updatedLanguages);
                     }}
                   >
-                    <option value="" disabled>Certifications (if any)</option>
+                    <option value="" disabled>
+                      Certifications (if any)
+                    </option>
                     <option>B1</option>
                     <option>B2</option>
                     <option>C1</option>
@@ -584,7 +592,9 @@ function Registration() {
                     name="proficiencyL2"
                     // className="mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
                     // className="mt-1 block w-52 pl-3 pr-8 py-2 text-base border border-gray-300 sm:text-sm rounded-md text-gray-300"
-                     className={`mt-1 block w-full pl-3 pr-8 py-2 text-base border border-gray-300 sm:text-sm rounded-md ${lang.proficiency?'text-gray-950':'text-gray-300'} appearance-none`}
+                    className={`mt-1 block w-full pl-3 pr-8 py-2 text-base border border-gray-300 sm:text-sm rounded-md ${
+                      lang.proficiency ? "text-gray-950" : "text-gray-300"
+                    } appearance-none`}
                     value={lang.proficiency}
                     onChange={(e) => {
                       const updatedLanguages = foreignLanguages.map((l) => {
@@ -596,7 +606,9 @@ function Registration() {
                       setForeignLanguages(updatedLanguages);
                     }}
                   >
-                    <option value="" disabled>Proficiency L2</option>
+                    <option value="" disabled>
+                      Proficiency L2
+                    </option>
                     <option>Beginner</option>
                     <option>Intermediate</option>
                     <option>Advanced</option>
@@ -613,7 +625,9 @@ function Registration() {
                   <select
                     id={`certifications-${lang._id}`}
                     name="certifications"
-                    className={`mt-1 sm:ml-2 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${lang.certifications?'text-gray-900':'text-gray-300'}`}
+                    className={`mt-1 sm:ml-2 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
+                      lang.certifications ? "text-gray-900" : "text-gray-300"
+                    }`}
                     value={lang.certifications}
                     onChange={(e) => {
                       const updatedLanguages = foreignLanguages.map((l) => {
@@ -628,7 +642,9 @@ function Registration() {
                       setForeignLanguages(updatedLanguages);
                     }}
                   >
-                    <option value="" disabled>Certifications (if any)</option>
+                    <option value="" disabled>
+                      Certifications (if any)
+                    </option>
                     <option>B1</option>
                     <option>B2</option>
                     <option>C1</option>
@@ -849,11 +865,17 @@ function Registration() {
                 <select
                   id="languageCertifications"
                   name="languageCertifications"
-                  className={`mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300  ${formData.languageCertifications ? 'text-gray-950':'text-gray-300'} sm:text-sm rounded-md`}
+                  className={`mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300  ${
+                    formData.languageCertifications
+                      ? "text-gray-950"
+                      : "text-gray-300"
+                  } sm:text-sm rounded-md`}
                   value={formData.languageCertifications}
                   onChange={handleInputChange}
                 >
-                  <option value="" disabled>Select</option>
+                  <option value="" disabled>
+                    Select
+                  </option>
                   <option>B1</option>
                   <option>B2</option>
                   <option>C1</option>
@@ -887,15 +909,20 @@ function Registration() {
                 <select
                   id="preferredLocations"
                   name="preferredLocations"
-                  className={`mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300   sm:text-sm rounded-md ${formData.preferredLocations?'text-gray-950':'text-gray-300'}`}
+                  className={`mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300   sm:text-sm rounded-md ${
+                    formData.preferredLocations
+                      ? "text-gray-950"
+                      : "text-gray-300"
+                  }`}
                   value={formData.preferredLocations}
                   onChange={handleInputChange}
                 >
-                  <option value="" disabled>Select</option>
+                  <option value="" disabled>
+                    Select
+                  </option>
                   <option>Gurugram</option>
                   <option>Jaipur</option>
-                  <option>Mumbai</option>s
-                  <option>Kolkata</option>
+                  <option>Mumbai</option>s<option>Kolkata</option>
                   <option>Mohali</option>
                   <option>Bangalore</option>
                 </select>
@@ -910,11 +937,17 @@ function Registration() {
                 <select
                   id="preferredProcesses"
                   name="preferredProcesses"
-                  className={`mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300  sm:text-sm rounded-md ${formData.preferredLocations?'text-gray-900':'text-gray-300'}`}
+                  className={`mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300  sm:text-sm rounded-md ${
+                    formData.preferredLocations
+                      ? "text-gray-900"
+                      : "text-gray-300"
+                  }`}
                   value={formData.preferredProcesses}
                   onChange={handleInputChange}
                 >
-                  <option value="" disabled>Select</option>
+                  <option value="" disabled>
+                    Select
+                  </option>
                   <option>Voice</option>
                   <option>Non-Voice</option>
                   <option>Blended</option>
