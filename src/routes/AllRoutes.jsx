@@ -91,6 +91,7 @@ import CompanyDashboard from "../componants/VerbiqPortal/CompanyDashboad/Company
 import PrivateRoute from "./PrivateRoute";
 import JobPostForm from "../pages/Registration/DashboardRegistration/JobsPostForm";
 
+
 export default function ALLRoutes() {
   return (
     <Routes>
@@ -141,6 +142,9 @@ export default function ALLRoutes() {
           </PrivateRoute>
         }
       />
+     
+ 
+
 
       {/* Public Assessment Page */}
       <Route path="/assessment" element={<Assessment />} />

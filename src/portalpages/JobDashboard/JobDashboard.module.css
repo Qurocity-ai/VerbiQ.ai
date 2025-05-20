@@ -1,0 +1,120 @@
+
+.jobDashboardContainer {
+  margin-top: -20px;
+  padding-top: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /*gap: 1.5rem;*/
+  width: 100%;
+  max-width: 1200px;
+   justify-items: start;
+   /*border: 2px solid red;*/
+}
+
+.dashboardWrapper {
+  width: 100%;
+  max-width: 1200px;
+  /*padding: 0 1.5rem 1.5rem 1.5rem;*/
+      padding: 0 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.noJobs {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.jobGrid {
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+ 
+}
+
+.jobCard {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease-in-out;
+  min-height: 180px;
+  
+}
+
+.jobCard:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.jobTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.jobInfo {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.boldLabel {
+  font-weight: 600;
+  color: #222;
+  margin-right: 6px;
+}
+
+.tagsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tagBadge {
+  background-color: #e6f2f8;
+  color: #005670;
+  font-size: 0.875rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+}
+.buttonGroup {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.updateButton, .deleteButton {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.updateButton {
+  background-color: gray;
+  color: white;
+}
+
+.updateButton:hover {
+  background-color: #2563eb;
+}
+
+.deleteButton {
+  background-color: gray;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color:  #2563eb;
+}
