@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Intermediate() {
+function Clients() {
   return (
     <div>
-
+      Clients
     </div>
   )
 }
 
-export default Intermediate
+export default Clients

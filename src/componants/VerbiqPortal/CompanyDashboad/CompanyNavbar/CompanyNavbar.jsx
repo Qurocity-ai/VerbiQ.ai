@@ -1,11 +1,11 @@
 
 import React, { useState, useRef, useEffect } from "react";
-import styles from "./PortalNavbar.module.css";
+import styles from "./CompanyNavbar.module.css";
 //import { FaBell } from "react-icons/fa"; 
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";  // Import the hamburger menu icon
 import clsx from "clsx";
-const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
+const CompanyNavbar = ({ setMobileOpen, mobileOpen }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef();
 
@@ -86,5 +86,5 @@ const PortalNavbar = ({ setMobileOpen, mobileOpen }) => {
   );
 };
 
-export default PortalNavbar;
+export default CompanyNavbar;
 

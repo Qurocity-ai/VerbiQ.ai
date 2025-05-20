@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Intermediate() {
+function Innodata() {
   return (
     <div>
-
+      Innodata
     </div>
   )
 }
 
-export default Intermediate
+export default Innodata

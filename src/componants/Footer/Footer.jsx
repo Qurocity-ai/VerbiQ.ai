@@ -18,17 +18,26 @@ function Footer() {
             <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
               {/* Left Column */}
               <div className="space-y-4">
-                <a href="#" className="block text-[#00046C] hover:text-opacity-80">
+                <a
+                  href="#"
+                  className="block text-[#00046C] hover:text-opacity-80"
+                >
                   Careers
                 </a>
-                <a href="/blog" className="block text-[#00046C] hover:text-opacity-80">
+                <a
+                  href="/blog"
+                  className="block text-[#00046C] hover:text-opacity-80"
+                >
                   Blogs
                 </a>
               </div>
 
               {/* Middle Column */}
               <div className="space-y-4">
-                <a href="/registration" className="block text-[#00046C] hover:text-opacity-80">
+                <a
+                  href="/registration"
+                  className="block text-[#00046C] hover:text-opacity-80"
+                >
                   Register as Candidate
                 </a>
                 <a
@@ -42,7 +51,7 @@ function Footer() {
               </div>
 
               {/* Right Column - Social Links */}
-              <div className="col-span-2 space-y-4 md:col-span-1">
+              <div className="col-span-2 space-y-4 md:col-span-1 sm:pl-16">
                 <div className="flex flex-col space-y-4">
                   <a
                     href="https://www.linkedin.com/company/recrutorycompany/"
@@ -50,7 +59,11 @@ function Footer() {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-[#00046C] hover:text-opacity-80"
                   >
-                    <img src="./assets/image 213.png" alt="LinkedIn" className="h-6 w-6" />
+                    <img
+                      src="./assets/image 213.png"
+                      alt="LinkedIn"
+                      className="h-6 w-6"
+                    />
                     <span>LinkedIn</span>
                   </a>
                   <a
@@ -59,7 +72,11 @@ function Footer() {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-[#00046C] hover:text-opacity-80"
                   >
-                    <img src="./assets/image 214.png" alt="Instagram" className="h-6 w-6" />
+                    <img
+                      src="./assets/image 214.png"
+                      alt="Instagram"
+                      className="h-6 w-6"
+                    />
                     <span>Instagram</span>
                   </a>
                   <a
@@ -80,14 +97,16 @@ function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-2 text-right">
+            <div className="space-y-2 col-span-1 sm:-mt-16">
               <div className="block text-[#00046C] font-medium">9373902340</div>
-              <div className="block text-[#00046C] font-medium">hr@verbiq.ai</div>
+              <div className="block text-[#00046C] font-medium">
+                hr@verbiq.ai
+              </div>
             </div>
           </div>
 
           {/* Bottom Border */}
-          <div className="mt-8 border-t border-gray-200 pt-8 text-center">
+          <div className="mt-8 border-t border-gray-200 pt-8 text-right">
             <p className="text-base text-[#00046C]">
               &copy; {new Date().getFullYear()} VerbiQ.ai. All rights reserved.
             </p>
@@ -106,10 +125,16 @@ function Footer() {
 
             {/* Mobile Links in specified order */}
             <div className="space-y-3 mb-6 text-left">
-              <a href="/registration" className="block text-[#00046C] hover:text-opacity-80">
+              <a
+                href="/registration"
+                className="block text-[#00046C] hover:text-opacity-80"
+              >
                 Register as Candidate
               </a>
-              <a href="/blog" className="block text-[#00046C] hover:text-opacity-80">
+              <a
+                href="/blog"
+                className="block text-[#00046C] hover:text-opacity-80"
+              >
                 Blogs
               </a>
               <a
@@ -118,7 +143,10 @@ function Footer() {
               >
                 News Letters
               </a>
-              <a href="#" className="block text-[#00046C] hover:text-opacity-80">
+              <a
+                href="#"
+                className="block text-[#00046C] hover:text-opacity-80"
+              >
                 Careers
               </a>
             </div>
@@ -126,7 +154,9 @@ function Footer() {
             {/* Contact Info */}
             <div className="space-y-2 mb-6 text-left">
               <div className="block text-[#00046C] font-medium">9373902340</div>
-              <div className="block text-[#00046C] font-medium">hr@verbiq.ai</div>
+              <div className="block text-[#00046C] font-medium">
+                hr@verbiq.ai
+              </div>
             </div>
 
             {/* Horizontal Social Links */}
@@ -136,14 +166,22 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="./assets/image 213.png" alt="LinkedIn" className="h-6 w-6" />
+                <img
+                  src="./assets/image 213.png"
+                  alt="LinkedIn"
+                  className="h-6 w-6"
+                />
               </a>
               <a
                 href="https://www.instagram.com/verbiq.ai/?igsh=YjJ1Z2V1aTV2d2Vq#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="./assets/image 214.png" alt="Instagram" className="h-6 w-6" />
+                <img
+                  src="./assets/image 214.png"
+                  alt="Instagram"
+                  className="h-6 w-6"
+                />
               </a>
               <a
                 href="https://www.facebook.com/share/1FcCEmyUsp/"
@@ -161,7 +199,8 @@ function Footer() {
             {/* Bottom Border section*/}
             <div className="mt-8 border-t border-gray-200 pt-8 text-center">
               <p className="text-base text-[#00046C]">
-                &copy; {new Date().getFullYear()} VerbiQ.ai. All rights reserved.
+                &copy; {new Date().getFullYear()} VerbiQ.ai. All rights
+                reserved.
               </p>
             </div>
           </div>

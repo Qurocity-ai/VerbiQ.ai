@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Intermediate() {
+function MyProject() {
   return (
     <div>
-
+      MyProject
     </div>
   )
 }
 
-export default Intermediate
+export default MyProject

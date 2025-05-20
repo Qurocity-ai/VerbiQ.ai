@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Intermediate() {
+function Soft2Bet() {
   return (
     <div>
-
+      Soft2Bet
     </div>
   )
 }
 
-export default Intermediate
+export default Soft2Bet
