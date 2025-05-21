@@ -3,11 +3,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./JobDashboard.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 
 const JobDashboard = () => {
   const [jobs, setJobs] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate(); 
 
   /*Agar current route post job form ka hai, toh JobDashboard kuch bhi na show kare
   if (location.pathname === "/companydashboard/JobPostForm") {
@@ -34,6 +35,27 @@ const JobDashboard = () => {
     fetchJobs();
   }, []);
 
+  // Delete Fuction 
+
+  const handleDelete = async (jobId) => {
+  const token = localStorage.getItem("token");
+
+  try {
+    await axios.delete(`https://verbiq-backend1-1.onrender.com/jobs/deleteJob/${jobId}`, {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }    });
+    alert("Job deleted successfully!");
+    navigate("/companydashboard");
+        setJobs(prev => prev.filter(job => job._id !== jobId));
+
+  } catch (err) {
+    console.error("Failed to delete job", err);
+    alert("Failed to delete job.");
+  }
+};
+
+
   
 
   return (
@@ -57,8 +79,10 @@ const JobDashboard = () => {
                   ))}
                 </div>
                  <div className={styles.buttonGroup}>
-                  <button className={styles.updateButton}>Update</button>
-                  <button className={styles.deleteButton}>Delete</button>
+                  <button className={styles.updateButton}
+                   onClick={() => navigate(`testupdatejob/${job._id}`)}>Update</button>
+                  <button className={styles.deleteButton} onClick={() => handleDelete(job._id)}
+>Delete</button>
                 </div>
               </div>
             ))}
