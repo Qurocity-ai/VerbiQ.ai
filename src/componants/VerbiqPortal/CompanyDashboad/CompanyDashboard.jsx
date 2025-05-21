@@ -22,7 +22,9 @@
 
 // export default CompanyDashboard;
 
-import React from "react";
+import React ,{useEffect}from "react";
+import { useLocation } from "react-router-dom";
+
 import PortalNavbar from "../PortalNavbar/PortalNavbar";
 import { useNavigate } from "react-router-dom";
 import PortalRoutes from "../../../routes/PortalRoutes";
@@ -36,6 +38,8 @@ function CompanyDashboard() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const navigate = useNavigate();
+
+
   return (
    
     <div className="min-h-screen flex flex-col">

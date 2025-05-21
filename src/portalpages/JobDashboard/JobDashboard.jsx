@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./JobDashboard.module.css";
+import styles from "./JobDashboard.module.css";         
 import { useLocation,useNavigate } from "react-router-dom";
 
 const JobDashboard = () => {
@@ -33,7 +33,7 @@ const JobDashboard = () => {
     };
 
     fetchJobs();
-  }, []);
+  }, [location.state?.updated]);
 
   // Delete Fuction 
 
