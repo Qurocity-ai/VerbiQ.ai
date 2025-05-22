@@ -92,7 +92,7 @@ const JobPostForm = () => {
           <div>
             <p className="text-left text-sm text-[#C92A2D] font-semibold">
               Post a New Job
-              <hr className="-mt-2.5 ml-24 text-gray-200" />
+              <hr className="-mt-2.5 ml-28 text-gray-200" />
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mt-8 ">
