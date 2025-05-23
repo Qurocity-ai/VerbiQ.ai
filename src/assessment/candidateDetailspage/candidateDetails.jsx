@@ -5,7 +5,7 @@
 import React from 'react';
 import styles from './candidateDetails.module.css';
 
-import verbiqLogo from '../../../public/assets/VerbiQ Logo 5.png';
+// import verbiqLogo from '../../../public/assets/VerbiQ Logo 5.png';
 
 function CandidatureForm({onSubmit}) {
  
@@ -13,7 +13,9 @@ function CandidatureForm({onSubmit}) {
   return (
     <div className={styles.page}>
       <div className={styles.logoSection}>
-        <img src={verbiqLogo} alt="VerbiQ Logo" className={styles.logo} />
+        {/* <img src={verbiqLogo} alt="VerbiQ Logo" className={styles.logo} /> */}
+        <img src="/assets/VerbiQ Logo 5.png" alt=" VerbiQ Logo" className={styles.logo} />
+
         <hr className={styles.fullDivider} />
       </div>
       
