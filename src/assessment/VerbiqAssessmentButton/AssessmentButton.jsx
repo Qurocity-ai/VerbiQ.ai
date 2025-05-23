@@ -1,6 +1,6 @@
 
 import styles from './AssessmentButton.module.css';
-import logo from '../../../public/assets/VerbiQ Logo 5.png';
+import logo from '/assets/VerbiQ Logo 5.png';
 
 const AssessmentButton = ({onSubmit}) => {
   return (

@@ -80,7 +80,7 @@
 
 .pageWrapper {
   padding-top: 100px;
-  padding-left: 292px; /* match sidebarExpanded width */
+  padding-left: 5px; /* match sidebarExpanded width*/
 }
   @media (max-width: 1023px) {
     .pageWrapper {

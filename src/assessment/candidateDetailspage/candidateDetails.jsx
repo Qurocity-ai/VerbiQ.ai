@@ -5,7 +5,7 @@
 import React from 'react';
 import styles from './candidateDetails.module.css';
 
-import verbiqLogo from '../../../public/assets/VerbiQ Logo 5.png';
+import verbiqLogo from '/assets/VerbiQ Logo 5.png';
 
 function CandidatureForm({onSubmit}) {
  
