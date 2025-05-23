@@ -28,7 +28,7 @@ import { useLocation } from "react-router-dom";
 import PortalNavbar from "../PortalNavbar/PortalNavbar";
 import { useNavigate } from "react-router-dom";
 import PortalRoutes from "../../../routes/PortalRoutes";
-import styles from "../Sidebar/Sidebar.module.css"; // Import the CSS module
+import styles from "./CompanySidebar/CompanySidebar.module.css"
 import { useState } from "react";
 import CompanySidebar from "./CompanySidebar/CompanySidebar";
 import JobDashboard from "../../../portalpages/JobDashboard/JobDashboard";
