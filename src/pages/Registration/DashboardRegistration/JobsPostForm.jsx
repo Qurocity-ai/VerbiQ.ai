@@ -83,10 +83,13 @@ const JobPostForm = () => {
   };
 
   return (
-    <div className="max-h-screen flex items-center justify-center w-max mx-auto -ml-20 sm:-ml-0 mt-[30%] sm:mt-0">
+    <div className="max-h-screen flex items-center justify-center w-full mx-auto -ml-20 sm:-ml-0 mt-[60%] sm:mt-0">
       <div className="max-w-6xl w-full ">
         <div className="pt-42 sm:pt-0">
-          <img src="\assets\virbiqlogo.png" className="pb-7 h-20 w-52" />
+          <img
+            src="\assets\virbiqlogo.png"
+            className="pb-7 sm:h-20 sm:w-52 h-18 w-38"
+          />
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div>

@@ -27,9 +27,13 @@ import ResetPassword from "../portalpages/ResetPassword/ResetPassword";
 import ForgotPassword from "../portalpages/ForgotPassword/ForgotPassword";
 import SignIn from "../portalpages/Sign-In/SignIn";
 import JobPostForm from "../pages/Registration/DashboardRegistration/JobsPostForm";
+import UpdateJobs from "../portalpages/UpadateJobs/UpdateJobs";
+//import JobDashboard from "../portalpages/JobDashboard/JobDashboard";
+
 export default function PortalRoutes() {
   return (
     <Routes>
+
       {/* folder wise routing */}
 
       {/* TypeofEmployement */}
@@ -77,6 +81,10 @@ export default function PortalRoutes() {
       <Route path="/teleperformance" element={<Teleperformance />} />
       {/* {job posting form } */}
       <Route path="/JobPostForm" element={<JobPostForm />} />
+      <Route path="/testupdatejob/:jobId" element={<UpdateJobs/>}/>
+      
+      {/*<Route path="/companydashboard" element={<JobDashboard />} />*/}
+      
     </Routes>
   );
 }

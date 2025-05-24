@@ -219,10 +219,13 @@ function Registration() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center mx-auto">
-      <div className="max-w-full  ">
+    <div className="min-h-screen flex items-center justify-center mx-auto pl-6">
+      <div className="max-w-full">
         <div>
-          <img src="\assets\virbiqlogo.png" className="pb-7 h-20 w-52" />
+          <img
+            src="\assets\virbiqlogo.png"
+            className="pb-7 sm:h-24 sm:w-52 h-16 w-44"
+          />
         </div>
         <form className="mt-8 space-y-6 w-max" onSubmit={handleSubmit}>
           <div className=" space-y-4">
@@ -308,7 +311,7 @@ function Registration() {
                   onChange={handleInputChange}
                 />
                 {!hasValue(formData.fullName) && (
-                  <span className="text-[#C92A2D] sm:-ml-[250px] -ml-[250px]">
+                  <span className="text-[#C92A2D] sm:-ml-[120px] -ml-[110px]">
                     *
                   </span>
                 )}
@@ -327,7 +330,7 @@ function Registration() {
                   onChange={handleInputChange}
                 />
                 {!hasValue(formData.contactNumber) && (
-                  <span className="text-[#C92A2D] sm:-ml-[200px] -ml-[200px]">
+                  <span className="text-[#C92A2D] sm:-ml-[70px] -ml-[60px]">
                     *
                   </span>
                 )}
@@ -346,7 +349,7 @@ function Registration() {
                   onChange={handleInputChange}
                 />
                 {!hasValue(formData.emailId) && (
-                  <span className="text-[#C92A2D] sm:-ml-[265px] -ml-[265px]">
+                  <span className="text-[#C92A2D] sm:-ml-[140px] -ml-[130px]">
                     *
                   </span>
                 )}
@@ -365,7 +368,7 @@ function Registration() {
                   onChange={handleInputChange}
                 />
                 {!hasValue(formData.location) && (
-                  <span className="text-[#C92A2D] sm:-ml-[260px] -ml-[260px]">
+                  <span className="text-[#C92A2D] sm:-ml-[135px] -ml-[125px]">
                     *
                   </span>
                 )}
@@ -384,7 +387,7 @@ function Registration() {
                   onChange={handleInputChange}
                 />
                 {!hasValue(formData.currentCTC) && (
-                  <span className="text-[#C92A2D] sm:-ml-[235px] -ml-[235px]">
+                  <span className="text-[#C92A2D] sm:-ml-[110px] -ml-[100px]">
                     *
                   </span>
                 )}
@@ -430,7 +433,7 @@ function Registration() {
                     }}
                   />
                   {!hasValue(formData.nativeLanguages) && (
-                    <span className="text-[#C92A2D] sm:-ml-[200px] -ml-[200px]">
+                    <span className="text-[#C92A2D] sm:-ml-[70px] -ml-[60px]">
                       *
                     </span>
                   )}
@@ -439,7 +442,7 @@ function Registration() {
                   <select
                     id={`proficiencyNative-${lang._id}`}
                     name="proficiencyNative"
-                    className={`mt-1 block w-88 pl-3 py-3 text-base border border-gray-300 sm:text-sm rounded-md ${
+                    className={`mt-1 block w-52 pl-3 py-3 text-base border border-gray-300 sm:text-sm rounded-md ${
                       lang.proficiencyNative ? "text-gray-950" : "text-gray-300"
                     }`}
                     value={lang.proficiencyNative}
@@ -466,7 +469,7 @@ function Registration() {
                   <select
                     id={`certifications-${lang._id}`}
                     name="certifications"
-                    className={`mt-1 block w-88 pl-3 py-3 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
+                    className={`mt-1 block w-52 pl-3 py-3 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
                       lang.certifications ? "text-gray-950" : "text-gray-300"
                     }  sm:ml-2`}
                     value={lang.certifications}
@@ -580,7 +583,7 @@ function Registration() {
                     }}
                   />
                   {!hasValue(formData.foreignLanguages) && (
-                    <span className="text-[#C92A2D] sm:-ml-[190px] -ml-[190px]">
+                    <span className="text-[#C92A2D] sm:-ml-[60px] -ml-[50px]">
                       *
                     </span>
                   )}
@@ -590,7 +593,7 @@ function Registration() {
                     id={`proficiencyL2-${lang._id}`}
                     required
                     name="proficiencyL2"
-                    className={`mt-1 block w-88 pl-3 pr-8 py-3 text-base border border-gray-300 sm:text-sm rounded-md ${
+                    className={`mt-1 block w-52 pl-3 pr-8 py-3 text-base border border-gray-300 sm:text-sm rounded-md ${
                       lang.proficiency ? "text-gray-950" : "text-gray-300"
                     } appearance-none`}
                     value={lang.proficiency}
@@ -614,7 +617,7 @@ function Registration() {
                   </select>
 
                   {!hasValue(formData.proficiencyL2) && (
-                    <span className="absolute text-[#C92A2D] right-23 top-3 pointer-events-none">
+                    <span className="absolute text-[#C92A2D] sm:right-22 right-18 top-3 pointer-events-none">
                       *
                     </span>
                   )}
@@ -623,7 +626,7 @@ function Registration() {
                   <select
                     id={`certifications-${lang._id}`}
                     name="certifications"
-                    className={`mt-1 sm:ml-2 block w-88 pl-3 py-3 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
+                    className={`mt-1 sm:ml-2 block w-52 pl-3 py-3 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
                       lang.certifications ? "text-gray-900" : "text-gray-300"
                     }`}
                     value={lang.certifications}
@@ -863,7 +866,7 @@ function Registration() {
                 <select
                   id="languageCertifications"
                   name="languageCertifications"
-                  className={`mt-1 block w-88 pl-3 pr-10 py-3 text-base border border-gray-300  ${
+                  className={`mt-1 block w-52 pl-3 pr-10 py-3 text-base border border-gray-300  ${
                     formData.languageCertifications
                       ? "text-gray-950"
                       : "text-gray-300"
@@ -907,7 +910,7 @@ function Registration() {
                 <select
                   id="preferredLocations"
                   name="preferredLocations"
-                  className={`mt-1 block w-88 pl-3 pr-10 py-3 text-base border border-gray-300   sm:text-sm rounded-md ${
+                  className={`mt-1 block w-52 pl-3 pr-10 py-3 text-base border border-gray-300   sm:text-sm rounded-md ${
                     formData.preferredLocations
                       ? "text-gray-950"
                       : "text-gray-300"
@@ -935,7 +938,7 @@ function Registration() {
                 <select
                   id="preferredProcesses"
                   name="preferredProcesses"
-                  className={`mt-1 block w-88 pl-3 pr-10 py-3 text-base border border-gray-300  sm:text-sm rounded-md ${
+                  className={`mt-1 block w-52 pl-3 pr-10 py-3 text-base border border-gray-300  sm:text-sm rounded-md ${
                     formData.preferredLocations
                       ? "text-gray-900"
                       : "text-gray-300"

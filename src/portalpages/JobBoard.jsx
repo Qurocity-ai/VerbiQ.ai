@@ -5,7 +5,6 @@ const JobBoard = () => {
   const [jobs, setJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
-
   useEffect(() => {
     const fetchJobs = async () => {
       const token = localStorage.getItem("token");
