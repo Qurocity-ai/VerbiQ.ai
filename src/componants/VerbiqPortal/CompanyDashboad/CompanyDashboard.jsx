@@ -22,18 +22,26 @@
 
 // export default CompanyDashboard;
 
-import React from "react";
+import React ,{useEffect}from "react";
+import { useLocation } from "react-router-dom";
+
 import PortalNavbar from "../PortalNavbar/PortalNavbar";
 import { useNavigate } from "react-router-dom";
 import PortalRoutes from "../../../routes/PortalRoutes";
-import styles from "../Sidebar/Sidebar.module.css"; // Import the CSS module
+import styles from "./CompanySidebar/CompanySidebar.module.css"
 import { useState } from "react";
 import CompanySidebar from "./CompanySidebar/CompanySidebar";
+import JobDashboard from "../../../portalpages/JobDashboard/JobDashboard";
+
+
 function CompanyDashboard() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const navigate = useNavigate();
+
+
   return (
+   
     <div className="min-h-screen flex flex-col">
       <CompanySidebar
         mobileOpen={mobileOpen}
@@ -43,6 +51,7 @@ function CompanyDashboard() {
       <div className="lg:pl-[272px] flex flex-col flex-1 bg-white">
         <PortalNavbar setMobileOpen={setMobileOpen} mobileOpen={mobileOpen} />
 
+       
         <button
           className="absolute top-20 right-7 flex items-center text-red-700 font-semibold border border-gray-200 bg-transparent py-3 px-4 rounded-lg text-nowrap text-md cursor-pointer"
           onClick={() => {
@@ -61,9 +70,13 @@ function CompanyDashboard() {
           className={`${styles.pageWrapper} flex-1 p-4 overflow-auto bg-white`}
         >
           <PortalRoutes />
-        </main>
+          <JobDashboard />
+           </main>
+          {/*<div className={`$ flex-1 p-4 pt-0.5 overflow-auto bg-white`}>
+        <JobDashboard />
+      </div>*/}
       </div>
-    </div>
+      </div>
   );
 }
 
