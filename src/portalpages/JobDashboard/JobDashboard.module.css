@@ -51,8 +51,8 @@
   transition: box-shadow 0.2s ease-in-out;
   min-height: 200px;
  
-   width: 100%; /* 👈 Make it stretch to grid column */
-  box-sizing: border-box; /* 👈 Prevent overflow */
+   width: 100%; 
+  box-sizing: border-box; 
 
   
 }
