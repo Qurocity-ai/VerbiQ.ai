@@ -82,7 +82,17 @@ const JobDashboard = () => {
                   <button className={styles.updateButton}
                    onClick={() => navigate(`testupdatejob/${job._id}`)}>Update</button>
                   <button className={styles.deleteButton} onClick={() => handleDelete(job._id)}
+
 >Delete</button>
+<button
+  className={styles.viewButton}
+  onClick={() => navigate(`view-candidate/${job._id}`,{
+  state: job,
+})}
+
+>
+  View Candidate
+</button>
                 </div>
               </div>
             ))}

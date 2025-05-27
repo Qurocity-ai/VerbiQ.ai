@@ -1,0 +1,70 @@
+.container {
+  padding: 2rem;
+}
+
+.jobCard {
+  width: 450px;
+  height: 167px;
+  border-radius: 10px;
+  border: 1px solid #d5d5d5;
+  background: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  /* border: 1px solid blue; */
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 3px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+
+.jobTitle {
+  font-weight: 500;
+  font-size: 20px;
+  color: #c92a2d;
+  margin-bottom: 0.5rem;
+}
+
+.dateText,
+.payoutText {
+  font-weight: 400;
+  font-size: 20px;
+  color: #464646;
+  margin: 0.3rem 0;
+}
+
+
+.tableBox {
+  width: 100%;
+  max-width: 1559px;
+  border-radius: 10px;
+  border: 1px solid #efefef;
+  overflow-x: auto;
+}
+
+.candidateTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.candidateTable thead {
+  background: #f1f1f1;
+}
+
+.candidateTable th,
+.candidateTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #d5d5d5;
+  font-size: 16px;
+}

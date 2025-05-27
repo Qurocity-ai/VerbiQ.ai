@@ -28,6 +28,7 @@ import ForgotPassword from "../portalpages/ForgotPassword/ForgotPassword";
 import SignIn from "../portalpages/Sign-In/SignIn";
 import JobPostForm from "../pages/Registration/DashboardRegistration/JobsPostForm";
 import UpdateJobs from "../portalpages/UpadateJobs/UpdateJobs";
+import ViewCandidate from "../portalpages/ViewCandidate/ViewCandidate";
 //import JobDashboard from "../portalpages/JobDashboard/JobDashboard";
 
 export default function PortalRoutes() {
@@ -82,6 +83,8 @@ export default function PortalRoutes() {
       {/* {job posting form } */}
       <Route path="/JobPostForm" element={<JobPostForm />} />
       <Route path="/testupdatejob/:jobId" element={<UpdateJobs/>}/>
+      <Route path="view-candidate/:jobId" element={<ViewCandidate/>} />
+
       
       {/*<Route path="/companydashboard" element={<JobDashboard />} />*/}
       
