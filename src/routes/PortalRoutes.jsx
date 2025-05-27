@@ -86,7 +86,6 @@ export default function PortalRoutes() {
       <Route path="view-candidate/:jobId" element={<ViewCandidate/>} />
 
       
-      {/*<Route path="/companydashboard" element={<JobDashboard />} />*/}
       
     </Routes>
   );

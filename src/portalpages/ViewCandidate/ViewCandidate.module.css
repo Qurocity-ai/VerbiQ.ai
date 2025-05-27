@@ -45,7 +45,7 @@
 
 .tableBox {
   width: 100%;
-  max-width: 1559px;
+  max-width: 1400px;
   border-radius: 10px;
   border: 1px solid #efefef;
   overflow-x: auto;
@@ -64,7 +64,20 @@
 .candidateTable th,
 .candidateTable td {
   padding: 1rem;
-  text-align: left;
+  /* text-align: left; */
   border-bottom: 1px solid #d5d5d5;
-  font-size: 16px;
+  font-size: 14px;
 }
+.candName{
+  font-size:16px ;
+  font-weight: 500;
+  white-space: nowrap;     
+  overflow: hidden;        
+  text-overflow: ellipsis; /* Adds "..." if text overflows */
+  max-width: 180px;  
+}
+.experienceCell {
+  text-align: center;
+  vertical-align: middle;
+}
+

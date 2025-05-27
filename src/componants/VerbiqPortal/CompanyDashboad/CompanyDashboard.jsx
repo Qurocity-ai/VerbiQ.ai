@@ -28,7 +28,7 @@ import { useLocation } from "react-router-dom";
 import PortalNavbar from "../PortalNavbar/PortalNavbar";
 import { useNavigate } from "react-router-dom";
 import PortalRoutes from "../../../routes/PortalRoutes";
-import styles from "./CompanySidebar/CompanySidebar.module.css"
+import styles from "./CompanySidebar/CompanySidebar.module.css"; // Import the CSS module
 import { useState } from "react";
 import CompanySidebar from "./CompanySidebar/CompanySidebar";
 import JobDashboard from "../../../portalpages/JobDashboard/JobDashboard";
@@ -66,18 +66,21 @@ function CompanyDashboard() {
           />
         </button>
         <hr className="text-gray-200" />
+        
         <main
           className={`${styles.pageWrapper} flex-1 p-4 overflow-auto bg-white`}
         >
-          <PortalRoutes />
+         
           <JobDashboard />
+          <PortalRoutes />
            </main>
-          {/*<div className={`$ flex-1 p-4 pt-0.5 overflow-auto bg-white`}>
-        <JobDashboard />
-      </div>*/}
+         
       </div>
       </div>
   );
 }
 
 export default CompanyDashboard;
+
+
+

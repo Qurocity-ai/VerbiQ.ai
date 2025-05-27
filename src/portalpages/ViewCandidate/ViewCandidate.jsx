@@ -65,19 +65,31 @@ console.log("Job from state:", job);
             <tr>
               <th>Name</th>
               <th>Email</th>
-              <th>Number</th>
+              <th>Summary</th>
+              {/* <th>Number</th> */}
               <th>Language</th>
               <th>Experience</th>
+              <th>Resume</th>
             </tr>
           </thead>
           <tbody>
             {candidates.map((cand, index) => (
               <tr key={index}>
-                <td>{cand.name}</td>
+                <td className={styles.candName}>{cand.name}</td>
                 <td>{cand.emailId}</td>
-                <td>{cand.number}</td>
+                <td>{cand.summary}</td>
+
+                
+                {/* <td>{cand.number}</td> */}
                 <td>{cand.language?.join(", ")}</td>
-                <td>{cand.experience}</td>
+                <td className={styles.experienceCell}>{cand.experience}</td>
+                <td>{cand.cv ? (
+    <a href={cand.cv} target="_blank" rel="noopener noreferrer">
+      View CV
+    </a>
+  ) : (
+    "N/A"
+  )}</td>
               </tr>
             ))}
           </tbody>
