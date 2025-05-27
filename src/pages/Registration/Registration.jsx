@@ -219,12 +219,12 @@ function Registration() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center mx-auto pl-6">
+    <div className="min-h-screen flex items-center justify-center mx-auto pl-6 py-14">
       <div className="max-w-full">
         <div>
           <img
             src="\assets\virbiqlogo.png"
-            className="pb-7 sm:h-24 sm:w-52 h-16 w-44"
+            className="pb-7 sm:h-24 sm:w-58 h-16 w-44"
           />
         </div>
         <form className="mt-8 space-y-6 w-max" onSubmit={handleSubmit}>
@@ -442,7 +442,7 @@ function Registration() {
                   <select
                     id={`proficiencyNative-${lang._id}`}
                     name="proficiencyNative"
-                    className={`mt-1 block w-52 pl-3 py-3 text-base border border-gray-300 sm:text-sm rounded-md ${
+                    className={`mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md ${
                       lang.proficiencyNative ? "text-gray-950" : "text-gray-300"
                     }`}
                     value={lang.proficiencyNative}
@@ -469,7 +469,7 @@ function Registration() {
                   <select
                     id={`certifications-${lang._id}`}
                     name="certifications"
-                    className={`mt-1 block w-52 pl-3 py-3 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
+                    className={`mt-1 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
                       lang.certifications ? "text-gray-950" : "text-gray-300"
                     }  sm:ml-2`}
                     value={lang.certifications}
@@ -593,7 +593,7 @@ function Registration() {
                     id={`proficiencyL2-${lang._id}`}
                     required
                     name="proficiencyL2"
-                    className={`mt-1 block w-52 pl-3 pr-8 py-3 text-base border border-gray-300 sm:text-sm rounded-md ${
+                    className={`mt-1 block w-52 pl-3 py-2 text-base border border-gray-300 sm:text-sm rounded-md ${
                       lang.proficiency ? "text-gray-950" : "text-gray-300"
                     } appearance-none`}
                     value={lang.proficiency}
@@ -626,7 +626,7 @@ function Registration() {
                   <select
                     id={`certifications-${lang._id}`}
                     name="certifications"
-                    className={`mt-1 sm:ml-2 block w-52 pl-3 py-3 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
+                    className={`mt-1 sm:ml-2 block w-52 pl-3 py-2 pr-11 text-base border border-gray-300 sm:text-sm rounded-md ${
                       lang.certifications ? "text-gray-900" : "text-gray-300"
                     }`}
                     value={lang.certifications}
@@ -866,7 +866,7 @@ function Registration() {
                 <select
                   id="languageCertifications"
                   name="languageCertifications"
-                  className={`mt-1 block w-52 pl-3 pr-10 py-3 text-base border border-gray-300  ${
+                  className={`mt-1 block w-52 pl-3 pr-10 py-2 text-base border border-gray-300  ${
                     formData.languageCertifications
                       ? "text-gray-950"
                       : "text-gray-300"
@@ -910,7 +910,7 @@ function Registration() {
                 <select
                   id="preferredLocations"
                   name="preferredLocations"
-                  className={`mt-1 block w-52 pl-3 pr-10 py-3 text-base border border-gray-300   sm:text-sm rounded-md ${
+                  className={`mt-1 block w-52 pl-3 pr-10 py-2 text-base border border-gray-300   sm:text-sm rounded-md ${
                     formData.preferredLocations
                       ? "text-gray-950"
                       : "text-gray-300"
@@ -938,7 +938,7 @@ function Registration() {
                 <select
                   id="preferredProcesses"
                   name="preferredProcesses"
-                  className={`mt-1 block w-52 pl-3 pr-10 py-3 text-base border border-gray-300  sm:text-sm rounded-md ${
+                  className={`mt-1 block w-52 pl-3 pr-10 py-2 text-base border border-gray-300  sm:text-sm rounded-md ${
                     formData.preferredLocations
                       ? "text-gray-900"
                       : "text-gray-300"
