@@ -70,6 +70,7 @@ function CompanyDashboard() {
         <main
           className={`${styles.pageWrapper} flex-1 p-4 overflow-auto bg-white`}
         >
+         
           <JobDashboard />
           <PortalRoutes />
            </main>
@@ -83,4 +84,3 @@ export default CompanyDashboard;
 
 
 
-//  flex-1 p-4overflow-auto bg-white

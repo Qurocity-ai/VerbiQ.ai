@@ -83,7 +83,6 @@ export default function PortalRoutes() {
       <Route path="/JobPostForm" element={<JobPostForm />} />
       <Route path="/testupdatejob/:jobId" element={<UpdateJobs/>}/>
       
-      {/*<Route path="/companydashboard" element={<JobDashboard />} />*/}
       
     </Routes>
   );
