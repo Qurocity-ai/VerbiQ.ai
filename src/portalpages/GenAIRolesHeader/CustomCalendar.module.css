@@ -1,0 +1,18 @@
+/* CustomCalendar.module.css */
+.calendarContainer {
+  border: 1px solid #000949;
+  font-family: 'Inter', sans-serif;
+}
+
+.react-calendar__tile--active {
+  background-color: #000949;
+  color: white;
+}
+
+.react-calendar__tile--now {
+  background-color: #E8EAF6;
+}
+/* CustomCalendar.css */
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+}
