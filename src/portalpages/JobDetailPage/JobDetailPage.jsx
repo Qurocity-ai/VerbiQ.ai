@@ -15,7 +15,7 @@ const JobDetailPage = () => {
     experience: "",
     summary: "",
   });
-
+// 
   const [loading, setLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [emailError, setEmailError] = useState("");
