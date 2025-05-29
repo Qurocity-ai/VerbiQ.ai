@@ -30,6 +30,7 @@ import JobPostForm from "../pages/Registration/DashboardRegistration/JobsPostFor
 import UpdateJobs from "../portalpages/UpadateJobs/UpdateJobs";
 import JobDetailPage from "../portalpages/JobDetailPage/JobDetailPage";
 //import JobDashboard from "../portalpages/JobDashboard/JobDashboard";
+import ViewCandidate from "../portalpages/ViewCandidate/ViewCandidate";
 
 export default function PortalRoutes() {
   return (
@@ -85,7 +86,7 @@ export default function PortalRoutes() {
       <Route path="/JobPostForm" element={<JobPostForm />} />
       <Route path="/testupdatejob/:jobId" element={<UpdateJobs/>}/>
       {/*<Route path="/companydashboard" element={<JobDashboard />} />*/}
-      
+<Route path="view-candidate/:jobId" element={<ViewCandidate/>} />
     </Routes>
   );
 }
