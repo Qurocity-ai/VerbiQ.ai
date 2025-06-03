@@ -1,5 +1,4 @@
 import React from 'react'
-import GenAIRolesHeader from '../GenAIRolesHeader/GenAIRolesHeader'
 
 
 function TypeofEmployement() {
@@ -10,4 +9,4 @@ function TypeofEmployement() {
   )
 }
 
-export default TypeofEmployement
+export default TypeofEmployement;
