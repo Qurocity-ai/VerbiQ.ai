@@ -89,8 +89,6 @@ import Platform from "../pages/Platform/Platform";
 import Assessment from "../assessment/Assessment";
 import CompanyDashboard from "../componants/VerbiqPortal/CompanyDashboad/CompanyDashboard";
 import PrivateRoute from "./PrivateRoute";
-import JobPostForm from "../pages/Registration/DashboardRegistration/JobsPostForm";
-
 
 export default function ALLRoutes() {
   return (
@@ -142,15 +140,9 @@ export default function ALLRoutes() {
           </PrivateRoute>
         }
       />
-     
- 
-
 
       {/* Public Assessment Page */}
       <Route path="/assessment" element={<Assessment />} />
-
-      {/* {job posting form } */}
-      <Route path="/JobPostForm" element={<JobPostForm />} />
     </Routes>
   );
 }

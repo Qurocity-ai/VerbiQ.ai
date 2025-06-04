@@ -18,7 +18,7 @@ function DashBoardRegister() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-28 bg-gradient-to-br from-blue-50 to-indigo-100 p-4"
+      className="min-h-28 bg-[#f3f4f6] p-4"
     >
       <div className={styles.container}>
         <motion.h2
