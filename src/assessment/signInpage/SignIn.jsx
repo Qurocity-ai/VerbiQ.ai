@@ -2,8 +2,8 @@
 import React from 'react';
 import styles from './SignIn.module.css';
 
-import image from '../../../public/assets/Frame.png'; 
-import logo from '../../../public/assets/VerbiQ Logo 5.png';
+// import image from '../../../public/assets/Frame.png'; 
+// import logo from '../../../public/assets/VerbiQ Logo 5.png';
 
 function SignIn({onSubmit}) {
   
@@ -11,10 +11,14 @@ function SignIn({onSubmit}) {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <img src={image} alt="Illustration" />
+        {/* <img src={image} alt="Illustration" /> */}
+        <img src="/assets/Frame.png" alt="Frame" />
+
       </div>
       <div className={styles.right}>
-      <img src={logo} alt="Verbiw Logo" className={styles.logo} />
+      {/* <img src={logo} alt="Verbiw Logo" className={styles.logo} /> */}
+      <img src="/assets/VerbiQ Logo 5.png" alt="Logo"  className={styles.logo} />
+
         <div className={styles.inputContainer}>
           <label className={styles.label}>Candidate Registration Number</label>
           <input placeholder="Enter Registration Number" className={styles.input} />

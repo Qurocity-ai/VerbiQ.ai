@@ -1,0 +1,110 @@
+
+.dashboardContainer {
+  padding: 3rem;
+  background-color: #fff;
+  /*min-height: 100vh;*/
+}
+
+.jobGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.jobCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.jobCard:hover {
+  transform: scale(1.01);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  color:#C92A2D;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.duration {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.details {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  gap: 30px;
+}
+
+/*.company {
+  font-size: 0.9rem;
+  color: #003366;
+  margin-bottom: 0.3rem;
+}*/
+
+.tagsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editBtn,
+.deleteBtn,
+.viewBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #002279;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.deleteBtn {
+  color: #002279;
+  margin-left: -140px;
+}
+
+.viewBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color:#002279;
+}
+
+.noJobs {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+
+
