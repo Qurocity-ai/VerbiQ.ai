@@ -89,6 +89,7 @@ import Platform from "../pages/Platform/Platform";
 import Assessment from "../assessment/Assessment";
 import CompanyDashboard from "../componants/VerbiqPortal/CompanyDashboad/CompanyDashboard";
 import PrivateRoute from "./PrivateRoute";
+import Interpetation from "../pages/Interpetation/Interpetation";
 
 export default function ALLRoutes() {
   return (
@@ -97,6 +98,7 @@ export default function ALLRoutes() {
       <Route path="/platform" element={<Platform />} />
       <Route path="/ceo" element={<CenterofExce />} />
       <Route path="/aboutUs" element={<Aboutus />} />
+      <Route path="/interpetation" element={<Interpetation />} />
 
       {/* Solutions */}
       <Route path="/globalhiring" element={<NativeHiringSupport />} />
