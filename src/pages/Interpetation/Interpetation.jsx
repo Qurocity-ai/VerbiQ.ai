@@ -4,6 +4,7 @@ import Inter_1 from "./Inter_1";
 import Inter_2 from "./Inter_2";
 import Inter_3 from "./Inter_3";
 import Inter_4 from "./Inter_4";
+import Footer from "../../componants/Footer/Footer";
 
 const Interpetation = () => {
   return (
@@ -13,6 +14,7 @@ const Interpetation = () => {
       <Inter_2 />
       <Inter_3 />
       <Inter_4 />
+      <Footer/>
     </div>
   );
 };
