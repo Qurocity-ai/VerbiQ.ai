@@ -2,7 +2,7 @@ import React from "react";
 
 function Inter_4() {
   return (
-    <div className=" grid md:grid-cols-2 gap-6 pb-18">
+    <div className=" grid md:grid-cols-2 gap-6 pb-18 px-4 md:px-16">
       <div className="mt-12 md:grid-cols-2 gap-6">
         <h3 className="font-semibold">Market Pain Points</h3>
         <ul className="list-disc list-inside text-sm text-gray-800">

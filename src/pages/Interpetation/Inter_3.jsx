@@ -2,7 +2,7 @@ import React from "react";
 
 function Inter_3() {
   return (
-    <div>
+    <div className="px-4 md:px-16">
       {/* Two Column Info Sections */}
       <div className="grid md:grid-cols-2 gap-8">
         <div>

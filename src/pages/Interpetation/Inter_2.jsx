@@ -3,7 +3,7 @@ import { Briefcase, Users, Layers, ShieldCheck } from "lucide-react";
 
 function Inter_2() {
   return (
-    <div>
+    <div className="px-4 md:px-16">
       {/* Icons with Descriptions */}
       <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
         <div className="text-center">

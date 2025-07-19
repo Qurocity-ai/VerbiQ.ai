@@ -2,7 +2,7 @@ import React from "react";
 
 function Inter_1() {
   return (
-    <div>
+    <div className="px-4 md:px-16">
       {/* Header Section */}
       <h2 className="text-center text-lg font-light text-red-600 mb-4">
         Areas of Specialization
