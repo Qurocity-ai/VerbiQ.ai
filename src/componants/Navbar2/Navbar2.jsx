@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import style from "./Navbar.module.css";
+import style from "./Navbar2.module.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { IoIosArrowForward } from "react-icons/io";
 
-export default function Navbar() {
+export default function Navbar2() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
   const [showResources, setShowResources] = useState(false);
@@ -46,7 +46,7 @@ export default function Navbar() {
   }, []);
 
   {
-    /*activeLink for navbar hovering the effect*/
+    /*activeLink for navbar2 hovering the effect*/
   }
   const handleLinkClick = (link) => {
     setActiveLink(link); // Set the clicked link as active
@@ -58,7 +58,7 @@ export default function Navbar() {
       {/* Company Logo*/}
       <div className={style.logo}>
         <Link to="/" onClick={() => setActiveLink("")}>
-          <img src="/assets/virbiqlogo.png" alt="Company Logo" />
+          <img src="/assets/VerbiQ Logo 1.png" alt="Company Logo" />
         </Link>
       </div>
 
@@ -92,7 +92,9 @@ export default function Navbar() {
             onClick={() => setShowSolution(!showSolution)}
           >
             <span
-              className={activeLink === "solutions" ? style.activeLink : ""}
+              className={`${
+                activeLink === "solutions" ? style.activeLink : ""
+              } `}
             >
               Solutions
             </span>

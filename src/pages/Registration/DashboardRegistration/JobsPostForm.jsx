@@ -83,176 +83,191 @@ const JobPostForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center sm:-mt-64 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl bg-white rounded-lg shadow-md sm:p-20 p-8">
-        <h2 className="text-[35px] text-center font-bold text-red-600 mb-10">
-          Post a New Job
-        </h2>
+    <div className="max-h-screen flex items-center justify-center w-full mx-auto -ml-20 sm:-ml-0 mt-[60%] sm:mt-0">
+      <div className="max-w-6xl w-full ">
+        <div className="pt-42 sm:pt-0">
+          <img
+            src="\assets\virbiqlogo.png"
+            className="pb-7 sm:h-20 sm:w-52 h-18 w-38"
+          />
+        </div>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div>
+            <p className="text-left text-sm text-[#C92A2D] font-semibold">
+              Post a New Job
+              <hr className="-mt-2.5 ml-28 text-gray-200" />
+            </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <div className="p-2">
-              <label className="block text-lg sm:text-[20px] font-medium text-gray-700 mb-2">
-                Job Title
-              </label>
-              <input
-                type="text"
-                name="jobTitle"
-                value={formData.jobTitle}
-                onChange={handleInputChange}
-                className="mt-1 block w-full rounded-md  shadow-sm border-gray-300 py-3 px-11"
-                placeholder="Data Scientist"
-                required
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mt-8 ">
+              <div>
+                <input
+                  type="text"
+                  name="jobTitle"
+                  value={formData.jobTitle}
+                  onChange={handleInputChange}
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white "
+                  placeholder="Job Title"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  name="companyName"
+                  value={formData.companyName}
+                  onChange={handleInputChange}
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white"
+                  placeholder="Company Name"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  name="languages"
+                  value={formData.languages.join(", ")}
+                  onChange={handleArrayInput}
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white"
+                  placeholder="Languages (comma-separated)"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  name="duration"
+                  value={formData.duration}
+                  onChange={handleInputChange}
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white"
+                  placeholder="Duration (e.g., 6 months)"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  name="price"
+                  value={formData.price}
+                  onChange={handleInputChange}
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white"
+                  placeholder="Salary/Price Range"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  name="emailId"
+                  value={formData.emailId}
+                  onChange={handleInputChange}
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white"
+                  placeholder="Contact Email"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  name="employmentType"
+                  value={formData.employmentType.join(", ")}
+                  onChange={handleArrayInput}
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white"
+                  placeholder="Employment Type (Full-time, Part-time)"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  name="experienceLevel"
+                  value={formData.experienceLevel.join(", ")}
+                  onChange={handleArrayInput}
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white"
+                  placeholder="Experience Level (Entry, Senior)"
+                  required
+                />
+              </div>
             </div>
 
-            <div className="p-2">
-              <label className="block text-lg sm:text-[20px] font-medium text-gray-700 mb-2">
-                Company Name
-              </label>
+            <div className="mt-6">
               <input
                 type="text"
-                name="companyName"
-                value={formData.companyName}
-                onChange={handleInputChange}
-                placeholder="Company Name"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm py-3 px-11"
-                required
-              />
-            </div>
-
-            <div className="p-2">
-              <label className="block text-lg sm:text-[20px] font-medium text-gray-700 text-nowrap mb-2">
-                Languages (comma-separated)
-              </label>
-              <input
-                type="text"
-                name="languages"
-                value={formData.languages.join(", ")}
+                name="tags"
+                value={formData.tags.join(", ")}
                 onChange={handleArrayInput}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm py-3 px-11"
-                placeholder="Python, SQL, R"
-                required
+                className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white"
+                placeholder="Tags (Remote, AI, Machine Learning)"
               />
             </div>
 
-            <div className="p-2">
-              <label className="block text-lg sm:text-[20px] font-medium text-gray-700 mb-2">
-                Duration
-              </label>
-              <input
-                type="text"
-                name="duration"
-                value={formData.duration}
+            <div className="mt-6">
+              <textarea
+                name="jobDescription"
+                value={formData.jobDescription}
                 onChange={handleInputChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm py-3 px-11"
-                placeholder="12 months"
+                rows={4}
+                className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-transparent focus:bg-white"
+                placeholder="Job Description"
                 required
               />
             </div>
-
-            <div className="p-2">
-              <label className="block text-lg sm:text-[20px] font-medium text-gray-700 mb-2">
-                Price/Salary
-              </label>
-              <input
-                type="text"
-                name="price"
-                value={formData.price}
-                onChange={handleInputChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm py-3 px-11"
-                required
-              />
-            </div>
-
-            <div className="p-2">
-              <label className="block text-lg sm:text-[20px] font-medium text-gray-700 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                name="emailId"
-                value={formData.emailId}
-                onChange={handleInputChange}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm py-3 px-11"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div className="p-2">
-              <label className="block text-lg sm:text-[20px] font-medium text-gray-700 mb-2">
-                Employee Type
-              </label>
-              <input
-                type="text"
-                name="employmentType"
-                value={formData.employmentType.join(", ")}
-                onChange={handleArrayInput}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm py-3 px-11"
-                placeholder="Enter Employee Type"
-                required
-              />
-            </div>
-            <div className="p-2">
-              <label className="block text-lg sm:text-[20px] font-medium text-gray-700 mb-2">
-                Experience Level
-              </label>
-              <input
-                type="text"
-                name="experienceLevel"
-                value={formData.experienceLevel.join(", ")}
-                onChange={handleArrayInput}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm py-3 px-11"
-                placeholder="Enter Experience Level"
-                required
-              />
-            </div>
-          </div>
-
-          <div className="p-2">
-            <label className="block text-lg sm:text-[20px] font-medium text-gray-700 mb-2">
-              Tags (comma-separated)
-            </label>
-            <input
-              type="text"
-              name="tags"
-              value={formData.tags.join(", ")}
-              onChange={handleArrayInput}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm py-3 px-11"
-              placeholder="Remote, Full-time, Data Analysis"
-            />
-          </div>
-
-          <div className="p-2">
-            <label className="block text-lg sm:text-[20px] font-medium text-gray-700 mb-2">
-              Job Description
-            </label>
-            <textarea
-              name="jobDescription"
-              value={formData.jobDescription}
-              onChange={handleInputChange}
-              rows={4}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm "
-              required
-            />
           </div>
 
           {error && (
-            <div className="text-red-600 text-lg sm:text-[20px]">{error}</div>
+            <div className="text-[#C92A2D] text-sm font-medium">{error}</div>
           )}
 
-          <button
-            type="submit"
-            disabled={isLoading}
-            className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg sm:text-[20px] font-medium text-white 
-              ${
-                isLoading
-                  ? "bg-indigo-400"
-                  : "bg-indigo-600 hover:bg-indigo-700"
-              }`}
-          >
-            {isLoading ? "Posting..." : "Post Job"}
-          </button>
+          <div className="flex items-center justify-start">
+            <button
+              type="reset"
+              className="w-40 py-2 px-4 border border-transparent text-sm shadow-md font-medium rounded-md text-black focus:outline-none sm:mr-7 mr-3"
+              onClick={() => setFormData(initialState)}
+            >
+              Clear Form
+            </button>
+            <button
+              type="submit"
+              className={`text-sm font-medium rounded-md text-white 
+                ${
+                  isLoading
+                    ? "bg-[#d85e61] cursor-not-allowed w-40 py-2 px-4"
+                    : "bg-[#B0181B] hover:bg-[#a31518] w-40 py-2 px-4"
+                }`}
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <svg
+                    className="animate-spin h-5 w-5 mr-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    />
+                  </svg>
+                </div>
+              ) : (
+                "Post Job"
+              )}
+            </button>
+          </div>
         </form>
       </div>
     </div>
