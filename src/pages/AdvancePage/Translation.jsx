@@ -7,6 +7,9 @@ function Translation() {
 
   return (
     <div className="mb-30">
+      <div>
+        <img src='/assets/Translation.png' alt='Translation'/>
+      </div>
       <h1 className="text-center text-2xl text-red-800 font-normal">
         Area of Translation
       </h1>
