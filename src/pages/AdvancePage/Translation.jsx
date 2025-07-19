@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 
 
-function AdvancePage() {
+function Translation() {
     const [showModal, setShowModal] = useState(false);
 
   return (
@@ -327,4 +327,4 @@ Assembly-line downtimes dropped 35% after multilingual SOPs and manuals were dep
   )
 }
 
-export default AdvancePage
+export default Translation

@@ -90,7 +90,7 @@ import Assessment from "../assessment/Assessment";
 import CompanyDashboard from "../componants/VerbiqPortal/CompanyDashboad/CompanyDashboard";
 import PrivateRoute from "./PrivateRoute";
 import JobPostForm from "../pages/Registration/DashboardRegistration/JobsPostForm";
-import AdvancePage from "../pages/AdvancePage/AdvancePage";
+import Translation from "../pages/AdvancePage/Translation";
 
 
 export default function ALLRoutes() {
@@ -100,7 +100,7 @@ export default function ALLRoutes() {
       <Route path="/platform" element={<Platform />} />
       <Route path="/ceo" element={<CenterofExce />} />
       <Route path="/aboutUs" element={<Aboutus />} />
-      <Route path="/translation" element={<AdvancePage/>}/>
+      <Route path="/translation" element={<Translation/>}/>
 
       {/* Solutions */}
       <Route path="/globalhiring" element={<NativeHiringSupport />} />
