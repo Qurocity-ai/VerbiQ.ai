@@ -1,12 +1,16 @@
 import React from 'react'
 import { useState } from 'react';
+import PortalNavbar from '../../componants/VerbiqPortal/PortalNavbar/PortalNavbar';
+import Navbar2 from '../../componants/Navbar2/Navbar2';
 
 
 function Translation() {
     const [showModal, setShowModal] = useState(false);
-
   return (
+
     <div className="mb-30">
+      <Navbar2/>
+
       <div>
         <img src='/assets/Translation.png' alt='Translation'/>
       </div>
