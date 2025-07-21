@@ -91,6 +91,7 @@ import CompanyDashboard from "../componants/VerbiqPortal/CompanyDashboad/Company
 import PrivateRoute from "./PrivateRoute";
 import Translation from "../pages/AdvancePage/Translation";
 import Interpetation from "../pages/Interpetation/Interpetation";
+import CompanyPolicy from "../pages/Company Policy/CompanyPolicy";
 
 export default function ALLRoutes() {
   return (
@@ -99,6 +100,7 @@ export default function ALLRoutes() {
       <Route path="/platform" element={<Platform />} />
       <Route path="/ceo" element={<CenterofExce />} />
       <Route path="/aboutUs" element={<Aboutus />} />
+      <Route path="/companyPolicy" element={<CompanyPolicy />} />
 
       <Route path="/translation" element={<Translation />} />
 
