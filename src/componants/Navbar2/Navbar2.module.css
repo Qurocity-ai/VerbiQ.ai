@@ -12,7 +12,6 @@
     rgba(30, 58, 138, 0.6)
   );
 
-
   /* Blur the background behind it */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -239,6 +238,12 @@
     align-items: flex-start;
     gap: 1rem;
     width: 100%;
+  }
+  .navlinks a {
+    color: #000949;
+  }
+  .navLinkWithIcon span {
+    color: #000949;
   }
 
   .showMenu {

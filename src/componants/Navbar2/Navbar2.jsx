@@ -195,6 +195,17 @@ export default function Navbar2() {
         >
           Interpetation
         </Link>
+        {/*Interpetation*/}
+        <Link
+          onClick={() => {
+            setActiveLink("translation");
+            setIsMobileMenuOpen(false);
+          }}
+          to="/translation"
+          className={activeLink === "translation" ? style.activeLink : ""}
+        >
+          Translation
+        </Link>
         {/* Platform */}
         <Link
           onClick={() => {

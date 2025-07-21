@@ -15,11 +15,14 @@ const App = () => {
     "/assessment",
     "/companydashboard",
     "/interpetation",
+    "/translation",
   ].some((path) => location.pathname.startsWith(path));
   const Interpetation = location.pathname === "/interpetation";
+  const Translation = location.pathname === "/translation";
   return (
     <>
       {Interpetation && <Navbar2 />}
+      {Translation && <Navbar2 />}
       {!hideNavbarFooter && <Navbar />}
       <ALLRoutes />
       {!hideNavbarFooter && <Footer />}

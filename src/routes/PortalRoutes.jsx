@@ -35,7 +35,6 @@ import ViewCandidate from "../portalpages/ViewCandidate/ViewCandidate";
 export default function PortalRoutes() {
   return (
     <Routes>
-
       {/* folder wise routing */}
 
       {/* TypeofEmployement */}
@@ -84,9 +83,9 @@ export default function PortalRoutes() {
       <Route path="/teleperformance" element={<Teleperformance />} />
       {/* {job posting form } */}
       <Route path="/JobPostForm" element={<JobPostForm />} />
-      <Route path="/testupdatejob/:jobId" element={<UpdateJobs/>}/>
+      <Route path="/testupdatejob/:jobId" element={<UpdateJobs />} />
       {/*<Route path="/companydashboard" element={<JobDashboard />} />*/}
-<Route path="view-candidate/:jobId" element={<ViewCandidate/>} />
+      <Route path="view-candidate/:jobId" element={<ViewCandidate />} />
     </Routes>
   );
 }
