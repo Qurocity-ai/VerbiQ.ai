@@ -21,7 +21,7 @@ function Inter_2() {
         </div>
         <div className="text-center">
           <img
-            src="\assets\global.png"
+            src="\assets\Global.png"
             className="mx-auto h-16 w-18 sm:mr-40 sm:mb-16"
           />
           <h4 className="font-semibold text-[15px] mt-2 text-red-700 text-left text-wrap">

@@ -20,7 +20,7 @@ function Inter_1() {
           </p>
         </div>
         <div className="p-4 rounded h-40 w-60 hover:shadow border-2 border-gray-200">
-          <img src="/assets/legal.png" className="mx-auto h-20 w-20 mb-2" />
+          <img src="/assets/Legal.png" className="mx-auto h-20 w-20 mb-2" />
           <p className="text-red-700 font-normal text-wrap text-[15px]">
             Legal & Courtroom
           </p>
