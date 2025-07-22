@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import CallbackForm from "./CallbackForm"; // import modal form
 
 const Inter_0 = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div
       className="relative h-screen bg-cover bg-center"
@@ -8,8 +11,7 @@ const Inter_0 = () => {
         backgroundImage: "url('/assets/Interpetation.jpg')",
       }}
     >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-opacity-50 "></div>
+      {/* No dark overlay */}
 
       {/* Hero Content */}
       <div className="relative z-10 text-white flex flex-col justify-center h-full sm:pl-40 px-10 max-w-2xl">
@@ -25,10 +27,15 @@ const Inter_0 = () => {
           Expert interpretation for your niche – technical briefings, legal
           proceedings, defense dialogues, and more.
         </p>
-        <button className="mt-6 bg-transparent border sm:w-80 w-40 border-gray-200 text-white px-2 py-2 rounded-full font-normal sm:text-2xl text-sm hover:bg-gray-200 hover:text-black transition">
+        <button
+          onClick={() => setShowModal(true)}
+          className="mt-6 bg-transparent border sm:w-80 w-40 border-gray-200 text-white px-2 py-2 rounded-full font-normal sm:text-2xl text-sm hover:bg-gray-200 hover:text-black transition"
+        >
           Request a callback
         </button>
       </div>
+
+      {showModal && <CallbackForm onClose={() => setShowModal(false)} />}
     </div>
   );
 };
