@@ -89,8 +89,9 @@ import Platform from "../pages/Platform/Platform";
 import Assessment from "../assessment/Assessment";
 import CompanyDashboard from "../componants/VerbiqPortal/CompanyDashboad/CompanyDashboard";
 import PrivateRoute from "./PrivateRoute";
-import JobPostForm from "../pages/Registration/DashboardRegistration/JobsPostForm";
-
+import Translation from "../pages/AdvancePage/Translation";
+import Interpetation from "../pages/Interpetation/Interpetation";
+import CompanyPolicy from "../pages/Company Policy/CompanyPolicy";
 
 export default function ALLRoutes() {
   return (
@@ -99,6 +100,11 @@ export default function ALLRoutes() {
       <Route path="/platform" element={<Platform />} />
       <Route path="/ceo" element={<CenterofExce />} />
       <Route path="/aboutUs" element={<Aboutus />} />
+      <Route path="/companyPolicy" element={<CompanyPolicy />} />
+
+      <Route path="/translation" element={<Translation />} />
+
+      <Route path="/interpetation" element={<Interpetation />} />
 
       {/* Solutions */}
       <Route path="/globalhiring" element={<NativeHiringSupport />} />
@@ -142,15 +148,9 @@ export default function ALLRoutes() {
           </PrivateRoute>
         }
       />
-     
- 
-
 
       {/* Public Assessment Page */}
       <Route path="/assessment" element={<Assessment />} />
-
-      {/* {job posting form } */}
-      <Route path="/JobPostForm" element={<JobPostForm />} />
     </Routes>
   );
 }

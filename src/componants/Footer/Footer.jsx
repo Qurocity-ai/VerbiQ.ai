@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
+
   return (
     <footer className="w-full bg-[#F8FAFF] shadow-2xl">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -97,10 +100,16 @@ function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-2 col-span-1 sm:-mt-16">
+            <div className="space-y-2 col-span-1 sm:-mt-2">
               <div className="block text-[#00046C] font-medium">9373902340</div>
               <div className="block text-[#00046C] font-medium">
                 hr@verbiq.ai
+              </div>
+              <div
+                className="block text-[#00046C] font-medium"
+                onClick={() => navigate("/companyPolicy")}
+              >
+                Company Policy
               </div>
             </div>
           </div>

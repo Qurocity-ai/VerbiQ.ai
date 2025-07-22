@@ -21,11 +21,11 @@ const teamMembers = [
     linkedin:'https://www.linkedin.com/in/adityamuthane/',
   },
   {
-    name: 'Laxmi Yadav',
+    name: 'Anuvika Diwan',
     role: 'National Account Manager',
     department: 'Sales and Marketing, Client Relationships, Strategic Partnerships, Account Growth',
-    image: '/assets/laxmi.jpg',
-    linkedin:'https://www.linkedin.com/in/laxmi-yadav-33ab56227/',
+    image: '/assets/AnuvikaDiwan.png',
+    linkedin:'https://www.linkedin.com/in/anuvika-diwan-83246735a/',
   },
 ];
   const founders = [
