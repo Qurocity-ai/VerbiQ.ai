@@ -26,6 +26,7 @@ const App = () => {
       {!hideNavbarFooter && <Navbar />}
       <ALLRoutes />
       {!hideNavbarFooter && <Footer />}
+      {Translation && <Footer />}
 
       {/* <AssessmentsRoutes /> */}
 

@@ -5,7 +5,7 @@ function Footer() {
   const navigate = useNavigate();
 
   return (
-    <footer className="w-full bg-[#F8FAFF] shadow-2xl">
+    <footer className="w-full bg-[#F8FAFF] -mb-10">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Desktop Layout */}
         <div className="hidden sm:flex flex-col">
@@ -115,7 +115,7 @@ function Footer() {
           </div>
 
           {/* Bottom Border */}
-          <div className="mt-8 border-t border-gray-200 pt-8 text-right">
+          <div className="mt-8 border-t border-gray-200 pt-8 text-center">
             <p className="text-base text-[#00046C]">
               &copy; {new Date().getFullYear()} VerbiQ.ai. All rights reserved.
             </p>

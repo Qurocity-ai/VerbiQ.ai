@@ -8,13 +8,13 @@ import Footer from "../../componants/Footer/Footer";
 
 const Interpetation = () => {
   return (
-    <div className="w-full pb-10 bg-white -mt-18 sm:space-y-48 space-y-40">
+    <div className="w-full mb-4 bg-white  sm:space-y-48 space-y-40">
       <Inter_0 />
       <Inter_1 />
       <Inter_2 />
       <Inter_3 />
       <Inter_4 />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
