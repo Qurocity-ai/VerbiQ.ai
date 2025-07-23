@@ -97,6 +97,33 @@ const CallbackForm = ({ onClose }) => {
                 className="w-full border border-gray-300 px-4 py-2 rounded-md"
               />
             </div>
+
+                        <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
+              <input
+                name="number"
+                value={formData.number}
+                onChange={handleChange}
+                required
+                placeholder="Enter your Company Name"
+                type="tel"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md"
+              />
+            </div>
+
+
+                        <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Designation </label>
+              <input
+                name="number"
+                value={formData.number}
+                onChange={handleChange}
+                required
+                placeholder="Enter your  Designation"
+                type="tel"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md"
+              />
+            </div>
             
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
