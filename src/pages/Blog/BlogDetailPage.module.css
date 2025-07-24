@@ -1,193 +1,190 @@
 /* Container for the blog details */
 
 .singleBlogContainer {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    /* background-color: #f8fafc; */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    /* border: 1px solid red; */
-    margin-top: 75px;
-    
-    
-    
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  /* background-color: #f8fafc; */
+
+  font-family: "Poppins", sans-serif;
+  /* border: 1px solid red; */
+  margin-top: 75px;
 }
 
 /* Blog Title */
 .blogTitle {
-    font-size: 1.5rem; /* Large and bold for the main title */
-    font-weight: bold;
-    color: #00376b;
-    margin-bottom: 10px;
-    text-align: center;
-    
+  font-size: 5rem; /* Large and bold for the main title */
+  font-weight: medium;
+  color: #00376b;
+  margin-bottom: 10px;
+  text-align: center;
 }
-:global(span){
-    font-weight: normal;
+:global(span) {
+  font-weight: normal;
 }
-:global(strong){
-    /* font-weight: normal; */
-    font-size: 0.9rem;
+:global(strong) {
+  /* font-weight: normal; */
+  font-size: 0.9rem;
 }
 /* Blog Date */
 .blogDate {
-    font-size: 0.8rem;
-    color: #7a7a7a;
-    text-align: center;
-    margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #7a7a7a;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* Blog Image */
 .blogImage {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto 30px;
-    border-radius: 10px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 30px;
+  border-radius: 10px;
 }
 
 /* Main Content Area */
 .blogContent {
-    font-size: 1rem; /* Base font size for the content */
-    line-height: 1.7;
-    color: #333333;
-    padding: 0 20px;
-    
-    font-family: 'Poppins' ,sans-serif;
+  font-size: 1rem; /* Base font size for the content */
+  line-height: 1.7;
+  color: #333333;
+  padding: 0 200px;
+
+  font-family: "Poppins", sans-serif;
 }
 
 /* Standardized headings */
-.blogContent h1, 
-.blogContent h2, 
-.blogContent h3, 
+.blogContent h1,
+.blogContent h2,
+.blogContent h3,
 .blogContent h4 {
-    color: #00376b;
-    font-weight: normal;
-   font-family: 'Poppins' ,sans-serif;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    line-height: 1.5rem;
+  color: #00376b;
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  line-height: 1.5rem;
 }
 
-.blogContent h1 { font-size: 2rem; }
-.blogContent h2 { font-size: 1.75rem; }
-.blogContent h3 { font-size: 1.2rem; }
-.blogContent h4 { font-size: 1rem; }
-
+.blogContent h1 {
+  font-size: 2rem;
+}
+.blogContent h2 {
+  font-size: 1.75rem;
+}
+.blogContent h3 {
+  font-size: 1.2rem;
+}
+.blogContent h4 {
+  font-size: 1rem;
+}
 
 /* Paragraphs */
 .blogContent p {
-    margin-bottom: 15px;
-    font-size: 1rem; /* Consistent paragraph font size */
-    line-height: 1.7;
-    font-family: 'Poppins', sans-serif;
-    
+  margin-bottom: 15px;
+  font-size: 1rem; /* Consistent paragraph font size */
+  line-height: 1.7;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Lists */
-.blogContent ul, 
+.blogContent ul,
 .blogContent ol {
-    margin-left: 20px;
-    margin-bottom: 15px;
-    font-size: 1.1rem; /* Consistent font size for lists */
-    line-height: 1.7;
-    font-family: 'Poppins', sans-serif;
-    
+  margin-left: 20px;
+  margin-bottom: 15px;
+  font-size: 1.6rem; /* Consistent font size for lists */
+  line-height: 1.7;
+  font-family: "Poppins", sans-serif;
 }
 
 /* List items */
 .blogContent li {
-    margin-bottom: 10px;
-    font-size: 1.1rem; /* Consistent font size for list items */
-    font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+  font-size: 1.1rem; /* Consistent font size for list items */
+  font-family: "Poppins", sans-serif;
 }
 
 /* Blockquote */
 .blogContent blockquote {
-    margin: 20px 0;
-    padding: 10px 20px;
-    background-color: #f0f4f8;
-    border-left: 5px solid #00376b;
-    font-style: italic;
-    font-size: 1.1rem; /* Consistent font size for blockquotes */
-    line-height: 1.7;
-    
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #f0f4f8;
+  border-left: 5px solid #00376b;
+  font-style: italic;
+  font-size: 1.1rem; /* Consistent font size for blockquotes */
+  line-height: 1.7;
 }
 
 /* Links */
 .blogContent a {
-    color: #00376b;
-    text-decoration: underline;
+  color: #00376b;
+  text-decoration: underline;
 }
 
 /* Button for more actions */
 .readMoreButton {
-    background-color: #00376b;
-    color: white;
-    font-size: 1rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 30px auto;
-    transition: background-color 0.3s ease;
+  background-color: #00376b;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto;
+  transition: background-color 0.3s ease;
 }
 
 .readMoreButton:hover {
-    background-color: #005bb5;
+  background-color: #005bb5;
 }
 
 /* Optional background for the page */
 
-
 /* Responsiveness for smaller screens */
 @media (max-width: 768px) {
-    .singleBlogContainer {
-        padding: 10px;
-    }
+  .singleBlogContainer {
+    padding: 10px;
+  }
 
-    .blogTitle {
-        font-size: 1.7rem; /* Adjusted for smaller screens */
-    }
+  .blogTitle {
+    font-size: 1.7rem; /* Adjusted for smaller screens */
+  }
 
-    .blogContent {
-        font-size: 1rem; /* Adjusted font size for smaller screens */
-    }
+  .blogContent {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
 
-    .blogContent ul, 
-    .blogContent ol {
-        font-size: 1rem; /* Ensure list font size is consistent */
-    }
+  .blogContent ul,
+  .blogContent ol {
+    font-size: 1rem; /* Ensure list font size is consistent */
+  }
 
-    .readMoreButton {
-        padding: 8px 16px; /* Adjusted padding for smaller screens */
-    }
+  .readMoreButton {
+    padding: 8px 16px; /* Adjusted padding for smaller screens */
+  }
 }
 
 /* For very small screens (mobile portrait) */
 @media (max-width: 480px) {
-    .singleBlogContainer {
-        padding: 5px;
-    }
+  .singleBlogContainer {
+    padding: 5px;
+  }
 
-    .blogTitle {
-        font-size: 1.5rem; /* Further reduce title size */
-    }
+  .blogTitle {
+    font-size: 1.5rem; /* Further reduce title size */
+  }
 
-    .blogContent {
-        font-size: 0.9rem; /* Further reduce font size for smaller screens */
-    }
+  .blogContent {
+    font-size: 0.9rem; /* Further reduce font size for smaller screens */
+  }
 
-    .blogContent ul, 
-    .blogContent ol {
-        font-size: 0.9rem; /* Consistent font size for lists on small screens */
-    }
+  .blogContent ul,
+  .blogContent ol {
+    font-size: 0.9rem; /* Consistent font size for lists on small screens */
+  }
 
-    .readMoreButton {
-        padding: 6px 12px; /* Smaller buttons for mobile */
-    }
+  .readMoreButton {
+    padding: 6px 12px; /* Smaller buttons for mobile */
+  }
 }
-
