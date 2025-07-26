@@ -13,8 +13,11 @@
 
 /* Blog Title */
 .blogTitle {
-  font-size: 5rem; /* Large and bold for the main title */
+  font-family: "Google Sans", sans-serif;
+  font-size: 3rem; /* Large and bold for the main title */
   font-weight: medium;
+  letter-spacing: -0.5px;
+  line-height: 1.1666666667;
   color: #00376b;
   margin-bottom: 10px;
   text-align: center;
