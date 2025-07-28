@@ -92,6 +92,7 @@ import PrivateRoute from "./PrivateRoute";
 import Translation from "../pages/AdvancePage/Translation";
 import Interpetation from "../pages/Interpetation/Interpetation";
 import CompanyPolicy from "../pages/Company Policy/CompanyPolicy";
+import NewsListPage from "../pages/NewsLetters/NewsListPage";
 
 export default function ALLRoutes() {
   return (
@@ -125,6 +126,7 @@ export default function ALLRoutes() {
       <Route path="/registrationMessage" element={<Message />} />
       <Route path="/candidatelogin" element={<LoginDash />} />
 
+      <Route path="/Newsletters" element={<NewsListPage/>}/>
       <Route path="/register/*" element={<DashBoardRegister />}>
         <Route index element={<CandidateRegistration />} />
         <Route path="company" element={<CompanyRegistration />} />

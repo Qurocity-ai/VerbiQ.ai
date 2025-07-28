@@ -44,7 +44,7 @@ function Footer() {
                   Register as Candidate
                 </a>
                 <a
-                  href="https://www.linkedin.com/newsletters/7185962989202669569/"
+                  href="/Newsletters"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-[#00046C] hover:text-opacity-80"
@@ -147,8 +147,7 @@ function Footer() {
                 Blogs
               </a>
               <a
-                href="https://www.linkedin.com/newsletters/7185962989202669569/"
-                className="block text-[#00046C] hover:text-opacity-80"
+                href="/Newsletters"
               >
                 News Letters
               </a>

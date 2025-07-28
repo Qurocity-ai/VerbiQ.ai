@@ -1,9 +1,9 @@
 /* Container for the blog details */
 
 .singleBlogContainer {
-  max-width: 80%;
+  max-width:90%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
   /* background-color: #f8fafc; */
 
   font-family: "Poppins", sans-serif;
@@ -18,7 +18,7 @@
   font-weight: medium;
   letter-spacing: -0.5px;
   line-height: 1.1666666667;
-  color: #00376b;
+  color: #36383a;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -61,7 +61,7 @@
 .blogContent h2,
 .blogContent h3,
 .blogContent h4 {
-  color: #00376b;
+  color: #34373a;
   font-weight: normal;
   font-family: "Poppins", sans-serif;
   margin-top: 20px;
