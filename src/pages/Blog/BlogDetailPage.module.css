@@ -1,35 +1,41 @@
-/* Container for the blog details */
-
+/* ============================
+   Container & Layout
+============================ */
 .singleBlogContainer {
-  max-width:90%;
-  margin: 0 auto;
+  max-width: 90%;
+  margin: 75px auto 0;
   padding: 15px;
-  /* background-color: #f8fafc; */
-
   font-family: "Poppins", sans-serif;
-  /* border: 1px solid red; */
-  margin-top: 75px;
 }
 
-/* Blog Title */
+/* ============================
+   Blog Title
+============================ */
 .blogTitle {
   font-family: "Google Sans", sans-serif;
-  font-size: 3rem; /* Large and bold for the main title */
-  font-weight: medium;
-  letter-spacing: -0.5px;
-  line-height: 1.1666666667;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: -0.3px; /* Reduced for readability */
+  line-height: 1.2;
   color: #36383a;
   margin-bottom: 10px;
   text-align: center;
 }
+
+/* ============================
+   Global Inline Text Styles
+============================ */
 :global(span) {
   font-weight: normal;
 }
+
 :global(strong) {
-  /* font-weight: normal; */
   font-size: 0.9rem;
 }
-/* Blog Date */
+
+/* ============================
+   Blog Date
+============================ */
 .blogDate {
   font-size: 1.3rem;
   color: #7a7a7a;
@@ -37,103 +43,124 @@
   margin-bottom: 20px;
 }
 
-/* Blog Image */
+/* ============================
+   Blog Image
+============================ */
 .blogImage {
   display: block;
-  max-width: 100%;
+  max-width: 83%;
   height: auto;
   margin: 0 auto 30px;
   border-radius: 10px;
 }
 
-/* Main Content Area */
+/* ============================
+   Blog Content Area
+============================ */
 .blogContent {
-  font-size: 1rem; /* Base font size for the content */
+  font-size: 1rem;
   line-height: 1.7;
   color: #333333;
   padding: 0 200px;
-
   font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2px;
 }
 
-/* Standardized headings */
+/* ============================
+   Headings (Standardized)
+============================ */
 .blogContent h1,
 .blogContent h2,
 .blogContent h3,
 .blogContent h4 {
-  color: #34373a;
-  font-weight: normal;
   font-family: "Poppins", sans-serif;
+  color: #34373a;
+  font-weight: 500;
+  line-height: 1.5;
   margin-top: 20px;
   margin-bottom: 10px;
-  line-height: 1.5rem;
+  letter-spacing: -0.3px;
 }
 
 .blogContent h1 {
   font-size: 2rem;
 }
+
 .blogContent h2 {
   font-size: 1.75rem;
   color: red;
 }
+
 .blogContent h3 {
   font-size: 1.2rem;
 }
-strong font{
-  font-size: 2rem;
-  font-weight: 500;
-}
+
 .blogContent h4 {
   font-size: 1rem;
 }
-ol strong{
+
+/* Special strong font inside tags */
+strong font {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+ol strong {
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-/* Paragraphs */
+/* ============================
+   Paragraphs
+============================ */
 .blogContent p {
+  font-size: 1rem;
   margin-bottom: 15px;
-  font-size: 1rem; /* Consistent paragraph font size */
   line-height: 1.7;
   font-family: "Poppins", sans-serif;
 }
 
-/* Lists */
+/* ============================
+   Lists
+============================ */
 .blogContent ul,
 .blogContent ol {
   margin-left: 20px;
   margin-bottom: 15px;
-  font-size: 1.6rem; /* Consistent font size for lists */
+  font-size: 1.6rem;
   line-height: 1.7;
   font-family: "Poppins", sans-serif;
 }
 
-/* List items */
 .blogContent li {
+  font-size: 1.1rem;
   margin-bottom: 10px;
-  font-size: 1.1rem; /* Consistent font size for list items */
-  font-family: "Poppins", sans-serif;
 }
 
-/* Blockquote */
+/* ============================
+   Blockquote
+============================ */
 .blogContent blockquote {
   margin: 20px 0;
   padding: 10px 20px;
   background-color: #f0f4f8;
   border-left: 5px solid #00376b;
   font-style: italic;
-  font-size: 1.1rem; /* Consistent font size for blockquotes */
+  font-size: 1.1rem;
   line-height: 1.7;
 }
 
-/* Links */
+/* ============================
+   Anchor Tags
+============================ */
 .blogContent a {
   color: #00376b;
   text-decoration: underline;
 }
 
-/* Button for more actions */
+/* ============================
+   Read More Button
+============================ */
 .readMoreButton {
   background-color: #00376b;
   color: white;
@@ -151,52 +178,56 @@ ol strong{
   background-color: #005bb5;
 }
 
-/* Optional background for the page */
+/* ============================
+   Responsive Design
+============================ */
 
-/* Responsiveness for smaller screens */
+/* Tablets & below */
 @media (max-width: 768px) {
   .singleBlogContainer {
     padding: 10px;
   }
 
   .blogTitle {
-    font-size: 1.7rem; /* Adjusted for smaller screens */
+    font-size: 1.7rem;
   }
 
   .blogContent {
-    font-size: 1rem; /* Adjusted font size for smaller screens */
+    font-size: 1rem;
+    padding: 0 20px;
   }
 
   .blogContent ul,
   .blogContent ol {
-    font-size: 1rem; /* Ensure list font size is consistent */
+    font-size: 1rem;
   }
 
   .readMoreButton {
-    padding: 8px 16px; /* Adjusted padding for smaller screens */
+    padding: 8px 16px;
   }
 }
 
-/* For very small screens (mobile portrait) */
+/* Phones & small devices */
 @media (max-width: 480px) {
   .singleBlogContainer {
     padding: 5px;
   }
 
   .blogTitle {
-    font-size: 1.5rem; /* Further reduce title size */
+    font-size: 1.5rem;
   }
 
   .blogContent {
-    font-size: 0.9rem; /* Further reduce font size for smaller screens */
+    font-size: 0.9rem;
+    padding: 0 10px;
   }
 
   .blogContent ul,
   .blogContent ol {
-    font-size: 0.9rem; /* Consistent font size for lists on small screens */
+    font-size: 0.9rem;
   }
 
   .readMoreButton {
-    padding: 6px 12px; /* Smaller buttons for mobile */
+    padding: 6px 12px;
   }
 }

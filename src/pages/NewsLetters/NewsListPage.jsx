@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NewsListPage.module.css';
-import config from "../../services/config";
 import { motion } from 'framer-motion';
 
 const NewsLetters = () => {
@@ -10,20 +9,21 @@ const NewsLetters = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 9;
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  //   setLoading(true);
-  //   fetch(`${config.apiUrl}/blog/blogs`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setBlogs(data.reverse());
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching blogs:', error);
-  //       setLoading(false);
-  //     });
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setLoading(true);
+    fetch(`https://verbiq-backend1.onrender.com/newsletter/getAllNewsletters`)
+      .then((response) => response.json())
+      .then((data) => {
+        setBlogs(data.reverse());
+        console.log(data)
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching blogs:', error);
+        setLoading(false);
+      });
+  }, []);
 
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
@@ -91,7 +91,7 @@ const NewsLetters = () => {
                   transition={{ duration: 0.5, ease: 'easeOut' }}
                   viewport={{ once: true, amount: 0.2 }}
                 >
-                  <Link to={`/blogs/${blog._id}`} style={{ textDecoration: 'none' }}>
+                  <Link to={`/Newsletters/${blog._id}`} style={{ textDecoration: 'none' }}>
                     <img src={blog.imageUrl} alt={blog.title} className={styles.blogImage} />
                     <h2 className={styles.blogTitle}>{blog.title}</h2>
                     <p className={styles.blogDate}>{formatDate(blog.date)}</p>

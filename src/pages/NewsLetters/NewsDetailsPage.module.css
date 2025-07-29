@@ -77,7 +77,8 @@
   color: red;
 }
 .blogContent h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 strong font{
   font-size: 2rem;
@@ -199,4 +200,34 @@ ol strong{
   .readMoreButton {
     padding: 6px 12px; /* Smaller buttons for mobile */
   }
+}
+.blogSection {
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.sectionText {
+  font-size: 1rem;
+  color: #34495e;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.errorText {
+  color: red;
+  text-align: center;
+  padding: 2rem;
 }

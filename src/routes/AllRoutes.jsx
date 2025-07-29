@@ -93,6 +93,7 @@ import Translation from "../pages/AdvancePage/Translation";
 import Interpetation from "../pages/Interpetation/Interpetation";
 import CompanyPolicy from "../pages/Company Policy/CompanyPolicy";
 import NewsListPage from "../pages/NewsLetters/NewsListPage";
+import NewsDetailsPage from "../pages/NewsLetters/NewsDetailsPage";
 
 export default function ALLRoutes() {
   return (
@@ -127,6 +128,9 @@ export default function ALLRoutes() {
       <Route path="/candidatelogin" element={<LoginDash />} />
 
       <Route path="/Newsletters" element={<NewsListPage/>}/>
+      <Route path="/Newsletters/:id" element={<NewsDetailsPage/>}/>
+
+      
       <Route path="/register/*" element={<DashBoardRegister />}>
         <Route index element={<CandidateRegistration />} />
         <Route path="company" element={<CompanyRegistration />} />
