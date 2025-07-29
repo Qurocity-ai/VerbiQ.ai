@@ -10,20 +10,20 @@ const NewsLetters = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 9;
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setLoading(true);
-    fetch(`${config.apiUrl}/blog/blogs`)
-      .then((response) => response.json())
-      .then((data) => {
-        setBlogs(data.reverse());
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching blogs:', error);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  //   setLoading(true);
+  //   fetch(`${config.apiUrl}/blog/blogs`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setBlogs(data.reverse());
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching blogs:', error);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;

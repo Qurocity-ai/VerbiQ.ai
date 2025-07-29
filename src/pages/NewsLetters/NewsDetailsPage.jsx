@@ -8,12 +8,12 @@ const NewsDetailsPage = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
 
-  useEffect(() => {
-    fetch(`${config.apiUrl}/blog/blogs/${id}`)
-      .then((response) => response.json())
-      .then((data) => setBlog(data))
-      .catch((error) => console.error("Error fetching blog:", error));
-  }, [id]);
+  // useEffect(() => {
+  //   fetch(`${config.apiUrl}/blog/blogs/${id}`)
+  //     .then((response) => response.json())
+  //     .then((data) => setBlog(data))
+  //     .catch((error) => console.error("Error fetching blog:", error));
+  // }, [id]);
 
   // Function to format date as '21 Nov 2024'
   const formatDate = (dateString) => {
